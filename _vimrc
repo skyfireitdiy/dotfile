@@ -44,10 +44,6 @@ nnoremap <silent> [f :ProjectBufPrev 'F<cr>
 " ------------- coc extensions ------------
 let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python', 'coc-vimlsp', 'coc-marketplace', 'coc-rust-analyzer']
 
-" ------------- workspace -------------
-let g:workspace_autocreate = 1
-let g:workspace_create_new_tabs = 0
-let g:workspace_autosave_always = 1
 
 " -------------- LeaderF -----------------
 let g:Lf_ShortcutF = '<C-p>'
@@ -207,6 +203,7 @@ set relativenumber
 set cursorline cursorcolumn
 
 autocmd InsertLeave,InsertEnter * :set relativenumber!
+autocmd BufEnter * :ProjectRootCD
 
 inoremap jj <ESC>
 
@@ -227,21 +224,13 @@ nnoremap <leader>mr @
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 nnoremap <leader>g :Grep
 
-" ---- git config -----
-nnoremap <leader>ga :Git add -u
-nnoremap <leader>gco :Git checkout
-nnoremap <leader>gc :Git commit<cr>
-nnoremap <leader>gl :Git log<cr>
-nnoremap <leader>gb :Git branch<cr>
-nnoremap <leader>gba :Git branch -a<cr>
-nnoremap <leader>gpl :Git pull --rebase<cr>
-nnoremap <leader>gps :Git push<cr>
 
+nnoremap <leader>g :!lazygit<cr>
 
 nnoremap <leader>fc :echo @%<cr>
-nnoremap <leader>i "_
 
-nmap gb <C-n>
+" ignore clipboard
+nnoremap <leader>i "_
 
 vnoremap <leader>w <C-w>
 vnoremap <leader>tt :tabnew
