@@ -226,7 +226,7 @@ nnoremap <leader>j 25j
 nnoremap <leader>k 25k
 nnoremap <leader>mr @
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
-nnoremap <leader>G :Grep 
+nnoremap <leader>G :Grep
 
 " ---- git config -----
 nnoremap <leader>ga :Git add -u
@@ -238,6 +238,9 @@ nnoremap <leader>gba :Git branch -a<cr>
 nnoremap <leader>gpl :Git pull --rebase<cr>
 nnoremap <leader>gps :Git push<cr>
 
+
+nnoremap <leader>fc :echo @%<cr>
+nnoremap <leader>i "_
 
 nmap gb <C-n>
 
