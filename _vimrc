@@ -228,6 +228,14 @@ nnoremap <leader>mr @
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 nnoremap <leader>G :Grep 
 
+" ---- git config -----
+nnoremap <leader>ga :Git add -u
+nnoremap <leader>gco :Git checkout
+nnoremap <leader>gc :Git commit<cr>
+nnoremap <leader>gl :Git log<cr>
+nnoremap <leader>gb :Git branch<cr>
+nnoremap <leader>gba :Git branch -a<cr>
+
 
 nmap gb <C-n>
 
