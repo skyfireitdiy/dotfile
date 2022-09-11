@@ -198,7 +198,7 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " ---------------- my config ---------------
-
+set showcmd
 set nu
 set autowriteall
 set autoread
@@ -226,7 +226,7 @@ nnoremap <leader>j 25j
 nnoremap <leader>k 25k
 nnoremap <leader>mr @
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
-nnoremap <leader>G :Grep
+nnoremap <leader>g :Grep
 
 " ---- git config -----
 nnoremap <leader>ga :Git add -u
