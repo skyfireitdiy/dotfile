@@ -236,7 +236,7 @@ nnoremap <leader>gl :Git log<cr>
 nnoremap <leader>gb :Git branch<cr>
 nnoremap <leader>gba :Git branch -a<cr>
 nnoremap <leader>gpl :Git pull --rebase<cr>
-nnoremap <leader>gba :Git push<cr>
+nnoremap <leader>gps :Git push<cr>
 
 
 nmap gb <C-n>
