@@ -221,7 +221,6 @@ nnoremap <leader>sh :shell<CR>
 nnoremap <leader>h 0
 nnoremap <leader>l $
 nnoremap <f4> :CocCommand clangd.switchSourceHeader<CR>
-nnoremap <leader>ws :ToggleWorkspace<CR>
 nnoremap <leader>j 25j
 nnoremap <leader>k 25k
 nnoremap <leader>mr @
@@ -256,7 +255,6 @@ vnoremap <leader>sh :shell<CR>
 vnoremap <leader>h 0
 vnoremap <leader>l $
 vnoremap <f4> :CocCommand clangd.switchSourceHeader<CR>
-vnoremap <leader>ws :ToggleWorkspace<CR>
 vnoremap <leader>j 25j
 vnoremap <leader>k 25k
 
