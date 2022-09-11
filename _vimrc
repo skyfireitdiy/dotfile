@@ -243,7 +243,6 @@ nnoremap <leader>i "_
 
 nmap gb <C-n>
 
-
 vnoremap <leader>w <C-w>
 vnoremap <leader>tt :tabnew
 vnoremap <leader>tn :tabnext<CR>
