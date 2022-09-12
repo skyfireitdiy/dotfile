@@ -21,6 +21,7 @@ Plug 'dbakker/vim-projectroot'
 Plug 'dkprice/vim-easygrep'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
+Plug 'joonty/vdebug'
 call plug#end()
 
 
@@ -54,8 +55,8 @@ let g:molokai_original = 1
 let g:rehash256 = 1
 color molokai
 " -------------- nerdtree config -------------------
-map <F2> :NERDTreeToggle<CR>
-map <F3> :NERDTreeFind<CR>
+map <leader>nt :NERDTreeToggle<CR>
+map <leader>nf :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 
 " --------------- coc.vim config -------------------
