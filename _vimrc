@@ -43,7 +43,7 @@ nnoremap <silent> [f :ProjectBufPrev 'F<cr>
 
 
 " ------------- coc extensions ------------
-let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python', 'coc-vimlsp', 'coc-marketplace', 'coc-rust-analyzer', 'coc-markdownlint', 'coc-markdown-preview-enhanced']
+let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python', 'coc-vimlsp', 'coc-marketplace', 'coc-rust-analyzer', 'coc-markdownlint', 'coc-markdown-preview-enhanced', 'coc-webview', 'coc-github']
 
 
 " -------------- LeaderF -----------------
@@ -206,7 +206,9 @@ set cursorline cursorcolumn
 autocmd InsertLeave,InsertEnter * :set relativenumber!
 autocmd BufEnter * :ProjectRootCD
 
+inoremap hh <ESC>
 inoremap jj <ESC>
+inoremap kk <ESC>
 
 nnoremap <leader>w <C-w>
 nnoremap <leader>tt :tabnew
@@ -223,9 +225,7 @@ nnoremap <leader>j 25j
 nnoremap <leader>k 25k
 nnoremap <leader>mr @
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
-nnoremap <leader>g :Grep
-
-
+nnoremap <leader>G :Grep
 nnoremap <leader>g :!lazygit<cr>
 
 nnoremap <leader>fc :echo @%<cr>
