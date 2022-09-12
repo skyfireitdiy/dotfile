@@ -43,7 +43,7 @@ nnoremap <silent> [f :ProjectBufPrev 'F<cr>
 
 
 " ------------- coc extensions ------------
-let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python', 'coc-vimlsp', 'coc-marketplace', 'coc-rust-analyzer']
+let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python', 'coc-vimlsp', 'coc-marketplace', 'coc-rust-analyzer', 'coc-markdownlint', 'coc-markdown-preview-enhanced']
 
 
 " -------------- LeaderF -----------------
