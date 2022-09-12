@@ -202,6 +202,8 @@ set autoread
 set ignorecase smartcase
 set relativenumber
 set cursorline cursorcolumn
+set tabstop=4
+set shiftwidth=4
 
 autocmd InsertLeave,InsertEnter * :set relativenumber!
 autocmd BufEnter * :ProjectRootCD
@@ -227,11 +229,14 @@ nnoremap <leader>mr @
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 nnoremap <leader>G :Grep
 nnoremap <leader>g :!lazygit<cr>
-
+nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
 nnoremap <leader>fc :echo @%<cr>
-
-" ignore clipboard
 nnoremap <leader>i "_
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+
 
 vnoremap <leader>w <C-w>
 vnoremap <leader>tt :tabnew
@@ -246,4 +251,7 @@ vnoremap <leader>l $
 vnoremap <f4> :CocCommand clangd.switchSourceHeader<CR>
 vnoremap <leader>j 25j
 vnoremap <leader>k 25k
-
+vnoremap <Up> <Nop>
+vnoremap <Down> <Nop>
+vnoremap <Left> <Nop>
+vnoremap <Right> <Nop>
