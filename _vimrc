@@ -22,7 +22,18 @@ Plug 'dkprice/vim-easygrep'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'joonty/vdebug'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 call plug#end()
+
+
+" ------------ doxygen -------------
+let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
+let g:DoxygenToolkit_paramTag_pre="@Param "
+let g:DoxygenToolkit_returnTag="@Returns   "
+let g:DoxygenToolkit_blockHeader="-------------------------------"
+let g:DoxygenToolkit_blockFooter="---------------------------------"
+let g:DoxygenToolkit_authorName="skyfire"
+let g:DoxygenToolkit_licenseTag="all rights reserved by skyfire"
 
 
 
@@ -130,8 +141,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
 	autocmd!
@@ -207,6 +218,7 @@ set shiftwidth=4
 
 autocmd InsertLeave,InsertEnter * :set relativenumber!
 autocmd BufEnter * :ProjectRootCD
+autocmd BufWritePre * :Autoformat
 
 inoremap hh <ESC>
 inoremap jj <ESC>
@@ -218,7 +230,6 @@ nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader>tp :tabprev<CR>
 nnoremap <leader>to :tabonly<CR>
 nnoremap <leader>tc :tabclose<CR>
-nnoremap <leader>f :Autoformat<CR>
 nnoremap <leader>sh :shell<CR>
 nnoremap <leader>h 0
 nnoremap <leader>l $
@@ -244,7 +255,6 @@ vnoremap <leader>tn :tabnext<CR>
 vnoremap <leader>tp :tabprev<CR>
 vnoremap <leader>to :tabonly<CR>
 vnoremap <leader>tc :tabclose<CR>
-vnoremap <leader>f :Autoformat<CR>
 vnoremap <leader>sh :shell<CR>
 vnoremap <leader>h 0
 vnoremap <leader>l $
