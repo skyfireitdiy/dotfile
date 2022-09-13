@@ -27,14 +27,23 @@ call plug#end()
 
 
 " ------------ doxygen -------------
-let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
-let g:DoxygenToolkit_paramTag_pre="@Param "
-let g:DoxygenToolkit_returnTag="@Returns   "
-let g:DoxygenToolkit_blockHeader="-------------------------------"
-let g:DoxygenToolkit_blockFooter="---------------------------------"
-let g:DoxygenToolkit_authorName="skyfire"
-let g:DoxygenToolkit_licenseTag="all rights reserved by skyfire"
+let g:DoxygenToolkit_briefTag_funcName = "yes"
 
+let g:DoxygenToolkit_commentType = "C++"
+let g:DoxygenToolkit_briefTag_pre = "\\brief "
+let g:DoxygenToolkit_templateParamTag_pre = "\\tparam "
+let g:DoxygenToolkit_paramTag_pre = "\\param "
+let g:DoxygenToolkit_returnTag = "\\return "
+let g:DoxygenToolkit_throwTag_pre = "\\throw " " @exception is also valid
+let g:DoxygenToolkit_fileTag = "\\file "
+let g:DoxygenToolkit_dateTag = "\\date "
+let g:DoxygenToolkit_authorTag = "\\author "
+let g:DoxygenToolkit_versionTag = "\\version "
+let g:DoxygenToolkit_blockTag = "\\name "
+let g:DoxygenToolkit_classTag = "\\class "
+let g:DoxygenToolkit_authorName = "skyfire, skyfireitdiy@hotmail.com"
+let g:doxygen_enhanced_color = 1
+let g:load_doxygen_syntax = 1
 
 
 " ------------ easygrep -------------
@@ -223,6 +232,7 @@ autocmd BufWritePre * :Autoformat
 inoremap hh <ESC>
 inoremap jj <ESC>
 inoremap kk <ESC>
+inoremap /**<cr> <ESC>:Dox<cr>
 
 nnoremap <leader>w <C-w>
 nnoremap <leader>tt :tabnew
@@ -247,7 +257,7 @@ nnoremap <Up> <Nop>
 nnoremap <Down> <Nop>
 nnoremap <Left> <Nop>
 nnoremap <Right> <Nop>
-
+nnoremap /**<cr> :Dox<cr>
 
 vnoremap <leader>w <C-w>
 vnoremap <leader>tt :tabnew
