@@ -26,26 +26,6 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 call plug#end()
 
 
-" ------------ doxygen -------------
-let g:DoxygenToolkit_briefTag_funcName = "yes"
-
-let g:DoxygenToolkit_commentType = "C++"
-let g:DoxygenToolkit_briefTag_pre = "@brief "
-let g:DoxygenToolkit_templateParamTag_pre = "@tparam "
-let g:DoxygenToolkit_paramTag_pre = "@param "
-let g:DoxygenToolkit_returnTag = "@return "
-let g:DoxygenToolkit_throwTag_pre = "@throw " " @exception is also valid
-let g:DoxygenToolkit_fileTag = "@file "
-let g:DoxygenToolkit_dateTag = "@date "
-let g:DoxygenToolkit_authorTag = "@author "
-let g:DoxygenToolkit_versionTag = "@version "
-let g:DoxygenToolkit_blockTag = "@name "
-let g:DoxygenToolkit_classTag = "@class "
-let g:DoxygenToolkit_authorName = "skyfire, skyfireitdiy@hotmail.com"
-let g:doxygen_enhanced_color = 1
-let g:load_doxygen_syntax = 1
-
-
 " ------------ easygrep -------------
 let g:EasyGrepRoot = "search:.git,.svn"
 
@@ -63,6 +43,7 @@ nnoremap <silent> [f :ProjectBufPrev 'F<cr>
 
 
 " ------------- coc extensions ------------
+let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python', 'coc-vimlsp', 'coc-marketplace', 'coc-rust-analyzer', 'coc-markdownlint', 'coc-markdown-preview-enhanced', 'coc-webview', 'coc-github']
 
 
@@ -224,6 +205,7 @@ set relativenumber
 set cursorline cursorcolumn
 set tabstop=4
 set shiftwidth=4
+set nocompatible
 
 autocmd InsertLeave,InsertEnter * :set relativenumber!
 autocmd BufEnter * :ProjectRootCD
@@ -242,11 +224,7 @@ nnoremap <leader>tp :tabprev<CR>
 nnoremap <leader>to :tabonly<CR>
 nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>sh :shell<CR>
-nnoremap <leader>h 0
-nnoremap <leader>l $
 nnoremap <f4> :CocCommand clangd.switchSourceHeader<CR>
-nnoremap <leader>j 25j
-nnoremap <leader>k 25k
 nnoremap <leader>mr @
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 nnoremap <leader>G :Grep
@@ -254,13 +232,22 @@ nnoremap <leader>g :!lazygit<cr>
 nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
 nnoremap <leader>fc :echo @%<cr>
 nnoremap <leader>i "_
-nnoremap <Up> <Nop>
-nnoremap <Down> <Nop>
-nnoremap <Left> <Nop>
-nnoremap <Right> <Nop>
 nnoremap //<cr> :Dox<cr>
 nnoremap ///<cr> :DoxLic<cr>
 
+
+nnoremap <Up> k
+nnoremap <Down> j
+nnoremap <Left> h
+nnoremap <Right> l
+nnoremap <leader>h 0
+nnoremap <leader>l $
+nnoremap <leader>j 25j
+nnoremap <leader>k 25k
+nnoremap <leader><Left> 0
+nnoremap <leader><Right> $
+nnoremap <leader><Down> 25j
+nnoremap <leader><Up> 25k
 
 
 vnoremap <leader>w <C-w>
@@ -273,9 +260,17 @@ vnoremap <leader>sh :shell<CR>
 vnoremap <leader>h 0
 vnoremap <leader>l $
 vnoremap <f4> :CocCommand clangd.switchSourceHeader<CR>
+
+
+vnoremap <Up> k
+vnoremap <Down> j
+vnoremap <Left> h
+vnoremap <Right> l
+vnoremap <leader>h 0
+vnoremap <leader>l $
 vnoremap <leader>j 25j
 vnoremap <leader>k 25k
-vnoremap <Up> <Nop>
-vnoremap <Down> <Nop>
-vnoremap <Left> <Nop>
-vnoremap <Right> <Nop>
+vnoremap <leader><Left> 0
+vnoremap <leader><Right> $
+vnoremap <leader><Down> 25j
+vnoremap <leader><Up> 25k

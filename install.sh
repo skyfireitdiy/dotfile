@@ -13,8 +13,9 @@ fi
 echo 安装 vim-plug ...
 # 使用 ghproxy 做代理
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
 
+sed -i 's/https:\/\/github\.com/https:\/\/ghproxy\.com\/https:\/\/github\.com/g' ~/.vim/autoload/plug.vim
 
 echo 创建软链接 $(pwd)/_vimrc -> ~/.vimrc
 ln -sf $(pwd)/_vimrc ~/.vimrc
