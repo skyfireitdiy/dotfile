@@ -1,9 +1,18 @@
 #!/bin/bash
 
-config_vim(){
-	if [ -f ~/.vimrc ]; then
-		mv ~/.vimrc ~/.vimrc_bak
+replace_config() {
+	old_config=$1
+	new_config=$2
+	if [ -f $old_config ]; then
+		mv $old_config ${old_config}_bak
+		echo "备份$old_config 到 ${old_config}_bak"
 	fi
+	ln -sf $new_config $old_config
+}
+
+
+config_vim(){
+	replace_config ~/.vimrc $(pwd)/_vimrc
 
 	if [ -d ~/.vim ]; then
 		mv ~/.vim ~/.vim_bak
@@ -21,19 +30,19 @@ config_vim(){
 	echo 首次启动 vim 的时候会有一些报错，因为相关插件未安装，需要执行命令 :PlugInstall
 }
 
+
 config_fish(){
 	mkdir -p ~/.config/fish
-	if [ -f ~/.config/fish/config.fish ]; then
-		mv ~/.config/fish/config.fish ~/.config/fish/config.fish_bak
-	fi
-	ln -sf $(pwd)/config.fish ~/.config/fish/config.fish
-	if [ -f ~/.config/fish/fish_variables ]; then
-		mv ~/.config/fish/fish_variables ~/.config/fish/fish_variables_bak
-	fi
-	ln -sf $(pwd)/fish_variables ~/.config/fish/fish_variables
+	replace_config ~/.config/fish/config.fish $(pwd)/config.fish
+	replace_config ~/.config/fish/fish_variables $(pwd)/fish_variables
 	echo fish 配置成功
 }
 
+
+config_tmux(){
+	replace_config ~/.tmux.conf $(pwd)/_tmux.conf
+	echo tmux配置成功！
+}
 
 while test $# -gt 0
 do

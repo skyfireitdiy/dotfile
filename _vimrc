@@ -23,6 +23,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'joonty/vdebug'
 Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'junegunn/fzf'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " ------------ easygrep -------------
@@ -93,13 +95,6 @@ function! CheckBackspace() abort
 	let col = col('.') - 1
 	return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-" Use <c-space> to trigger completion.
-if has('nvim')
-	inoremap <silent><expr> <c-space> coc#refresh()
-else
-	inoremap <silent><expr> <c-@> coc#refresh()
-endif
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -200,13 +195,13 @@ set nu
 set autowriteall
 set autoread
 set ignorecase smartcase
-set relativenumber
+" set relativenumber
 set cursorline cursorcolumn
 set tabstop=4
 set shiftwidth=4
 set nocompatible
 
-autocmd InsertLeave,InsertEnter * :set relativenumber!
+" autocmd InsertLeave,InsertEnter * :set relativenumber!
 autocmd BufEnter * :ProjectRootCD
 autocmd BufWritePre *.cpp :Autoformat
 autocmd BufWritePre *.h :Autoformat
@@ -236,7 +231,6 @@ nnoremap <leader>G :Grep
 nnoremap <leader>g :!lazygit<cr>
 nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
 nnoremap <leader>fc :echo @%<cr>
-nnoremap <leader>i "_
 nnoremap //<cr> :Dox<cr>
 nnoremap ///<cr> :DoxLic<cr>
 nnoremap <leader>f :Autoformat
@@ -265,7 +259,6 @@ vnoremap <leader>sh :shell<CR>
 vnoremap <leader>h 0
 vnoremap <leader>l $
 vnoremap <f4> :CocCommand clangd.switchSourceHeader<CR>
-
 
 vnoremap <Up> k
 vnoremap <Down> j
