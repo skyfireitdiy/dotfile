@@ -25,7 +25,6 @@ Plug 'joonty/vdebug'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 call plug#end()
 
-
 " ------------ easygrep -------------
 let g:EasyGrepRoot = "search:.git,.svn"
 
@@ -209,7 +208,13 @@ set nocompatible
 
 autocmd InsertLeave,InsertEnter * :set relativenumber!
 autocmd BufEnter * :ProjectRootCD
-autocmd BufWritePre * :Autoformat
+autocmd BufWritePre *.cpp :Autoformat
+autocmd BufWritePre *.h :Autoformat
+autocmd BufWritePre *.go :Autoformat
+autocmd BufWritePre *.c :Autoformat
+autocmd BufWritePre *.rs :Autoformat
+autocmd BufWritePre *.json :Autoformat
+autocmd BufWritePre *.js :Autoformat
 
 inoremap hh <ESC>
 inoremap jj <ESC>
@@ -234,7 +239,7 @@ nnoremap <leader>fc :echo @%<cr>
 nnoremap <leader>i "_
 nnoremap //<cr> :Dox<cr>
 nnoremap ///<cr> :DoxLic<cr>
-
+nnoremap <leader>f :Autoformat
 
 nnoremap <Up> k
 nnoremap <Down> j

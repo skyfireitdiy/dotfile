@@ -3,6 +3,7 @@
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_a:abbr\x20\x2da
 SETUVAR _fish_abbr_cdf:cd\x20\x28find\x20\x2e\x20\x2dtype\x20d\x20\x7c\x20fzf\x29
+SETUVAR _fish_abbr_e:exit
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_ga:git\x20add\x20\x2du
 SETUVAR _fish_abbr_gc:git\x20commit
@@ -12,7 +13,10 @@ SETUVAR _fish_abbr_gpl:git\x20pull
 SETUVAR _fish_abbr_gps:git\x20push
 SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fish_abbr_kb:kubectl
+SETUVAR _fish_abbr_lg:lazygit
+SETUVAR _fish_abbr_mk:make
 SETUVAR _fish_abbr_pr:set\x20\x2dx\x20http_proxy\x20http\x3a//127\x2e0\x2e0\x2e1\x3a44629\x20\x3b\x20set\x20\x2dx\x20https_proxy\x20http\x3a//127\x2e0\x2e0\x2e1\x3a44629\x20\x3b\x20set\x20\x2dx\x20socks_proxy\x20127\x2e0\x2e0\x2e1\x3a35649
+SETUVAR _fish_abbr_r:ranger
 SETUVAR _fish_abbr_rm:rm\x20\x2drf
 SETUVAR _fish_abbr_s:sudo
 SETUVAR _fish_abbr_vf:vim\x20\x28find\x20\x2e\x20\x2dtype\x20f\x20\x7c\x20fzf\x29
