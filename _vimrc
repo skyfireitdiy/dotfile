@@ -49,7 +49,7 @@ let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python',
 
 
 " -------------- LeaderF -----------------
-let g:Lf_ShortcutF = '<C-p>'
+let g:Lf_ShortcutF = '<leader>p'
 
 " -------------- color scheme ---------------------
 
@@ -210,6 +210,8 @@ autocmd BufWritePre *.c :Autoformat
 autocmd BufWritePre *.rs :Autoformat
 autocmd BufWritePre *.json :Autoformat
 autocmd BufWritePre *.js :Autoformat
+
+autocmd BufWritePost *vimrc :source ~/.vimrc
 
 inoremap hh <ESC>
 inoremap jj <ESC>
