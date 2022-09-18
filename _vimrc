@@ -234,20 +234,18 @@ inoremap AA <ESC>A
 inoremap II <ESC>I
 inoremap WW <ESC>wwi
 inoremap BB <ESC>bi
-inoremap CC <ESC>cc
 inoremap EE <ESC>eei
 inoremap GEE <ESC>gei
 inoremap yiw <ESC>lyiwa
-inoremap ciw <ESC>lciw
 inoremap diw <ESC>diwa
 inoremap :w<cr> <ESC>:w<cr>a
 inoremap :wq<cr> <ESC>:wq<cr>
 inoremap RR <ESC>lviwp
 inoremap uu <ESC>ui
 inoremap UU <ESC><C-r>
-inoremap rw<cr> <ESC>lyiw:%s/<C-r>0/
+inoremap sw<cr> <ESC>lyiw:%s/<C-r>0/
 inoremap /w<cr> <ESC>lyiw/<C-r>0
-inoremap SS <ESC>/
+inoremap ?? <ESC>/
 inoremap ^^ <ESC>0i
 inoremap $$ <ESC>$a
 
