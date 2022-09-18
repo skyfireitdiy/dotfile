@@ -1,104 +1,99 @@
-
-
 let mapleader=" "
-
-"plugin manager
-call plug#begin()
+             
+"plugin manager           
+call plug#begin()           
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-surround'
-Plug 'easymotion/vim-easymotion'
-Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
-Plug 'tomasr/molokai'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'justinmk/vim-sneak'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'pablopunk/statusline.vim'
-Plug 'chiel92/vim-autoformat'
-Plug 'kana/vim-textobj-user'
-Plug 'gcmt/wildfire.vim'
-Plug 'dbakker/vim-projectroot'
-Plug 'dkprice/vim-easygrep'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-fugitive'
-Plug 'joonty/vdebug'
-Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'junegunn/fzf'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'neoclide/coc.nvim', {'branch': 'release'} 
+Plug 'tpope/vim-surround'        
+Plug 'easymotion/vim-easymotion'   
+Plug 'Yggdroot/LeaderF', {'do': './install.sh'} 
+Plug 'tomasr/molokai'          
+Plug 'nathanaelkane/vim-indent-guides' 
+Plug 'justinmk/vim-sneak'        
+Plug 'mg979/vim-visual-multi', {'branch': 'master'} 
+Plug 'pablopunk/statusline.vim'    
+Plug 'chiel92/vim-autoformat'     
+Plug 'kana/vim-textobj-user'     
+Plug 'gcmt/wildfire.vim'      
+Plug 'dbakker/vim-projectroot'    
+Plug 'dkprice/vim-easygrep'    
+Plug 'scrooloose/nerdcommenter'   
+Plug 'tpope/vim-fugitive'   
+Plug 'joonty/vdebug'   
+Plug 'vim-scripts/DoxygenToolkit.vim'  
+Plug 'junegunn/fzf'  
+Plug 'christoomey/vim-tmux-navigator' 
 call plug#end()
 
 " ------------ easygrep -------------
 let g:EasyGrepRoot = "search:.git,.svn"
-
-" ------------ project -----------------
-nnoremap <leader>dp :ProjectRootCD<cr>
+ 
+" ------------ project -----------------  
+nnoremap <leader>dp :ProjectRootCD<cr> 
 nnoremap <silent> <leader>dt :ProjectRootExe NERDTreeFind<cr>
-nnoremap <silent> [p :ProjectBufPrev<cr>
-nnoremap <silent> ]p :ProjectBufNext<cr>
-nnoremap <silent> [P :ProjectBufFirst<cr>
-nnoremap <silent> ]P :ProjectBufLast<cr>
+nnoremap <silent> [p :ProjectBufPrev<cr> 
+nnoremap <silent> ]p :ProjectBufNext<cr> 
+nnoremap <silent> [P :ProjectBufFirst<cr> 
+nnoremap <silent> ]P :ProjectBufLast<cr> 
 nnoremap <silent> ]v :ProjectBufNext ~/.vim<cr>
 nnoremap <silent> [v :ProjectBufPrev ~/.vim<cr>
-nnoremap <silent> ]f :ProjectBufNext 'F<cr>
-nnoremap <silent> [f :ProjectBufPrev 'F<cr>
-
-
-" ------------- coc extensions ------------
-let g:coc_disable_startup_warning = 1
+nnoremap <silent> ]f :ProjectBufNext 'F<cr> 
+nnoremap <silent> [f :ProjectBufPrev 'F<cr> 
+ 
+ 
+" ------------- coc extensions ------------ 
+let g:coc_disable_startup_warning = 1 
 let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python', 'coc-vimlsp', 'coc-marketplace', 'coc-rust-analyzer', 'coc-markdownlint', 'coc-markdown-preview-enhanced', 'coc-webview', 'coc-github']
-
-
-" -------------- LeaderF -----------------
-let g:Lf_ShortcutF = '<leader>p'
-
+ 
+ 
 " -------------- color scheme ---------------------
-
-let g:molokai_original = 1
-let g:rehash256 = 1
-color molokai
+ 
+let g:molokai_original = 1 
+let g:rehash256 = 1 
+color molokai 
 " -------------- nerdtree config -------------------
-map <leader>nt :NERDTreeToggle<CR>
-map <leader>nf :NERDTreeFind<CR>
-let NERDTreeShowHidden=1
-
+map <leader>nt :NERDTreeToggle<CR> 
+map <leader>nf :NERDTreeFind<CR> 
+let NERDTreeShowHidden=1 
+ 
 " --------------- coc.vim config -------------------
-
+ 
 " Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
+set nobackup 
+set nowritebackup 
+ 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
+" delays and poor user experience. 
+set updatetime=300 
+ 
 " Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-set signcolumn=yes
-
+" diagnostics appear/become resolved. 
+set signcolumn=yes 
+ 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
+inoremap <silent><expr> <TAB> 
 			\ coc#pum#visible() ? coc#pum#next(1) :
-			\ CheckBackspace() ? "\<Tab>" :
-			\ coc#refresh()
+			\ CheckBackspace() ? "\<Tab>" : 
+			\ coc#refresh() 
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
+ 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 			\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-function! CheckBackspace() abort
-	let col = col('.') - 1
+ 
+function! CheckBackspace() abort 
+	let col = col('.') - 1 
 	return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use `[g` and `]g` to navigate diagnostics
+endfunction 
+ 
+" Use `[g` and `]g` to navigate diagnostics 
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> [g <Plug>(coc-diagnostic-prev) 
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
@@ -212,6 +207,7 @@ autocmd BufWritePre *.json :Autoformat
 autocmd BufWritePre *.js :Autoformat
 
 autocmd BufWritePost *vimrc :source ~/.vimrc
+autocmd BufEnter * :set nomodifiable
 
 inoremap hh <ESC>
 inoremap jj <ESC>
@@ -219,18 +215,50 @@ inoremap kk <ESC>
 inoremap //<cr> <ESC>:Dox<cr>
 inoremap ///<cr> <ESC>:DoxLic<cr>
 inoremap ' ''<ESC>i
+inoremap ( ()<ESC>i
 inoremap " ""<ESC>i
 inoremap { {}<ESC>i
 inoremap [ []<ESC>i
 
+inoremap yy <ESC>yya
+inoremap dd <ESC>ddi
+inoremap pp <ESC>pi
+inoremap VV <ESC>V
+inoremap vv <ESC>v
+inoremap zz <ESC>zza
+inoremap gg <ESC>ggi
+inoremap GG <ESC>G$a
+inoremap oo <ESC>o
+inoremap OO <ESC>O
+inoremap AA <ESC>A
+inoremap II <ESC>I
+inoremap WW <ESC>wwi
+inoremap BB <ESC>bi
+inoremap CC <ESC>cc
+inoremap EE <ESC>eei
+inoremap GEE <ESC>gei
+inoremap yiw <ESC>lyiwa
+inoremap ciw <ESC>lciw
+inoremap diw <ESC>diwa
+inoremap :w<cr> <ESC>:w<cr>a
+inoremap :wq<cr> <ESC>:wq<cr>
+inoremap RR <ESC>lviwp
+inoremap uu <ESC>ui
+inoremap UU <ESC><C-r>
+inoremap rw<cr> <ESC>lyiw:%s/<C-r>0/
+inoremap /w<cr> <ESC>lyiw/<C-r>0
+inoremap SS <ESC>/
+inoremap ^^ <ESC>0i
+inoremap $$ <ESC>$a
+
 
 nnoremap <leader>w <C-w>
-nnoremap <leader>tt :tabnew
-nnoremap <leader>tn :tabnext<CR>
-nnoremap <leader>tp :tabprev<CR>
-nnoremap <leader>to :tabonly<CR>
-nnoremap <leader>tc :tabclose<CR>
-nnoremap <leader>sh :shell<CR>
+nnoremap tt :tabnew
+nnoremap tn :tabnext<CR>
+nnoremap tp :tabprev<CR>
+nnoremap to :tabonly<CR>
+nnoremap tc :tabclose<CR>
+nnoremap sh :shell<CR>
 nnoremap <f4> :CocCommand clangd.switchSourceHeader<CR>
 nnoremap <leader>mr @
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
@@ -240,42 +268,45 @@ nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
 nnoremap <leader>fc :echo @%<cr>
 nnoremap //<cr> :Dox<cr>
 nnoremap ///<cr> :DoxLic<cr>
-nnoremap <leader>f :Autoformat
+nnoremap <leader>F :Autoformat
+nnoremap MM :set modifiable<cr>i
+
 
 nnoremap <Up> k
 nnoremap <Down> j
 nnoremap <Left> h
 nnoremap <Right> l
-nnoremap <leader>h 0
-nnoremap <leader>l $
-nnoremap <leader>j 25j
-nnoremap <leader>k 25k
-nnoremap <leader><Left> 0
-nnoremap <leader><Right> $
-nnoremap <leader><Down> 25j
-nnoremap <leader><Up> 25k
+nnoremap gh 0
+nnoremap gl $
+nnoremap gj 25j
+nnoremap gk 25k
+nnoremap g<Left> 0
+nnoremap g<Right> $
+nnoremap g<Down> 25j
+nnoremap g<Up> 25k
 
 
 vnoremap <leader>w <C-w>
-vnoremap <leader>tt :tabnew
-vnoremap <leader>tn :tabnext<CR>
-vnoremap <leader>tp :tabprev<CR>
-vnoremap <leader>to :tabonly<CR>
-vnoremap <leader>tc :tabclose<CR>
-vnoremap <leader>sh :shell<CR>
-vnoremap <leader>h 0
-vnoremap <leader>l $
+vnoremap tt :tabnew
+vnoremap tn :tabnext<CR>
+vnoremap tp :tabprev<CR>
+vnoremap to :tabonly<CR>
+vnoremap tc :tabclose<CR>
+vnoremap sh :shell<CR>
 vnoremap <f4> :CocCommand clangd.switchSourceHeader<CR>
+vnoremap m <Plug>(VM-Visual-Cursors)
 
 vnoremap <Up> k
 vnoremap <Down> j
 vnoremap <Left> h
 vnoremap <Right> l
-vnoremap <leader>h 0
-vnoremap <leader>l $
-vnoremap <leader>j 25j
-vnoremap <leader>k 25k
-vnoremap <leader><Left> 0
-vnoremap <leader><Right> $
-vnoremap <leader><Down> 25j
-vnoremap <leader><Up> 25k
+vnoremap gh 0
+vnoremap gl $
+vnoremap gj 25j
+vnoremap gk 25k
+vnoremap g<Left> 0
+vnoremap g<Right> $
+vnoremap g<Down> 25j
+vnoremap g<Up> 25k
+
+
