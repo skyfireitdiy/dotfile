@@ -218,6 +218,11 @@ inoremap jj <ESC>
 inoremap kk <ESC>
 inoremap //<cr> <ESC>:Dox<cr>
 inoremap ///<cr> <ESC>:DoxLic<cr>
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+inoremap { {}<ESC>i
+inoremap [ []<ESC>i
+
 
 nnoremap <leader>w <C-w>
 nnoremap <leader>tt :tabnew
