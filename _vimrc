@@ -27,6 +27,8 @@ call plug#end()
 
 " ------------ easygrep -------------
 let g:EasyGrepRoot = "search:.git,.svn"
+let g:EasyGrepRecursive = "1"
+let g:EasyGrepIgnoreCase = "1"
  
 " ------------ project -----------------  
 nnoremap <leader>dp :ProjectRootCD<cr> 
@@ -196,6 +198,9 @@ set tabstop=4
 set shiftwidth=4
 set nocompatible
 
+set enc=utf-8
+set fencs=utf-8,ucs-bom,gb18030
+
 " autocmd InsertLeave,InsertEnter * :set relativenumber!
 autocmd BufEnter * :ProjectRootCD
 autocmd BufWritePre *.cpp :Autoformat
@@ -207,7 +212,7 @@ autocmd BufWritePre *.json :Autoformat
 autocmd BufWritePre *.js :Autoformat
 
 autocmd BufWritePost *vimrc :source ~/.vimrc
-autocmd BufEnter * :set nomodifiable
+" autocmd BufEnter * :set nomodifiable
 
 inoremap hh <ESC>
 inoremap jj <ESC>
@@ -220,34 +225,34 @@ inoremap " ""<ESC>i
 inoremap { {}<ESC>i
 inoremap [ []<ESC>i
 
-inoremap yy <ESC>yya
-inoremap dd <ESC>ddi
-inoremap pp <ESC>pi
-inoremap VV <ESC>V
-inoremap vv <ESC>v
-inoremap zz <ESC>zza
-inoremap gg <ESC>ggi
-inoremap GG <ESC>G$a
+" inoremap yy <ESC>yya
+" inoremap dd <ESC>ddi
+" inoremap pp <ESC>pi
+" inoremap VV <ESC>V
+" inoremap vv <ESC>v
+" inoremap zz <ESC>zza
+" inoremap gg <ESC>ggi
+" inoremap GG <ESC>G$a
 inoremap oo <ESC>o
 inoremap OO <ESC>O
-inoremap AA <ESC>A
-inoremap II <ESC>I
-inoremap WW <ESC>wwi
-inoremap BB <ESC>bi
-inoremap EE <ESC>eei
-inoremap GEE <ESC>gei
-inoremap yiw <ESC>lyiwa
-inoremap diw <ESC>diwa
-inoremap :w<cr> <ESC>:w<cr>a
-inoremap :wq<cr> <ESC>:wq<cr>
-inoremap RR <ESC>lviwp
-inoremap uu <ESC>ui
-inoremap UU <ESC><C-r>
-inoremap sw<cr> <ESC>lyiw:%s/<C-r>0/
-inoremap /w<cr> <ESC>lyiw/<C-r>0
-inoremap ?? <ESC>/
-inoremap ^^ <ESC>0i
-inoremap $$ <ESC>$a
+" inoremap AA <ESC>A
+" inoremap II <ESC>I
+" inoremap WW <ESC>wwi
+" inoremap BB <ESC>bi
+" inoremap EE <ESC>eei
+" inoremap GEE <ESC>gei
+" inoremap yiw <ESC>lyiwa
+" inoremap diw <ESC>diwa
+" inoremap :w<cr> <ESC>:w<cr>a
+" inoremap :wq<cr> <ESC>:wq<cr>
+" inoremap RR <ESC>lviwp
+" inoremap uu <ESC>ui
+" inoremap UU <ESC><C-r>
+" inoremap sw<cr> <ESC>lyiw:%s/<C-r>0/
+" inoremap /w<cr> <ESC>lyiw/<C-r>0
+" inoremap ?? <ESC>/
+" inoremap ^^ <ESC>0i
+" inoremap $$ <ESC>$a
 
 
 nnoremap <leader>w <C-w>
@@ -267,7 +272,7 @@ nnoremap <leader>fc :echo @%<cr>
 nnoremap //<cr> :Dox<cr>
 nnoremap ///<cr> :DoxLic<cr>
 nnoremap <leader>F :Autoformat
-nnoremap MM :set modifiable<cr>i
+" nnoremap MM :set modifiable<cr>i
 
 
 nnoremap <Up> k
