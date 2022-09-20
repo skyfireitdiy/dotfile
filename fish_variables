@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR FZF_DEFAULT_COMMAND:fd
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_a:abbr\x20\x2da
 SETUVAR _fish_abbr_cdf:cd\x20\x28find\x20\x2e\x20\x2dtype\x20d\x20\x7c\x20fzf\x29
