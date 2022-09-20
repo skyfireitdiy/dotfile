@@ -44,6 +44,12 @@ config_tmux(){
 	echo tmux配置成功！
 }
 
+config_emacs(){
+	replace_config ~/.emacs.d $(pwd)/_emacs.d	
+	replace_config ~/.spacemacs $(pwd)/_spacemacs
+	echo emacs配置成功！
+}
+
 while test $# -gt 0
 do
 	config_$1

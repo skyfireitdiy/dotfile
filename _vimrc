@@ -21,6 +21,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'joonty/vdebug'   
 Plug 'vim-scripts/DoxygenToolkit.vim'  
 Plug 'junegunn/fzf'  
+Plug 'yegappan/grep'
+Plug 'yggdroot/leaderf'
 call plug#end()
 
 " ------------ easygrep -------------
@@ -263,7 +265,7 @@ nnoremap sh :shell<CR>
 nnoremap <f4> :CocCommand clangd.switchSourceHeader<CR>
 nnoremap <leader>mr @
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
-nnoremap <leader>G :Grep
+nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
 nnoremap <leader>g :!lazygit<cr>
 nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
 nnoremap <leader>fc :echo @%<cr>
