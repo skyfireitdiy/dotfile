@@ -6,7 +6,6 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'} 
 Plug 'tpope/vim-surround'        
 Plug 'easymotion/vim-easymotion'   
-Plug 'Yggdroot/LeaderF', {'do': './install.sh'} 
 Plug 'tomasr/molokai'          
 Plug 'nathanaelkane/vim-indent-guides' 
 Plug 'justinmk/vim-sneak'        
@@ -22,7 +21,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'joonty/vdebug'   
 Plug 'vim-scripts/DoxygenToolkit.vim'  
 Plug 'junegunn/fzf'  
-Plug 'christoomey/vim-tmux-navigator' 
 call plug#end()
 
 " ------------ easygrep -------------
@@ -273,7 +271,7 @@ nnoremap //<cr> :Dox<cr>
 nnoremap ///<cr> :DoxLic<cr>
 nnoremap <leader>F :Autoformat
 " nnoremap MM :set modifiable<cr>i
-
+nnoremap <leader>o :FZF<cr>
 
 nnoremap <Up> k
 nnoremap <Down> j
