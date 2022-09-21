@@ -1,25 +1,26 @@
 let mapleader=" "
-             
-"plugin manager           
-call plug#begin()           
+
+"plugin manager
+call plug#begin()
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'neoclide/coc.nvim', {'branch': 'release'} 
-Plug 'tpope/vim-surround'        
-Plug 'easymotion/vim-easymotion'   
-Plug 'tomasr/molokai'          
-Plug 'justinmk/vim-sneak'        
-Plug 'mg979/vim-visual-multi', {'branch': 'master'} 
-Plug 'pablopunk/statusline.vim'    
-Plug 'chiel92/vim-autoformat'     
-Plug 'kana/vim-textobj-user'     
-Plug 'gcmt/wildfire.vim'      
-Plug 'dbakker/vim-projectroot'    
-Plug 'dkprice/vim-easygrep'    
-Plug 'scrooloose/nerdcommenter'   
-Plug 'tpope/vim-fugitive'   
-Plug 'joonty/vdebug'   
-Plug 'vim-scripts/DoxygenToolkit.vim'  
-Plug 'junegunn/fzf'  
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+Plug 'tomasr/molokai'
+Plug 'justinmk/vim-sneak'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'pablopunk/statusline.vim'
+Plug 'chiel92/vim-autoformat'
+Plug 'kana/vim-textobj-user'
+Plug 'gcmt/wildfire.vim'
+Plug 'dbakker/vim-projectroot'
+Plug 'dkprice/vim-easygrep'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-fugitive'
+Plug 'joonty/vdebug'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'yegappan/grep'
 Plug 'yggdroot/leaderf'
 Plug 'vim-airline/vim-airline'
@@ -28,7 +29,21 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-repeat'
+Plug 'ervandew/supertab'
 call plug#end()
+
+" ------------- visual cursor --------
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = 'gb'
+let g:VM_maps['Find Subword Under'] = 'gb'
+
+" ------------- super tab -----------
+let g:SuperTabRetainCompletionType=2
+let g:SuperTabDefaultCompletionType="<tab>"
+
+
 " -------------- nerdtree git ---------
 
 let g:NERDTreeGitStatusShowIgnored = 1
@@ -52,73 +67,73 @@ let g:rainbow_active = 1
 let g:EasyGrepRoot = "search:.git,.svn"
 let g:EasyGrepRecursive = "1"
 let g:EasyGrepIgnoreCase = "1"
- 
-" ------------ project -----------------  
-nnoremap <leader>dp :ProjectRootCD<cr> 
+
+" ------------ project -----------------
+nnoremap <leader>dp :ProjectRootCD<cr>
 nnoremap <silent> <leader>dt :ProjectRootExe NERDTreeFind<cr>
-nnoremap <silent> [p :ProjectBufPrev<cr> 
-nnoremap <silent> ]p :ProjectBufNext<cr> 
-nnoremap <silent> [P :ProjectBufFirst<cr> 
-nnoremap <silent> ]P :ProjectBufLast<cr> 
+nnoremap <silent> [p :ProjectBufPrev<cr>
+nnoremap <silent> ]p :ProjectBufNext<cr>
+nnoremap <silent> [P :ProjectBufFirst<cr>
+nnoremap <silent> ]P :ProjectBufLast<cr>
 nnoremap <silent> ]v :ProjectBufNext ~/.vim<cr>
 nnoremap <silent> [v :ProjectBufPrev ~/.vim<cr>
-nnoremap <silent> ]f :ProjectBufNext 'F<cr> 
-nnoremap <silent> [f :ProjectBufPrev 'F<cr> 
- 
- 
-" ------------- coc extensions ------------ 
-let g:coc_disable_startup_warning = 1 
+nnoremap <silent> ]f :ProjectBufNext 'F<cr>
+nnoremap <silent> [f :ProjectBufPrev 'F<cr>
+
+
+" ------------- coc extensions ------------
+let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python', 'coc-vimlsp', 'coc-marketplace', 'coc-rust-analyzer', 'coc-markdownlint', 'coc-markdown-preview-enhanced', 'coc-webview', 'coc-github']
- 
- 
+
+
 " -------------- color scheme ---------------------
- 
-let g:molokai_original = 1 
-let g:rehash256 = 1 
-color molokai 
+
+let g:molokai_original = 1
+let g:rehash256 = 1
+color molokai
 " -------------- nerdtree config -------------------
-map <leader>nt :NERDTreeToggle<CR> 
-map <leader>nf :NERDTreeFind<CR> 
-let NERDTreeShowHidden=1 
- 
+map <leader>nt :NERDTreeToggle<CR>
+map <leader>nf :NERDTreeFind<CR>
+let NERDTreeShowHidden=1
+
 " --------------- coc.vim config -------------------
- 
+
 " Some servers have issues with backup files, see #649.
-set nobackup 
-set nowritebackup 
- 
+set nobackup
+set nowritebackup
+
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience. 
-set updatetime=300 
- 
+" delays and poor user experience.
+set updatetime=300
+
 " Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved. 
-set signcolumn=yes 
- 
+" diagnostics appear/become resolved.
+set signcolumn=yes
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB> 
-                        \ coc#pum#visible() ? coc#pum#next(1) :
-                        \ CheckBackspace() ? "\<Tab>" : 
-                        \ coc#refresh() 
+inoremap <silent><expr> <TAB>
+			\ coc#pum#visible() ? coc#pum#next(1) :
+			\ CheckBackspace() ? "\<Tab>" :
+			\ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
- 
+
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                        \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
- 
-function! CheckBackspace() abort 
-        let col = col('.') - 1 
-        return !col || getline('.')[col - 1]  =~# '\s'
-endfunction 
- 
-" Use `[g` and `]g` to navigate diagnostics 
+			\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev) 
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
@@ -131,11 +146,11 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
-        if CocAction('hasProvider', 'hover')
-                call CocActionAsync('doHover')
-        else
-                call feedkeys('K', 'in')
-        endif
+	if CocAction('hasProvider', 'hover')
+		call CocActionAsync('doHover')
+	else
+		call feedkeys('K', 'in')
+	endif
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
@@ -149,11 +164,11 @@ nmap <leader>rn <Plug>(coc-rename)
 " nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
-        autocmd!
-        " Setup formatexpr specified filetype(s).
-        autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-        " Update signature help on jump placeholder.
-        autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+	autocmd!
+	" Setup formatexpr specified filetype(s).
+	autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+	" Update signature help on jump placeholder.
+	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Applying codeAction to the selected region.
@@ -182,12 +197,12 @@ omap ac <Plug>(coc-classobj-a)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
-        nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-        nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-        inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-        inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-        vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-        vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+	nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+	nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+	inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+	inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+	vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+	vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
 " Use CTRL-S for selections ranges.
@@ -285,7 +300,6 @@ nnoremap tp :tabprev<CR>
 nnoremap to :tabonly<CR>
 nnoremap tc :tabclose<CR>
 nnoremap sh :shell<CR>
-nnoremap <f4> :CocCommand clangd.switchSourceHeader<CR>
 nnoremap <leader>mr @
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
@@ -300,7 +314,6 @@ nnoremap <leader>o :FZF<cr>
 nnoremap <leader>% ggvG
 nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left>
 
-
 nnoremap <Up> k
 nnoremap <Down> j
 nnoremap <Left> h
@@ -313,16 +326,15 @@ nnoremap g<Left> 0
 nnoremap g<Right> $
 nnoremap g<Down> 25j
 nnoremap g<Up> 25k
+nnoremap gh :CocCommand clangd.switchSourceHeader<CR>
+nnoremap gt :TagbarToggle<CR>
+nnoremap s <Plug>Sneak_s
+nnoremap S <Plug>Sneak_S
+nnoremap f <Plug>Sneak_f
+nnoremap F <Plug>Sneak_F
+nnoremap t <Plug>Sneak_t
+nnoremap T <Plug>Sneak_T
 
-
-vnoremap <leader>w <C-w>
-vnoremap tt :tabnew
-vnoremap tn :tabnext<CR>
-vnoremap tp :tabprev<CR>
-vnoremap to :tabonly<CR>
-vnoremap tc :tabclose<CR>
-vnoremap sh :shell<CR>
-vnoremap <f4> :CocCommand clangd.switchSourceHeader<CR>
 
 vnoremap <Up> k
 vnoremap <Down> j
