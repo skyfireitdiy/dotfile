@@ -2,12 +2,11 @@ let mapleader=" "
              
 "plugin manager           
 call plug#begin()           
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'} 
 Plug 'tpope/vim-surround'        
 Plug 'easymotion/vim-easymotion'   
 Plug 'tomasr/molokai'          
-Plug 'nathanaelkane/vim-indent-guides' 
 Plug 'justinmk/vim-sneak'        
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} 
 Plug 'pablopunk/statusline.vim'    
@@ -23,7 +22,31 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'junegunn/fzf'  
 Plug 'yegappan/grep'
 Plug 'yggdroot/leaderf'
+Plug 'vim-airline/vim-airline'
+Plug 'luochen1990/rainbow'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
+" -------------- nerdtree git ---------
+
+let g:NERDTreeGitStatusShowIgnored = 1
+
+
+" ------------- cpp highlight ------
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:cpp_no_function_highlight = 1
+
+" ------------ rainbow -------------
+let g:rainbow_active = 1
+
 
 " ------------ easygrep -------------
 let g:EasyGrepRoot = "search:.git,.svn"
@@ -78,19 +101,19 @@ set signcolumn=yes
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB> 
-			\ coc#pum#visible() ? coc#pum#next(1) :
-			\ CheckBackspace() ? "\<Tab>" : 
-			\ coc#refresh() 
+                        \ coc#pum#visible() ? coc#pum#next(1) :
+                        \ CheckBackspace() ? "\<Tab>" : 
+                        \ coc#refresh() 
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
  
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-			\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+                        \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
  
 function! CheckBackspace() abort 
-	let col = col('.') - 1 
-	return !col || getline('.')[col - 1]  =~# '\s'
+        let col = col('.') - 1 
+        return !col || getline('.')[col - 1]  =~# '\s'
 endfunction 
  
 " Use `[g` and `]g` to navigate diagnostics 
@@ -108,11 +131,11 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
-	if CocAction('hasProvider', 'hover')
-		call CocActionAsync('doHover')
-	else
-		call feedkeys('K', 'in')
-	endif
+        if CocAction('hasProvider', 'hover')
+                call CocActionAsync('doHover')
+        else
+                call feedkeys('K', 'in')
+        endif
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
@@ -126,11 +149,11 @@ nmap <leader>rn <Plug>(coc-rename)
 " nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
-	autocmd!
-	" Setup formatexpr specified filetype(s).
-	autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-	" Update signature help on jump placeholder.
-	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+        autocmd!
+        " Setup formatexpr specified filetype(s).
+        autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+        " Update signature help on jump placeholder.
+        autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Applying codeAction to the selected region.
@@ -159,12 +182,12 @@ omap ac <Plug>(coc-classobj-a)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
-	nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-	nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-	inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-	inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-	vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-	vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+        nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+        nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+        inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+        inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+        vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+        vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
 " Use CTRL-S for selections ranges.
@@ -271,9 +294,12 @@ nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
 nnoremap <leader>fc :echo @%<cr>
 nnoremap //<cr> :Dox<cr>
 nnoremap ///<cr> :DoxLic<cr>
-nnoremap <leader>F :Autoformat
+nnoremap <leader>F :Autoformat<cr>
 " nnoremap MM :set modifiable<cr>i
 nnoremap <leader>o :FZF<cr>
+nnoremap <leader>% ggvG
+nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left>
+
 
 nnoremap <Up> k
 nnoremap <Down> j
@@ -297,7 +323,6 @@ vnoremap to :tabonly<CR>
 vnoremap tc :tabclose<CR>
 vnoremap sh :shell<CR>
 vnoremap <f4> :CocCommand clangd.switchSourceHeader<CR>
-vnoremap m <Plug>(VM-Visual-Cursors)
 
 vnoremap <Up> k
 vnoremap <Down> j
@@ -311,5 +336,3 @@ vnoremap g<Left> 0
 vnoremap g<Right> $
 vnoremap g<Down> 25j
 vnoremap g<Up> 25k
-
-
