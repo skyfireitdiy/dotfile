@@ -31,17 +31,61 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
-Plug 'ervandew/supertab'
+Plug 't9md/vim-choosewin'
+
+
+" bellow is textobj
+
+Plug 'fvictorio/vim-textobj-backticks' " ` 
+Plug 'thinca/vim-textobj-between' " af{char}
+Plug 'deathlyfrantic/vim-textobj-blanklines' " a<space>
+Plug 'Julian/vim-textobj-brace' " aj
+Plug 'D4KU/vim-textobj-chainmember' " am  chain call
+Plug 'glts/vim-textobj-comment' " ac comment
+Plug 'rhysd/vim-textobj-continuous-line' " av \string
+Plug 'kana/vim-textobj-datetime' " ada datetime
+Plug 'kana/vim-textobj-diff' " adh diff
+Plug 'kana/vim-textobj-entire' " 
+Plug 'somini/vim-textobj-fold'
+Plug 'kana/vim-textobj-function'
+Plug 'kana/vim-textobj-indent'
+Plug 'vimtaku/vim-textobj-keyvalue'
+Plug 'kana/vim-textobj-lastpat'
+Plug 'kana/vim-textobj-line'
+Plug 'adriaanzon/vim-textobj-matchit'
+Plug 'sgur/vim-textobj-parameter'
+Plug 'saaguero/vim-textobj-pastedtext'
+Plug 'paulhybryant/vim-textobj-path'
+Plug 'beloglazov/vim-textobj-punctuation'
+Plug 'preservim/vim-textobj-quote'
+Plug 'beloglazov/vim-textobj-quotes'
+Plug 'preservim/vim-textobj-sentence'
+Plug 'kana/vim-textobj-syntax'
+Plug 'adolenc/vim-textobj-toplevel'
+Plug 'lucapette/vim-textobj-underscore'
+Plug 'mattn/vim-textobj-url'
+Plug 'Julian/vim-textobj-variable-segment'
+Plug 'whatyouhide/vim-textobj-xmlattr'
+
+Plug 'libclang-vim/vim-textobj-clang'
+Plug 'bps/vim-textobj-python'
+
+" textobj end
+
 call plug#end()
+
+" ------------ text obj user --------
+
+
+
+" ------------- choosewin -----------
+let g:choosewin_overlay_enable = 1
+
 
 " ------------- visual cursor --------
 let g:VM_maps = {}
 let g:VM_maps['Find Under']         = 'gb'
 let g:VM_maps['Find Subword Under'] = 'gb'
-
-" ------------- super tab -----------
-let g:SuperTabRetainCompletionType=2
-let g:SuperTabDefaultCompletionType="<tab>"
 
 
 " -------------- nerdtree git ---------
@@ -83,7 +127,7 @@ nnoremap <silent> [f :ProjectBufPrev 'F<cr>
 
 " ------------- coc extensions ------------
 let g:coc_disable_startup_warning = 1
-let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python', 'coc-vimlsp', 'coc-marketplace', 'coc-rust-analyzer', 'coc-markdownlint', 'coc-markdown-preview-enhanced', 'coc-webview', 'coc-github']
+let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python', 'coc-vimlsp', 'coc-marketplace', 'coc-rust-analyzer', 'coc-markdownlint', 'coc-markdown-preview-enhanced', 'coc-webview', 'coc-github', 'coc-jsref']
 
 
 " -------------- color scheme ---------------------
@@ -116,19 +160,19 @@ set signcolumn=yes
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-			\ coc#pum#visible() ? coc#pum#next(1) :
-			\ CheckBackspace() ? "\<Tab>" :
-			\ coc#refresh()
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-			\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! CheckBackspace() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~# '\s'
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -146,11 +190,11 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
-	if CocAction('hasProvider', 'hover')
-		call CocActionAsync('doHover')
-	else
-		call feedkeys('K', 'in')
-	endif
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
@@ -164,11 +208,11 @@ nmap <leader>rn <Plug>(coc-rename)
 " nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
-	autocmd!
-	" Setup formatexpr specified filetype(s).
-	autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-	" Update signature help on jump placeholder.
-	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Applying codeAction to the selected region.
@@ -197,12 +241,12 @@ omap ac <Plug>(coc-classobj-a)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
-	nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-	nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-	inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-	inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-	vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-	vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
 " Use CTRL-S for selections ranges.
@@ -237,6 +281,7 @@ set shiftwidth=4
 set nocompatible
 
 set enc=utf-8
+let &termencoding=&encoding
 set fencs=utf-8,ucs-bom,gb18030
 
 " autocmd InsertLeave,InsertEnter * :set relativenumber!
@@ -262,44 +307,17 @@ inoremap ( ()<ESC>i
 inoremap " ""<ESC>i
 inoremap { {}<ESC>i
 inoremap [ []<ESC>i
-
-" inoremap yy <ESC>yya
-" inoremap dd <ESC>ddi
-" inoremap pp <ESC>pi
-" inoremap VV <ESC>V
-" inoremap vv <ESC>v
-" inoremap zz <ESC>zza
-" inoremap gg <ESC>ggi
-" inoremap GG <ESC>G$a
 inoremap oo <ESC>o
 inoremap OO <ESC>O
-" inoremap AA <ESC>A
-" inoremap II <ESC>I
-" inoremap WW <ESC>wwi
-" inoremap BB <ESC>bi
-" inoremap EE <ESC>eei
-" inoremap GEE <ESC>gei
-" inoremap yiw <ESC>lyiwa
-" inoremap diw <ESC>diwa
-" inoremap :w<cr> <ESC>:w<cr>a
-" inoremap :wq<cr> <ESC>:wq<cr>
-" inoremap RR <ESC>lviwp
-" inoremap uu <ESC>ui
-" inoremap UU <ESC><C-r>
-" inoremap sw<cr> <ESC>lyiw:%s/<C-r>0/
-" inoremap /w<cr> <ESC>lyiw/<C-r>0
-" inoremap ?? <ESC>/
-" inoremap ^^ <ESC>0i
-" inoremap $$ <ESC>$a
 
 
 nnoremap <leader>w <C-w>
-nnoremap tt :tabnew
-nnoremap tn :tabnext<CR>
-nnoremap tp :tabprev<CR>
-nnoremap to :tabonly<CR>
-nnoremap tc :tabclose<CR>
-nnoremap sh :shell<CR>
+nnoremap <leader>tt :tabnew
+nnoremap <leader>tn :tabnext<CR>
+nnoremap <leader>tp :tabprev<CR>
+nnoremap <leader>to :tabonly<CR>
+nnoremap <leader>tc :tabclose<CR>
+nnoremap <leader>sh :shell<CR>
 nnoremap <leader>mr @
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
@@ -309,10 +327,13 @@ nnoremap <leader>fc :echo @%<cr>
 nnoremap //<cr> :Dox<cr>
 nnoremap ///<cr> :DoxLic<cr>
 nnoremap <leader>F :Autoformat<cr>
-" nnoremap MM :set modifiable<cr>i
 nnoremap <leader>o :FZF<cr>
 nnoremap <leader>% ggvG
 nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left>
+nnoremap <leader>R :set nomodifiable!<cr>
+nnoremap <tab> :ChooseWin<cr>
+nnoremap Q @
+
 
 nnoremap <Up> k
 nnoremap <Down> j
@@ -328,12 +349,6 @@ nnoremap g<Down> 25j
 nnoremap g<Up> 25k
 nnoremap gh :CocCommand clangd.switchSourceHeader<CR>
 nnoremap gt :TagbarToggle<CR>
-nnoremap s <Plug>Sneak_s
-nnoremap S <Plug>Sneak_S
-nnoremap f <Plug>Sneak_f
-nnoremap F <Plug>Sneak_F
-nnoremap t <Plug>Sneak_t
-nnoremap T <Plug>Sneak_T
 
 
 vnoremap <Up> k
