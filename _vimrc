@@ -35,6 +35,7 @@ Plug 'tpope/vim-repeat'
 Plug 't9md/vim-choosewin'
 Plug 'airblade/vim-gitgutter'
 Plug 'weilbith/nerdtree_choosewin-plugin'
+Plug 'jszakmeister/vim-togglecursor'
 
 " bellow is textobj
 
