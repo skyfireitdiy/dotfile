@@ -24,6 +24,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'yegappan/grep'
 Plug 'yggdroot/leaderf'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -32,7 +33,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
 Plug 't9md/vim-choosewin'
-
+Plug 'airblade/vim-gitgutter'
 
 " bellow is textobj
 
@@ -74,8 +75,17 @@ Plug 'bps/vim-textobj-python'
 
 call plug#end()
 
-" ------------ text obj user --------
 
+" ------------- airline theme -------
+let g:airline_theme='ayu_mirage'
+
+
+" ------------ gitgutter --------
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
 
 
 " ------------- choosewin -----------
@@ -318,7 +328,6 @@ nnoremap <leader>tp :tabprev<CR>
 nnoremap <leader>to :tabonly<CR>
 nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>sh :shell<CR>
-nnoremap <leader>mr @
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
 nnoremap <leader>g :!lazygit<cr>
@@ -341,12 +350,12 @@ nnoremap <Left> h
 nnoremap <Right> l
 nnoremap gh 0
 nnoremap gl $
-nnoremap gj 25j
-nnoremap gk 25k
+nnoremap gj 25jzz
+nnoremap gk 25kzz
 nnoremap g<Left> 0
 nnoremap g<Right> $
-nnoremap g<Down> 25j
-nnoremap g<Up> 25k
+nnoremap g<Down> 25jzz
+nnoremap g<Up> 25kzz
 nnoremap gh :CocCommand clangd.switchSourceHeader<CR>
 nnoremap gt :TagbarToggle<CR>
 
@@ -357,9 +366,10 @@ vnoremap <Left> h
 vnoremap <Right> l
 vnoremap gh 0
 vnoremap gl $
-vnoremap gj 25j
-vnoremap gk 25k
+vnoremap gj 25jzz
+vnoremap gk 25kzz
 vnoremap g<Left> 0
 vnoremap g<Right> $
-vnoremap g<Down> 25j
-vnoremap g<Up> 25k
+vnoremap g<Down> 25jzz
+vnoremap g<Up> 25kzz
+
