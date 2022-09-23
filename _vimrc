@@ -36,6 +36,7 @@ Plug 't9md/vim-choosewin'
 Plug 'airblade/vim-gitgutter'
 Plug 'weilbith/nerdtree_choosewin-plugin'
 Plug 'jszakmeister/vim-togglecursor'
+Plug 'rhysd/git-messenger.vim'
 
 " bellow is textobj
 
@@ -77,6 +78,8 @@ Plug 'bps/vim-textobj-python'
 
 call plug#end()
 
+" -------------- git messenger -----
+let g:git_messenger_include_diff='current'
 
 " ------------- airline theme -------
 let g:airline_theme='ayu_mirage'
