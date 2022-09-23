@@ -38,7 +38,7 @@ Plug 'weilbith/nerdtree_choosewin-plugin'
 
 " bellow is textobj
 
-Plug 'fvictorio/vim-textobj-backticks' " ` 
+Plug 'fvictorio/vim-textobj-backticks' " `
 Plug 'thinca/vim-textobj-between' " af{char}
 Plug 'deathlyfrantic/vim-textobj-blanklines' " a<space>
 Plug 'Julian/vim-textobj-brace' " aj
@@ -47,7 +47,7 @@ Plug 'glts/vim-textobj-comment' " ac comment
 Plug 'rhysd/vim-textobj-continuous-line' " av \string
 Plug 'kana/vim-textobj-datetime' " ada datetime
 Plug 'kana/vim-textobj-diff' " adh diff
-Plug 'kana/vim-textobj-entire' " 
+Plug 'kana/vim-textobj-entire' "
 Plug 'somini/vim-textobj-fold'
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
@@ -83,8 +83,8 @@ let g:airline_theme='ayu_mirage'
 
 " ------------ gitgutter --------
 function! GitStatus()
-  let [a,m,r] = GitGutterGetHunkSummary()
-  return printf('+%d ~%d -%d', a, m, r)
+	let [a,m,r] = GitGutterGetHunkSummary()
+	return printf('+%d ~%d -%d', a, m, r)
 endfunction
 set statusline+=%{GitStatus()}
 
@@ -171,19 +171,19 @@ set signcolumn=yes
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
+			\ coc#pum#visible() ? coc#pum#next(1) :
+			\ CheckBackspace() ? "\<Tab>" :
+			\ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+			\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -201,11 +201,11 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
+	if CocAction('hasProvider', 'hover')
+		call CocActionAsync('doHover')
+	else
+		call feedkeys('K', 'in')
+	endif
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
@@ -219,11 +219,11 @@ nmap <leader>rn <Plug>(coc-rename)
 " nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+	autocmd!
+	" Setup formatexpr specified filetype(s).
+	autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+	" Update signature help on jump placeholder.
+	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Applying codeAction to the selected region.
@@ -252,12 +252,12 @@ omap ac <Plug>(coc-classobj-a)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+	nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+	nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+	inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+	inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+	vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+	vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
 " Use CTRL-S for selections ranges.
@@ -304,6 +304,8 @@ autocmd BufWritePre *.c :Autoformat
 autocmd BufWritePre *.rs :Autoformat
 autocmd BufWritePre *.json :Autoformat
 autocmd BufWritePre *.js :Autoformat
+autocmd BufWritePre *.py :Autoformat
+"autocmd BufWritePre *vimrc :Autoformat " don't format vimrc
 
 autocmd BufWritePost *vimrc :source ~/.vimrc
 " autocmd BufEnter * :set nomodifiable
@@ -328,7 +330,7 @@ nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader>tp :tabprev<CR>
 nnoremap <leader>to :tabonly<CR>
 nnoremap <leader>tc :tabclose<CR>
-nnoremap <leader>sh :shell<CR>
+nnoremap <leader>s :shell<CR>
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
 nnoremap <leader>g :!lazygit<cr>
@@ -341,7 +343,7 @@ nnoremap <leader>o :FZF<cr>
 nnoremap <leader>% ggvG
 nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left>
 nnoremap <leader>R :set nomodifiable!<cr>
-nnoremap <tab> :ChooseWin<cr>
+nnoremap ` :ChooseWin<cr>
 nnoremap Q @
 
 
