@@ -37,6 +37,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'weilbith/nerdtree_choosewin-plugin'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'rhysd/git-messenger.vim'
+Plug 'reedes/vim-wheel'
+Plug 'rrethy/vim-illuminate'
+Plug 'inside/vim-search-pulse'
+Plug 'joeytwiddle/sexy_scroller.vim'
+Plug 'vim-scripts/CursorLineCurrentWindow'
+
+
+
 
 " bellow is textobj
 
