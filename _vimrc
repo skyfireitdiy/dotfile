@@ -42,7 +42,7 @@ Plug 'rrethy/vim-illuminate'
 Plug 'inside/vim-search-pulse'
 Plug 'joeytwiddle/sexy_scroller.vim'
 Plug 'vim-scripts/CursorLineCurrentWindow'
-
+Plug 'christoomey/vim-system-copy'
 
 
 
@@ -302,6 +302,7 @@ set cursorline cursorcolumn
 set tabstop=4
 set shiftwidth=4
 set nocompatible
+set nowrap
 
 set enc=utf-8
 let &termencoding=&encoding
