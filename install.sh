@@ -50,6 +50,11 @@ config_emacs(){
 	echo emacs配置成功！
 }
 
+config_i3() {
+	replace_config ~/.config/i3/config $(pwd)/i3_config
+	echo i3 配置成功!
+}
+
 while test $# -gt 0
 do
 	config_$1
