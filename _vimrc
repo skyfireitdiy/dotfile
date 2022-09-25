@@ -60,7 +60,7 @@ Plug 'glts/vim-textobj-comment' " ac comment
 Plug 'rhysd/vim-textobj-continuous-line' " av \string
 Plug 'kana/vim-textobj-datetime' " ada datetime
 Plug 'kana/vim-textobj-diff' " adh diff
-Plug 'kana/vim-textobj-entire' "
+Plug 'kana/vim-textobj-entire'
 Plug 'somini/vim-textobj-fold'
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
