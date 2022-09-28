@@ -1,3 +1,4 @@
+
 let mapleader=" "
 
 
@@ -43,7 +44,7 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'reedes/vim-wheel'
 Plug 'rrethy/vim-illuminate'
 Plug 'inside/vim-search-pulse'
-Plug 'joeytwiddle/sexy_scroller.vim'
+"Plug 'joeytwiddle/sexy_scroller.vim'
 Plug 'vim-scripts/CursorLineCurrentWindow'
 Plug 'christoomey/vim-system-copy'
 
@@ -302,7 +303,8 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " ---------------- my config ---------------
 set showcmd
 set nu
-set autowriteall
+" already set autocmd, comment this line
+"set autowriteall
 set autoread
 set ignorecase smartcase
 " set relativenumber
@@ -318,6 +320,7 @@ set fencs=utf-8,ucs-bom,gb18030
 
 " autocmd InsertLeave,InsertEnter * :set relativenumber!
 autocmd BufEnter * :ProjectRootCD
+
 autocmd BufWritePre *.cpp :Autoformat
 autocmd BufWritePre *.h :Autoformat
 autocmd BufWritePre *.go :Autoformat
@@ -326,7 +329,18 @@ autocmd BufWritePre *.rs :Autoformat
 autocmd BufWritePre *.json :Autoformat
 autocmd BufWritePre *.js :Autoformat
 autocmd BufWritePre *.py :Autoformat
+
 "autocmd BufWritePre *vimrc :Autoformat " don't format vimrc
+
+
+autocmd InsertLeave *.cpp :w
+autocmd InsertLeave *.h :w
+autocmd InsertLeave *.go :w
+autocmd InsertLeave *.c :w
+autocmd InsertLeave *.rs :w
+autocmd InsertLeave *.json :w
+autocmd InsertLeave *.js :w
+autocmd InsertLeave *.py :w
 
 autocmd BufWritePost *vimrc :source ~/.vimrc
 " autocmd BufEnter * :set nomodifiable
@@ -341,8 +355,8 @@ inoremap ( ()<ESC>i
 inoremap " ""<ESC>i
 inoremap { {}<ESC>i
 inoremap [ []<ESC>i
-inoremap oo <ESC>o
-inoremap OO <ESC>O
+"inoremap oo <ESC>o
+"inoremap OO <ESC>O
 
 
 nnoremap <leader>w <C-w>
@@ -357,13 +371,14 @@ nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
 nnoremap <leader>g :!lazygit<cr>
 nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
 nnoremap <leader>fc :echo @%<cr>
-nnoremap //<cr> :Dox<cr>
-nnoremap ///<cr> :DoxLic<cr>
+nnoremap // *
+nnoremap ?? #
 nnoremap <leader>F :Autoformat<cr>
 nnoremap <leader>o :FZF<cr>
 nnoremap <leader>% ggvG
 nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left>
-nnoremap <leader>R :set nomodifiable!<cr>
+nnoremap <leader>R "9yiw:%s/\<<C-r>9\>//g<Left><Left>
+nnoremap <leader>m :set nomodifiable!<cr>
 nnoremap ` :ChooseWin<cr>
 nnoremap Q @
 
@@ -382,6 +397,7 @@ nnoremap g<Down> 25jzz
 nnoremap g<Up> 25kzz
 nnoremap gh :CocCommand clangd.switchSourceHeader<CR>
 nnoremap gt :TagbarToggle<CR>
+nnoremap <leader>h "9yiw:help<space><C-r>9<cr>
 
 
 vnoremap <Up> k
@@ -396,4 +412,3 @@ vnoremap g<Left> 0
 vnoremap g<Right> $
 vnoremap g<Down> 25jzz
 vnoremap g<Up> 25kzz
-
