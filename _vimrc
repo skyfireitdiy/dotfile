@@ -8,7 +8,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'tomasr/molokai'
-"Plug 'dracula/vim'
+Plug 'dracula/vim'
 "Plug 'sjl/badwolf'
 Plug 'justinmk/vim-sneak'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -158,10 +158,10 @@ let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python',
 nnoremap <leader>e :CocCommand explorer<cr>
 
 " -------------- color scheme ---------------------
-let g:molokai_original = 1
+"let g:molokai_original = 1
 let g:rehash256 = 1
-color molokai
-"color dracula
+"color molokai
+color dracula
 "color badwolf
 
 " --------------- coc.vim config -------------------
@@ -369,6 +369,8 @@ nnoremap <leader>: :History:<cr>
 nnoremap <leader>/ :History/<cr>
 nnoremap <leader>H :Helptags<cr>
 nnoremap <leader>m :Marks<cr>
+nnoremap <leader>c :BCommits<cr>
+nnoremap <leader>C :Commits<cr>
 
 
 nnoremap <leader>tt :tabnew
