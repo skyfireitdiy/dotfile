@@ -4,13 +4,12 @@ let mapleader=" "
 
 "plugin manager
 call plug#begin()
-Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
-"Plug 'tomasr/molokai'
+Plug 'tomasr/molokai'
 "Plug 'dracula/vim'
-Plug 'sjl/badwolf'
+"Plug 'sjl/badwolf'
 Plug 'justinmk/vim-sneak'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'pablopunk/statusline.vim'
@@ -21,7 +20,6 @@ Plug 'dbakker/vim-projectroot'
 Plug 'dkprice/vim-easygrep'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
-Plug 'joonty/vdebug'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -32,9 +30,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
 Plug 't9md/vim-choosewin'
 Plug 'airblade/vim-gitgutter'
@@ -143,8 +140,6 @@ let g:EasyGrepRecursive = "1"
 let g:EasyGrepIgnoreCase = "1"
 
 " ------------ project -----------------
-nnoremap <leader>dp :ProjectRootCD<cr>
-nnoremap <silent> <leader>dt :ProjectRootExe NERDTreeFind<cr>
 nnoremap <silent> [p :ProjectBufPrev<cr>
 nnoremap <silent> ]p :ProjectBufNext<cr>
 nnoremap <silent> [P :ProjectBufFirst<cr>
@@ -157,20 +152,17 @@ nnoremap <silent> [f :ProjectBufPrev 'F<cr>
 
 " ------------- coc extensions ------------
 let g:coc_disable_startup_warning = 1
-let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python', 'coc-vimlsp', 'coc-marketplace', 'coc-rust-analyzer', 'coc-markdownlint', 'coc-markdown-preview-enhanced', 'coc-webview', 'coc-github', 'coc-jsref', 'coc-sumneko-lua']
+let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python', 'coc-vimlsp', 'coc-marketplace', 'coc-rust-analyzer', 'coc-markdownlint', 'coc-markdown-preview-enhanced', 'coc-webview', 'coc-github', 'coc-jsref', 'coc-sumneko-lua', 'coc-explorer']
 
+" ------------- coc-explorer ----------
+nnoremap <leader>e :CocCommand explorer<cr>
 
 " -------------- color scheme ---------------------
-"let g:molokai_original = 1
+let g:molokai_original = 1
 let g:rehash256 = 1
-"color molokai
+color molokai
 "color dracula
-color badwolf
-
-" -------------- nerdtree config -------------------
-map <leader>nt :NERDTreeToggle<CR>
-map <leader>nf :NERDTreeFind<CR>
-let NERDTreeShowHidden=1
+"color badwolf
 
 " --------------- coc.vim config -------------------
 
@@ -304,43 +296,39 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set showcmd
 set nu
 " already set autocmd, comment this line
-"set autowriteall
 set autoread
+set autowriteall
 set ignorecase smartcase
+set incsearch
+"set hlsearch
+set cmdheight=1
 " set relativenumber
 set cursorline cursorcolumn
+set smarttab
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set nocompatible
 set nowrap
+set ruler
+set rulerformat=%15(%c%V\ %p%%%)
+set smartindent
+set autoindent
 
 set enc=utf-8
 let &termencoding=&encoding
 set fencs=utf-8,ucs-bom,gb18030
 
-" autocmd InsertLeave,InsertEnter * :set relativenumber!
-autocmd BufEnter * :ProjectRootCD
-
-autocmd BufWritePre *.cpp :Autoformat
-autocmd BufWritePre *.h :Autoformat
-autocmd BufWritePre *.go :Autoformat
-autocmd BufWritePre *.c :Autoformat
-autocmd BufWritePre *.rs :Autoformat
-autocmd BufWritePre *.json :Autoformat
-autocmd BufWritePre *.js :Autoformat
-autocmd BufWritePre *.py :Autoformat
-
-"autocmd BufWritePre *vimrc :Autoformat " don't format vimrc
 
 
-autocmd InsertLeave *.cpp :w
-autocmd InsertLeave *.h :w
-autocmd InsertLeave *.go :w
-autocmd InsertLeave *.c :w
-autocmd InsertLeave *.rs :w
-autocmd InsertLeave *.json :w
-autocmd InsertLeave *.js :w
-autocmd InsertLeave *.py :w
+augroup autoRunGroup
+	autocmd!
+	autocmd BufEnter * :ProjectRootCD
+	autocmd BufWritePre * :Autoformat
+	" autocmd InsertLeave,InsertEnter * :set relativenumber!
+augroup END
+
+
 
 autocmd BufWritePost *vimrc :source ~/.vimrc
 " autocmd BufEnter * :set nomodifiable
@@ -355,11 +343,34 @@ inoremap ( ()<ESC>i
 inoremap " ""<ESC>i
 inoremap { {}<ESC>i
 inoremap [ []<ESC>i
-"inoremap oo <ESC>o
-"inoremap OO <ESC>O
+inoremap oo <ESC>o
+inoremap OO <ESC>O
+inoremap zz <ESC>zza
 
 
-nnoremap <leader>w <C-w>
+" ---- fzf key map ------
+nnoremap <leader>w :Windows<cr>
+nnoremap <leader>o :FZF<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>gff :GFiles<cr>
+nnoremap <leader>gf? :GFiles?<cr>
+nnoremap <leader>co :Colors<cr>
+nnoremap <leader>rg :Rg<cr>
+nnoremap <leader>l :BLines<cr>
+nnoremap <leader>L :Lines<cr>
+nnoremap <leader>T :Tags<cr>
+nnoremap <leader>t :BTags<cr>
+nnoremap <leader>t :BTags<cr>
+nnoremap <leader>x :Commands<cr>
+nnoremap <leader>k :Maps<cr>
+nnoremap <leader>h :History<cr>
+nnoremap <leader>: :History:<cr>
+nnoremap <leader>/ :History/<cr>
+nnoremap <leader>H :Helptags<cr>
+nnoremap <leader>m :Marks<cr>
+
+
 nnoremap <leader>tt :tabnew
 nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader>tp :tabprev<CR>
@@ -374,13 +385,14 @@ nnoremap <leader>fc :echo @%<cr>
 nnoremap // *
 nnoremap ?? #
 nnoremap <leader>F :Autoformat<cr>
-nnoremap <leader>o :FZF<cr>
 nnoremap <leader>% ggvG
 nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left>
 nnoremap <leader>R "9yiw:%s/\<<C-r>9\>//g<Left><Left>
-nnoremap <leader>m :set nomodifiable!<cr>
+nnoremap <leader>M :set nomodifiable!<cr>
 nnoremap ` :ChooseWin<cr>
 nnoremap Q @
+nnoremap <C-Right> <C-o>
+nnoremap <C-Left> <C-i>
 
 
 nnoremap <Up> k
@@ -396,8 +408,6 @@ nnoremap g<Right> $
 nnoremap g<Down> 25jzz
 nnoremap g<Up> 25kzz
 nnoremap gh :CocCommand clangd.switchSourceHeader<CR>
-nnoremap gt :TagbarToggle<CR>
-nnoremap <leader>h "9yiw:help<space><C-r>9<cr>
 
 
 vnoremap <Up> k
