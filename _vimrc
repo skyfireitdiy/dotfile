@@ -37,7 +37,7 @@ Plug 'tpope/vim-repeat'
 Plug 'airblade/vim-gitgutter'
 Plug 'weilbith/nerdtree_choosewin-plugin'
 Plug 'jszakmeister/vim-togglecursor'
-Plug 'rhysd/git-messenger.vim'
+"Plug 'rhysd/git-messenger.vim'
 Plug 'reedes/vim-wheel'
 Plug 'rrethy/vim-illuminate'
 Plug 'inside/vim-search-pulse'
@@ -87,8 +87,8 @@ Plug 'bps/vim-textobj-python'
 
 call plug#end()
 
-" -------------- git messenger -----
-let g:git_messenger_include_diff='current'
+"" -------------- git messenger -----
+"let g:git_messenger_include_diff='current'
 
 " ------------- airline theme -------
 let g:airline_theme='badwolf'
@@ -391,7 +391,6 @@ nnoremap <leader>% ggvG
 nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left>
 nnoremap <leader>R "9yiw:%s/\<<C-r>9\>//g<Left><Left>
 nnoremap <leader>M :set nomodifiable!<cr>
-nnoremap ` :ChooseWin<cr>
 nnoremap Q @
 nnoremap <C-Right> <C-o>
 nnoremap <C-Left> <C-i>
