@@ -17,7 +17,7 @@ Plug 'chiel92/vim-autoformat'
 Plug 'kana/vim-textobj-user'
 Plug 'gcmt/wildfire.vim'
 Plug 'dbakker/vim-projectroot'
-Plug 'dkprice/vim-easygrep'
+"Plug 'dkprice/vim-easygrep'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/DoxygenToolkit.vim'
@@ -33,7 +33,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
-Plug 't9md/vim-choosewin'
+"Plug 't9md/vim-choosewin'
 Plug 'airblade/vim-gitgutter'
 Plug 'weilbith/nerdtree_choosewin-plugin'
 Plug 'jszakmeister/vim-togglecursor'
@@ -106,7 +106,7 @@ let g:gitgutter_highlight_lines = 1
 let g:gitgutter_highlight_linenrs = 1
 
 " ------------- choosewin -----------
-let g:choosewin_overlay_enable = 1
+"let g:choosewin_overlay_enable = 1
 
 
 " ------------- visual cursor --------
@@ -134,10 +134,10 @@ let g:cpp_no_function_highlight = 1
 let g:rainbow_active = 1
 
 
-" ------------ easygrep -------------
-let g:EasyGrepRoot = "search:.git,.svn"
-let g:EasyGrepRecursive = "1"
-let g:EasyGrepIgnoreCase = "1"
+"" ------------ easygrep -------------
+"let g:EasyGrepRoot = "search:.git,.svn"
+"let g:EasyGrepRecursive = "1"
+"let g:EasyGrepIgnoreCase = "1"
 
 " ------------ project -----------------
 nnoremap <silent> [p :ProjectBufPrev<cr>
