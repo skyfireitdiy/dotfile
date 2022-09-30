@@ -31,7 +31,7 @@ Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'ryanoasis/vim-devicons'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
 "Plug 't9md/vim-choosewin'
 Plug 'airblade/vim-gitgutter'
@@ -359,7 +359,7 @@ nnoremap <leader>l :BLines<cr>
 nnoremap <leader>L :Lines<cr>
 nnoremap <leader>T :Tags<cr>
 nnoremap <leader>t :BTags<cr>
-nnoremap <leader>t :BTags<cr>
+nnoremap <leader>gt "9yiw:Tags<space><C-r>9<cr>
 nnoremap <leader>x :Commands<cr>
 nnoremap <leader>k :Maps<cr>
 nnoremap <leader>h :History<cr>
@@ -369,6 +369,7 @@ nnoremap <leader>H :Helptags<cr>
 nnoremap <leader>m :Marks<cr>
 nnoremap <leader>c :BCommits<cr>
 nnoremap <leader>C :Commits<cr>
+
 
 
 nnoremap <leader>tt :tabnew
