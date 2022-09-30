@@ -326,12 +326,10 @@ augroup autoRunGroup
 	autocmd BufEnter * :ProjectRootCD
 	autocmd BufWritePre * :Autoformat
 	" autocmd InsertLeave,InsertEnter * :set relativenumber!
+	autocmd BufWritePost *vimrc :source ~/.vimrc
+	" autocmd BufEnter * :set nomodifiable
 augroup END
 
-
-
-autocmd BufWritePost *vimrc :source ~/.vimrc
-" autocmd BufEnter * :set nomodifiable
 
 inoremap hh <ESC>
 inoremap jj <ESC>
