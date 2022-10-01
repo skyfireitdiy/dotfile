@@ -1,53 +1,48 @@
 
-let mapleader=" "
+let mapleader=" " "映射leader键为空格
 
 
-"plugin manager
-call plug#begin()
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-surround'
-Plug 'easymotion/vim-easymotion'
-Plug 'tomasr/molokai'
-Plug 'dracula/vim'
-"Plug 'sjl/badwolf'
-Plug 'justinmk/vim-sneak'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'pablopunk/statusline.vim'
-Plug 'chiel92/vim-autoformat'
-Plug 'kana/vim-textobj-user'
-Plug 'gcmt/wildfire.vim'
-Plug 'dbakker/vim-projectroot'
-"Plug 'dkprice/vim-easygrep'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-"Plug 'yegappan/grep'
-Plug 'yggdroot/leaderf'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'luochen1990/rainbow'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'ryanoasis/vim-devicons'
-"Plug 'majutsushi/tagbar'
-Plug 'tpope/vim-repeat'
-"Plug 't9md/vim-choosewin'
-Plug 'airblade/vim-gitgutter'
-Plug 'weilbith/nerdtree_choosewin-plugin'
-Plug 'jszakmeister/vim-togglecursor'
-"Plug 'rhysd/git-messenger.vim'
-Plug 'reedes/vim-wheel'
-Plug 'rrethy/vim-illuminate'
-Plug 'inside/vim-search-pulse'
-"Plug 'joeytwiddle/sexy_scroller.vim'
-Plug 'vim-scripts/CursorLineCurrentWindow'
-Plug 'christoomey/vim-system-copy'
+call plug#begin()  " 插件管理
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " coc插件，提供lsp等功能
+Plug 'tpope/vim-surround' " 快速修改包围类型
+Plug 'easymotion/vim-easymotion' " 快速跳转
+Plug 'justinmk/vim-sneak' " s键快速查找
+Plug 'mg979/vim-visual-multi', {'branch': 'master'} " 多光标
+Plug 'chiel92/vim-autoformat' " 格式化
+Plug 'gcmt/wildfire.vim' " 回车按照层级选中
+Plug 'dbakker/vim-projectroot' " 自动进入项目根目录
+Plug 'scrooloose/nerdcommenter' " 快速格式化
+Plug 'tpope/vim-fugitive' " git封装
+Plug 'vim-scripts/DoxygenToolkit.vim' " doxygen 注释
+Plug 'junegunn/fzf' " fzf 模糊查找
+Plug 'junegunn/fzf.vim' " fzf 模糊查找
+Plug 'vim-airline/vim-airline' " 状态栏
+Plug 'vim-airline/vim-airline-themes' " 状态栏主题
+Plug 'luochen1990/rainbow' " 彩虹括号
+Plug 'octol/vim-cpp-enhanced-highlight' " c++ 增强的语法高亮
+Plug 'ryanoasis/vim-devicons' " 图标
+Plug 'majutsushi/tagbar' " 标签栏
+Plug 'tpope/vim-repeat' " 增强.操作
+Plug 't9md/vim-choosewin' " 快速选择窗口
+Plug 'airblade/vim-gitgutter' " git状态显示
+"Plug 'weilbith/nerdtree_choosewin-plugin'
+Plug 'jszakmeister/vim-togglecursor' " 光标形状
+Plug 'reedes/vim-wheel' " 保持光标不动，屏幕滚动
+Plug 'inside/vim-search-pulse' " 搜索到匹配的时候会闪烁高亮
+Plug 'joeytwiddle/sexy_scroller.vim' " 平滑滚动
+Plug 'vim-scripts/CursorLineCurrentWindow' " 高亮显示激活窗口的当前行
+Plug 'christoomey/vim-system-copy' " 拷贝到系统剪贴板
 
 
+" 主题
+"Plug 'tomasr/molokai' " molokai主题
+Plug 'dracula/vim' " dracula 主题
+"Plug 'sjl/badwolf' " badwolf主题
 
-" bellow is textobj
+
+" text object
+Plug 'kana/vim-textobj-user' "
+
 
 Plug 'fvictorio/vim-textobj-backticks' " `
 Plug 'thinca/vim-textobj-between' " af{char}
@@ -87,6 +82,9 @@ Plug 'bps/vim-textobj-python'
 
 call plug#end()
 
+" --------------- tagbar ----------------
+nnoremap gt :Tagbar<cr>
+
 "" -------------- git messenger -----
 "let g:git_messenger_include_diff='current'
 
@@ -106,8 +104,8 @@ let g:gitgutter_highlight_lines = 1
 let g:gitgutter_highlight_linenrs = 1
 
 " ------------- choosewin -----------
-"let g:choosewin_overlay_enable = 1
-
+let g:choosewin_overlay_enable = 1
+nnoremap ` :ChooseWin<cr>
 
 " ------------- visual cursor --------
 let g:VM_maps = {}
@@ -334,8 +332,6 @@ augroup END
 inoremap hh <ESC>
 inoremap jj <ESC>
 inoremap kk <ESC>
-inoremap //<cr> <ESC>:Dox<cr>
-inoremap ///<cr> <ESC>:DoxLic<cr>
 inoremap ' ''<ESC>i
 inoremap ( ()<ESC>i
 inoremap " ""<ESC>i
@@ -347,7 +343,7 @@ inoremap zz <ESC>zza
 
 
 " ---- fzf key map ------
-nnoremap <leader>w :Windows<cr>
+nnoremap <leader>W :Windows<cr>
 nnoremap <leader>o :FZF<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>f :Files<cr>
@@ -371,7 +367,7 @@ nnoremap <leader>c :BCommits<cr>
 nnoremap <leader>C :Commits<cr>
 
 
-
+nnoremap <leader>w <C-w>
 nnoremap <leader>tt :tabnew
 nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader>tp :tabprev<CR>
@@ -393,7 +389,8 @@ nnoremap <leader>M :set nomodifiable!<cr>
 nnoremap Q @
 nnoremap <C-Right> <C-o>
 nnoremap <C-Left> <C-i>
-
+nnoremap <leader>// :Dox<cr>
+nnoremap <leader>/// :DoxLic<cr>
 
 nnoremap <Up> k
 nnoremap <Down> j
