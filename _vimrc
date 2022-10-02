@@ -25,7 +25,6 @@ Plug 'majutsushi/tagbar' " 标签栏
 Plug 'tpope/vim-repeat' " 增强.操作
 Plug 't9md/vim-choosewin' " 快速选择窗口
 Plug 'airblade/vim-gitgutter' " git状态显示
-"Plug 'weilbith/nerdtree_choosewin-plugin'
 Plug 'jszakmeister/vim-togglecursor' " 光标形状
 Plug 'reedes/vim-wheel' " 保持光标不动，屏幕滚动
 Plug 'inside/vim-search-pulse' " 搜索到匹配的时候会闪烁高亮
