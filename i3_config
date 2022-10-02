@@ -187,6 +187,7 @@ exec --no-startup-id fcitx
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id pa-applet
+bindsym Print --release exec flameshot gui
 
 exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/*
 																   exec_always --no-startup-id picom
