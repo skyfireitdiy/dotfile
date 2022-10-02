@@ -29,7 +29,7 @@ Plug 'airblade/vim-gitgutter' " git状态显示
 Plug 'jszakmeister/vim-togglecursor' " 光标形状
 Plug 'reedes/vim-wheel' " 保持光标不动，屏幕滚动
 Plug 'inside/vim-search-pulse' " 搜索到匹配的时候会闪烁高亮
-Plug 'joeytwiddle/sexy_scroller.vim' " 平滑滚动
+"Plug 'joeytwiddle/sexy_scroller.vim' " 平滑滚动，有时候屏幕会闪动
 Plug 'vim-scripts/CursorLineCurrentWindow' " 高亮显示激活窗口的当前行
 Plug 'christoomey/vim-system-copy' " 拷贝到系统剪贴板
 
@@ -41,7 +41,7 @@ Plug 'dracula/vim' " dracula 主题
 
 
 " text object
-Plug 'kana/vim-textobj-user' "
+Plug 'kana/vim-textobj-user'
 
 
 Plug 'fvictorio/vim-textobj-backticks' " `
