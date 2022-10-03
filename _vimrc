@@ -230,7 +230,22 @@ nnoremap <silent> [f :ProjectBufPrev 'F<cr>
 
 " ------------- coc extensions ------------
 let g:coc_disable_startup_warning = 1
-let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-go', 'coc-python', 'coc-vimlsp', 'coc-marketplace', 'coc-rust-analyzer', 'coc-markdownlint', 'coc-markdown-preview-enhanced', 'coc-webview', 'coc-github', 'coc-jsref', 'coc-sumneko-lua', 'coc-explorer']
+let g:coc_global_extensions = ['coc-json'
+			\, 'coc-clangd'
+			\, 'coc-go'
+			\, 'coc-python'
+			\, 'coc-vimlsp'
+			\, 'coc-marketplace'
+			\, 'coc-rust-analyzer'
+			\, 'coc-markdownlint'
+			\, 'coc-markdown-preview-enhanced'
+			\, 'coc-webview'
+			\, 'coc-github'
+			\, 'coc-jsref'
+			\, 'coc-sumneko-lua'
+			\, 'coc-explorer'
+			\, 'coc-tabnine'
+			\]
 
 " ------------- coc-explorer ----------
 nnoremap <leader>e :CocCommand explorer<cr>
