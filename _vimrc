@@ -111,8 +111,8 @@ let g:VM_maps={}
 let g:VM_maps['Exit']='<Esc>'
 let g:VM_maps['Find Under']='<C-n>'
 let g:VM_maps['Find Subword Under']='<C-n>'
-let g:VM_maps['Add Cursor Down']='<C-Down>'
-let g:VM_maps['Add Cursor Up']='C-Up'
+let g:VM_maps['Add Cursor Down']='<leader>aj'
+let g:VM_maps['Add Cursor Up']='<leader>ak'
 let g:VM_maps['Select All']='\\A'
 let g:VM_maps['Start Regex Search']='\\/'
 let g:VM_maps['Add Cursor At Pos']='\\\'
@@ -380,7 +380,7 @@ set ignorecase smartcase
 set incsearch
 "set hlsearch
 set cmdheight=1
-" set relativenumber
+set relativenumber
 set cursorline cursorcolumn
 set smarttab
 set tabstop=4
@@ -403,7 +403,7 @@ augroup autoRunGroup
 	autocmd!
 	autocmd BufEnter * :ProjectRootCD
 	autocmd BufWritePre * :Autoformat
-	" autocmd InsertLeave,InsertEnter * :set relativenumber!
+	autocmd InsertLeave,InsertEnter * :set relativenumber!
 	autocmd BufWritePost *vimrc :source ~/.vimrc
 	" autocmd BufEnter * :set nomodifiable
 augroup END
@@ -412,7 +412,7 @@ augroup END
 inoremap hh <ESC>
 inoremap jj <ESC>
 inoremap kk <ESC>
-inoremap ' ''<ESC>i
+lnoremap ' ''<ESC>i
 inoremap ( ()<ESC>i
 inoremap " ""<ESC>i
 inoremap { {}<ESC>i
@@ -445,7 +445,6 @@ nnoremap <leader>H :Helptags<cr>
 nnoremap <leader>m :Marks<cr>
 nnoremap <leader>c :BCommits<cr>
 nnoremap <leader>C :Commits<cr>
-
 
 nnoremap <leader>w <C-w>
 nnoremap <leader>tt :tabnew<space>
