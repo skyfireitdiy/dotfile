@@ -1,6 +1,7 @@
 #!/bin/bash
 
 bak_config() {
+	old_config=$1
 	bak_config=${1}_bak
 	if [ -f $bak_config ] || [ -d $bak_config ]; then
 		echo "删除旧的备份文件" $bak_config
