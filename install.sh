@@ -1,12 +1,21 @@
 #!/bin/bash
 
-replace_config() {
-	old_config=$1
-	new_config=$2
-	if [ -f $old_config ]; then
+bak_config() {
+	bak_config=${1}_bak
+	if [ -f $bak_config ] || [ -d $bak_config ]; then
+		echo "删除旧的备份文件" $bak_config
+		rm -f $bak_config
+	fi
+	if [ -f $old_config ] || [ -d $old_config ] ; then
 		mv $old_config ${old_config}_bak
 		echo "备份$old_config 到 ${old_config}_bak"
 	fi
+}
+
+replace_config() {
+	old_config=$1
+	new_config=$2
+	bak_config $1
 	ln -sf $new_config $old_config
 }
 
@@ -40,18 +49,21 @@ config_fish(){
 
 
 config_tmux(){
+	bak_config ~/.tmux
+	git clone https://ghproxy.com/https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	replace_config ~/.tmux.conf $(pwd)/_tmux.conf
 	echo tmux配置成功！
 }
 
 config_emacs(){
-	replace_config ~/.emacs.d $(pwd)/_emacs.d	
+	replace_config ~/.emacs.d $(pwd)/_emacs.d
 	replace_config ~/.spacemacs $(pwd)/_spacemacs
 	echo emacs配置成功！
 }
 
 config_i3() {
-	replace_config ~/.config/i3/config $(pwd)/i3_config
+	replace_config ~/.config/i3 $(pwd)/i3
+	replace_config ~/.config/i3status $(pwd)/i3status
 	echo i3 配置成功!
 }
 

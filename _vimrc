@@ -35,7 +35,7 @@ Plug 'kabbamine/zeavim.vim' " zeal 文档
 
 " 主题
 "Plug 'tomasr/molokai' " molokai主题
-Plug 'dracula/vim' " dracula 主题
+Plug 'dracula/vim',{'as': 'dracula'} " dracula 主题
 "Plug 'sjl/badwolf' " badwolf主题
 
 
@@ -407,6 +407,7 @@ set ruler
 set rulerformat=%15(%c%V\ %p%%%)
 set smartindent
 set autoindent
+set clipboard=unnamedplus
 
 set enc=utf-8
 let &termencoding=&encoding
