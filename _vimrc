@@ -413,7 +413,7 @@ set clipboard=unnamedplus
 set enc=utf-8
 let &termencoding=&encoding
 set fencs=utf-8,ucs-bom,gb18030
-
+set mouse=a
 
 
 augroup autoRunGroup
