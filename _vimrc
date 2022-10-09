@@ -33,6 +33,7 @@ Plug 'vim-scripts/CursorLineCurrentWindow' " 高亮显示激活窗口的当前�
 Plug 'christoomey/vim-system-copy' " 拷贝到系统剪贴板
 Plug 'kabbamine/zeavim.vim' " zeal 文档
 Plug 'mileszs/ack.vim' " ack搜索
+Plug 'christoomey/vim-tmux-navigator' " tmux
 
 " 主题
 "Plug 'tomasr/molokai' " molokai主题
@@ -81,6 +82,10 @@ Plug 'bps/vim-textobj-python'
 " textobj end
 
 call plug#end()
+
+" --------------- tmux ---------------
+let g:tmux_navigator_save_on_switch = 2
+let g:tmux_navigator_disable_when_zoomed = 1
 
 " --------------- tagbar ----------------
 nnoremap gt :Tagbar<cr>
@@ -471,13 +476,13 @@ nnoremap <leader>to :tabonly<CR>
 nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>s :shell<CR>
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
-nnoremap <leader>G "9yiw:Ack<space><C-r>9<cr>
+nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
 nnoremap <leader>g :!lazygit<cr>
 nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
 nnoremap <leader>fc :echo @%<cr>
 nnoremap // *
 nnoremap ?? #
-nnoremap <leader>F :Autoformat<cr>
+nnoremap <leader>G "9yiw:Ack<space><C-r>9<cr>
 nnoremap <leader>% ggvG
 nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left>
 nnoremap <leader>R "9yiw:%s/\<<C-r>9\>//g<Left><Left>
