@@ -68,6 +68,11 @@ config_i3() {
 	echo i3 配置成功!
 }
 
+config_konsole() {
+	replace_config ~/.local/share/konsole/skyfire.profile $(pwd)/skyfire.profile
+	echo konsole 配置成功！
+}
+
 while test $# -gt 0
 do
 	config_$1
