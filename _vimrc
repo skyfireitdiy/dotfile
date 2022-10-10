@@ -37,9 +37,9 @@ Plug 'christoomey/vim-tmux-navigator' " tmux pane跳转
 Plug 'benmills/vimux' " tmux 终端集成
 
 " 主题
-"Plug 'tomasr/molokai' " molokai主题
+Plug 'tomasr/molokai' " molokai主题
 Plug 'dracula/vim',{'as': 'dracula'} " dracula 主题
-"Plug 'sjl/badwolf' " badwolf主题
+Plug 'sjl/badwolf' " badwolf主题
 
 
 " text object
@@ -218,12 +218,6 @@ let g:cpp_no_function_highlight = 1
 " ------------ rainbow -------------
 let g:rainbow_active = 1
 
-
-"" ------------ easygrep -------------
-"let g:EasyGrepRoot = "search:.git,.svn"
-"let g:EasyGrepRecursive = "1"
-"let g:EasyGrepIgnoreCase = "1"
-
 " ------------ project -----------------
 nnoremap <silent> [p :ProjectBufPrev<cr>
 nnoremap <silent> ]p :ProjectBufNext<cr>
@@ -258,7 +252,7 @@ let g:coc_global_extensions = ['coc-json'
 nnoremap <leader>e :CocCommand explorer<cr>
 
 " -------------- color scheme ---------------------
-"let g:molokai_original = 1
+let g:molokai_original = 1
 let g:rehash256 = 1
 "color molokai
 color dracula
@@ -468,7 +462,7 @@ nnoremap <leader>H :Helptags<cr>
 nnoremap <leader>m :Marks<cr>
 nnoremap <leader>c :BCommits<cr>
 nnoremap <leader>C :Commits<cr>
-
+nnoremap <leader>\ :VimuxRunCommand ""<cr>
 nnoremap <leader>w <C-w>
 nnoremap <leader>tt :tabnew<space>
 nnoremap <leader>tn :tabnext<CR>
