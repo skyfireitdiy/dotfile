@@ -34,7 +34,7 @@ Plug 'christoomey/vim-system-copy' " 拷贝到系统剪贴板
 Plug 'kabbamine/zeavim.vim' " zeal 文档
 Plug 'mileszs/ack.vim' " ack搜索
 Plug 'christoomey/vim-tmux-navigator' " tmux pane跳转
-Plugin 'benmills/vimux' " tmux 终端集成
+Plug 'benmills/vimux' " tmux 终端集成
 
 " 主题
 "Plug 'tomasr/molokai' " molokai主题
