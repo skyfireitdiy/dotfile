@@ -482,7 +482,7 @@ nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
 nnoremap <leader>fc :echo @%<cr>
 nnoremap // *
 nnoremap ?? #
-nnoremap <leader>G "9yiw:Ack<space><C-r>9<cr>
+nnoremap <leader>F "9yiw:Ack<space><C-r>9<cr>
 nnoremap <leader>% ggvG
 nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left>
 nnoremap <leader>R "9yiw:%s/\<<C-r>9\>//g<Left><Left>
