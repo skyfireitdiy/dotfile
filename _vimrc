@@ -11,7 +11,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'} " 多光标
 Plug 'chiel92/vim-autoformat' " 格式化
 Plug 'gcmt/wildfire.vim' " 回车按照层级选中
 Plug 'dbakker/vim-projectroot' " 自动进入项目根目录
-Plug 'scrooloose/nerdcommenter' " 快速格式化
+Plug 'scrooloose/nerdcommenter' " 快速注释
 Plug 'tpope/vim-fugitive' " git封装
 Plug 'vim-scripts/DoxygenToolkit.vim' " doxygen 注释
 Plug 'junegunn/fzf' " fzf 模糊查找
@@ -33,7 +33,8 @@ Plug 'vim-scripts/CursorLineCurrentWindow' " 高亮显示激活窗口的当前�
 Plug 'christoomey/vim-system-copy' " 拷贝到系统剪贴板
 Plug 'kabbamine/zeavim.vim' " zeal 文档
 Plug 'mileszs/ack.vim' " ack搜索
-Plug 'christoomey/vim-tmux-navigator' " tmux
+Plug 'christoomey/vim-tmux-navigator' " tmux pane跳转
+Plugin 'benmills/vimux' " tmux 终端集成
 
 " 主题
 "Plug 'tomasr/molokai' " molokai主题
