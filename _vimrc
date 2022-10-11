@@ -32,7 +32,7 @@ Plug 'inside/vim-search-pulse' " 搜索到匹配的时候会闪烁高亮
 Plug 'vim-scripts/CursorLineCurrentWindow' " 高亮显示激活窗口的当前行
 Plug 'christoomey/vim-system-copy' " 拷贝到系统剪贴板
 Plug 'kabbamine/zeavim.vim' " zeal 文档
-Plug 'mileszs/ack.vim' " ack搜索
+Plug 'vim-scripts/EasyGrep' " 查找替换
 Plug 'christoomey/vim-tmux-navigator' " tmux pane跳转
 Plug 'benmills/vimux' " tmux 终端集成
 
@@ -477,7 +477,7 @@ nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
 nnoremap <leader>fc :echo @%<cr>
 nnoremap // *
 nnoremap ?? #
-nnoremap <leader>F "9yiw:Ack<space><C-r>9<cr>
+nnoremap <leader>F "9yiw:Grep<space><C-r>9<cr>
 nnoremap <leader>% ggvG
 nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left>
 nnoremap <leader>R "9yiw:%s/\<<C-r>9\>//g<Left><Left>
