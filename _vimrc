@@ -49,6 +49,7 @@ if has('nvim')
 	Plug 'kdheepak/lazygit.nvim' " lazygit
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " treesitter
 else
+	" some plugin only run in vim
 endif
 
 " text object
@@ -137,7 +138,7 @@ lua << EOF
 				-- Using this option may slow down your editor, and you may see some duplicate highlights.
 				-- Instead of true it can also be a list of languages
 				additional_vim_regex_highlighting = false,
-				},
+		},
 	}
 EOF
 endif
@@ -305,21 +306,9 @@ let g:rehash256 = 1
 color dracula
 "color badwolf
 
+
 " --------------- coc.vim config -------------------
 
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-set signcolumn=yes
-
-" Use tab for trigger completion with characters ahead and navigate.
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -459,7 +448,6 @@ let g:coc_global_extensions = ['coc-json'
 nnoremap <leader>e :CocCommand explorer<cr>
 
 
-
 " ---------------- telescope -------------
 
 if has('nvim')
@@ -538,6 +526,10 @@ nnoremap <leader>/// :DoxLic<cr>
 
 
 " ---------------- my config ---------------
+set nobackup
+set nowritebackup
+set updatetime=300
+set signcolumn=yes
 set showcmd
 set nu
 set autoread
