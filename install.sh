@@ -35,6 +35,13 @@ config_vim(){
 	sed -i 's/https:\/\/github\.com/https:\/\/ghproxy\.com\/https:\/\/github\.com/g' ~/.vim/autoload/plug.vim
 
 	ln -sf $(pwd)/_vimrc ~/.vimrc
+	
+	# 配置nvim
+	mkdir -p ~/.local/share/nvim/site
+	mkdir -p ~/.config/nvim
+	replace_config ~/.local/share/nvim/site/autoload ~/.vim/autoload 
+	replace_config ~/.config/nvim/init.vim ~/.vimrc
+
 
 	echo vim配置成功！
 	echo 首次启动 vim 的时候会有一些报错，因为相关插件未安装，需要执行命令 :PlugInstall
