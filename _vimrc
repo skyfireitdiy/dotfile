@@ -526,8 +526,14 @@ augroup autoRunGroup
 	" autocmd BufEnter * :set nomodifiable
 augroup END
 
+" ----------------- doxygen -----------------------
+nnoremap <leader>// :Dox<cr>
+nnoremap <leader>/// :DoxLic<cr>
+
+
 
 " ------------------------------------------------------------------------------------------------------
+
 
 
 
@@ -583,6 +589,7 @@ nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>w <C-w>
 nnoremap <leader>s :shell<CR>
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
+nnoremap <leader>? :set hlsearch!
 
 
 nnoremap <leader>fc :echo @%<cr>
@@ -595,8 +602,6 @@ nnoremap <leader>M :set nomodifiable!<cr>
 nnoremap Q @
 nnoremap <C-Right> <C-o>
 nnoremap <C-Left> <C-i>
-nnoremap <leader>// :Dox<cr>
-nnoremap <leader>/// :DoxLic<cr>
 
 nnoremap <Up> k
 nnoremap <Down> j
@@ -610,7 +615,6 @@ nnoremap g<Left> 0
 nnoremap g<Right> $
 nnoremap g<Down> 25jzz
 nnoremap g<Up> 25kzz
-
 
 vnoremap <Up> k
 vnoremap <Down> j
