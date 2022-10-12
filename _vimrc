@@ -492,10 +492,6 @@ nnoremap <Up> k
 nnoremap <Down> j
 nnoremap <Left> h
 nnoremap <Right> l
-nnoremap gh 0
-nnoremap gl $
-nnoremap gj 25jzz
-nnoremap gk 25kzz
 nnoremap g<Left> 0
 nnoremap g<Right> $
 nnoremap g<Down> 25jzz
@@ -507,10 +503,6 @@ vnoremap <Up> k
 vnoremap <Down> j
 vnoremap <Left> h
 vnoremap <Right> l
-vnoremap gh 0
-vnoremap gl $
-vnoremap gj 25jzz
-vnoremap gk 25kzz
 vnoremap g<Left> 0
 vnoremap g<Right> $
 vnoremap g<Down> 25jzz
