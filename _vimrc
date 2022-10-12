@@ -14,8 +14,6 @@ Plug 'dbakker/vim-projectroot' " 自动进入项目根目录
 Plug 'scrooloose/nerdcommenter' " 快速注释
 Plug 'tpope/vim-fugitive' " git封装
 Plug 'vim-scripts/DoxygenToolkit.vim' " doxygen 注释
-Plug 'junegunn/fzf' " fzf 模糊查找
-Plug 'junegunn/fzf.vim' " fzf 模糊查找
 Plug 'vim-airline/vim-airline' " 状态栏
 Plug 'vim-airline/vim-airline-themes' " 状态栏主题
 Plug 'luochen1990/rainbow' " 彩虹括号
@@ -35,14 +33,22 @@ Plug 'kabbamine/zeavim.vim' " zeal 文档
 Plug 'vim-scripts/EasyGrep' " 查找替换
 Plug 'christoomey/vim-tmux-navigator' " tmux pane跳转
 Plug 'benmills/vimux' " tmux 终端集成
+Plug 'junegunn/fzf' " fzf 模糊查找
+Plug 'junegunn/fzf.vim' " fzf 模糊查找
 
 " 主题
 Plug 'tomasr/molokai' " molokai主题
 Plug 'dracula/vim',{'as': 'dracula'} " dracula 主题
 Plug 'sjl/badwolf' " badwolf主题
 
+" nvim 专属插件
+
 if has('nvim')
-	Plug 'kdheepak/lazygit.nvim' " nvim 专属插件
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+	Plug 'kdheepak/lazygit.nvim' " lazygit
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " treesitter
+else
 endif
 
 " text object
@@ -87,6 +93,57 @@ Plug 'bps/vim-textobj-python'
 
 call plug#end()
 
+" ---------------- treesitter -----------------
+
+if has('nvim')
+lua << EOF
+	require'nvim-treesitter.configs'.setup {
+		-- A list of parser names, or "all"
+		ensure_installed = { "c", "lua", "rust", "cpp", "go", "bash", "make", "json", "json5", "yaml", "jsonc", "julia", "c_sharp", "vim" },
+
+		-- Install parsers synchronously (only applied to `ensure_installed`)
+		sync_install = false,
+
+		-- Automatically install missing parsers when entering buffer
+		-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+		auto_install = true,
+
+		-- List of parsers to ignore installing (for "all")
+		ignore_install = { "javascript" },
+
+		---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+		-- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+
+		highlight = {
+			-- `false` will disable the whole extension
+			enable = true,
+
+			-- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+			-- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+			-- the name of the parser)
+			-- list of language that will be disabled
+			disable = {},
+			-- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
+			disable = function(lang, buf)
+			local max_filesize = 100 * 1024 -- 100 KB
+			local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+			if ok and stats and stats.size > max_filesize then
+				return true
+				end
+				end,
+
+				-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+				-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+				-- Using this option may slow down your editor, and you may see some duplicate highlights.
+				-- Instead of true it can also be a list of languages
+				additional_vim_regex_highlighting = false,
+				},
+	}
+EOF
+endif
+
+" ---------------- lazygit ------------------
+
 if has('nvim')
 	let g:lazygit_floating_window_winblend = 0 " transparency of floating window
 	let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
@@ -104,7 +161,7 @@ nnoremap gt :Tagbar<cr>
 
 
 " ------------- airline theme -------
-let g:airline_theme='badwolf'
+let g:airline_theme='dracula'
 
 
 " ------------ gitgutter --------
@@ -240,27 +297,6 @@ nnoremap <silent> ]f :ProjectBufNext 'F<cr>
 nnoremap <silent> [f :ProjectBufPrev 'F<cr>
 
 
-" ------------- coc extensions ------------
-let g:coc_disable_startup_warning = 1
-let g:coc_global_extensions = ['coc-json'
-			\, 'coc-clangd'
-			\, 'coc-go'
-			\, 'coc-python'
-			\, 'coc-vimlsp'
-			\, 'coc-marketplace'
-			\, 'coc-rust-analyzer'
-			\, 'coc-markdownlint'
-			\, 'coc-markdown-preview-enhanced'
-			\, 'coc-webview'
-			\, 'coc-github'
-			\, 'coc-jsref'
-			\, 'coc-sumneko-lua'
-			\, 'coc-explorer'
-			\, 'coc-tabnine'
-			\]
-
-" ------------- coc-explorer ----------
-nnoremap <leader>e :CocCommand explorer<cr>
 
 " -------------- color scheme ---------------------
 let g:molokai_original = 1
@@ -397,10 +433,107 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
+nnoremap gh :CocCommand clangd.switchSourceHeader<CR>
+
+" ------------- coc extensions ------------
+let g:coc_disable_startup_warning = 1
+let g:coc_global_extensions = ['coc-json'
+			\, 'coc-clangd'
+			\, 'coc-go'
+			\, 'coc-python'
+			\, 'coc-vimlsp'
+			\, 'coc-marketplace'
+			\, 'coc-rust-analyzer'
+			\, 'coc-markdownlint'
+			\, 'coc-markdown-preview-enhanced'
+			\, 'coc-webview'
+			\, 'coc-github'
+			\, 'coc-jsref'
+			\, 'coc-sumneko-lua'
+			\, 'coc-explorer'
+			\, 'coc-tabnine'
+			\]
+
+" ------------- coc-explorer ----------
+nnoremap <leader>e :CocCommand explorer<cr>
+
+
+
+" ---------------- telescope -------------
+
+if has('nvim')
+	nnoremap <leader><cr> :Telescope builtin<cr>
+else
+endif
+
+" ---- fzf key map ------
+
+nnoremap <leader>W :Windows<cr>
+nnoremap <leader>o :FZF<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>gff :GFiles<cr>
+nnoremap <leader>gf? :GFiles?<cr>
+nnoremap <leader>co :Colors<cr>
+nnoremap <leader>rg :Rg<cr>
+nnoremap <leader>l :BLines<cr>
+nnoremap <leader>L :Lines<cr>
+nnoremap <leader>T :Tags<cr>
+nnoremap <leader>t :BTags<cr>
+nnoremap <leader>gt "9yiw:Tags<space><C-r>9<cr>
+nnoremap <leader>x :Commands<cr>
+nnoremap <leader>k :Maps<cr>
+nnoremap <leader>h :History<cr>
+nnoremap <leader>: :History:<cr>
+nnoremap <leader>/ :History/<cr>
+nnoremap <leader>H :Helptags<cr>
+nnoremap <leader>m :Marks<cr>
+nnoremap <leader>c :BCommits<cr>
+nnoremap <leader>C :Commits<cr>
+nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
+
+" ------------- lazygit --------------
+
+if has('nvim')
+	nnoremap <leader>g :LazyGit<cr>
+else
+	nnoremap <leader>g :!lazygit<cr>
+endif
+
+" ----------------- VimuxRunCommand ---------------
+nnoremap <leader>\ :VimuxRunCommand ""<cr>
+
+
+" ----------------- EasyGrep ------------
+nnoremap <leader>F "9yiw:Grep<space><C-r>9<cr>
+
+
+" 自动格式化会将EOF缩进，这样就有问题了，此处将缩进去除
+function! RepairLuaScript()
+	%s/^\slua << EOF/lua << EOF/g
+	%s/^\sEOF/EOF/g
+endfunction
+
+
+augroup autoRunGroup
+	autocmd!
+	autocmd BufEnter * :ProjectRootCD
+	autocmd BufWritePre * :Autoformat
+	autocmd BufWritePre *vimrc :call RepairLuaScript()
+	autocmd InsertLeave,InsertEnter * :set relativenumber!
+	autocmd BufWritePost *vimrc :source ~/.vimrc
+	" autocmd BufEnter * :set nomodifiable
+augroup END
+
+
+" ------------------------------------------------------------------------------------------------------
+
+
+
 " ---------------- my config ---------------
 set showcmd
 set nu
-" already set autocmd, comment this line
 set autoread
 set autowriteall
 set ignorecase smartcase
@@ -427,14 +560,6 @@ set fencs=utf-8,ucs-bom,gb18030
 set mouse=a
 
 
-augroup autoRunGroup
-	autocmd!
-	autocmd BufEnter * :ProjectRootCD
-	autocmd BufWritePre * :Autoformat
-	autocmd InsertLeave,InsertEnter * :set relativenumber!
-	autocmd BufWritePost *vimrc :source ~/.vimrc
-	" autocmd BufEnter * :set nomodifiable
-augroup END
 
 
 inoremap hh <ESC>
@@ -450,51 +575,19 @@ inoremap OO <ESC>O
 inoremap zz <ESC>zza
 
 
-" ---- fzf key map ------
-nnoremap <leader>W :Windows<cr>
-nnoremap <leader>o :FZF<cr>
-nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>f :Files<cr>
-nnoremap <leader>gff :GFiles<cr>
-nnoremap <leader>gf? :GFiles?<cr>
-nnoremap <leader>co :Colors<cr>
-nnoremap <leader>rg :Rg<cr>
-nnoremap <leader>l :BLines<cr>
-nnoremap <leader>L :Lines<cr>
-nnoremap <leader>T :Tags<cr>
-nnoremap <leader>t :BTags<cr>
-nnoremap <leader>gt "9yiw:Tags<space><C-r>9<cr>
-nnoremap <leader>x :Commands<cr>
-nnoremap <leader>k :Maps<cr>
-nnoremap <leader>h :History<cr>
-nnoremap <leader>: :History:<cr>
-nnoremap <leader>/ :History/<cr>
-nnoremap <leader>H :Helptags<cr>
-nnoremap <leader>m :Marks<cr>
-nnoremap <leader>c :BCommits<cr>
-nnoremap <leader>C :Commits<cr>
-nnoremap <leader>\ :VimuxRunCommand ""<cr>
-nnoremap <leader>w <C-w>
 nnoremap <leader>tt :tabnew<space>
 nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader>tp :tabprev<CR>
 nnoremap <leader>to :tabonly<CR>
 nnoremap <leader>tc :tabclose<CR>
+nnoremap <leader>w <C-w>
 nnoremap <leader>s :shell<CR>
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
-nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
 
-if has('nvim')
-	nnoremap <leader>g :LazyGit<cr>
-else
-	nnoremap <leader>g :!lazygit<cr>
-endif
 
-nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
 nnoremap <leader>fc :echo @%<cr>
 nnoremap // *
 nnoremap ?? #
-nnoremap <leader>F "9yiw:Grep<space><C-r>9<cr>
 nnoremap <leader>% ggvG
 nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left><C-r>9
 nnoremap <leader>R "9yiw:%s/\<<C-r>9\>//g<Left><Left><C-r>9
@@ -517,7 +610,6 @@ nnoremap g<Left> 0
 nnoremap g<Right> $
 nnoremap g<Down> 25jzz
 nnoremap g<Up> 25kzz
-nnoremap gh :CocCommand clangd.switchSourceHeader<CR>
 
 
 vnoremap <Up> k
