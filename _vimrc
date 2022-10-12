@@ -41,6 +41,9 @@ Plug 'tomasr/molokai' " molokai主题
 Plug 'dracula/vim',{'as': 'dracula'} " dracula 主题
 Plug 'sjl/badwolf' " badwolf主题
 
+if has('nvim')
+	Plug 'kdheepak/lazygit.nvim' " nvim 专属插件
+endif
 
 " text object
 Plug 'kana/vim-textobj-user'
@@ -83,6 +86,14 @@ Plug 'bps/vim-textobj-python'
 " textobj end
 
 call plug#end()
+
+if has('nvim')
+	let g:lazygit_floating_window_winblend = 0 " transparency of floating window
+	let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
+	let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
+	let g:lazygit_floating_window_use_plenary = 0 " use plenary.nvim to manage floating window if available
+	let g:lazygit_use_neovim_remote = 1 " fallback to 0 if neovim-remote is not installed
+endif
 
 " --------------- tmux ---------------
 let g:tmux_navigator_save_on_switch = 2
@@ -472,7 +483,13 @@ nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>s :shell<CR>
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
-nnoremap <leader>g :!lazygit<cr>
+
+if has('nvim')
+	nnoremap <leader>g :LazyGit<cr>
+else
+	nnoremap <leader>g :!lazygit<cr>
+endif
+
 nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
 nnoremap <leader>fc :echo @%<cr>
 nnoremap // *
@@ -492,6 +509,10 @@ nnoremap <Up> k
 nnoremap <Down> j
 nnoremap <Left> h
 nnoremap <Right> l
+nnoremap gh 0
+nnoremap gl $
+nnoremap gj 25jzz
+nnoremap gk 25kzz
 nnoremap g<Left> 0
 nnoremap g<Right> $
 nnoremap g<Down> 25jzz
@@ -503,6 +524,10 @@ vnoremap <Up> k
 vnoremap <Down> j
 vnoremap <Left> h
 vnoremap <Right> l
+vnoremap gh 0
+vnoremap gl $
+vnoremap gj 25jzz
+vnoremap gk 25kzz
 vnoremap g<Left> 0
 vnoremap g<Right> $
 vnoremap g<Down> 25jzz
