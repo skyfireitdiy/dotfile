@@ -589,7 +589,7 @@ nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>w <C-w>
 nnoremap <leader>s :shell<CR>
 nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
-nnoremap <leader>? :set hlsearch!
+nnoremap <leader>? :set hlsearch!<cr>
 
 
 nnoremap <leader>fc :echo @%<cr>
