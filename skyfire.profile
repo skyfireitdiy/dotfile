@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=Breeze
-Font=Consolas,10,-1,5,75,0,0,0,0,0,Bold
+Font=SauceCodePro Nerd Font,9,-1,5,87,0,0,0,0,0,Black
 UseFontLineChararacters=false
 
 [General]

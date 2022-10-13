@@ -35,12 +35,13 @@ config_vim(){
 	sed -i 's/https:\/\/github\.com/https:\/\/ghproxy\.com\/https:\/\/github\.com/g' ~/.vim/autoload/plug.vim
 
 	ln -sf $(pwd)/_vimrc ~/.vimrc
-	
+
 	# 配置nvim
 	mkdir -p ~/.local/share/nvim/site
 	mkdir -p ~/.config/nvim
-	replace_config ~/.local/share/nvim/site/autoload ~/.vim/autoload 
+	replace_config ~/.local/share/nvim/site/autoload ~/.vim/autoload
 	replace_config ~/.config/nvim/init.vim ~/.vimrc
+	replace_config ~/config/nvim/coc-settings.json $(pwd)/coc-settings.json
 
 
 	echo vim配置成功！
@@ -78,6 +79,15 @@ config_i3() {
 config_konsole() {
 	replace_config ~/.local/share/konsole/skyfire.profile $(pwd)/skyfire.profile
 	echo konsole 配置成功！
+}
+
+config_fonts() {
+	mkdir -p ~/.fonts
+	curr=`pwd`
+	cd ~/.fonts
+	unzip $curr/fonts.zip
+	sudo fc-cache -fv ~/.fonts
+	echo 字体安装成功！
 }
 
 while test $# -gt 0
