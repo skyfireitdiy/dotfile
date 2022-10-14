@@ -5,7 +5,7 @@ bak_config() {
 	bak_config=${1}_bak
 	if [ -f $bak_config ] || [ -d $bak_config ]; then
 		echo "删除旧的备份文件" $bak_config
-		rm -f $bak_config
+		rm -rf $bak_config
 	fi
 	if [ -f $old_config ] || [ -d $old_config ] ; then
 		mv $old_config ${old_config}_bak
@@ -16,36 +16,43 @@ bak_config() {
 replace_config() {
 	old_config=$1
 	new_config=$2
-	bak_config $1
+	bak_config $old_config
 	ln -sf $new_config $old_config
 }
 
 
 config_vim(){
-	replace_config ~/.vimrc $(pwd)/_vimrc
 
-	if [ -d ~/.vim ]; then
-		mv ~/.vim ~/.vim_bak
-	fi
+	bak_config ~/.config/nvim
+	bak_config ~/.vim
+
+	mkdir -p ~/.config
+	mkdir -p ~/.vim
 
 	# 使用 ghproxy 做代理
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 		https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-	sed -i 's/https:\/\/github\.com/https:\/\/ghproxy\.com\/https:\/\/github\.com/g' ~/.vim/autoload/plug.vim
-
-	ln -sf $(pwd)/_vimrc ~/.vimrc
-
-	# 配置nvim
-	mkdir -p ~/.local/share/nvim/site
-	mkdir -p ~/.config/nvim
-	replace_config ~/.local/share/nvim/site/autoload ~/.vim/autoload
-	replace_config ~/.config/nvim/init.vim ~/.vimrc
-	replace_config ~/.config/nvim/coc-settings.json $(pwd)/coc-settings.json
+	replace_config ~/.config/nvim $(pwd)/vim/nvim
 
 
-	echo vim配置成功！
-	echo 首次启动 vim 的时候会有一些报错，因为相关插件未安装，需要执行命令 :PlugInstall
+	# 配置vim
+	replace_config ~/.vim/autoload ~/.local/share/nvim/site/autoload
+	replace_config ~/.vimrc ~/.config/nvim/init.vim
+	replace_config ~/.vim/plugins.vim ~/.config/nvim/plugins.vim
+	replace_config ~/.vim/coc-settings.json ~/.config/nvim/coc-settings.json 
+
+	nvim --version 2>/dev/null
+	if [ $? -eq 0 ]; then
+		nvim -c PlugInstall -u ~/.config/nvim/plugins.vim 
+	fi
+
+	vim --version 2>/dev/null
+	if [ $? -eq 0 ]; then
+		vim -c PlugInstall -u ~/.vim/plugins.vim
+	fi
+
+	echo [n]vim配置成功！
 }
 
 
