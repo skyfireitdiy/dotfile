@@ -41,7 +41,7 @@ config_vim(){
 	mkdir -p ~/.config/nvim
 	replace_config ~/.local/share/nvim/site/autoload ~/.vim/autoload
 	replace_config ~/.config/nvim/init.vim ~/.vimrc
-	replace_config ~/config/nvim/coc-settings.json $(pwd)/coc-settings.json
+	replace_config ~/.config/nvim/coc-settings.json $(pwd)/coc-settings.json
 
 
 	echo vim配置成功！
