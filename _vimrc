@@ -2,14 +2,13 @@
 let mapleader=" " "映射leader键为空格
 
 
+
 call plug#begin()  " 插件管理
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " coc插件，提供lsp等功能
-Plug 'tpope/vim-surround' " 快速修改包围类型
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " 多光标
 Plug 'chiel92/vim-autoformat' " 格式化
 Plug 'gcmt/wildfire.vim' " 回车按照层级选中
 Plug 'dbakker/vim-projectroot' " 自动进入项目根目录
-Plug 'scrooloose/nerdcommenter' " 快速注释
 Plug 'tpope/vim-fugitive' " git封装
 Plug 'vim-scripts/DoxygenToolkit.vim' " doxygen 注释
 Plug 'vim-airline/vim-airline' " 状态栏
@@ -33,6 +32,7 @@ Plug 'junegunn/fzf' " fzf 模糊查找
 Plug 'junegunn/fzf.vim' " fzf 模糊查找
 
 Plug 'ryanoasis/vim-devicons' " 图标
+Plug 'kyazdani42/nvim-web-devicons'
 
 
 " 主题
@@ -52,11 +52,135 @@ if has('nvim')
 	Plug 'ggandor/lightspeed.nvim' " 增强的s键快速定位
 	Plug 'm-demare/hlargs.nvim' " 参数高亮
 	Plug 'gennaro-tedesco/nvim-peekup' " 寄存器管理
+	Plug 'chentoast/marks.nvim' " 书签管理
+
+	" treesitter主题
+
+	Plug 'shaeinst/roshnivim-cs'
+	Plug 'rafamadriz/neon'
+	Plug 'tomasiser/vim-code-dark'
+	Plug 'Mofiqul/vscode.nvim'
+	Plug 'marko-cerovac/material.nvim'
+	Plug 'bluz71/vim-nightfly-guicolors'
+	Plug 'bluz71/vim-moonfly-colors'
+	Plug 'ChristianChiarulli/nvcode-color-schemes.vim'
+	Plug 'folke/tokyonight.nvim'
+	Plug 'sainnhe/sonokai'
+	Plug 'kyazdani42/blue-moon'
+	Plug 'mhartington/oceanic-next'
+	Plug 'glepnir/zephyr-nvim'
+	Plug 'rockerBOO/boo-colorscheme-nvim'
+	Plug 'jim-at-jibba/ariake-vim-colors'
+	Plug 'Th3Whit3Wolf/onebuddy'
+	Plug 'ishan9299/modus-theme-vim'
+	Plug 'sainnhe/edge'
+	Plug 'theniceboy/nvim-deus'
+	Plug 'bkegley/gloombuddy'
+	Plug 'Th3Whit3Wolf/one-nvim'
+	Plug 'PHSix/nvim-hybrid'
+	Plug 'Th3Whit3Wolf/space-nvim'
+	Plug 'yonlu/omni.vim'
+	Plug 'ray-x/aurora'
+	Plug 'ray-x/starry.nvim'
+	Plug 'tanvirtin/monokai.nvim'
+	Plug 'ofirgall/ofirkai.nvim'
+	Plug 'savq/melange'
+	Plug 'RRethy/nvim-base16'
+	Plug 'fenetikm/falcon'
+	Plug 'andersevenrud/nordic.nvim'
+	Plug 'shaunsingh/nord.nvim'
+	Plug 'ishan9299/nvim-solarized-lua'
+	Plug 'shaunsingh/moonlight.nvim'
+	Plug 'navarasu/onedark.nvim'
+	Plug 'lourenci/github-colors'
+	Plug 'sainnhe/gruvbox-material'
+	Plug 'sainnhe/everforest'
+	Plug 'NTBBloodbath/doom-one.nvim'
+	Plug 'dracula/vim'
+	Plug 'Mofiqul/dracula.nvim'
+	Plug 'yashguptaz/calvera-dark.nvim'
+	Plug 'nxvu699134/vn-night.nvim'
+	Plug 'adisen99/codeschool.nvim'
+	Plug 'projekt0n/github-nvim-theme'
+	Plug 'kdheepak/monochrome.nvim'
+	Plug 'rose-pine/neovim'
+	Plug 'mcchrish/zenbones.nvim'
+	Plug 'catppuccin/nvim'
+	Plug 'FrenzyExists/aquarium-vim'
+	Plug 'EdenEast/nightfox.nvim'
+	Plug 'kvrohit/substrata.nvim'
+	Plug 'ldelossa/vimdark'
+	Plug 'Everblush/everblush.nvim'
+	Plug 'adisen99/apprentice.nvim'
+	Plug 'olimorris/onedarkpro.nvim'
+	Plug 'rmehri01/onenord.nvim'
+	Plug 'RishabhRD/gruvy'
+	Plug 'echasnovski/mini.nvim'
+	Plug 'luisiacc/gruvbox-baby'
+	Plug 'titanzero/zephyrium'
+	Plug 'rebelot/kanagawa.nvim'
+	Plug 'tiagovla/tokyodark.nvim'
+	Plug 'cpea2506/one_monokai.nvim'
+	Plug 'phha/zenburn.nvim'
+	Plug 'kvrohit/rasmus.nvim'
+	Plug 'chrsm/paramount-ng.nvim'
+	Plug 'kaiuri/nvim-juliana'
+	Plug 'lmburns/kimbox'
+	Plug 'rockyzhang24/arctic.nvim'
+	Plug 'meliora-theme/neovim'
+	Plug 'Yazeed1s/minimal.nvim'
+	Plug 'lewpoly/sherbet.nvim'
+	Plug 'Mofiqul/adwaita.nvim'
+	Plug 'olivercederborg/poimandres.nvim'
+
+	" lua 主题
+
+	Plug 'tjdevries/gruvbuddy.nvim'
+	Plug 'ellisonleao/gruvbox.nvim'
+	Plug 'metalelf0/jellybeans-nvim'
+	Plug 'lalitmee/cobalt2.nvim'
+
 else
 	Plug 'justinmk/vim-sneak' " s键快速查找
+	Plug 'scrooloose/nerdcommenter' " 快速注释
+	Plug 'tpope/vim-surround' " 快速修改包围类型
 endif
 
 call plug#end()
+
+" mini
+if has('nvim')
+lua << EOF
+	require('mini.ai').setup()
+	require('mini.align').setup()
+	-- require('mini.base16').setup()
+	require('mini.bufremove').setup()
+	require('mini.comment').setup()
+	-- require('mini.completion').setup()
+	require('mini.cursorword').setup()
+	require('mini.doc').setup()
+	require('mini.fuzzy').setup()
+	require('mini.indentscope').setup()
+	require('mini.jump').setup()
+	require('mini.jump2d').setup({
+	mappings = {
+		start_jumping = 'g<cr>',
+	}
+	})
+	require('mini.map').setup()
+	require('mini.misc').setup()
+	require('mini.pairs').setup()
+	require('mini.sessions').setup()
+	require('mini.starter').setup()
+	-- require('mini.statusline').setup()
+	require('mini.surround').setup()
+	require('mini.tabline').setup()
+	require('mini.test').setup()
+	require('mini.trailspace').setup()
+EOF
+endif
+
+
 
 "  which-key
 if has('nvim')
@@ -65,6 +189,46 @@ lua << EOF
 		-- your configuration comes here
 		-- or leave it empty to use the default settings
 		-- refer to the configuration section below
+	}
+EOF
+endif
+
+" marks
+if has('nvim')
+lua << EOF
+	require'marks'.setup {
+		-- whether to map keybinds or not. default true
+		default_mappings = true,
+		-- which builtin marks to show. default {}
+		builtin_marks = { ".", "<", ">", "^" },
+		-- whether movements cycle back to the beginning/end of buffer. default true
+		cyclic = true,
+		-- whether the shada file is updated after modifying uppercase marks. default false
+		force_write_shada = false,
+		-- how often (in ms) to redraw signs/recompute mark positions.
+		-- higher values will have better performance but may cause visual lag,
+		-- while lower values may cause performance penalties. default 150.
+		refresh_interval = 250,
+		-- sign priorities for each type of mark - builtin marks, uppercase marks, lowercase
+		-- marks, and bookmarks.
+		-- can be either a table with all/none of the keys, or a single number, in which case
+		-- the priority applies to all marks.
+		-- default 10.
+		sign_priority = { lower=10, upper=15, builtin=8, bookmark=20 },
+		-- disables mark tracking for specific filetypes. default {}
+		excluded_filetypes = {},
+		-- marks.nvim allows you to configure up to 10 bookmark groups, each with its own
+		-- sign/virttext. Bookmarks can be used to group together positions and quickly move
+		-- across multiple buffers. default sign is '!@#$%^&*()' (from 0 to 9), and
+		-- default virt_text is "".
+		bookmark_0 = {
+			sign = "⚑",
+			virt_text = "hello world",
+			-- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
+			-- defaults to false.
+			annotate = false,
+		},
+		mappings = {}
 	}
 EOF
 endif
@@ -496,12 +660,17 @@ EOF
 	"  telescope
 
 	if has('nvim')
+lua << EOF
+		require('telescope').setup({
+		defaults = {
+			generic_sorter = require('mini.fuzzy').get_telescope_sorter
+		}
+		})
+EOF
 		nnoremap <leader><cr> :Telescope builtin<cr>
-	else
 	endif
 
 	"  fzf key map
-
 	nnoremap <leader>W :Windows<cr>
 	nnoremap <leader>o :FZF<cr>
 	nnoremap <leader>b :Buffers<cr>
@@ -569,23 +738,6 @@ EOF
 
 	"  my function
 
-	function! Zoom ()
-		" check if is the zoomed state (tabnumber > 1 && window == 1)
-		if tabpagenr('$') > 1 && tabpagewinnr(tabpagenr(), '$') == 1
-			let l:cur_winview = winsaveview()
-			let l:cur_bufname = bufname('')
-			tabclose
-
-			" restore the view
-			if l:cur_bufname == bufname('')
-				call winrestview(cur_winview)
-			endif
-		else
-			tab split
-		endif
-	endfunction
-
-
 	"
 
 	"  my config
@@ -622,18 +774,43 @@ EOF
 	set timeoutlen=500
 
 
+	if !has('nvim')
+		lnoremap ' ''<ESC>i
+		inoremap ( ()<ESC>i
+		inoremap " ""<ESC>i
+		inoremap { {}<ESC>i
+		inoremap [ []<ESC>i
+	endif
+
 
 	inoremap hh <ESC>
 	inoremap jj <ESC>
 	inoremap kk <ESC>
-	lnoremap ' ''<ESC>i
-	inoremap ( ()<ESC>i
-	inoremap " ""<ESC>i
-	inoremap { {}<ESC>i
-	inoremap [ []<ESC>i
 	inoremap oo <ESC>o
 	inoremap OO <ESC>O
 	inoremap zz <ESC>zza
+
+	if has('nvim')
+		nnoremap <leader>z :lua MiniMisc.zoom()<cr>
+	else
+		function! Zoom ()
+			" check if is the zoomed state (tabnumber > 1 && window == 1)
+			if tabpagenr('$') > 1 && tabpagewinnr(tabpagenr(), '$') == 1
+				let l:cur_winview = winsaveview()
+				let l:cur_bufname = bufname('')
+				tabclose
+
+				" restore the view
+				if l:cur_bufname == bufname('')
+					call winrestview(cur_winview)
+				endif
+			else
+				tab split
+			endif
+		endfunction
+		nnoremap <leader>z :call Zoom()<cr>
+	endif
+
 
 
 	nnoremap <leader>tt :tabnew<space>
@@ -646,7 +823,6 @@ EOF
 	nnoremap <leader>s :shell<CR>
 	nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 	nnoremap <leader>? :set hlsearch!<cr>
-	nnoremap <leader>z :call Zoom()<cr>
 
 	nnoremap <leader>fc :echo @%<cr>
 	nnoremap // *
