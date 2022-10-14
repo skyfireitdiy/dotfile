@@ -31,7 +31,6 @@ Plug 'christoomey/vim-tmux-navigator' " tmux pane跳转
 Plug 'benmills/vimux' " tmux 终端集成
 Plug 'junegunn/fzf' " fzf 模糊查找
 Plug 'junegunn/fzf.vim' " fzf 模糊查找
-Plug 'gennaro-tedesco/nvim-peekup' " 寄存器管理
 
 Plug 'ryanoasis/vim-devicons' " 图标
 
@@ -52,6 +51,7 @@ if has('nvim')
 	Plug 'folke/which-key.nvim' " 显示可能的快捷键
 	Plug 'ggandor/lightspeed.nvim' " 增强的s键快速定位
 	Plug 'm-demare/hlargs.nvim' " 参数高亮
+	Plug 'gennaro-tedesco/nvim-peekup' " 寄存器管理
 else
 	Plug 'justinmk/vim-sneak' " s键快速查找
 endif
