@@ -5,8 +5,6 @@ let mapleader=" " "映射leader键为空格
 call plug#begin()  " 插件管理
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " coc插件，提供lsp等功能
 Plug 'tpope/vim-surround' " 快速修改包围类型
-Plug 'easymotion/vim-easymotion' " 快速跳转
-Plug 'justinmk/vim-sneak' " s键快速查找
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " 多光标
 Plug 'chiel92/vim-autoformat' " 格式化
 Plug 'gcmt/wildfire.vim' " 回车按照层级选中
@@ -34,6 +32,7 @@ Plug 'christoomey/vim-tmux-navigator' " tmux pane跳转
 Plug 'benmills/vimux' " tmux 终端集成
 Plug 'junegunn/fzf' " fzf 模糊查找
 Plug 'junegunn/fzf.vim' " fzf 模糊查找
+Plug 'gennaro-tedesco/nvim-peekup' " 寄存器管理
 
 Plug 'ryanoasis/vim-devicons' " 图标
 
@@ -52,8 +51,10 @@ if has('nvim')
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " treesitter
 	Plug 'ray-x/lsp_signature.nvim' " 函数签名展示
 	Plug 'folke/which-key.nvim' " 显示可能的快捷键
+	Plug 'ggandor/lightspeed.nvim' " 增强的s键快速定位
+	Plug 'm-demare/hlargs.nvim' " 参数高亮
 else
-	" some plugin only run in vim
+	Plug 'justinmk/vim-sneak' " s键快速查找
 endif
 
 call plug#end()
@@ -621,7 +622,7 @@ EOF
 	let &termencoding=&encoding
 	set fencs=utf-8,ucs-bom,gb18030
 	" set mouse=a
-	set timeoutlen=300
+	set timeoutlen=500
 
 
 
