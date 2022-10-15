@@ -578,6 +578,7 @@ EOF
 		autocmd BufEnter * :ProjectRootCD
 		autocmd BufWritePre * :Autoformat
 		autocmd BufWrite *vimrc :call RepairLuaScript()
+		autocmd BufWrite *.vim :call RepairLuaScript()
 		autocmd InsertLeave,InsertEnter * :set relativenumber!
 		autocmd BufWritePost *vimrc :source ~/.vimrc
 		" autocmd BufEnter * :set nomodifiable
@@ -625,7 +626,7 @@ EOF
 	set enc=utf-8
 	let &termencoding=&encoding
 	set fencs=utf-8,ucs-bom,gb18030
-	" set mouse=a
+	set mouse=a
 	set timeoutlen=500
 
 
