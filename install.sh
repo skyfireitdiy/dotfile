@@ -92,6 +92,11 @@ config_kitty() {
 	echo kitty 配置成功！
 }
 
+config_x() {
+	replace_config ~/.xprofile $(pwd)/_xprofile
+	echo x 配置成功！
+}
+
 config_fonts() {
 	mkdir -p ~/.fonts
 	curr=`pwd`
