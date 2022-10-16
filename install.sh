@@ -57,9 +57,8 @@ config_vim(){
 
 
 config_fish(){
-	mkdir -p ~/.config/fish
-	replace_config ~/.config/fish/config.fish $(pwd)/config.fish
-	replace_config ~/.config/fish/fish_variables $(pwd)/fish_variables
+	mkdir -p ~/.config
+	replace_config ~/.config/fish $(pwd)/fish
 	echo fish 配置成功
 }
 
@@ -86,6 +85,11 @@ config_i3() {
 config_konsole() {
 	replace_config ~/.local/share/konsole/skyfire.profile $(pwd)/skyfire.profile
 	echo konsole 配置成功！
+}
+
+config_kitty() {
+	replace_config ~/.config/kitty $(pwd)/kitty 
+	echo kitty 配置成功！
 }
 
 config_fonts() {

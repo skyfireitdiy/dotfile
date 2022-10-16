@@ -598,6 +598,7 @@ EOF
 	augroup autoRunGroup
 		autocmd!
 		autocmd BufEnter * :ProjectRootCD
+		autocmd BufLeave * stopinsert 
 		autocmd BufWritePre *.cpp,*.c,*.go,*.h,*.rs,*.json,*.yaml,dockerfile,makefile,CMakeLists.txt :Autoformat
 		autocmd InsertLeave,InsertEnter * :set relativenumber!
 		autocmd BufWritePost *vimrc :source ~/.vimrc
@@ -659,11 +660,11 @@ EOF
 	endif
 
 
-	inoremap hh <ESC>
+	" inoremap hh <ESC>
 	inoremap jj <ESC>
 	inoremap kk <ESC>
-	inoremap oo <ESC>o
-	inoremap OO <ESC>O
+	" inoremap oo <ESC>o
+	" inoremap OO <ESC>O
 	inoremap zz <ESC>zza
 
 	if has('nvim')
