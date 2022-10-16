@@ -17,11 +17,11 @@ lua << EOF
 	require('mini.fuzzy').setup()
 	require('mini.indentscope').setup()
 	require('mini.jump').setup()
-	require('mini.jump2d').setup({
-	mappings = {
-		start_jumping = 'g<cr>',
-	}
-	})
+--	require('mini.jump2d').setup({
+--	mappings = {
+--		start_jumping = 'g<cr>',
+--	}
+--	})
 	require('mini.map').setup()
 	require('mini.misc').setup()
 	require('mini.pairs').setup()
