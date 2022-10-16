@@ -506,6 +506,7 @@ EOF
 				\, 'coc-sumneko-lua'
 				\, 'coc-explorer'
 				\, 'coc-tabnine'
+				\, 'coc-clang-format-style-options'
 				\]
 
 	"  coc-explorer
@@ -598,13 +599,13 @@ EOF
 	augroup autoRunGroup
 		autocmd!
 		autocmd BufEnter * :ProjectRootCD
-		autocmd BufWritePre * :Autoformat
+		autocmd BufWritePre *.(cpp|c|h|go|rs|sh|md|vim) :Autoformat
 		autocmd BufWrite *vimrc :call RepairLuaScript()
 		autocmd BufWrite *.vim :call RepairLuaScript()
 		autocmd InsertLeave,InsertEnter * :set relativenumber!
 		autocmd BufWritePost *vimrc :source ~/.vimrc
 		if has('nvim')
-			autocmd TermOpen * startinsert
+			autocmd TermEnter * startinsert
 		endif
 		" autocmd BufEnter * :set nomodifiable
 	augroup END
