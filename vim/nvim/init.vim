@@ -334,7 +334,7 @@ EOF
 	let g:VM_maps['Toggle Whole Word']='\\w'
 	let g:VM_maps['Case Setting']='\\c'
 	let g:VM_maps['Toggle Mappings']='\\<Space>'
-	let g:VM_maps['Toggle Single Region']='\\<CR>'
+	let g:VM_maps['Toggle Single Region']='\\<cr>'
 
 
 
@@ -383,10 +383,10 @@ EOF
 				\ coc#refresh()
 	inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-	" Make <CR> to accept selected completion item or notify coc.nvim to format
+	" Make <cr> to accept selected completion item or notify coc.nvim to format
 	" <C-g>u breaks current undo, please make your own choice.
-	inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+	inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
+				\: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
 	function! CheckBackspace() abort
 		let col = col('.') - 1
@@ -405,7 +405,7 @@ EOF
 	nmap <silent> gr <Plug>(coc-references)
 
 	" Use K to show documentation in preview window.
-	nnoremap <silent> K :call ShowDocumentation()<CR>
+	nnoremap <silent> K :call ShowDocumentation()<cr>
 
 	function! ShowDocumentation()
 		if CocAction('hasProvider', 'hover')
@@ -487,7 +487,7 @@ EOF
 	set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 	nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
-	nnoremap gh :CocCommand clangd.switchSourceHeader<CR>
+	nnoremap gH :CocCommand clangd.switchSourceHeader<cr>
 
 	"  coc extensions
 	let g:coc_disable_startup_warning = 1
@@ -525,31 +525,53 @@ EOF
 		nnoremap <leader><cr> :Telescope builtin<cr>
 	endif
 
-	"  fzf key map
-	nnoremap <leader>W :Windows<cr>
-	nnoremap <leader>o :FZF<cr>
-	nnoremap <leader>b :Buffers<cr>
-	nnoremap <leader>f :Files<cr>
-	nnoremap <leader>gff :GFiles<cr>
-	nnoremap <leader>gf? :GFiles?<cr>
-	nnoremap <leader>co :Colors<cr>
-	nnoremap <leader>rg :Rg<cr>
-	nnoremap <leader>l :BLines<cr>
-	nnoremap <leader>L :Lines<cr>
-	nnoremap <leader>T :Tags<cr>
-	nnoremap <leader>t :BTags<cr>
-	nnoremap <leader>gt "9yiw:Tags<space><C-r>9<cr>
-	nnoremap <leader>x :Commands<cr>
-	nnoremap <leader>k :Maps<cr>
-	nnoremap <leader>h :History<cr>
-	nnoremap <leader>: :History:<cr>
-	nnoremap <leader>/ :History/<cr>
-	nnoremap <leader>H :Helptags<cr>
-	nnoremap <leader>m :Marks<cr>
-	nnoremap <leader>c :BCommits<cr>
-	nnoremap <leader>C :Commits<cr>
-	nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
-
+	if has('nvim')
+		" telescope
+		nnoremap <leader>b :Telescope buffers<cr>
+		nnoremap <leader>f :Telescope fd<cr>
+		nnoremap <leader>gff :Telescope git_files<cr>
+		nnoremap <leader>gf? :Telescope git_status<cr>
+		nnoremap <leader>co :Telescope colortheme<cr>
+		nnoremap <leader>rg :Telescope grep_string<cr>
+		nnoremap <leader>l :BLines<cr>
+		nnoremap <leader>L :Lines<cr>
+		nnoremap <leader>T :Telescope tags<cr>
+		nnoremap <leader>t :Telescope current_file_tags<cr>
+		nnoremap <leader>gt "9yiw:Tags<space><C-r>9<cr>
+		nnoremap <leader>x :Telescope commands<cr>
+		nnoremap <leader>k :Telescope keymaps<cr>
+		nnoremap <leader>h :Telescope oldfiles<cr>
+		nnoremap <leader>: :Telescope command_history<cr>
+		nnoremap <leader>/ :Telescope search_history<cr>
+		nnoremap <leader>H :Telescope help_tags<cr>
+		nnoremap <leader>m :Telescope marks<cr>
+		nnoremap <leader>c :Telescope git_bcommits<cr>
+		nnoremap <leader>C :Telescope git_commits<cr>
+		nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
+	else
+		"  fzf key map
+		nnoremap <leader>b :Buffers<cr>
+		nnoremap <leader>f :Files<cr>
+		nnoremap <leader>gff :GFiles<cr>
+		nnoremap <leader>gf? :GFiles?<cr>
+		nnoremap <leader>co :Colors<cr>
+		nnoremap <leader>rg :Rg<cr>
+		nnoremap <leader>l :BLines<cr>
+		nnoremap <leader>L :Lines<cr>
+		nnoremap <leader>T :Tags<cr>
+		nnoremap <leader>t :BTags<cr>
+		nnoremap <leader>gt "9yiw:Tags<space><C-r>9<cr>
+		nnoremap <leader>x :Commands<cr>
+		nnoremap <leader>k :Maps<cr>
+		nnoremap <leader>h :History<cr>
+		nnoremap <leader>: :History:<cr>
+		nnoremap <leader>/ :History/<cr>
+		nnoremap <leader>H :Helptags<cr>
+		nnoremap <leader>m :Marks<cr>
+		nnoremap <leader>c :BCommits<cr>
+		nnoremap <leader>C :Commits<cr>
+		nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
+	endif
 	"  lazygit
 
 	if has('nvim')
@@ -581,6 +603,9 @@ EOF
 		autocmd BufWrite *.vim :call RepairLuaScript()
 		autocmd InsertLeave,InsertEnter * :set relativenumber!
 		autocmd BufWritePost *vimrc :source ~/.vimrc
+		if has('nvim')
+			autocmd TermOpen * startinsert
+		endif
 		" autocmd BufEnter * :set nomodifiable
 	augroup END
 
@@ -670,13 +695,17 @@ EOF
 
 
 	nnoremap <leader>tt :tabnew<space>
-	nnoremap <leader>tn :tabnext<CR>
-	nnoremap <leader>tp :tabprev<CR>
-	nnoremap <leader>to :tabonly<CR>
-	nnoremap <leader>tc :tabclose<CR>
+	nnoremap <leader>tn :tabnext<cr>
+	nnoremap <leader>tp :tabprev<cr>
+	nnoremap <leader>to :tabonly<cr>
+	nnoremap <leader>tc :tabclose<cr>
 
 	nnoremap <leader>w <C-w>
-	nnoremap <leader>s :shell<CR>
+	if has('nvim')
+		nnoremap <leader>s :terminal<cr>
+	else
+		nnoremap <leader>s :shell<cr>
+	endif
 	nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 	nnoremap <leader>? :set hlsearch!<cr>
 
@@ -697,8 +726,6 @@ EOF
 	nnoremap <Right> l
 	nnoremap gh 0
 	nnoremap gl $
-	nnoremap gj 25jzz
-	nnoremap gk 25kzz
 	nnoremap g<Left> 0
 	nnoremap g<Right> $
 	nnoremap g<Down> 25jzz
@@ -710,8 +737,6 @@ EOF
 	vnoremap <Right> l
 	vnoremap gh 0
 	vnoremap gl $
-	vnoremap gj 25jzz
-	vnoremap gk 25kzz
 	vnoremap g<Left> 0
 	vnoremap g<Right> $
 	vnoremap g<Down> 25jzz
