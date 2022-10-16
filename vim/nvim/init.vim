@@ -604,9 +604,6 @@ EOF
 		autocmd BufWrite *.vim :call RepairLuaScript()
 		autocmd InsertLeave,InsertEnter * :set relativenumber!
 		autocmd BufWritePost *vimrc :source ~/.vimrc
-		if has('nvim')
-			autocmd TermEnter * startinsert
-		endif
 		" autocmd BufEnter * :set nomodifiable
 	augroup END
 
