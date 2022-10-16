@@ -532,7 +532,7 @@ EOF
 		nnoremap <leader>f :Telescope fd<cr>
 		nnoremap <leader>gff :Telescope git_files<cr>
 		nnoremap <leader>gf? :Telescope git_status<cr>
-		nnoremap <leader>co :Telescope colortheme<cr>
+		nnoremap <leader>co :Telescope colorscheme<cr>
 		nnoremap <leader>rg :Telescope grep_string<cr>
 		nnoremap <leader>l :BLines<cr>
 		nnoremap <leader>L :Lines<cr>
