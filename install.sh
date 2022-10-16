@@ -87,11 +87,6 @@ config_konsole() {
 	echo konsole 配置成功！
 }
 
-config_kitty() {
-	replace_config ~/.config/kitty $(pwd)/kitty 
-	echo kitty 配置成功！
-}
-
 config_x() {
 	replace_config ~/.xprofile $(pwd)/_xprofile
 	echo x 配置成功！
