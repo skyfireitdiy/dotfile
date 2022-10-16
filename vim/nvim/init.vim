@@ -537,7 +537,7 @@ EOF
 		nnoremap <leader>l :BLines<cr>
 		nnoremap <leader>L :Lines<cr>
 		nnoremap <leader>T :Telescope tags<cr>
-		nnoremap <leader>t :Telescope current_file_tags<cr>
+		nnoremap <leader>t :Telescope current_buffer_tags<cr>
 		nnoremap <leader>gt "9yiw:Tags<space><C-r>9<cr>
 		nnoremap <leader>x :Telescope commands<cr>
 		nnoremap <leader>k :Telescope keymaps<cr>
