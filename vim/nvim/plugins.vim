@@ -28,6 +28,7 @@ Plug 'christoomey/vim-tmux-navigator' " tmux pane跳转
 Plug 'benmills/vimux' " tmux 终端集成
 Plug 'junegunn/fzf' " fzf 模糊查找
 Plug 'junegunn/fzf.vim' " fzf 模糊查找
+Plug 'tpope/vim-surround' " 快速修改包围类型
 
 Plug 'ryanoasis/vim-devicons' " 图标
 Plug 'kyazdani42/nvim-web-devicons'
@@ -141,7 +142,6 @@ if has('nvim')
 else
 	Plug 'justinmk/vim-sneak' " s键快速查找
 	Plug 'scrooloose/nerdcommenter' " 快速注释
-	Plug 'tpope/vim-surround' " 快速修改包围类型
 endif
 
 call plug#end()

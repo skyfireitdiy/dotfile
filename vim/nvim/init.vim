@@ -28,7 +28,7 @@ lua << EOF
 	require('mini.sessions').setup()
 	require('mini.starter').setup()
 	-- require('mini.statusline').setup()
-	require('mini.surround').setup()
+	-- require('mini.surround').setup()
 	require('mini.tabline').setup()
 	require('mini.test').setup()
 	require('mini.trailspace').setup()
@@ -82,8 +82,8 @@ lua << EOF
 			-- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
 			-- defaults to false.
 			annotate = false,
-		},
-		mappings = {}
+			},
+			mappings = {}
 	}
 EOF
 endif
@@ -127,24 +127,24 @@ lua << EOF
 		hi_parameter = "LspSignatureActiveParameter", -- how your parameter will be highlight
 		handler_opts = {
 			border = "rounded"   -- double, rounded, single, shadow, none
-		},
+			},
 
-		always_trigger = false, -- sometime show signature on new line or in middle of parameter can be confusing, set it to false for #58
+			always_trigger = false, -- sometime show signature on new line or in middle of parameter can be confusing, set it to false for #58
 
-		auto_close_after = nil, -- autoclose signature float win after x sec, disabled if nil.
-		extra_trigger_chars = {}, -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
-		zindex = 200, -- by default it will be on top of all floating windows, set to <= 50 send it to bottom
+			auto_close_after = nil, -- autoclose signature float win after x sec, disabled if nil.
+			extra_trigger_chars = {}, -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
+			zindex = 200, -- by default it will be on top of all floating windows, set to <= 50 send it to bottom
 
-		padding = '', -- character to pad on left and right of signature can be ' ', or '|'  etc
+			padding = '', -- character to pad on left and right of signature can be ' ', or '|'  etc
 
-		transparency = nil, -- disabled by default, allow floating win transparent value 1~100
-		shadow_blend = 36, -- if you using shadow as border use this set the opacity
-		shadow_guibg = 'Black', -- if you using shadow as border use this set the color e.g. 'Green' or '#121315'
-		timer_interval = 200, -- default timer check interval set to lower value if you want to reduce latency
-		toggle_key = nil, -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
+			transparency = nil, -- disabled by default, allow floating win transparent value 1~100
+			shadow_blend = 36, -- if you using shadow as border use this set the opacity
+			shadow_guibg = 'Black', -- if you using shadow as border use this set the color e.g. 'Green' or '#121315'
+			timer_interval = 200, -- default timer check interval set to lower value if you want to reduce latency
+			toggle_key = nil, -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
 
-		select_signature_key = nil, -- cycle to next signature, e.g. '<M-n>' function overloading
-		move_cursor_key = nil, -- imap, use nvim_set_current_win to move cursor between current win and floating
+			select_signature_key = nil, -- cycle to next signature, e.g. '<M-n>' function overloading
+			move_cursor_key = nil, -- imap, use nvim_set_current_win to move cursor between current win and floating
 	}
 
 	-- recommended:
@@ -206,7 +206,7 @@ lua << EOF
 					-- Using this option may slow down your editor, and you may see some duplicate highlights.
 					-- Instead of true it can also be a list of languages
 					additional_vim_regex_highlighting = false,
-			},
+					},
 		}
 EOF
 	endif
@@ -590,18 +590,15 @@ EOF
 
 
 	" 自动格式化会将EOF缩进，这样就有问题了，此处将缩进去除
-	function! RepairLuaScript()
+	function! RepairVimScript()
 		%s/^\s*lua << EOF/lua << EOF/g
 		%s/^\s*EOF/EOF/g
 	endfunction
 
-
 	augroup autoRunGroup
 		autocmd!
 		autocmd BufEnter * :ProjectRootCD
-		autocmd BufWritePre *.(cpp|c|h|go|rs|sh|md|vim) :Autoformat
-		autocmd BufWrite *vimrc :call RepairLuaScript()
-		autocmd BufWrite *.vim :call RepairLuaScript()
+		autocmd BufWritePre *.cpp,*.c,*.go,*.h,*.rs,*.json,*.yaml,dockerfile,makefile,CMakeLists.txt :Autoformat
 		autocmd InsertLeave,InsertEnter * :set relativenumber!
 		autocmd BufWritePost *vimrc :source ~/.vimrc
 		" autocmd BufEnter * :set nomodifiable
