@@ -40,11 +40,11 @@ endif
 "  which-key
 if has('nvim')
 lua << EOF
-	require("which-key").setup {
+	-- require("which-key").setup {
 		-- your configuration comes here
 		-- or leave it empty to use the default settings
 		-- refer to the configuration section below
-	}
+	-- }
 EOF
 endif
 
@@ -660,11 +660,11 @@ EOF
 	endif
 
 
-	" inoremap hh <ESC>
+	inoremap hh <ESC>
 	inoremap jj <ESC>
 	inoremap kk <ESC>
-	" inoremap oo <ESC>o
-	" inoremap OO <ESC>O
+	inoremap oo <ESC>o
+	inoremap OO <ESC>O
 	inoremap zz <ESC>zza
 
 	if has('nvim')
