@@ -15,6 +15,10 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:'Source Code Pro' 8
 
+new_window none
+new_float normal
+hide_edge_borders both
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -188,15 +192,12 @@ bindsym $mod+x [urgent=latest] focus
 # this is my config
 
 exec --no-startup-id fcitx
-exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id pa-applet
 
 exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/*
 exec_always --no-startup-id picom
 exec_always --no-startup-id xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal
-exec_always --no-startup-id polybar example
-
 
 
 # class                 border  bground text    indicator child_border
