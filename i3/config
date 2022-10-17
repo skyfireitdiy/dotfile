@@ -162,24 +162,27 @@ mode "resize" {
 # Pressing right will grow the window’s width.
 # Pressing up will shrink the window’s height.
 # Pressing down will grow the window’s height.
+
 	bindsym j resize shrink width 10 px or 10 ppt
-		bindsym k resize grow height 10 px or 10 ppt
-		bindsym l resize shrink height 10 px or 10 ppt
-		bindsym semicolon resize grow width 10 px or 10 ppt
+	bindsym k resize grow height 10 px or 10 ppt
+	bindsym l resize shrink height 10 px or 10 ppt
+	bindsym semicolon resize grow width 10 px or 10 ppt
 
 # same bindings, but for the arrow keys
-		bindsym Left resize shrink width 10 px or 10 ppt
-		bindsym Down resize grow height 10 px or 10 ppt
-		bindsym Up resize shrink height 10 px or 10 ppt
-		bindsym Right resize grow width 10 px or 10 ppt
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
 
 # back to normal: Enter or Escape or $mod+r
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
-		bindsym $mod+r mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
+bindsym Print --release exec flameshot gui
+bindsym $mod+x [urgent=latest] focus
 
 
 # this is my config
@@ -188,13 +191,12 @@ exec --no-startup-id fcitx
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id pa-applet
-bindsym Print --release exec flameshot gui
 
 exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/*
-																   exec_always --no-startup-id picom
-																   exec_always --no-startup-id xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal
+exec_always --no-startup-id picom
+exec_always --no-startup-id xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal
+exec_always --no-startup-id polybar example
 
-																   bindsym $mod+x [urgent=latest] focus
 
 
 # class                 border  bground text    indicator child_border
@@ -211,18 +213,18 @@ client.background       #F8F8F2
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-status_command i3status
-colors {
-background #282A36
-statusline #F8F8F2
-separator  #44475A
+	status_command i3status
+	colors {
+		background #282A36
+		statusline #F8F8F2
+		separator  #44475A
 
-focused_workspace  #44475A #44475A #F8F8F2
-active_workspace   #282A36 #44475A #F8F8F2
-inactive_workspace #282A36 #282A36 #BFBFBF
-urgent_workspace   #FF5555 #FF5555 #F8F8F2
-binding_mode       #FF5555 #FF5555 #F8F8F2
-}
+		focused_workspace  #44475A #44475A #F8F8F2
+		active_workspace   #282A36 #44475A #F8F8F2
+		inactive_workspace #282A36 #282A36 #BFBFBF
+		urgent_workspace   #FF5555 #FF5555 #F8F8F2
+		binding_mode       #FF5555 #FF5555 #F8F8F2
+	}
 }
 
 bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'EXEC:'"

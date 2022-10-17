@@ -18,6 +18,7 @@ replace_config() {
 	new_config=$2
 	bak_config $old_config
 	ln -sf $new_config $old_config
+	echo 软链接 $old_config -> $new_config
 }
 
 
@@ -91,6 +92,7 @@ config_x() {
 	replace_config ~/.xprofile $(pwd)/_xprofile
 	echo x 配置成功！
 }
+
 
 config_fonts() {
 	mkdir -p ~/.fonts
