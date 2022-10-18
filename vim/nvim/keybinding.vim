@@ -22,10 +22,12 @@ nnoremap <leader>to :tabonly<cr>
 nnoremap <leader>tc :tabclose<cr>
 
 nnoremap <leader>w <C-w>
-if !has('nvim')
+if has('nvim')
+	nnoremap <leader>rl :w<cr>:source ~/.config/nvim/init.vim<cr>
+else
+	nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 	nnoremap <leader>s :shell<cr>
 endif
-nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 nnoremap <leader>? :set hlsearch!<cr>
 
 nnoremap <leader>fc :echo @%<cr>

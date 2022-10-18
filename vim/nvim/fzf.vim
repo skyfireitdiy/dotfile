@@ -24,7 +24,7 @@ else
 	nnoremap <leader>/ :History/<cr>
 	nnoremap <leader>H :Helptags<cr>
 	nnoremap <leader>m :Marks<cr>
-	nnoremap <leader>c :BCommits<cr>
-	nnoremap <leader>C :Commits<cr>
+	nnoremap <leader>cc :BCommits<cr>
+	nnoremap <leader>CC :Commits<cr>
 	nnoremap <leader>G "9yiw:Rg<space><C-r>9<cr>
 endif
