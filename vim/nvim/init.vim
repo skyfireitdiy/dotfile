@@ -704,6 +704,8 @@ EOF
 	nnoremap <leader>w <C-w>
 	if has('nvim')
 		nnoremap <leader>s :terminal<cr>
+		nnoremap <leader>SS :lua MiniSessions.select()<cr>
+		nnoremap <leader>SW :lua MiniSessions.Write('',nil)<Left><Left><Left><Left><Left><Left>
 	else
 		nnoremap <leader>s :shell<cr>
 	endif
