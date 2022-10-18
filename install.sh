@@ -18,7 +18,7 @@ replace_config() {
 	new_config=$2
 	bak_config $old_config
 	ln -sf $new_config $old_config
-	echo 软链接 $old_config -> $new_config
+	echo "软链接 $old_config 到 $new_config"
 }
 
 
@@ -41,10 +41,12 @@ config_vim(){
 
 
 	# 配置vim
-	replace_config ~/.vim/autoload ~/.local/share/nvim/site/autoload
+	bak_config ~/.vim
+	mkdir ~/.vim
+	ln -sf ~/.local/share/nvim/site/autoload ~/.vim/autoload
+	ln -sf ~/.config/nvim/*.vim ~/.vim/
+	ln -sf ~/.config/nvim/coc-settings.json ~/.vim/coc-settings.json
 	replace_config ~/.vimrc ~/.config/nvim/init.vim
-	replace_config ~/.vim/plugins.vim ~/.config/nvim/plugins.vim
-	replace_config ~/.vim/coc-settings.json ~/.config/nvim/coc-settings.json 
 
 	nvim --version 2>/dev/null
 	if [ $? -eq 0 ]; then
