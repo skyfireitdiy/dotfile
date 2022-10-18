@@ -33,6 +33,9 @@ config_vim(){
 	# 使用 ghproxy 做代理
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 		https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		
+	# vim session 文件存放目录
+	mkdir -p ~/.local/share/nvim/session 
 
 	replace_config ~/.config/nvim $(pwd)/vim/nvim
 
