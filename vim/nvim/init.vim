@@ -35,16 +35,21 @@ lua << EOF
 EOF
 endif
 
-
+" gitsigns
+if has('nvim')
+lua << EOF
+	require('gitsigns').setup()
+EOF
+endif
 
 "  which-key
 if has('nvim')
 lua << EOF
-	-- require("which-key").setup {
+	require("which-key").setup {
 		-- your configuration comes here
 		-- or leave it empty to use the default settings
 		-- refer to the configuration section below
-	-- }
+	}
 EOF
 endif
 
