@@ -2,7 +2,6 @@
 if has('nvim')
 
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'kdheepak/lazygit.nvim' " lazygit
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " treesitter
 Plug 'ray-x/lsp_signature.nvim' " 函数签名展示

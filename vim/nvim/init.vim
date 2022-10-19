@@ -16,7 +16,7 @@ runtime lsp_signature.vim
 runtime treesitter.vim
 runtime lazygit.vim
 runtime tmux.vim
-runtime tagbar.vim
+" runtime tagbar.vim
 runtime airline-theme.vim
 runtime gitsigns.vim
 runtime gitgutter.vim
@@ -27,12 +27,11 @@ runtime rainbow.vim
 runtime project.vim
 runtime colorscheme.vim
 runtime coc.vim
-runtime telescope.vim
-runtime fzf.vim
 runtime VimuxRunCommand.vim
 runtime easygrep.vim
 runtime custom.vim
 runtime zoom.vim 
+runtime yankround.vim
 runtime keybinding.vim
 
 
