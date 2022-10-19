@@ -1,4 +1,32 @@
 {
 	"explorer.icon.enableNerdfont": true,
-	"explorer.icon.source": "vim-devicons"
+	"explorer.icon.source": "vim-devicons",
+	"suggest.autoTrigger": "always",
+	"suggest.noselect": false,
+	"suggest.timeout": 5000,
+	"suggest.virtualText": true,
+	"suggest.selection": "recentlyUsed",
+	"suggest.detailField": "preview",
+	"suggest.minTriggerInputLength": 1,
+	"suggest.floatConfig": {
+		"border": true,
+		"rounded": true,
+		"highlight": "CocFloating",
+		"borderhighlight": "CocFloating"
+	},
+	"diagnostic.floatConfig": {
+		"border": true,
+		"rounded": true,
+		"borderhighlight": "CocFloating",
+		"highlight": "CocFloating",
+		"focusable": true
+	},
+	"hover.floatConfig": {
+		"border": true,
+		"rounded": true,
+		"borderhighlight": "CocFloating",
+		"highlight": "CocFloating",
+		"focusable": true,
+		"title": "🎈"
+	}
 }
