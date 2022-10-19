@@ -4,7 +4,7 @@
 	"suggest.autoTrigger": "always",
 	"suggest.noselect": false,
 	"suggest.timeout": 5000,
-	"suggest.virtualText": true,
+	"suggest.virtualText": false,
 	"suggest.selection": "recentlyUsed",
 	"suggest.detailField": "preview",
 	"suggest.minTriggerInputLength": 1,
@@ -28,5 +28,8 @@
 		"highlight": "CocFloating",
 		"focusable": true,
 		"title": "🎈"
-	}
+	},
+	"clangd.inlayHints.enable": true,
+	"inlayHint.refreshOnInsertMode": true
 }
+

@@ -5,12 +5,12 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'kdheepak/lazygit.nvim' " lazygit
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " treesitter
 Plug 'ray-x/lsp_signature.nvim' " 函数签名展示
-" Plug 'folke/which-key.nvim' " 显示可能的快捷键
+Plug 'folke/which-key.nvim' " 显示可能的快捷键
 Plug 'ggandor/lightspeed.nvim' " 增强的s键快速定位
 Plug 'm-demare/hlargs.nvim' " 参数高亮
-Plug 'gennaro-tedesco/nvim-peekup' " 寄存器管理
 Plug 'chentoast/marks.nvim' " 书签管理
 Plug 'lewis6991/gitsigns.nvim' " git签名
+
 
 " treesitter主题
 

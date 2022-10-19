@@ -21,14 +21,6 @@ function! CheckBackspace() abort
 	return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call ShowDocumentation()<cr>
 
 function! ShowDocumentation()
 	if CocAction('hasProvider', 'hover')
@@ -41,12 +33,7 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
 
-" Formatting selected code.
-" xmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
 	autocmd!
@@ -90,11 +77,6 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
 	vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
-
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocActionAsync('format')
 
@@ -109,25 +91,6 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Mappings for CoCList
-" Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent><nowait> <space>cx  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-" Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
-nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
-nnoremap gH :CocCommand clangd.switchSourceHeader<cr>
 
 "  coc extensions
 let g:coc_disable_startup_warning = 1
@@ -153,30 +116,52 @@ let g:coc_global_extensions = ['coc-json'
 "  coc-explorer
 nnoremap <leader>e :CocCommand explorer<cr>
 
-
 "  fzf key map
-nnoremap <leader>b :CocCommand<space>fzf-preview.Buffers<cr>
-nnoremap <leader>f :CocCommand<space>fzf-preview.ProjectFiles<cr>
-nnoremap <leader>gff :CocCommand<space>fzf-preview.GitFiles<cr>
-nnoremap <leader>rg :CocCommand<space>fzf-preview.ProjectGrep<space>
-nnoremap <leader>l :CocCommand<space>fzf-preview.Lines<cr>
-nnoremap <leader>T :CocCommand<space>fzf-preview.Ctags<cr>
-nnoremap <leader>t :CocCommand<space>fzf-preview.BufferTags<cr>
-nnoremap <leader>gt "9yiw:CocCommand<space>fzf-preview.Ctags<space><C-r>9<cr>
-nnoremap <leader>m :CocCommand<space>fzf-preview.Marks<cr>
-nnoremap <leader>h :CocCommand<space>fzf-preview.ProjectOldFiles<cr>
-nnoremap <leader>: :CocCommand<space>fzf-preview.CommandPalette<cr>
-nnoremap <leader>gg :CocCommand<space>fzf-preview.GitActions<cr>
-nnoremap <leader>G "9yiw:CocCommand<space>fzf-preview.ProjectGrep<space><C-r>9<cr>
-nnoremap <leader>o :CocCommand<space>fzf-preview.CocOutline<cr>
+nnoremap <leader>b :CocCommand fzf-preview.Buffers<cr>
+nnoremap <leader>f :CocCommand fzf-preview.ProjectFiles<cr>
+nnoremap <leader>gff :CocCommand fzf-preview.GitFiles<cr>
+nnoremap <leader>rg :CocCommand fzf-preview.ProjectGrep<space>
+nnoremap <leader>l :CocCommand fzf-preview.Lines<cr>
+nnoremap <leader>m :CocCommand fzf-preview.Marks<cr>
+nnoremap <leader>h :CocCommand fzf-preview.ProjectOldFiles<cr>
+nnoremap <leader>: :CocCommand fzf-preview.CommandPalette<cr>
+nnoremap <leader>gg :CocCommand fzf-preview.GitActions<cr>
+nnoremap <leader>G "9yiw:CocCommand fzf-preview.ProjectGrep <C-r>9<cr>
+nnoremap <leader>o :CocCommand fzf-preview.CocOutline<cr>
+nnoremap <leader>T :CocCommand fzf-preview.VistaCtags<cr>
+nnoremap <leader>t :CocCommand fzf-preview.VistaBufferCtags<cr>
 
 
+" Mappings for CoCList
+" Show all diagnostics.
+nnoremap <silent><nowait> <space>ca  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent><nowait> <space>ce  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent><nowait> <space>cx  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+" Search workspace symbols.
+nnoremap <silent><nowait> <space>cs  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <leader>mv :CocCommand markdown-preview-enhanced.openPreview<cr>
+nnoremap gH :CocCommand clangd.switchSourceHeader<cr>
 
-" GoTo code navigation.
-nmap <silent> gd :CocCommand<space>fzf-preview.CocDefinition<cr>
-nmap <silent> gy :CocCommand<space>fzf-preview.CocTypeDefinition<cr>
-nmap <silent> gi :CocCommand<space>fzf-preview.CocImplementations<cr>
-nmap <silent> gr :CocCommand<space>fzf-preview.CocReferences<cr>
 
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<cr>
 " Use vim-devicons
 let g:fzf_preview_use_dev_icons = 1
+set shell=/bin/zsh
+let $SHELL="/bin/zsh"

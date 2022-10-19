@@ -10,13 +10,13 @@ runtime plugins-vim.vim
 call plug#end()
 
 runtime mini.vim
-" runtime which-key.vim
+runtime which-key.vim
 runtime marks.vim
 runtime lsp_signature.vim
 runtime treesitter.vim
 runtime lazygit.vim
 runtime tmux.vim
-" runtime tagbar.vim
+runtime vista.vim
 runtime airline-theme.vim
 runtime gitsigns.vim
 runtime gitgutter.vim
