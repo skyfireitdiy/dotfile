@@ -6,7 +6,7 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'kdheepak/lazygit.nvim' " lazygit
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " treesitter
 Plug 'ray-x/lsp_signature.nvim' " 函数签名展示
-Plug 'folke/which-key.nvim' " 显示可能的快捷键
+" Plug 'folke/which-key.nvim' " 显示可能的快捷键
 Plug 'ggandor/lightspeed.nvim' " 增强的s键快速定位
 Plug 'm-demare/hlargs.nvim' " 参数高亮
 Plug 'gennaro-tedesco/nvim-peekup' " 寄存器管理
