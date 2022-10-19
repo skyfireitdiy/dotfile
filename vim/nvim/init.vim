@@ -10,7 +10,7 @@ runtime plugins-vim.vim
 call plug#end()
 
 runtime mini.vim
-runtime which-key.vim
+" runtime which-key.vim
 runtime marks.vim
 runtime lsp_signature.vim
 runtime treesitter.vim
