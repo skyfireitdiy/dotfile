@@ -21,6 +21,8 @@ runtime airline-theme.vim
 runtime gitsigns.vim
 runtime gitgutter.vim
 runtime choosewin.vim
+runtime fzf.vim
+runtime tagbar.vim 
 runtime visual-cursor.vim
 runtime cpphighlight.vim
 runtime rainbow.vim

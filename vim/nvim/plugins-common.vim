@@ -10,7 +10,7 @@ Plug 'vim-airline/vim-airline' " 状态栏
 Plug 'vim-airline/vim-airline-themes' " 状态栏主题
 Plug 'luochen1990/rainbow' " 彩虹括号
 Plug 'octol/vim-cpp-enhanced-highlight' " c++ 增强的语法高亮
-" Plug 'majutsushi/tagbar' " 标签栏
+Plug 'majutsushi/tagbar' " 标签栏
 Plug 'tpope/vim-repeat' " 增强.操作
 Plug 't9md/vim-choosewin' " 快速选择窗口
 Plug 'jszakmeister/vim-togglecursor' " 光标形状
@@ -23,10 +23,9 @@ Plug 'vim-scripts/EasyGrep' " 查找替换
 Plug 'christoomey/vim-tmux-navigator' " tmux pane跳转
 Plug 'benmills/vimux' " tmux 终端集成
 Plug 'junegunn/fzf' " fzf 模糊查找
-" Plug 'junegunn/fzf.vim' " fzf 模糊查找
+Plug 'junegunn/fzf.vim' " fzf 模糊查找
 Plug 'tpope/vim-surround' " 快速修改包围类型
 Plug 'LeafCage/yankround.vim' " 剪贴板
-Plug 'liuchengxu/vista.vim' " tags
 
 Plug 'ryanoasis/vim-devicons' " 图标
 Plug 'kyazdani42/nvim-web-devicons'

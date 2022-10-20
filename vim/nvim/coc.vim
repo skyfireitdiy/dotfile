@@ -110,27 +110,10 @@ let g:coc_global_extensions = ['coc-json'
 			\, 'coc-explorer'
 			\, 'coc-tabnine'
 			\, 'coc-clang-format-style-options'
-			\, 'coc-fzf-preview'
 			\]
 
 "  coc-explorer
 nnoremap <leader>e :CocCommand explorer<cr>
-
-"  fzf key map
-nnoremap <leader>b :CocCommand fzf-preview.Buffers<cr>
-nnoremap <leader>f :CocCommand fzf-preview.ProjectFiles<cr>
-nnoremap <leader>gff :CocCommand fzf-preview.GitFiles<cr>
-nnoremap <leader>rg :CocCommand fzf-preview.ProjectGrep<space>
-nnoremap <leader>l :CocCommand fzf-preview.Lines<cr>
-nnoremap <leader>m :CocCommand fzf-preview.Marks<cr>
-nnoremap <leader>h :CocCommand fzf-preview.ProjectOldFiles<cr>
-nnoremap <leader>: :CocCommand fzf-preview.CommandPalette<cr>
-nnoremap <leader>gg :CocCommand fzf-preview.GitActions<cr>
-nnoremap <leader>G "9yiw:CocCommand fzf-preview.ProjectGrep <C-r>9<cr>
-nnoremap <leader>o :CocCommand fzf-preview.CocOutline<cr>
-nnoremap <leader>T :CocCommand fzf-preview.VistaCtags<cr>
-nnoremap <leader>t :CocCommand fzf-preview.VistaBufferCtags<cr>
-
 
 " Mappings for CoCList
 " Show all diagnostics.
@@ -161,7 +144,5 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call ShowDocumentation()<cr>
-" Use vim-devicons
-let g:fzf_preview_use_dev_icons = 1
-set shell=/bin/zsh
-let $SHELL="/bin/zsh"
+
+
