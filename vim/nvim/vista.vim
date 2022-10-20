@@ -1,3 +1,3 @@
-nnoremap gt :Vista!!<cr>
+nnoremap gT :Vista!!<cr>
 
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
