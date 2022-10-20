@@ -25,10 +25,8 @@ replace_config() {
 config_vim(){
 
 	bak_config ~/.config/nvim
-	bak_config ~/.vim
 
 	mkdir -p ~/.config
-	mkdir -p ~/.vim
 
 	# 使用 ghproxy 做代理
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -39,26 +37,12 @@ config_vim(){
 
 	replace_config ~/.config/nvim $(pwd)/vim/nvim
 
-
-	# 配置vim
-	bak_config ~/.vim
-	mkdir ~/.vim
-	ln -sf ~/.local/share/nvim/site/autoload ~/.vim/autoload
-	ln -sf ~/.config/nvim/*.vim ~/.vim/
-	ln -sf ~/.config/nvim/coc-settings.json ~/.vim/coc-settings.json
-	replace_config ~/.vimrc ~/.config/nvim/init.vim
-
 	nvim --version 2>/dev/null
 	if [ $? -eq 0 ]; then
 		nvim -c PlugInstall -u ~/.config/nvim/plugins.vim 
 	fi
 
-	vim --version 2>/dev/null
-	if [ $? -eq 0 ]; then
-		vim -c PlugInstall -u ~/.vim/plugins.vim
-	fi
-
-	echo [n]vim配置成功！,有些软件包需要手动安装，目前已知的软件包包括：fzf ripgrep zsh bat 
+	echo [n]vim配置成功！,有些软件包需要手动安装，目前已知的软件包包括：fzf ripgrep 
 }
 
 
