@@ -44,8 +44,7 @@ config_vim(){
 	bak_config ~/.vim
 	mkdir ~/.vim
 	ln -sf ~/.local/share/nvim/site/autoload ~/.vim/autoload
-	ln -sf ~/.config/nvim/*.vim ~/.vim/
-	ln -sf ~/.config/nvim/coc-settings.json ~/.vim/coc-settings.json
+	ln -sf ~/.config/nvim/* ~/.vim/
 	replace_config ~/.vimrc ~/.config/nvim/init.vim
 
 	nvim --version 2>/dev/null
