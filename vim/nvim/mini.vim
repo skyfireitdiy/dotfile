@@ -29,7 +29,6 @@ lua << EOF
 	require('mini.trailspace').setup()
 EOF
 	nnoremap <leader>z :lua MiniMisc.zoom()<cr>
-	nnoremap <leader>s :terminal<cr>
 	nnoremap <leader>SS :lua MiniSessions.select()<cr>
 	nnoremap <leader>SW :lua MiniSessions.write('',nil)<Left><Left><Left><Left><Left><Left>
 endif

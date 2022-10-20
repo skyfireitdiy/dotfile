@@ -8,6 +8,7 @@ lua << EOF
 		triggers_blacklist = {
 			i = { "j", "k", "o", "O", "z"},
 			v = { "j", "k" },
+			n = { "v", "V", "<C-v>" }
 		}
 	}
 EOF

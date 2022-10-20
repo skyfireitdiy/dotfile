@@ -24,6 +24,7 @@ nnoremap <leader>tc :tabclose<cr>
 nnoremap <leader>w <C-w>
 if has('nvim')
 	nnoremap <leader>rl :w<cr>:source ~/.config/nvim/init.vim<cr>
+	nnoremap <leader>s :sp<cr>:terminal fish<cr>
 else
 	nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
 	nnoremap <leader>s :shell<cr>
