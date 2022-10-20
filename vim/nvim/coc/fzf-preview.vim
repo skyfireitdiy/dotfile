@@ -1,6 +1,6 @@
 
-nnoremap <silent> <leader>f     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
-nnoremap <silent> <leader>ff     :<C-u>CocCommand fzf-preview.ProjectFiles<CR>
+nnoremap <silent> <leader>f     :<C-u>CocCommand fzf-preview.GitFiles<CR>
+nnoremap <silent> <leader>ff    :<C-u>CocCommand fzf-preview.ProjectFiles<CR>
 nnoremap <silent> <leader>gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
 nnoremap <silent> <leader>ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
 nnoremap <silent> <leader>b     :<C-u>CocCommand fzf-preview.Buffers<CR>
@@ -30,11 +30,11 @@ set shell=/bin/zsh
 let $SHELL = "/bin/zsh"
 
 augroup fzf_preview
-  autocmd!
-  autocmd User fzf_preview#rpc#initialized call s:fzf_preview_settings() " fzf_preview#remote#initialized or fzf_preview#coc#initialized
+	autocmd!
+	autocmd User fzf_preview#rpc#initialized call s:fzf_preview_settings() " fzf_preview#remote#initialized or fzf_preview#coc#initialized
 augroup END
 
 function! s:fzf_preview_settings() abort
-  let g:fzf_preview_command = 'COLORTERM=truecolor ' . g:fzf_preview_command
-  let g:fzf_preview_grep_preview_cmd = 'COLORTERM=truecolor ' . g:fzf_preview_grep_preview_cmd
+	let g:fzf_preview_command = 'COLORTERM=truecolor ' . g:fzf_preview_command
+	let g:fzf_preview_grep_preview_cmd = 'COLORTERM=truecolor ' . g:fzf_preview_grep_preview_cmd
 endfunction
