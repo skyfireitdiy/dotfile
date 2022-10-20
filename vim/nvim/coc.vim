@@ -95,13 +95,14 @@ let g:coc_global_extensions = ['coc-json'
 			\, 'coc-explorer'
 			\, 'coc-tabnine'
 			\, 'coc-clang-format-style-options'
+			\, 'coc-fzf-preview'
 			\]
 
 
 runtime coc/clangd.vim
 runtime coc/explorer.vim
 runtime coc/markdown-preview-enhanced.vim
-
+runtime coc/fzf-preview.vim
 
 
 

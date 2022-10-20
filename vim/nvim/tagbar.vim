@@ -1,5 +1,5 @@
 
 "  tagbar
-nnoremap gt :Tagbar<cr>
+nnoremap gT :Tagbar<cr>
 
 
