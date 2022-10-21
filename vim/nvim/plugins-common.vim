@@ -2,7 +2,6 @@
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " coc插件，提供lsp等功能
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " 多光标
 Plug 'chiel92/vim-autoformat' " 格式化
-Plug 'gcmt/wildfire.vim' " 回车按照层级选中
 Plug 'dbakker/vim-projectroot' " 自动进入项目根目录
 Plug 'tpope/vim-fugitive' " git封装
 Plug 'vim-scripts/DoxygenToolkit.vim' " doxygen 注释
