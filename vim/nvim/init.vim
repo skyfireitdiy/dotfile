@@ -29,7 +29,7 @@ runtime rainbow.vim
 runtime project.vim
 runtime colorscheme.vim
 runtime coc.vim
-runtime tablemode.vim
+runtime doxygen.vim
 runtime VimuxRunCommand.vim
 runtime easygrep.vim
 runtime custom.vim

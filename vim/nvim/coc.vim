@@ -66,7 +66,6 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 nnoremap <silent><nowait> <space>ca  :<C-u>CocList diagnostics<cr>
 nnoremap <silent><nowait> <space>ce  :<C-u>CocList extensions<cr>
 nnoremap <silent><nowait> <space>cx  :<C-u>CocList commands<cr>
-nnoremap <silent><nowait> <space>cs  :<C-u>CocList -I symbols<cr>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)

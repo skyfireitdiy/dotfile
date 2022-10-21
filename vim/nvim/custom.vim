@@ -14,19 +14,7 @@ augroup autoRunGroup
 	" autocmd BufEnter * :set nomodifiable
 augroup END
 
-"  doxygen
-nnoremap <leader>// :Dox<cr>
-nnoremap <leader>/// :DoxLic<cr>
 
-
-
-"
-
-"  my function
-
-"
-
-"  my config
 set nobackup
 set nowritebackup
 set updatetime=300

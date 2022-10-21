@@ -39,14 +39,12 @@ nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left><C-r>9
 nnoremap <leader>R "9yiw:%s/\<<C-r>9\>//g<Left><Left><C-r>9
 nnoremap <leader>M :set nomodifiable!<cr>
 nnoremap Q @
-nnoremap <C-Right> <C-o>
-nnoremap <C-Left> <C-i>
 
 nnoremap <Up> k
 nnoremap <Down> j
 nnoremap <Left> h
 nnoremap <Right> l
-nnoremap gh 0
+nnoremap gh ^
 nnoremap gl $
 nnoremap g<Left> 0
 nnoremap g<Right> $
