@@ -13,7 +13,6 @@ nnoremap <silent> <leader>L     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg
 nnoremap          <leader>gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
 xnoremap          <leader>gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
 nnoremap <silent> <leader>q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
-nnoremap <silent> <leader>l     :<C-u>CocCommand fzf-preview.LocationList<CR>
 nnoremap <silent> <leader>G     "9yiw:CocCommand fzf-preview.ProjectGrep<Space>C-r>9<cr>
 nnoremap <silent> <leader>h     :<C-u>CocCommand fzf-preview.ProjectOldFiles<CR>
 nnoremap <silent> <leader>:     :<C-u>CocCommand fzf-preview.CommandPalette<CR>

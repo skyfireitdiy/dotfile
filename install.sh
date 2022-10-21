@@ -57,7 +57,7 @@ config_vim(){
 		vim -c PlugInstall -u ~/.vim/plugins.vim
 	fi
 
-	echo [n]vim配置成功！,有些软件包需要手动安装，目前已知的软件包包括：fzf ripgrep zsh bat 
+	echo [n]vim配置成功！有些软件包需要手动安装，目前已知的软件包包括：fzf ripgrep zsh bat universal-ctags
 }
 
 

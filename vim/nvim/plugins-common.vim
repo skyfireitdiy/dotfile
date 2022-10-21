@@ -27,6 +27,7 @@ Plug 'junegunn/fzf.vim' " fzf 模糊查找
 Plug 'tpope/vim-surround' " 快速修改包围类型
 Plug 'LeafCage/yankround.vim' " 剪贴板
 Plug 'liuchengxu/vista.vim' " vista
+Plug 'dhruvasagar/vim-table-mode' " TableMode
 
 Plug 'ryanoasis/vim-devicons' " 图标
 Plug 'kyazdani42/nvim-web-devicons'
