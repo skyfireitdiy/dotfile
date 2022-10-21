@@ -11,7 +11,7 @@ nnoremap <silent> <leader>l     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg
 nnoremap <silent> <leader>L     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
 nnoremap          <leader>gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
 nnoremap <silent> <leader>q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
-nnoremap <silent> <leader>G     "9yiw:CocCommand fzf-preview.ProjectGrep<Space>C-r>9<cr>
+nnoremap <silent> <leader>G     "9yiw:CocCommand fzf-preview.ProjectGrep<Space><C-r>9<cr>
 nnoremap <silent> <leader>h     :<C-u>CocCommand fzf-preview.ProjectOldFiles<CR>
 nnoremap <silent> <leader>:     :<C-u>CocCommand fzf-preview.CommandPalette<CR>
 nnoremap <silent> <leader>c     :<C-u>CocCommand fzf-preview.GitCurrentLogs<CR>
