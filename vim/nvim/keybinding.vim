@@ -32,6 +32,8 @@ endif
 nnoremap <leader>? :set hlsearch!<cr>
 
 nnoremap <leader>fc :echo @%<cr>
+nnoremap <leader>zc 99zm
+nnoremap <leader>zo 99zr
 nnoremap // *
 nnoremap ?? #
 nnoremap <leader>% ggvG
