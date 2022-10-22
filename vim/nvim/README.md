@@ -77,8 +77,8 @@
 | normal        | Q            | 回放宏（q为录制）                      |
 | normal/visual | gh           | 跳到行首                               |
 | normal/visual | gl           | 跳到行尾                               |
-| normal/visual | g<Down>      | 向下跳25行                             |
-| normal/visual | g<Up>        | 向上跳25行                             |
+| normal/visual | g`<Down>`    | 向下跳25行                             |
+| normal/visual | g`<Up>`      | 向上跳25行                             |
 
 ### 插件快捷键配置
 
