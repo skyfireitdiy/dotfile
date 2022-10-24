@@ -81,7 +81,7 @@ let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = ['coc-json'
 			\, 'coc-clangd'
 			\, 'coc-go'
-			\, 'coc-python'
+			\, 'coc-jedi'
 			\, 'coc-vimlsp'
 			\, 'coc-marketplace'
 			\, 'coc-rust-analyzer'
