@@ -16,10 +16,10 @@ lua << EOF
 		incremental_selection = {
 			enable = true,
 			keymaps = {
-				init_selection = "<leader><cr>",
-				node_incremental = "<leader><cr>",
-				scope_incremental = "<leader><cr>",
-				node_decremental = "<leader><bs>",
+				init_selection = "<cr>",
+				node_incremental = "<cr>",
+				scope_incremental = "<cr>",
+				node_decremental = "<bs>",
 			},
 		},
 		indent = {

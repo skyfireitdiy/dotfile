@@ -32,6 +32,7 @@ runtime coc.vim
 runtime doxygen.vim
 runtime VimuxRunCommand.vim
 runtime easygrep.vim
+runtime wildfire.vim
 runtime custom.vim
 runtime zoom.vim 
 runtime yankround.vim
