@@ -30,6 +30,9 @@
 		"title": "🎈"
 	},
 	"clangd.inlayHints.enable": true,
-	"inlayHint.refreshOnInsertMode": true
+	"inlayHint.refreshOnInsertMode": true,
+	"coc.preferences.extensionUpdateCheck": "never",
+	"explorer.focus": true,
+	"explorer.quitOnOpen": true,
+	"explorer.previewAction.onHover": "content"
 }
-
