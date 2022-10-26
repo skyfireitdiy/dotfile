@@ -198,7 +198,6 @@ exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/*
 exec_always --no-startup-id picom
 exec_always --no-startup-id xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal
 
-
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
@@ -214,6 +213,7 @@ client.background       #F8F8F2
 # finds out, if available)
 bar {
 	status_command i3status
+	# position top
 	colors {
 		background #282A36
 		statusline #F8F8F2
@@ -227,4 +227,5 @@ bar {
 	}
 }
 
-bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'EXEC:'"
+bindsym $mod+d exec "rofi -show drun"
+bindsym $mod+p exec "rofi -show combi"
