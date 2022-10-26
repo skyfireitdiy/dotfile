@@ -14,6 +14,9 @@ inoremap kk <ESC>
 inoremap oo <ESC>o
 inoremap OO <ESC>O
 inoremap zz <ESC>zza
+inoremap <C-a> <Esc>^i
+inoremap <C-e> <Esc>$a
+
 
 nnoremap <leader>tt :tabnew<space>
 nnoremap <leader>tn :tabnext<cr>
@@ -42,6 +45,11 @@ nnoremap <leader>R "9yiw:%s/\<<C-r>9\>//g<Left><Left><C-r>9
 nnoremap <leader>M :set nomodifiable!<cr>
 nnoremap Q @
 
+nnoremap <A-Left> <C-o>
+nnoremap <A-Right> <C-i>
+nnoremap <C-a> ^
+nnoremap <C-e> $
+
 nnoremap <Up> k
 nnoremap <Down> j
 nnoremap <Left> h
@@ -63,4 +71,5 @@ vnoremap g<Left> 0
 vnoremap g<Right> $
 vnoremap g<Down> 25jzz
 vnoremap g<Up> 25kzz
-
+vnoremap <C-a> ^
+vnoremap <C-e> $
