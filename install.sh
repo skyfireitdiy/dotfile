@@ -21,6 +21,15 @@ replace_config() {
 	echo "软链接 $old_config 到 $new_config"
 }
 
+config_alacritty() {
+	replace_config ~/.config/alacritty $(pwd)/alacritty
+	echo "alacritty 安装完成！"
+}
+
+config_polybar() {
+	replace_config ~/.config/polybar $(pwd)/polybar
+	echo "polybar 安装完成！"
+}
 
 config_vim(){
 
