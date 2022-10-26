@@ -34,5 +34,5 @@
 	"coc.preferences.extensionUpdateCheck": "never",
 	"explorer.focus": true,
 	"explorer.quitOnOpen": true,
-	"explorer.previewAction.onHover": "content"
+	"explorer.previewAction.onHover": "labeling"
 }
