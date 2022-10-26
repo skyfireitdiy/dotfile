@@ -191,7 +191,7 @@ bindsym $mod+x [urgent=latest] focus
 
 # this is my config
 
-exec --no-startup-id fcitx
+exec --no-startup-id ibus-daemon -x -d
 exec --no-startup-id blueman-applet
 
 exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/*
