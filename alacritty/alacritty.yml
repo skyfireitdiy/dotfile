@@ -45,8 +45,14 @@ scrolling:
 font:
   normal:
     family: 'SauceCodePro Nerd Font Mono'
+    style: Bold italic
   bold:
     family: 'SauceCodePro Nerd Font Mono'
+    style: Bold italic
   italic:
     family: 'SauceCodePro Nerd Font Mono'
+    style: Bold italic
+  bold_italic:
+    family: 'SauceCodePro Nerd Font Mono'
+    style: Bold italic
   size: 6
