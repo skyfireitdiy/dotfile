@@ -15,6 +15,7 @@ function! RandomColor()
   let index = rand() % len(colors)
   let target = substitute(substitute(fnamemodify(colors[index], ':t'), '\\..\\{-}$', '', ''), "\\.vim$", "", "")
   execute("colors " .. target)
+  echo "current color scheme: " .. target
 endfunction
 
 
