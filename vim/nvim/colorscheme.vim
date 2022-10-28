@@ -42,4 +42,8 @@ endfunction
 
 command! -nargs=0 RC :call RandomColor()
 
-colorscheme sonokai
+if has('nvim')
+	colorscheme sonokai
+else
+	color badwolf
+endif
