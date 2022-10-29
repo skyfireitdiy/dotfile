@@ -1,11 +1,9 @@
-
 if has('nvim')
-
 	if g:light_vim == 0
-		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " treesitter
-		Plug 'ray-x/lsp_signature.nvim' " 函数签名展示
+			Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " treesitter
 	endif
 
+	Plug 'ray-x/lsp_signature.nvim' " 函数签名展示
 	Plug 'm-demare/hlargs.nvim' " 参数高亮
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'kdheepak/lazygit.nvim' " lazygit
@@ -88,6 +86,4 @@ if has('nvim')
 	Plug 'tjdevries/gruvbuddy.nvim'
 	Plug 'ellisonleao/gruvbox.nvim'
 	Plug 'lalitmee/cobalt2.nvim'
-
 endif
-

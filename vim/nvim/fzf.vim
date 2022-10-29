@@ -7,4 +7,5 @@ nnoremap  <leader>W :Windows<cr>
 nnoremap  <leader>/ :History/<cr>
 nnoremap  <leader>k :Maps<cr>
 nnoremap  <leader>H :Helptags<cr>
-
+nnoremap  <leader>t :BTags<cr>
+nnoremap  <leader>T :Tags<cr>

@@ -1,6 +1,7 @@
-
 if g:light_vim == 0
-	Plug 'octol/vim-cpp-enhanced-highlight' " c++ 增强的语法高亮
+        Plug 'octol/vim-cpp-enhanced-highlight' " c++ 增强的语法高亮
+        Plug 'luochen1990/rainbow' " 彩虹括号
+        Plug 'majutsushi/tagbar' " 标签栏
 endif
 
 Plug 'inside/vim-search-pulse' " 搜索到匹配的时候会闪烁高亮
@@ -12,8 +13,6 @@ Plug 'tpope/vim-fugitive' " git封装
 Plug 'vim-scripts/DoxygenToolkit.vim' " doxygen 注释
 Plug 'vim-airline/vim-airline' " 状态栏
 Plug 'vim-airline/vim-airline-themes' " 状态栏主题
-Plug 'luochen1990/rainbow' " 彩虹括号
-Plug 'majutsushi/tagbar' " 标签栏
 Plug 'tpope/vim-repeat' " 增强.操作
 Plug 't9md/vim-choosewin' " 快速选择窗口
 Plug 'jszakmeister/vim-togglecursor' " 光标形状
@@ -27,7 +26,6 @@ Plug 'junegunn/fzf' " fzf 模糊查找
 Plug 'junegunn/fzf.vim' " fzf 模糊查找
 Plug 'tpope/vim-surround' " 快速修改包围类型
 Plug 'LeafCage/yankround.vim' " 剪贴板
-Plug 'liuchengxu/vista.vim' " vista
 Plug 'dhruvasagar/vim-table-mode' " TableMode
 Plug 'vim-scripts/wildfire.vim' " enter选择
 Plug 'ryanoasis/vim-devicons' " 图标
@@ -37,5 +35,4 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tomasr/molokai' " molokai主题
 Plug 'dracula/vim',{'as': 'dracula'} " dracula 主题
 Plug 'sjl/badwolf' " badwolf主题
-
 
