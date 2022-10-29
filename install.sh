@@ -58,12 +58,12 @@ config_vim(){
 
 	nvim --version 2>/dev/null
 	if [ $? -eq 0 ]; then
-		nvim -c PlugInstall -u ~/.config/nvim/plugins.vim 
+		INSTALL_VIM=1 nvim 
 	fi
 
 	vim --version 2>/dev/null
 	if [ $? -eq 0 ]; then
-		vim -c PlugInstall -u ~/.vim/plugins.vim
+		INSTALL_VIM=1 vim 
 	fi
 
 	echo "[n]vim配置成功！有些软件包需要手动安装，目前已知的软件包包括：fzf ripgrep zsh bat universal-ctags gcut（直接建立cut的软链接） gsed（直接建立sed的软链接） lazygit fish g++ tmux nodejs gcc xsel"
