@@ -19,15 +19,12 @@ window:
 
   # 边缘空白
   padding:
-    x: 10
-    y: 15
+    x: 0
+    y: 0
   dynamic_padding: false
   startup_mode: Maximized
-  # 窗口修饰
-  # - full: 有边界 + 标题栏
-  # - none: 无边界 + 标题栏
   decorations: none
-  opacity: 0
+  opacity: 0.6
 
 scrolling:
   # 历史保留行数
