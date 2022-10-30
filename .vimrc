@@ -1,0 +1,1 @@
+/home/skyfire/.config/nvim/init.vim/home/skyfire/.vimrc

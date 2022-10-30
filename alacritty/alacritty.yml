@@ -27,7 +27,7 @@ window:
   # - full: 有边界 + 标题栏
   # - none: 无边界 + 标题栏
   decorations: none
-  opacity: 0.8
+  opacity: 0
 
 scrolling:
   # 历史保留行数
