@@ -1,10 +1,12 @@
 
 let mapleader=" " "映射leader键为空格
 
+" 启用轻量化 vim，禁止加载一些重量级插件（比如treesitter），用于打开大文件
 let g:light_vim = index(keys(environ()), "LIGHT_VIM") != -1
 let g:install_vim = index(keys(environ()), "INSTALL_VIM") != -1
 let g:editor_type = has('nvim') ? 'nvim' : 'vim'
 let g:forbidden_editor = g:editor_type == "nvim" ? "vim" : "nvim"
+" 使用淘宝镜像加速coc安装
 let g:npm_registry = 'https://registry.npm.taobao.org'
 let g:load_flags = []
 let g:home_dir = environ()['HOME']
@@ -29,7 +31,9 @@ if g:install_vim == 1
 	let g:light_vim = 0
 endif
 
-
+" 使用表驱动重构vim配置
+" 表项含义
+"		插件名称 插件配置 插件flag(nvim/vim/heavy一个或者) 插件加载配置
 let g:config_table = [
 			\ [ 'octol/vim-cpp-enhanced-highlight', 'cpphighlight.vim', ['heavy'] ],
 			\ [ 'luochen1990/rainbow','rainbow.vim', ['heavy']],
@@ -142,14 +146,14 @@ let g:config_table = [
 			\ [ 'tjdevries/gruvbuddy.nvim','',['nvim']],
 			\ [ 'ellisonleao/gruvbox.nvim','',['nvim']],
 			\ [ 'lalitmee/cobalt2.nvim','',['nvim']],
-			\ [ 'neoclide/coc.nvim',  'coc.vim', [], "{'branch': 'master', 'do': 'yarn install --registry '..g:npm_registry..' --frozen-lockfile'}"],
+			\ [ 'neoclide/coc.nvim',  'coc.vim', [], "{'branch': 'master', 'do': 'yarn install --registry '..g:npm_registry..' --frozen-lockfile'}"], 
 			\ [ '', 'zoom.vim'],
 			\ [ '', 'custom.vim' ],
 			\ [ '', 'keybinding.vim'],
 			\ [ '', 'colorscheme.vim' ],
 			\ ]
 
-
+" 增加依赖项检测
 function! CheckDeps()
 	let flags = 1
 	for deps in g:deps_check
@@ -166,6 +170,7 @@ function! CheckDeps()
 	return flags
 endfunction
 
+" 自助安装配置，减少install.sh脚本中的依赖
 function! InstallVim()
 	if g:install_vim
 		if !filereadable(g:home_dir.."/.local/share/nvim/site/autoload/plug.vim")
@@ -181,7 +186,7 @@ function! InstallVim()
 	endif
 endfunction
 
-
+" 插件加载标记列表（判断某个插件是否需要加载）
 function! GetLoadFlags()
 	for config in g:config_table
 		let properties = []
@@ -196,7 +201,7 @@ function! GetLoadFlags()
 	endfor
 endfunction
 
-
+" 插件的加载和插件的配置分开
 function! LoadPlugin()
 	let g:plug_url_format="https://ghproxy.com/https://github.com/%s"
 	call plug#begin()
@@ -236,6 +241,7 @@ function! LoadConfig()
 	endfor
 endfunction
 
+" 如果依赖项没有检测通过，不加载任何配置
 if CheckDeps() == 1
 	call InstallVim()
 	call GetLoadFlags()
