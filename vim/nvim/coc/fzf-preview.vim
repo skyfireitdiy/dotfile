@@ -1,5 +1,6 @@
 nnoremap <silent> <leader>f     :<C-u>CocCommand fzf-preview.GitFiles<CR>
-nnoremap <silent> <leader>ff    :<C-u>CocCommand fzf-preview.ProjectFiles<CR>
+" fzf_preview 会漏掉一些文件，原因未知
+" nnoremap <silent> <leader>ff    :<C-u>CocCommand fzf-preview.ProjectFiles<CR>
 nnoremap <silent> <leader>gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
 nnoremap <silent> <leader>ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
 nnoremap <silent> <leader>b     :<C-u>CocCommand fzf-preview.Buffers<CR>

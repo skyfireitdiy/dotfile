@@ -9,3 +9,5 @@ nnoremap  <leader>k :Maps<cr>
 nnoremap  <leader>H :Helptags<cr>
 nnoremap  <leader>t :BTags<cr>
 nnoremap  <leader>T :Tags<cr>
+
+nnoremap <leader>ff    :Files<CR>
