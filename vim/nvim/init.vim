@@ -3,13 +3,13 @@ let mapleader=" " "映射leader键为空格
 
 " 启用轻量化 vim，禁止加载一些重量级插件（比如treesitter），用于打开大文件
 let g:light_vim = index(keys(environ()), "LIGHT_VIM") != -1
-let g:install_vim = index(keys(environ()), "INSTALL_VIM") != -1
+let g:home_dir = environ()['HOME']
+let g:install_vim = !filereadable(g:home_dir.."/.local/share/nvim/site/autoload/plug.vim") || !filereadable(g:home_dir.."/.local/share/nvim/site/autoload/plug.vim")
 let g:editor_type = has('nvim') ? 'nvim' : 'vim'
 let g:forbidden_editor = g:editor_type == "nvim" ? "vim" : "nvim"
 " 使用淘宝镜像加速coc安装
 let g:npm_registry = 'https://registry.npm.taobao.org'
 let g:load_flags = []
-let g:home_dir = environ()['HOME']
 let g:deps_check = [
 			\ ['fzf','fzf --version'],
 			\ ['lazygit','lazygit --version'],
@@ -144,7 +144,7 @@ let g:config_table = [
 			\ [ 'tjdevries/gruvbuddy.nvim','',['nvim']],
 			\ [ 'ellisonleao/gruvbox.nvim','',['nvim']],
 			\ [ 'lalitmee/cobalt2.nvim','',['nvim']],
-			\ [ 'neoclide/coc.nvim',  'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '..g:npm_registry..' --frozen-lockfile'}"], 
+			\ [ 'neoclide/coc.nvim',  'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '..g:npm_registry..' --frozen-lockfile'}"],
 			\ [ '', 'zoom.vim'],
 			\ [ '', 'custom.vim' ],
 			\ [ '', 'keybinding.vim'],
@@ -170,18 +170,15 @@ endfunction
 
 " 自助安装配置，减少install.sh脚本中的依赖
 function! InstallVim()
-	if g:install_vim
-		if !filereadable(g:home_dir.."/.local/share/nvim/site/autoload/plug.vim")
-			" nvim
-			echom system("curl -fLo " .. g:home_dir .. "/.local/share/nvim/site/autoload/plug.vim --create-dirs https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim")
-			echom system("mkdir -p " .. g:home_dir .. "/.local/share/nvim/session")
-			" vim
-			echom system("ln -sf " ..g:home_dir.."/.local/share/nvim/site/autoload "..g:home_dir .. "/.vim/autoload")
-			echom system("ln -sf " ..  g:home_dir.."/.config/nvim/* " .. g:home_dir .. "/.vim")
-			echom system("ln -sf " ..  g:home_dir.."/.config/nvim/init.vim " .. g:home_dir.."/.vimrc")
-			runtime! plug.vim
-			execute 'source '..g:home_dir..'/.config/nvim/init.vim'
-		endif
+	if !filereadable(g:home_dir.."/.local/share/nvim/site/autoload/plug.vim")
+		" nvim
+		echom system("curl -fLo " .. g:home_dir .. "/.local/share/nvim/site/autoload/plug.vim --create-dirs https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim")
+		echom system("mkdir -p " .. g:home_dir .. "/.local/share/nvim/session")
+		" vim
+		echom system("ln -sf " ..g:home_dir.."/.local/share/nvim/site/autoload "..g:home_dir .. "/.vim/autoload")
+		echom system("ln -sf " ..  g:home_dir.."/.config/nvim/* " .. g:home_dir .. "/.vim")
+		echom system("ln -sf " ..  g:home_dir.."/.config/nvim/init.vim " .. g:home_dir.."/.vimrc")
+		qa
 	endif
 endfunction
 
@@ -203,6 +200,7 @@ endfunction
 " 插件的加载和插件的配置分开
 function! LoadPlugin()
 	let g:plug_url_format="https://ghproxy.com/https://github.com/%s"
+	let plug_install = 0
 	call plug#begin()
 	let i = 0
 	for config in g:config_table
@@ -217,11 +215,15 @@ function! LoadPlugin()
 				let cmd = cmd .. "," .. plugin_ext
 			endif
 			execute cmd
+			let plugin_name = plugin[stridx(plugin, '/') + 1:] 
+			if len(readdir(g:editor_type == 'nvim' ? g:home_dir .. '/.local/share/nvim/plugged/'.. plugin_name : g:home_dir .. '/.vim/plugged/'.. plugin_name)) == 0 
+				let plug_install = 1
+			endif
 		endif
 		let i = i + 1
 	endfor
 	call plug#end()
-	if g:install_vim
+	if plug_install == 1
 		execute "PlugInstall"
 	endif
 endfunction
@@ -242,7 +244,9 @@ endfunction
 
 " 如果依赖项没有检测通过，不加载任何配置
 if CheckDeps() == 1
-	call InstallVim()
+	if g:install_vim == 1
+		call InstallVim()
+	endif
 	call GetLoadFlags()
 	call LoadPlugin()
 	call LoadConfig()
