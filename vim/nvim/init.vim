@@ -3,7 +3,7 @@ let mapleader=" " "映射leader键为空格
 
 " 启用轻量化 vim，禁止加载一些重量级插件（比如treesitter），用于打开大文件
 let g:light_vim = index(keys(environ()), "LIGHT_VIM") != -1
-let g:install_vim = index(keys(environ()), "INSTALL_VIM") != -1:
+let g:install_vim = index(keys(environ()), "INSTALL_VIM") != -1
 let g:editor_type = has('nvim') ? 'nvim' : 'vim'
 let g:forbidden_editor = g:editor_type == "nvim" ? "vim" : "nvim"
 " 使用淘宝镜像加速coc安装
