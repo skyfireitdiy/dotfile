@@ -21,7 +21,7 @@ let g:deps_check = [
 			\ ['tmux', 'tmux --version'],
 			\ ['nodejs', 'node --version'],
 			\ ['xsel', 'xsel --version'],
-			\ ['yarn', 'yarn --version'],
+			\ ['npm', 'npm --version'],
 			\ ]
 
 
