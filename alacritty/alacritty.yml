@@ -53,3 +53,6 @@ font:
     family: 'SauceCodePro Nerd Font Mono'
     style: Bold italic
   size: 6
+
+import:
+  - ~/.config/alacritty/alacritty-colorscheme/themes/darcula.yaml
