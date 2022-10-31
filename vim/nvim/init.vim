@@ -17,13 +17,11 @@ let g:deps_check = [
 			\ ['zsh', 'zsh --version'],
 			\ ['fish', 'fish version'],
 			\ ['universal-ctags', 'ctags --version'],
-			\ ['gcut', 'gcut --version', 'gcut not found, you can create symlink gcut -> cut'],
-			\ ['gsed', 'gsed --version', 'gsed not found, you can create symlink gsed -> sed'],
 			\ ['g++', 'g++ --version'],
 			\ ['tmux', 'tmux --version'],
 			\ ['nodejs', 'node --version'],
 			\ ['xsel', 'xsel --version'],
-			\ ['yarn', 'yarn --version'],
+			\ ['npm', 'npm --version'],
 			\ ]
 
 
@@ -146,7 +144,7 @@ let g:config_table = [
 			\ [ 'tjdevries/gruvbuddy.nvim','',['nvim']],
 			\ [ 'ellisonleao/gruvbox.nvim','',['nvim']],
 			\ [ 'lalitmee/cobalt2.nvim','',['nvim']],
-			\ [ 'neoclide/coc.nvim',  'coc.vim', [], "{'branch': 'master', 'do': 'yarn install --registry '..g:npm_registry..' --frozen-lockfile'}"], 
+			\ [ 'neoclide/coc.nvim',  'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '..g:npm_registry..' --frozen-lockfile'}"], 
 			\ [ '', 'zoom.vim'],
 			\ [ '', 'custom.vim' ],
 			\ [ '', 'keybinding.vim'],
