@@ -179,6 +179,7 @@ function! InstallVim()
 			echom system("ln -sf " ..g:home_dir.."/.local/share/nvim/site/autoload "..g:home_dir .. "/.vim/autoload")
 			echom system("ln -sf " ..  g:home_dir.."/.config/nvim/* " .. g:home_dir .. "/.vim")
 			echom system("ln -sf " ..  g:home_dir.."/.config/nvim/init.vim " .. g:home_dir.."/.vimrc")
+			runtime! plug.vim
 			execute 'source '..g:home_dir..'/.config/nvim/init.vim'
 		endif
 	endif
