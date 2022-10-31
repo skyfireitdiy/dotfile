@@ -45,6 +45,7 @@ config_vim(){
 	mkdir -p ~/.local/share
 
 	replace_config ~/.config/nvim $(pwd)/vim/nvim
+	replace_config ~/.vimrc ~/.config/nvim/init.vim
 
 	nvim --version 2>/dev/null
 	if [ $? -eq 0 ]; then
