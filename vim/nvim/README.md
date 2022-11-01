@@ -8,31 +8,31 @@
 
 1. init.vim
 
-    整个配置入口文件，引入了其他的.vim文件
+整个配置入口文件，引入了其他的.vim文件
 
 2. plugins.vim
 
-    插件配置文件，主要根据nvim和vim引入不同的插件安装文件：
+插件配置文件，主要根据nvim和vim引入不同的插件安装文件：
 
-    - plugins-common.vim
+- plugins-common.vim
 
-        vim和nvim都会生效的插件
+vim和nvim都会生效的插件
 
-    - plugins-vim.vim
+- plugins-vim.vim
 
-        仅会在vim生效的插件。
+仅会在vim生效的插件。
 
-    - plugins-nvim.vim
+- plugins-nvim.vim
 
-        仅会在nvim生效的插件
+仅会在nvim生效的插件
 
 3. coc.vim
 
-    coc的设置，引入了所有的coc目录下的.vim文件
+coc的设置，引入了所有的coc目录下的.vim文件
 
 4. coc-settings.json
 
-    coc相关插件的配置
+coc相关插件的配置
 
 ## 安装
 
@@ -158,40 +158,40 @@
 为了可以由用户完全控制`vim`的行为，此配置留下了以下定制点，建议修改的变量如下：
 
 1. g:light_vim
-	禁止加载一些重量级插件
+禁止加载一些重量级插件
 
-2. g:DefaultCheckdepsFunc 
-	检测依赖函数
+2. g:DefaultCheckdepsFunc
+检测依赖函数
 
-3. g:DefaultInstallVimFunc 
-	安装vim配置函数
+3. g:DefaultInstallVimFunc
+安装vim配置函数
 
-4. g:BeforeGetLoadFlagsFunc 
-	获取插件加载标志前执行的函数
+4. g:BeforeGetLoadFlagsFunc
+获取插件加载标志前执行的函数
 
-5. g:BeforeLoadPluginsFunc 
-	加载插件前执行的函数
+5. g:BeforeLoadPluginsFunc
+加载插件前执行的函数
 
 6. g:BeforeLoadConfigFunc
-	加载插件配置前执行的函数
+加载插件配置前执行的函数
 
-7. g:FinallyFunc 
-	加载完成后执行的函数
+7. g:FinallyFunc
+加载完成后执行的函数
 
 以下是一个例子：
 
-```vim
+	```vim
 function! UserFinallyFunc()
-	colorscheme monokai_soda 
-endfunction
+	colorscheme monokai_soda
+	endfunction
 
 function UserBeforeGetLoadFlagsFunc()
 	" 设置轻量化模式
 	let g:light_vim = 1
-endfunction
+	endfunction
 
-let g:FinallyFunc = function('UserFinallyFunc')
-let g:BeforeGetLoadFlagsFunc = function('UserBeforeGetLoadFlagsFunc')
-```
+	let g:FinallyFunc = function('UserFinallyFunc')
+	let g:BeforeGetLoadFlagsFunc = function('UserBeforeGetLoadFlagsFunc')
+	```
 
-此配置设置轻量化加载方式，并且在加载完成之后将主题设置为`monokai_soda`
+	此配置设置轻量化加载方式，并且在加载完成之后将主题设置为`monokai_soda`
