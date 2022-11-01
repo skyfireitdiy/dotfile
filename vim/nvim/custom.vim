@@ -48,3 +48,5 @@ set timeoutlen=500
 
 set foldlevelstart=99
 set foldlevel=99
+
+set undofile 
