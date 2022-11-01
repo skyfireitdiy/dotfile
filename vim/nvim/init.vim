@@ -14,8 +14,6 @@ let g:deps_check = [
 			\ ['fzf','fzf --version'],
 			\ ['lazygit','lazygit --version'],
 			\ ['ripgrep','rg --version'],
-			\ ['zsh', 'zsh --version'],
-			\ ['fish', 'fish version'],
 			\ ['universal-ctags', 'ctags --version'],
 			\ ['g++', 'g++ --version'],
 			\ ['tmux', 'tmux --version'],
@@ -23,7 +21,6 @@ let g:deps_check = [
 			\ ['xsel', 'xsel --version'],
 			\ ['npm', 'npm --version'],
 			\ ]
-
 
 if g:install_vim == 1
 	let g:light_vim = 0
@@ -55,7 +52,6 @@ let g:config_table = [
 			\ [ 'junegunn/fzf' ],
 			\ [ 'junegunn/fzf.vim', 'fzf.vim' ],
 			\ [ 'tpope/vim-surround' ],
-			\ [ 'LeafCage/yankround.vim' ,'yankround.vim'],
 			\ [ 'dhruvasagar/vim-table-mode' ],
 			\ [ 'vim-scripts/wildfire.vim' ,'wildfire.vim'],
 			\ [ 'ryanoasis/vim-devicons' ],
@@ -241,13 +237,34 @@ function! LoadConfig()
 	endfor
 endfunction
 
-" 如果依赖项没有检测通过，不加载任何配置
-if CheckDeps() == 1
-	if g:install_vim == 1
-		call InstallVim()
+function! LoadUserConfig()
+	let user_config = g:home_dir..'/.vimrc_user'
+	if filereadable(user_config)
+		execute 'source ' .. user_config
 	endif
+endfunction
+
+function! EmptyFunc()
+endfunction
+
+let g:DefaultCheckdepsFunc =function('CheckDeps')
+let g:DefaultInstallVimFunc =function('InstallVim')
+let g:BeforeGetLoadFlagsFunc =function('EmptyFunc')
+let g:BeforeLoadPluginsFunc =function('EmptyFunc')
+let g:BeforeLoadConfigFunc =function('EmptyFunc')
+let g:FinallyFunc =function('EmptyFunc')
+
+call LoadUserConfig()
+if g:DefaultCheckdepsFunc() == 1
+	if g:install_vim == 1
+		call g:DefaultInstallVimFunc()
+	endif
+	call g:BeforeGetLoadFlagsFunc()
 	call GetLoadFlags()
+	call g:BeforeLoadPluginsFunc()
 	call LoadPlugin()
+	call g:BeforeLoadConfigFunc()
 	call LoadConfig()
+	call g:FinallyFunc()
 endif
 
