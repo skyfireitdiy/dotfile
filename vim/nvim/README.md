@@ -139,4 +139,59 @@
 | normal | `<leader>`//  | 增加doxygen函数注释                      |
 | normal | `<leader>`/// | 增加doxygen文件注释                      |
 
+### 自定义用户配置
 
+为了兼顾功能和灵活性，此配置在`init.vim` 中留下了一些可定制点，其激活方式为创建文件`~/.vimrc_user`文件。
+
+当`vim`检测到此文件的时候，会自动加载此文件的配置。
+
+此文件的加载会在任何配置加载前加载，因此在此文件中完全可以控制加载行为。
+
+此 vim 配置的初始化分为以下阶段：
+
+1. 检测依赖
+2. 检测是否需要安装部署，如果需要就部署
+3. 生成插件加载标记表（标记哪些插件需要加载）
+4. 加载插件
+5. 加载插件配置
+
+为了可以由用户完全控制`vim`的行为，此配置留下了以下定制点，建议修改的变量如下：
+
+1. g:light_vim
+	禁止加载一些重量级插件
+
+2. g:DefaultCheckdepsFunc 
+	检测依赖函数
+
+3. g:DefaultInstallVimFunc 
+	安装vim配置函数
+
+4. g:BeforeGetLoadFlagsFunc 
+	获取插件加载标志前执行的函数
+
+5. g:BeforeLoadPluginsFunc 
+	加载插件前执行的函数
+
+6. g:BeforeLoadConfigFunc
+	加载插件配置前执行的函数
+
+7. g:FinallyFunc 
+	加载完成后执行的函数
+
+以下是一个例子：
+
+```vim
+function! UserFinallyFunc()
+	colorscheme monokai_soda 
+endfunction
+
+function UserBeforeGetLoadFlagsFunc()
+	" 设置轻量化模式
+	let g:light_vim = 1
+endfunction
+
+let g:FinallyFunc = function('UserFinallyFunc')
+let g:BeforeGetLoadFlagsFunc = function('UserBeforeGetLoadFlagsFunc')
+```
+
+此配置设置轻量化加载方式，并且在加载完成之后将主题设置为`monokai_soda`

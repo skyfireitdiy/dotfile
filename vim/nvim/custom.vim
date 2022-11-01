@@ -5,10 +5,12 @@ function! RepairVimScript()
 	%s/^\s*EOF/EOF/g
 endfunction
 
+
 augroup autoRunGroup
 	autocmd!
 	autocmd BufLeave * stopinsert
-	autocmd InsertLeave,InsertEnter * :set relativenumber!
+	autocmd InsertEnter * :set norelativenumber
+	autocmd InsertLeave * :set relativenumber
 	autocmd BufWritePost *vimrc :source ~/.vimrc
 	" autocmd BufEnter * :set nomodifiable
 augroup END
@@ -26,7 +28,6 @@ set ignorecase smartcase
 set incsearch
 "set hlsearch
 set cmdheight=1
-set relativenumber
 set cursorline cursorcolumn
 set smarttab
 set tabstop=4
