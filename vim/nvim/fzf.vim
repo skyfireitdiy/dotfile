@@ -21,5 +21,6 @@ nnoremap <leader>:		:History:<CR>
 nnoremap <leader>/		:History/<CR>
 nnoremap <leader>c		:BCommits<CR>
 nnoremap <leader>C		:Commits<CR>
+nnoremap <leader>x		:Commands<CR>
 
 nnoremap <leader>G      "9yiw:Rg<Space><C-r>9<cr>
