@@ -60,6 +60,9 @@ nnoremap g<Left> 0
 nnoremap g<Right> $
 nnoremap g<Down> 25jzz
 nnoremap g<Up> 25kzz
+nnoremap W :wa<cr> 
+nnoremap Q :qa<cr>
+nnoremap WQ :wqa<cr>
 
 vnoremap <Up> k
 vnoremap <Down> j
@@ -73,3 +76,4 @@ vnoremap g<Down> 25jzz
 vnoremap g<Up> 25kzz
 vnoremap <C-a> ^
 vnoremap <C-e> $
+
