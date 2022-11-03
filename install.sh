@@ -49,11 +49,11 @@ config_vim(){
 
 	nvim --version 2>/dev/null
 	if [ $? -eq 0 ]; then
-		INSTALL_VIM=1 nvim
+		nvim
 	else
 		vim --version 2>/dev/null
 		if [ $? -eq 0 ]; then
-			INSTALL_VIM=1 vim
+			vim
 		fi
 	fi
 
