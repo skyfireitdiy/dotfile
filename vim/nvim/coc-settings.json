@@ -33,6 +33,5 @@
 	"inlayHint.refreshOnInsertMode": true,
 	"coc.preferences.extensionUpdateCheck": "never",
 	"explorer.focus": true,
-	"explorer.quitOnOpen": true,
 	"explorer.previewAction.onHover": "labeling"
 }
