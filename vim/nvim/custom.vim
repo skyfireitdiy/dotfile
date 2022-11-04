@@ -55,7 +55,7 @@ set undofile
 if exists("g:neovide")
 	set guifont=SauceCodePro\ Nerd\ Font\ Mono:h7:w7:b:i
 	let g:neovide_scale_factor = 1.0
-	let g:neovide_transparency = 0.3
+	let g:neovide_transparency = 0.8
 	let g:neovide_hide_mouse_when_typing = v:true
 	let g:neovide_fullscreen = v:true
 	let g:neovide_cursor_vfx_mode = "railgun"
