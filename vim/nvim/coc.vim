@@ -96,6 +96,7 @@ let g:coc_global_extensions = ['coc-json'
 			\, 'coc-tabnine'
 			\, 'coc-clang-format-style-options'
 			\, 'coc-yaml'
+			\, 'coc-snippets'
 			\]
 
 
