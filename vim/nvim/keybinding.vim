@@ -20,6 +20,7 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
+inoremap <C-c> <ESC>
 
 
 nnoremap <leader>tt :tabnew<space>
@@ -80,4 +81,4 @@ vnoremap g<Down> 25jzz
 vnoremap g<Up> 25kzz
 vnoremap <C-a> ^
 vnoremap <C-e> $
-
+vnoremap <C-c> <ESC>
