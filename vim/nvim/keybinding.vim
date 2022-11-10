@@ -68,6 +68,7 @@ nnoremap g<Up> 25kzz
 nnoremap W :wa<cr> 
 nnoremap Q :qa<cr>
 nnoremap WQ :wqa<cr>
+nnoremap <leader>. :<Up><cr>
 
 vnoremap <Up> k
 vnoremap <Down> j
