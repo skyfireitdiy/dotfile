@@ -83,3 +83,4 @@ vnoremap g<Up> 25kzz
 vnoremap <C-a> ^
 vnoremap <C-e> $
 vnoremap <C-c> <ESC>
+vnoremap <leader>. :<Up><cr>
