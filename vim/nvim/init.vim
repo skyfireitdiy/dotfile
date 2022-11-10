@@ -140,7 +140,7 @@ let g:config_table = [
 			\ [ 'tjdevries/gruvbuddy.nvim','',['nvim']],
 			\ [ 'ellisonleao/gruvbox.nvim','',['nvim']],
 			\ [ 'lalitmee/cobalt2.nvim','',['nvim']],
-			\ [ 'vim-script/scratch.vim'],
+			\ [ 'vim-scripts/scratch.vim'],
 			\ [ 'neoclide/coc.nvim',  'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '..g:npm_registry..' --frozen-lockfile'}"],
 			\ [ '', 'zoom.vim'],
 			\ [ '', 'custom.vim' ],
