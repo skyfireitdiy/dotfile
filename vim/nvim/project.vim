@@ -11,6 +11,6 @@ nnoremap <silent> [f :ProjectBufPrev 'F<cr>
 
 
 augroup projectAutoCmd
-	autocmd!
-	autocmd BufEnter * :ProjectRootCD
+    autocmd!
+    autocmd BufEnter * :ProjectRootCD
 augroup end

@@ -1,10 +1,10 @@
 
 if !has('nvim')
-	lnoremap ' ''<ESC>i
-	inoremap ( ()<ESC>i
-	inoremap " ""<ESC>i
-	inoremap { {}<ESC>i
-	inoremap [ []<ESC>i
+    lnoremap ' ''<ESC>i
+    inoremap ( ()<ESC>i
+    inoremap " ""<ESC>i
+    inoremap { {}<ESC>i
+    inoremap [ []<ESC>i
 endif
 
 
@@ -31,11 +31,11 @@ nnoremap <leader>tc :tabclose<cr>
 
 nnoremap <leader>w <C-w>
 if has('nvim')
-	nnoremap <leader>rl :w<cr>:source ~/.config/nvim/init.vim<cr>
-	nnoremap <leader>s :sp<cr><C-w>j:terminal<cr>i
+    nnoremap <leader>rl :w<cr>:source ~/.config/nvim/init.vim<cr>
+    nnoremap <leader>s :sp<cr><C-w>j:terminal<cr>i
 else
-	nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
-	nnoremap <leader>s :shell<cr>
+    nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
+    nnoremap <leader>s :shell<cr>
 endif
 nnoremap <leader>? :set hlsearch!<cr>
 
@@ -65,7 +65,7 @@ nnoremap g<Left> 0
 nnoremap g<Right> $
 nnoremap g<Down> 25jzz
 nnoremap g<Up> 25kzz
-nnoremap W :wa<cr> 
+nnoremap W :wa<cr>
 nnoremap Q :qa<cr>
 nnoremap WQ :wqa<cr>
 nnoremap <leader>. :<Up><cr>

@@ -2,35 +2,35 @@
 "  coc.vim config
 
 inoremap <silent><expr> <TAB>
-			\ coc#pum#visible() ? coc#pum#next(1) :
-			\ CheckBackspace() ? "\<Tab>" :
-			\ coc#refresh()
+            \ coc#pum#visible() ? coc#pum#next(1) :
+            \ CheckBackspace() ? "\<Tab>" :
+            \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
-			\: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
+            \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
 
 function! CheckBackspace() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 
 function! ShowDocumentation()
-	if CocAction('hasProvider', 'hover')
-		call CocActionAsync('doHover')
-	else
-		call feedkeys('K', 'in')
-	endif
+    if CocAction('hasProvider', 'hover')
+        call CocActionAsync('doHover')
+    else
+        call feedkeys('K', 'in')
+    endif
 endfunction
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 augroup mygroup
-	autocmd!
-	autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    autocmd!
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 xmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -49,12 +49,12 @@ xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
 if has('nvim-0.4.0') || has('patch-8.2.0750')
-	nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-	nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-	inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-	inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-	vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-	vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+    nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+    inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+    inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+    vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
 command! -nargs=0 Format :call CocActionAsync('format')
@@ -80,24 +80,24 @@ nnoremap <silent> K :call ShowDocumentation()<cr>
 "  coc extensions
 let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = ['coc-json'
-			\, 'coc-clangd'
-			\, 'coc-go'
-			\, 'coc-jedi'
-			\, 'coc-vimlsp'
-			\, 'coc-marketplace'
-			\, 'coc-rust-analyzer'
-			\, 'coc-markdownlint'
-			\, 'coc-markdown-preview-enhanced'
-			\, 'coc-webview'
-			\, 'coc-github'
-			\, 'coc-jsref'
-			\, 'coc-sumneko-lua'
-			\, 'coc-explorer'
-			\, 'coc-tabnine'
-			\, 'coc-clang-format-style-options'
-			\, 'coc-yaml'
-			\, 'coc-snippets'
-			\]
+            \, 'coc-clangd'
+            \, 'coc-go'
+            \, 'coc-jedi'
+            \, 'coc-vimlsp'
+            \, 'coc-marketplace'
+            \, 'coc-rust-analyzer'
+            \, 'coc-markdownlint'
+            \, 'coc-markdown-preview-enhanced'
+            \, 'coc-webview'
+            \, 'coc-github'
+            \, 'coc-jsref'
+            \, 'coc-sumneko-lua'
+            \, 'coc-explorer'
+            \, 'coc-tabnine'
+            \, 'coc-clang-format-style-options'
+            \, 'coc-yaml'
+            \, 'coc-snippets'
+            \]
 
 
 runtime coc/clangd.vim
