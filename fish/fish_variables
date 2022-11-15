@@ -21,7 +21,9 @@ SETUVAR _fish_abbr_pr:set\x20\x2dx\x20http_proxy\x20http\x3a//127\x2e0\x2e0\x2e1
 SETUVAR _fish_abbr_r:ranger
 SETUVAR _fish_abbr_rm:rm\x20\x2drf
 SETUVAR _fish_abbr_s:sudo
-SETUVAR _fish_abbr_vf:vim\x20\x28find\x20\x2e\x20\x2dtype\x20f\x20\x7c\x20fzf\x29
+SETUVAR _fish_abbr_ta:tmux\x20a
+SETUVAR _fish_abbr_tn:tmux\x20new
+SETUVAR _fish_abbr_vf:nvim\x20\x28find\x20\x2e\x20\x2dtype\x20f\x20\x7c\x20fzf\x29
 SETUVAR _fish_abbr_vim:nvim
 SETUVAR _fish_abbr_xm:xmake
 SETUVAR _fish_abbr_yi:yay\x20\x2dS
