@@ -24,9 +24,6 @@ require'nvim-treesitter.configs'.setup {
             node_decremental = "<bs>",
         },
     },
-    indent = {
-        enable = true,
-    },
 }
 EOF
 set foldmethod=expr
