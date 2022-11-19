@@ -1,3 +1,3 @@
 
-nnoremap <leader>q :TranslateW<cr>
-vnoremap <leader>q :TranslateWV<cr>
+nnoremap <leader>q <Plug>TranslateW<cr>
+vnoremap <leader>q <Plug>TranslateWV<cr>
