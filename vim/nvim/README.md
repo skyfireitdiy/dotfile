@@ -74,7 +74,6 @@ coc相关插件的配置
 | normal        | `<leader>`r  | 整个buffer替换光标下的单词             |
 | normal        | `<leader>`R  | 整个buffer替换光标下的单词（全词匹配） |
 | normal        | `<leader>`M  | 切换只读模式                           |
-| normal        | Q            | 回放宏（q为录制）                      |
 | normal/visual | gh           | 跳到行首                               |
 | normal/visual | gl           | 跳到行尾                               |
 | normal/visual | g`<Down>`    | 向下跳25行                             |
@@ -101,27 +100,21 @@ coc相关插件的配置
 | normal | `<leader>`f   | 查找git管理的文件                        |
 | normal | `<leader>`ff  | 查找所有文件                             |
 | normal | `<leader>`gs  | git变更的文件                            |
-| normal | `<leader>`ga  | git操作                                  |
 | normal | `<leader>`b   | buffer列表                               |
-| normal | `<leader>`B   | 所有缓冲区（包括历史的）                 |
-| normal | `<leader>`g;  | 本缓冲区内的变更                         |
 | normal | `<leader>`L   | 使用光标下的单词搜索本缓冲区内的行       |
 | normal | `<leader>`gr  | 整个工程中查找                           |
-| normal | `<leader>`q   | QuickFix搜索                             |
 | normal | `<leader>`G   | 使用光标下的单词搜索整个项目             |
 | normal | `<leader>`h   | 历史打开的文件                           |
-| normal | `<leader>`:   | 命令搜索                                 |
+| normal | `<leader>`:   | 历史命令搜索                             |
+| normal | `<leader>`x   | 命令搜索                                 |
 | normal | `<leader>`c   | 当前缓冲区文件的git历史                  |
 | normal | `<leader>`C   | 整个项目的git历史                        |
-| normal | `<leader>`y   | yank寄存器                               |
 | normal | `<leader>`t   | 当前缓冲区的tags                         |
 | normal | `<leader>`T   | 整个项目的tags                           |
 | normal | `<leader>`mv  | markdown预览                             |
 | normal | `<leader>`F   | 在整个项目中查找（显示在QuickFix窗口）   |
 | normal | `<leader>`co  | 选择主题                                 |
 | normal | `<leader>`rg  | 在整个项目中模糊查找                     |
-| normal | `<leader>`ft  | 当前缓冲区的tags                         |
-| normal | `<leader>`fT  | 整个项目的tags                           |
 | normal | `<leader>`m   | 书签                                     |
 | normal | `<leader>`W   | 窗口列表                                 |
 | normal | `<leader>`rg  | 在整个项目中模糊查找                     |
@@ -180,18 +173,18 @@ coc相关插件的配置
 
 以下是一个例子：
 
-	```vim
+    ```vim
 function! UserFinallyFunc()
-	colorscheme monokai_soda
-	endfunction
+    colorscheme monokai_soda
+    endfunction
 
 function UserBeforeGetLoadFlagsFunc()
-	" 设置轻量化模式
-	let g:light_vim = 1
-	endfunction
+    " 设置轻量化模式
+    let g:light_vim = 1
+    endfunction
 
-	let g:FinallyFunc = function('UserFinallyFunc')
-	let g:BeforeGetLoadFlagsFunc = function('UserBeforeGetLoadFlagsFunc')
-	```
+    let g:FinallyFunc = function('UserFinallyFunc')
+    let g:BeforeGetLoadFlagsFunc = function('UserBeforeGetLoadFlagsFunc')
+    ```
 
-	此配置设置轻量化加载方式，并且在加载完成之后将主题设置为`monokai_soda`
+    此配置设置轻量化加载方式，并且在加载完成之后将主题设置为`monokai_soda`
