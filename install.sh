@@ -77,7 +77,7 @@ config_tmux(){
 
 config_i3() {
 	replace_config ~/.config/i3 $(pwd)/i3
-	replace_config ~/.config/i3status $(pwd)/i3status
+	replace_config ~/.config/polybar $(pwd)/polybar
 	echo i3 配置成功!
 }
 
