@@ -81,6 +81,11 @@ config_i3() {
 	echo i3 配置成功!
 }
 
+config_kitty() {
+	replace_config ~/.config/kitty $(pwd)/kitty
+	echo kitty 配置成功!
+}
+
 config_konsole() {
 	replace_config ~/.local/share/konsole/skyfire.profile $(pwd)/skyfire.profile
 	echo konsole 配置成功！
