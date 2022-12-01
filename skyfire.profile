@@ -6,3 +6,7 @@ UseFontLineChararacters=false
 [General]
 Name=skyfire
 Parent=FALLBACK/
+
+[Scrolling]
+HistoryMode=2
+ScrollBarPosition=2
