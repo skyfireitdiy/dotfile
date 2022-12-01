@@ -19,6 +19,11 @@
 #set $mod Mod1
 set $mod Mod4
 
+new_window none
+new_float normal
+hide_edge_borders both
+gaps outer 5
+
 # Font for window titles. Will also be used by the bar.
 font pango:monospace 15
 
@@ -27,7 +32,8 @@ font pango:monospace 15
 #font pango:DejaVu Sans Mono 8
 
 # start a terminal. We use kitty.
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -49,6 +55,8 @@ bindsym $mod+Shift+d exec --no-startup-id rofi -show run -theme Monokai
 # Launch Polybar. Take a look at ~/.confi/polybar/config to
 # configure the bar.
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+exec_always --no-startup-id fcitx
 
 # Display Wallpaper, always.
 exec_always feh --bg-fill /usr/share/backgrounds/i3/wall.png
