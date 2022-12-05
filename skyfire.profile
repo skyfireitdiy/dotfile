@@ -1,6 +1,7 @@
 [Appearance]
+AntiAliasFonts=true
 ColorScheme=Breeze
-Font=SauceCodePro Nerd Font Mono,9,-1,5,75,1,0,0,0,0,Bold Italic
+Font=iMWritingMonoS Nerd Font Mono,11,-1,5,75,1,0,0,0,0,Bold Italic
 UseFontLineChararacters=false
 
 [General]
