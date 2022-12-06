@@ -272,4 +272,4 @@ bindsym $mod+b workspace 5; exec firefox
 #eDP-X is the display used in Laptops.
 #HDMI-X is display used in Desktop connected to monitor with HDMI Cable.
 #VGA-X is display used in Desktop connected to monitor with VGA Cable.
-exec --no-startup-id xrandr --output HDMI-2 --right-of HDMI-1 --auto
+exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
