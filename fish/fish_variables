@@ -17,7 +17,7 @@ SETUVAR _fish_abbr_kb:kubectl
 SETUVAR _fish_abbr_lg:lazygit
 SETUVAR _fish_abbr_mk:make
 SETUVAR _fish_abbr_nv:nvim
-SETUVAR _fish_abbr_pr:set\x20\x2dx\x20http_proxy\x20http\x3a//127\x2e0\x2e0\x2e1\x3a45961\x20\x3b\x20set\x20\x2dx\x20https_proxy\x20http\x3a//127\x2e0\x2e0\x2e1\x3a45961\x20\x3b\x20set\x20\x2dx\x20socks_proxy\x20127\x2e0\x2e0\x2e1\x3a45961
+SETUVAR _fish_abbr_pr:set\x20\x2dx\x20http_proxy\x20http\x3a//127\x2e0\x2e0\x2e1\x3a45961\x20\x3b\x20set\x20\x2dx\x20https_proxy\x20http\x3a//127\x2e0\x2e0\x2e1\x3a45961\x20\x3b\x20set\x20\x2dx\x20socks_proxy\x20127\x2e0\x2e0\x2e1\x3a44659
 SETUVAR _fish_abbr_r:ranger
 SETUVAR _fish_abbr_rm:rm\x20\x2drf
 SETUVAR _fish_abbr_s:sudo
