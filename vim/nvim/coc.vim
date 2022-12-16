@@ -97,6 +97,7 @@ let g:coc_global_extensions = ['coc-json'
             \, 'coc-clang-format-style-options'
             \, 'coc-yaml'
             \, 'coc-snippets'
+            \, 'coc-cmake'
             \]
 
 
