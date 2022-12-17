@@ -43,7 +43,7 @@ endfunction
 command! -nargs=0 RC :call RandomColor()
 
 if has('nvim')
-    colorscheme monokai_soda
+    colorscheme base16-dracula
 else
     color badwolf
 endif
