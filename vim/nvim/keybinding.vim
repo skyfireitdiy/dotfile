@@ -69,6 +69,8 @@ nnoremap Q :qa<cr>
 nnoremap WQ :wqa<cr>
 nnoremap <leader>. :<Up><cr>
 nnoremap <C-d> "_d
+nnoremap <C-j> <C-u>
+nnoremap <C-k> <C-d>
 
 vnoremap <Up> k
 vnoremap <Down> j
