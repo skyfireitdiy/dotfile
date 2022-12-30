@@ -71,12 +71,14 @@ nnoremap <leader>. :<Up><cr>
 nnoremap <C-d> "_d
 nnoremap <C-j> <C-u>
 nnoremap <C-k> <C-d>
+nnoremap <S-Left> vh
+nnoremap <S-Right> vl
 
 vnoremap <Up> k
 vnoremap <Down> j
 vnoremap <Left> h
 vnoremap <Right> l
-vnoremap gh 0
+vnoremap gh ^
 vnoremap gl $
 vnoremap g<Left> 0
 vnoremap g<Right> $
@@ -88,4 +90,6 @@ vnoremap <C-c> <ESC>
 vnoremap <leader>. :<Up><cr>
 vnoremap p P
 vnoremap P p
+vnoremap <S-Left> h
+vnoremap <S-Right> l
 
