@@ -106,6 +106,11 @@ config_fonts() {
 	echo 字体安装成功！
 }
 
+config_hx() {
+	replace_config ~/.config/helix/config.toml $(pwd)/helix/config.toml
+	echo hx 配置成功！
+}
+
 while test $# -gt 0
 do
 	config_$1
