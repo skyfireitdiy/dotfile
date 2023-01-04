@@ -60,6 +60,7 @@ let g:config_table = [
             \ [ 'dracula/vim'],
             \ [ 'sjl/badwolf' ],
             \ [ 'nvim-treesitter/nvim-treesitter', 'treesitter.vim', ['heavy', 'nvim'], "{'do':':TSUpdate'}"],
+            \ [ 'nvim-treesitter/nvim-treesitter-textobjects', 'treesitter-textobjects.vim', ['heavy', 'nvim']],
             \ ['ray-x/lsp_signature.nvim', 'lsp_signature.vim', ['nvim']],
             \ ['m-demare/hlargs.nvim', '', ['nvim']],
             \ ['nvim-lua/plenary.nvim', '', ['nvim']],
