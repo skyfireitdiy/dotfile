@@ -10,20 +10,17 @@
     "suggest.minTriggerInputLength": 1,
     "suggest.floatConfig": {
         "border": true,
-        "rounded": true,
         "highlight": "CocFloating",
         "borderhighlight": "CocFloating"
     },
     "diagnostic.floatConfig": {
         "border": true,
-        "rounded": true,
         "borderhighlight": "CocFloating",
         "highlight": "CocFloating",
         "focusable": true
     },
     "hover.floatConfig": {
         "border": true,
-        "rounded": true,
         "borderhighlight": "CocFloating",
         "highlight": "CocFloating",
         "focusable": true,
