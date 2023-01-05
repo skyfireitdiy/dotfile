@@ -144,6 +144,7 @@ let g:config_table = [
             \ [ 'vim-scripts/scratch.vim'],
             \ [ 'jabirali/vim-tmux-yank'],
             \ [ 'ludovicchabant/vim-gutentags', 'ctags.vim'],
+            \ [ 'preservim/nerdcommenter', 'nerdcommenter.vim'],
             \ [ 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '..g:npm_registry..' --frozen-lockfile'}"],
             \ [ '', 'zoom.vim'],
             \ [ '', 'custom.vim' ],

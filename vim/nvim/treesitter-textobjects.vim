@@ -12,9 +12,11 @@ require'nvim-treesitter.configs'.setup {
                 ["af"] = "@function.outer",
                 ["if"] = "@function.inner",
                 ["ac"] = "@class.outer",
-                -- You can optionally set descriptions to the mappings (used in the desc parameter of
-                -- nvim_buf_set_keymap) which plugins like which-key display
-                ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+                ["ic"] = "@class.inner",
+                ["aa"] = "@parameter.outer",
+                ["ia"] = "@parameter.inner",
+                ["ab"] = "@block.outer",
+                ["ib"] = "@block.inner",
             },
             -- You can choose the select mode (default is charwise 'v')
             --
@@ -24,9 +26,14 @@ require'nvim-treesitter.configs'.setup {
             -- and should return the mode ('v', 'V', or '<c-v>') or a table
             -- mapping query_strings to modes.
             selection_modes = {
-                ['@parameter.outer'] = 'v', -- charwise
-                ['@function.outer'] = 'V', -- linewise
-                ['@class.outer'] = '<c-v>', -- blockwise
+                ['@parameter.outer'] = 'v',
+                ['@parameter.inner'] = 'v',
+                ['@block.outer'] = 'v',
+                ['@block.inner'] = 'v',
+                ['@function.inner'] = 'V',
+                ['@function.outer'] = 'V',
+                ['@class.inner'] = 'V',
+                ['@class.outer'] = 'V',
             },
             -- If you set this to `true` (default is `false`) then any textobject is
             -- extended to include preceding or succeeding whitespace. Succeeding
@@ -37,35 +44,39 @@ require'nvim-treesitter.configs'.setup {
             -- * query_string: eg '@function.inner'
             -- * selection_mode: eg 'v'
             -- and should return true of false
-            include_surrounding_whitespace = true,
+            include_surrounding_whitespace = false,
         },
         swap = {
             enable = true,
             swap_next = {
-                ["<leader>a"] = "@parameter.inner",
+                -- ["<leader>a"] = "@parameter.inner",
             },
             swap_previous = {
-                ["<leader>A"] = "@parameter.inner",
+                -- ["<leader>A"] = "@parameter.inner",
             },
         },
         move = {
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
-            goto_next_start = {
-                ["]m"] = "@function.outer",
-                ["]]"] = { query = "@class.outer", desc = "Next class start" },
-            },
             goto_next_end = {
-                ["]M"] = "@function.outer",
-                ["]["] = "@class.outer",
+                ["]f"] = "@function.outer",
+                ["]c"] = "@class.outer",
+                ["]a"] = "@parameter.outer",
+            },
+            goto_next_start = {
+                ["]F"] = "@function.outer",
+                ["]C"] = "@class.outer",
+                ["]A"] = "@parameter.outer",
             },
             goto_previous_start = {
-                ["[m"] = "@function.outer",
-                ["[["] = "@class.outer",
+                ["[f"] = "@function.outer",
+                ["[c"] = "@class.outer",
+                ["[a"] = "@parameter.outer",
             },
             goto_previous_end = {
-                ["[M"] = "@function.outer",
-                ["[]"] = "@class.outer",
+                ["[F"] = "@function.outer",
+                ["[C"] = "@class.outer",
+                ["[A"] = "@parameter.outer",
             },
         },
         lsp_interop = {
@@ -74,7 +85,7 @@ require'nvim-treesitter.configs'.setup {
             floating_preview_opts = {},
             peek_definition_code = {
                 ["<leader>df"] = "@function.outer",
-                ["<leader>dF"] = "@class.outer",
+                ["<leader>dc"] = "@class.outer",
             },
         },
     },
