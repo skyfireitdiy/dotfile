@@ -67,34 +67,37 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nnoremap <silent> K :call ShowDocumentation()<cr>
 
+" coc 插件配置表项  coc插件名  插件配置（可选）
+let g:coc_config = [
+            \ ["coc-clangd", 'clangd.vim'],
+            \ ['coc-go'],
+            \ ['coc-jedi'],
+            \ ['coc-vimlsp'],
+            \ ['coc-marketplace'],
+            \ ['coc-rust-analyzer'],
+            \ ['coc-markdownlint'],
+            \ ['coc-markdown-preview-enhanced', 'markdown-preview-enhanced.vim'],
+            \ ['coc-webview'],
+            \ ['coc-github'],
+            \ ['coc-jsref'],
+            \ ['coc-sumneko-lua'],
+            \ ['coc-explorer', 'explorer.vim'],
+            \ ['coc-tabnine'],
+            \ ['coc-clang-format-style-options'],
+            \ ['coc-yaml'],
+            \ ['coc-snippets'],
+            \ ['coc-cmake'],
+            \ ['coc-terminal'],
+            \ ['coc-toml'],
+            \ ]
 
 "  coc extensions
 let g:coc_disable_startup_warning = 1
-let g:coc_global_extensions = ['coc-json'
-            \, 'coc-clangd'
-            \, 'coc-go'
-            \, 'coc-jedi'
-            \, 'coc-vimlsp'
-            \, 'coc-marketplace'
-            \, 'coc-rust-analyzer'
-            \, 'coc-markdownlint'
-            \, 'coc-markdown-preview-enhanced'
-            \, 'coc-webview'
-            \, 'coc-github'
-            \, 'coc-jsref'
-            \, 'coc-sumneko-lua'
-            \, 'coc-explorer'
-            \, 'coc-tabnine'
-            \, 'coc-clang-format-style-options'
-            \, 'coc-yaml'
-            \, 'coc-snippets'
-            \, 'coc-cmake'
-            \]
-
-
-runtime coc/clangd.vim
-runtime coc/explorer.vim
-runtime coc/markdown-preview-enhanced.vim
-
-
+let g:coc_global_extensions = []
+for c in g:coc_config
+    let g:coc_global_extensions = add(g:coc_global_extensions, c[0])
+    if len(c) > 1
+        execute "runtime coc/" .. c[1]
+    endif
+endfor
 
