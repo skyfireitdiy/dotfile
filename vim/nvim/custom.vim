@@ -46,7 +46,7 @@ set enc=utf-8
 let &termencoding=&encoding
 set fencs=utf-8,ucs-bom,gb18030
 set mouse=a
-set timeoutlen=100
+set timeoutlen=200
 
 set foldlevelstart=99
 set foldlevel=99

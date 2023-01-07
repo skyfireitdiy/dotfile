@@ -22,13 +22,6 @@ inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 inoremap <C-c> <ESC>
 
-
-nnoremap <leader>tt :tabnew<space>
-nnoremap <leader>tn :tabnext<cr>
-nnoremap <leader>tp :tabprev<cr>
-nnoremap <leader>to :tabonly<cr>
-nnoremap <leader>tc :tabclose<cr>
-
 nnoremap <leader>w <C-w>
 if has('nvim')
     nnoremap <leader>rl :w<cr>:source ~/.config/nvim/init.vim<cr>
