@@ -28,7 +28,7 @@ if has('nvim')
     nnoremap <leader>s :sp<cr><C-w>j:terminal<cr>i
 else
     nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
-    nnoremap <leader>s :shell<cr>
+    nnoremap <leader>s :terminal<cr>
 endif
 nnoremap <leader>? :set hlsearch!<cr>
 
@@ -86,3 +86,5 @@ vnoremap P p
 vnoremap <S-Left> h
 vnoremap <S-Right> l
 
+tmap <ESC><ESC> <C-\><C-o>
+tmap <ESC><ESC><ESC> <C-\><C-n>

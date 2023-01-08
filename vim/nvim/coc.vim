@@ -87,7 +87,6 @@ let g:coc_config = [
             \ ['coc-yaml'],
             \ ['coc-snippets'],
             \ ['coc-cmake'],
-            \ ['coc-terminal'],
             \ ['coc-toml'],
             \ ]
 
