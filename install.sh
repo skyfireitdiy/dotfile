@@ -97,15 +97,6 @@ config_x() {
 }
 
 
-config_fonts() {
-	mkdir -p ~/.fonts
-	curr=`pwd`
-	cd ~/.fonts
-	unzip $curr/fonts.zip
-	sudo fc-cache -fv ~/.fonts
-	echo 字体安装成功！
-}
-
 config_hx() {
 	replace_config ~/.config/helix/config.toml $(pwd)/helix/config.toml
 	echo hx 配置成功！
