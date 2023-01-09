@@ -1,7 +1,5 @@
 nnoremap  <leader>co :Colors<cr>
 nnoremap  <leader>rg :Rg<cr>
-nnoremap  <leader>T :Tags<cr>
-nnoremap  <leader>t :BTags<cr>
 nnoremap  <leader>m :Marks<cr>
 nnoremap  <leader>W :Windows<cr>
 nnoremap  <leader>/ :History/<cr>
@@ -24,3 +22,4 @@ nnoremap <leader>x      :Commands<CR>
 
 nnoremap <leader>G      "9yiw:Rg<Space><C-r>9<cr>
 nnoremap <leader>L      "9yiw:BLines<Space><C-r>9<cr>
+nnoremap <leader>tt     "9yiw:Tags<Space><C-r>9<cr>
