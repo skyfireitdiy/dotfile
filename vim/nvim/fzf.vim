@@ -2,7 +2,6 @@ nnoremap  <leader>co :Colors<cr>
 nnoremap  <leader>rg :Rg<cr>
 nnoremap  <leader>m :Marks<cr>
 nnoremap  <leader>W :Windows<cr>
-nnoremap  <leader>/ :History/<cr>
 nnoremap  <leader>k :Maps<cr>
 nnoremap  <leader>H :Helptags<cr>
 nnoremap  <leader>t :BTags<cr>
@@ -16,8 +15,8 @@ nnoremap <leader>l      :BLines<CR>
 nnoremap <leader>h      :History<CR>
 nnoremap <leader>:      :History:<CR>
 nnoremap <leader>/      :History/<CR>
-nnoremap <leader>c      :BCommits<CR>
-nnoremap <leader>C      :Commits<CR>
+nnoremap <leader>gc     :BCommits<CR>
+nnoremap <leader>gC     :Commits<CR>
 nnoremap <leader>x      :Commands<CR>
 
 nnoremap <leader>G      "9yiw:Rg<Space><C-r>9<cr>
