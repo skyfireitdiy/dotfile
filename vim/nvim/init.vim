@@ -216,7 +216,7 @@ function! LoadPlugin()
             endif
             execute cmd
             let plugin_name = plugin[stridx(plugin, '/') + 1:]
-            if len(readdir(g:editor_type == 'nvim' ? g:home_dir .. '/.local/share/nvim/plugged/'.. plugin_name : g:home_dir .. '/.vim/plugged/'.. plugin_name)) == 0
+            if isdirectory(g:editor_type == 'nvim' ? g:home_dir .. '/.local/share/nvim/plugged/'.. plugin_name : g:home_dir .. '/.vim/plugged/'.. plugin_name) == 0
                 let plug_install = 1
             endif
         endif
