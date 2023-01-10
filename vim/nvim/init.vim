@@ -71,7 +71,6 @@ let g:config_table = [
             \ ['lewis6991/gitsigns.nvim', 'gitsigns.vim', ['nvim']],
             \ ['airblade/vim-gitgutter', 'gitgutter.vim', ['vim']],
             \ ['justinmk/vim-sneak', '', ['vim']],
-            \ ['scrooloose/nerdcommenter', '', ['vim']],
             \ ['gcmt/wildfire.vim', 'wildfire.vim', ['vim']],
             \ [ 'echasnovski/mini.nvim','mini.vim',['nvim']],
             \ [ 'shaeinst/roshnivim-cs','',['nvim']],
