@@ -78,8 +78,6 @@ let g:coc_config = [
             \ ['coc-markdownlint'],
             \ ['coc-markdown-preview-enhanced', 'markdown-preview-enhanced.vim'],
             \ ['coc-webview'],
-            \ ['coc-github'],
-            \ ['coc-jsref'],
             \ ['coc-sumneko-lua'],
             \ ['coc-explorer', 'explorer.vim'],
             \ ['coc-tabnine'],
@@ -87,7 +85,6 @@ let g:coc_config = [
             \ ['coc-yaml'],
             \ ['coc-snippets'],
             \ ['coc-cmake'],
-            \ ['coc-toml'],
             \ ]
 
 "  coc extensions
