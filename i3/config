@@ -33,7 +33,8 @@ font pango:monospace 15
 
 # start a terminal. We use kitty.
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec konsole
+# bindsym $mod+Return exec konsole
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -56,7 +57,7 @@ bindsym $mod+Shift+d exec --no-startup-id rofi -show run -theme Monokai
 # configure the bar.
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec_always --no-startup-id fcitx
+exec_always --no-startup-id fcitx5 -d
 
 # Display Wallpaper, always.
 exec_always feh --bg-fill /usr/share/backgrounds/i3/wall.png

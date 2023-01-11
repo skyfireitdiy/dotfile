@@ -10,7 +10,7 @@ nnoremap <silent> ]f :ProjectBufNext 'F<cr>
 nnoremap <silent> [f :ProjectBufPrev 'F<cr>
 
 
-augroup projectAutoCmd
-    autocmd!
-    autocmd BufEnter * :ProjectRootCD
-augroup end
+" augroup projectAutoCmd
+    " autocmd!
+    " autocmd BufEnter * :ProjectRootCD
+" augroup end
