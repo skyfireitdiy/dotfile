@@ -14,8 +14,8 @@ command_center.add({
 })
 
 command_center.add({
-  {desc="Telescope",cmd=":Telescope<CR>",keys={{"n","``t",noremap},{"v","``t",noremap},}},
-  {desc="SearchSession",cmd=":SearchSession<CR>",keys={{"n","<Leader>SS",noremap},{"v","<Leader>SS",noremap},}},
+  {desc=":Telescope",cmd=":Telescope<CR>",keys={{"n","``t",noremap},{"v","``t",noremap},}},
+  {desc=":SearchSession",cmd=":SearchSession<CR>",keys={{"n","<Leader>SS",noremap},{"v","<Leader>SS",noremap},}},
   {desc=":Telescope colorscheme<cr>", cmd=":Telescope colorscheme<cr>", keys={{"n","<leader>co",noremap},}},
   {desc=":Telescope grep_string<cr>", cmd=":Telescope grep_string<cr>", keys={{"n","<leader>rg",noremap},}},
   {desc=":Telescope marks<cr>", cmd=":Telescope marks<cr>", keys={{"n","<leader>m",noremap},}},
@@ -34,6 +34,10 @@ command_center.add({
   {desc=":Telescope git_bcommits<CR>", cmd=":Telescope git_bcommits<CR>", keys={{"n","<leader>gc",noremap},}},
   {desc=":Telescope git_commits<CR>", cmd=":Telescope git_commits<CR>", keys={{"n","<leader>gC",noremap},}},
   {desc=":Telescope commands<CR>", cmd=":Telescope commands<CR>", keys={{"n","<leader>x",noremap},}},
+  {desc=":Telescope file_browser<CR>", cmd=":Telescope file_browser<CR>", keys={{"n","<leader>E",noremap},}},
+  {desc=":Telescope git_diffs diff_commits<CR>", cmd=":Telescope git_diffs diff_commits<CR>", keys={{"n","<leader>gd",noremap},}},
+  {desc=":Telescope coc<CR>", cmd=":Telescope coc<CR>", keys={{"n","<leader>C",noremap},}},
+  {desc=":Telescope adjacent<CR>", cmd=":Telescope adjacent<CR>", keys={{"n","<leader>fa",noremap},}},
 
 
   }, {
@@ -108,6 +112,10 @@ require('telescope').load_extension('session-lens')
 require('telescope').load_extension('media_files')
 require('telescope').load_extension('bookmarks')
 require('telescope').load_extension('command_center')
+require('telescope').load_extension('file_browser')
+require('telescope').load_extension('git_diffs')
+require('telescope').load_extension('coc')
+require('telescope').load_extension('adjacent')
 
 
 EOF
