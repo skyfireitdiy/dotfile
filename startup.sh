@@ -36,10 +36,12 @@ install_normal_app() {
         fcitx5-config-qt \
         ripgrep universal-ctags gcc nodejs xsel npm \
         go rustup fd icalingua++ linux-headers \
-        vmware-workstation  \
+        vmware-workstation flameshot \
         p7zip wget aria2 unzip \
         wqy-zenhei wqy-microhei-lite wqy-microhei \
-        wqy-bitmapfont nerd-fonts-complete
+        wqy-bitmapfont nerd-fonts-complete \
+        ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git \
+        fontpreview  
 	sudo systemctl start vmware-networks
 	sudo systemctl enable vmware-networks
 	sudo systemctl start vmware-usbarbitrator
