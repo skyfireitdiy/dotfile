@@ -146,7 +146,9 @@ let g:config_table = [
             \ [ 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '..g:npm_registry..' --frozen-lockfile'}"],
             \ [ 'nvim-lua/plenary.nvim', '', ['nvim']],
             \ [ 'nvim-telescope/telescope.nvim', 'telescope.vim', ["nvim"]],
-            \ ['nvim-telescope/telescope-fzf-native.nvim', '', ["nvim"], "{ 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }"],
+            \ [ 'nvim-telescope/telescope-fzf-native.nvim', '', ["nvim"], "{ 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }"],
+            \ [ 'rmagatti/auto-session', '', ['nvim']],
+            \ [ 'rmagatti/session-lens', '', ['nvim']],
             \ [ '', 'zoom.vim'],
             \ [ '', 'custom.vim' ],
             \ [ '', 'keybinding.vim'],
@@ -175,7 +177,7 @@ function! InstallVim()
     if !filereadable(g:home_dir.."/.local/share/nvim/site/autoload/plug.vim")
         " nvim
         echom system("curl -fLo " .. g:home_dir .. "/.local/share/nvim/site/autoload/plug.vim --create-dirs https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim")
-        echom system("mkdir -p " .. g:home_dir .. "/.local/share/nvim/session")
+        " echom system("mkdir -p " .. g:home_dir .. "/.local/share/nvim/session")
         " vim
         echom system("ln -sf " ..g:home_dir.."/.local/share/nvim/site/autoload "..g:home_dir .. "/.vim/autoload")
         echom system("ln -sf " ..  g:home_dir.."/.config/nvim/* " .. g:home_dir .. "/.vim")

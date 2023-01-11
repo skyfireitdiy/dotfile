@@ -20,8 +20,8 @@ lua << EOF
 	require('mini.map').setup()
 	require('mini.misc').setup()
 	require('mini.pairs').setup()
-	require('mini.sessions').setup()
-	require('mini.starter').setup()
+--	require('mini.sessions').setup()
+--	require('mini.starter').setup()
 	-- require('mini.statusline').setup()
 	-- require('mini.surround').setup()
 	require('mini.tabline').setup()
@@ -29,6 +29,6 @@ lua << EOF
 	require('mini.trailspace').setup()
 EOF
 	nnoremap <leader>z :lua MiniMisc.zoom()<cr>
-	nnoremap <leader>SS :lua MiniSessions.select()<cr>
-	nnoremap <leader>SW :lua MiniSessions.write('',nil)<Left><Left><Left><Left><Left><Left>
+	" nnoremap <leader>SS :lua MiniSessions.select()<cr>
+	" nnoremap <leader>SW :lua MiniSessions.write('',nil)<Left><Left><Left><Left><Left><Left>
 endif
