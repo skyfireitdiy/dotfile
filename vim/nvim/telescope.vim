@@ -1,2 +1,2 @@
 
-nnoremap `p :Telescope<cr>
+nnoremap `tt :Telescope<cr>
