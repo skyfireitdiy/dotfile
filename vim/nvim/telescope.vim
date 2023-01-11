@@ -1,0 +1,2 @@
+
+nnoremap `p :Telescope<cr>
