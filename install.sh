@@ -87,7 +87,7 @@ config_kitty() {
 }
 
 config_konsole() {
-	replace_config ~/.local/share/konsole/skyfire.profile $(pwd)/skyfire.profile
+	replace_config ~/.local/share/konsole $(pwd)/konsole
 	echo konsole 配置成功！
 }
 
