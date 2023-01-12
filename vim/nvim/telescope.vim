@@ -14,7 +14,7 @@ command_center.add({
 })
 
 command_center.add({
-  {desc=":Telescope",cmd=":Telescope<CR>",keys={{"n","``t",noremap},{"v","``t",noremap},}},
+  {desc=":Telescope",cmd=":Telescope<CR>",keys={{"n","```",noremap},{"v","``t",noremap},}},
   {desc=":SearchSession",cmd=":SearchSession<CR>",keys={{"n","``SS",noremap},{"v","``SS",noremap},}},
   {desc=":Telescope colorscheme<cr>", cmd=":Telescope colorscheme<cr>", keys={{"n","``co",noremap},}},
   {desc=":Telescope grep_string<cr>", cmd=":Telescope grep_string<cr>", keys={{"n","``rg",noremap},}},
