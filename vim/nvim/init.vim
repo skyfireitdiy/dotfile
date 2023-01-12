@@ -163,6 +163,11 @@ let g:config_table = [
             \ [ '', 'colorscheme.vim' ],
             \ ]
 
+" 增加Plugin
+function! AddPlugin(plugin_config)
+    let g:config_table = add(g:config_table, a:plugin_config)
+endfunction
+
 " 增加依赖项检测
 function! CheckDeps()
     let flags = 1
@@ -265,17 +270,28 @@ endfunction
 
 let g:DefaultCheckdepsFunc =function('CheckDeps')
 let g:DefaultInstallVimFunc =function('InstallVim')
-let g:BeforeGetLoadFlagsFunc =function('EmptyFunc')
+
 let g:BeforeLoadPluginsFunc =function('EmptyFunc')
 let g:BeforeLoadConfigFunc =function('EmptyFunc')
 let g:FinallyFunc =function('EmptyFunc')
+
+function! SetBeforeGetLoadPluginsFunc(func_name)
+    let g:BeforeLoadPluginsFunc = function(a:func_name)
+endfunction
+
+function! SetBeforeGetLoadConfigFunc(func_name)
+    let g:BeforeLoadConfigFunc = function(a:func_name)
+endfunction
+
+function! SetFinallyFunc(func_name)
+    let g:FinallyFunc = function(a:func_name)
+endfunction
 
 call LoadUserConfig()
 if g:DefaultCheckdepsFunc() == 1
     if g:install_vim == 1
         call g:DefaultInstallVimFunc()
     endif
-    call g:BeforeGetLoadFlagsFunc()
     call GetLoadFlags()
     call g:BeforeLoadPluginsFunc()
     call LoadPlugin()
