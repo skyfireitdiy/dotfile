@@ -1,10 +1,4 @@
-export XIM_PROGRAM="fcitx"
-export XIM="fcitx"
-export XIM_ARGS="-d"
-export GTK_IM_MODULE="xim"
-export QT_IM_MODULE="fcitx"
-export ECORE_IMF_MODULE="xim"
-export XMODIFIERS="@im=fcitx"
-export GLFW_IM_MODULE="ibus"
-export SDL_IM_MODULE="fcitx"
 
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
