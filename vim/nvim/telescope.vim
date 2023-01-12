@@ -8,14 +8,14 @@ local noremap = { noremap = true, silent = true }
 local command_center = require("command_center")
 
 command_center.add({
-  {desc="Opencommand_center",cmd=":Telescope command_center<CR>",keys={{"n","``c",noremap},{"v","``c",noremap},},}
+  {desc="Opencommand_center",cmd=":Telescope command_center<CR>",keys={{"n","``c",noremap},}},
 }, {
   mode = command_center.mode.SET
 })
 
 command_center.add({
-  {desc=":Telescope",cmd=":Telescope<CR>",keys={{"n","```",noremap},{"v","``t",noremap},}},
-  {desc=":SearchSession",cmd=":SearchSession<CR>",keys={{"n","``SS",noremap},{"v","``SS",noremap},}},
+  {desc=":Telescope",cmd=":Telescope<CR>",keys={{"n","```",noremap},}},
+  {desc=":SearchSession",cmd=":SearchSession<CR>",keys={{"n","``s",noremap},}},
   {desc=":Telescope colorscheme<cr>", cmd=":Telescope colorscheme<cr>", keys={{"n","``co",noremap},}},
   {desc=":Telescope grep_string<cr>", cmd=":Telescope grep_string<cr>", keys={{"n","``rg",noremap},}},
   {desc=":Telescope marks<cr>", cmd=":Telescope marks<cr>", keys={{"n","``m",noremap},}},
