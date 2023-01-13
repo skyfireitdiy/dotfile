@@ -14,32 +14,7 @@ command_center.add({
 })
 
 command_center.add({
-  {desc=":Telescope",cmd=":Telescope<CR>",keys={{"n","```",noremap},}},
-  {desc=":SearchSession",cmd=":SearchSession<CR>",keys={{"n","``s",noremap},}},
-  {desc=":Telescope colorscheme<cr>", cmd=":Telescope colorscheme<cr>", keys={{"n","``co",noremap},}},
-  {desc=":Telescope grep_string<cr>", cmd=":Telescope grep_string<cr>", keys={{"n","``rg",noremap},}},
-  {desc=":Telescope marks<cr>", cmd=":Telescope marks<cr>", keys={{"n","``m",noremap},}},
-  {desc=":Telescope keymaps<cr>", cmd=":Telescope keymaps<cr>", keys={{"n","``k",noremap},}},
-  {desc=":Telescope help_tags<cr>", cmd=":Telescope help_tags<cr>", keys={{"n","``H",noremap},}},
-  {desc=":Telescope current_buffer_tags<cr>", cmd=":Telescope current_buffer_tags<cr>", keys={{"n","``t",noremap},}},
-  {desc=":Telescope tags<cr>", cmd=":Telescope tags<cr>", keys={{"n","``T",noremap},}},
-  {desc=":Telescope find_files<CR>", cmd=":Telescope find_files<CR>", keys={{"n","``ff",noremap},}},
-  {desc=":Telescope git_files<CR>", cmd=":Telescope git_files<CR>", keys={{"n","``f",noremap},}},
-  {desc=":Telescope git_status<CR>", cmd=":Telescope git_status<CR>", keys={{"n","``gs",noremap},}},
-  {desc=":Telescope buffers<CR>", cmd=":Telescope buffers<CR>", keys={{"n","``b",noremap},}},
-  {desc=":Telescope current_buffer_fuzzy_find<CR>", cmd=":Telescope current_buffer_fuzzy_find<CR>", keys={{"n","``l",noremap},}},
-  {desc=":Telescope oldfiles<CR>", cmd=":Telescope oldfiles<CR>", keys={{"n","``h",noremap},}},
-  {desc=":Telescope command_history<CR>", cmd=":Telescope command_history<CR>", keys={{"n","``:",noremap},}},
-  {desc=":Telescope search_history<CR>", cmd=":Telescope search_history<CR>", keys={{"n","``/",noremap},}},
-  {desc=":Telescope git_bcommits<CR>", cmd=":Telescope git_bcommits<CR>", keys={{"n","``gc",noremap},}},
-  {desc=":Telescope git_commits<CR>", cmd=":Telescope git_commits<CR>", keys={{"n","``gC",noremap},}},
-  {desc=":Telescope commands<CR>", cmd=":Telescope commands<CR>", keys={{"n","``x",noremap},}},
-  {desc=":Telescope file_browser<CR>", cmd=":Telescope file_browser<CR>", keys={{"n","``E",noremap},}},
-  {desc=":Telescope git_diffs diff_commits<CR>", cmd=":Telescope git_diffs diff_commits<CR>", keys={{"n","``gd",noremap},}},
-  {desc=":Telescope coc<CR>", cmd=":Telescope coc<CR>", keys={{"n","``C",noremap},}},
-  {desc=":Telescope adjacent<CR>", cmd=":Telescope adjacent<CR>", keys={{"n","``fa",noremap},}},
-
-
+    -- 在这里添加command
   }, {
       mode = command_center.mode.ADD_SET
   })
@@ -122,3 +97,27 @@ EOF
 
 
 
+nnoremap ``` :Telescope<CR>
+nnoremap ``s :SearchSession<CR>
+nnoremap ``co :Telescope colorscheme<cr>
+nnoremap ``rg :Telescope grep_string<cr>
+nnoremap ``m :Telescope marks<cr>
+nnoremap ``k :Telescope keymaps<cr>
+nnoremap ``H :Telescope help_tags<cr>
+nnoremap ``t :Telescope current_buffer_tags<cr>
+nnoremap ``T :Telescope tags<cr>
+nnoremap ``ff :Telescope find_files<CR>
+nnoremap ``f :Telescope git_files<CR>
+nnoremap ``gs :Telescope git_status<CR>
+nnoremap ``b :Telescope buffers<CR>
+nnoremap ``l :Telescope current_buffer_fuzzy_find<CR>
+nnoremap ``h :Telescope oldfiles<CR>
+nnoremap ``: :Telescope command_history<CR>
+nnoremap ``/ :Telescope search_history<CR>
+nnoremap ``gc :Telescope git_bcommits<CR>
+nnoremap ``gC :Telescope git_commits<CR>
+nnoremap ``x :Telescope commands<CR>
+nnoremap ``E :Telescope file_browser<CR>
+nnoremap ``gd :Telescope git_diffs diff_commits<CR>
+nnoremap ``C :Telescope coc<CR>
+nnoremap ``fa :Telescope adjacent<CR>
