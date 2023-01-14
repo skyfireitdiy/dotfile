@@ -107,7 +107,6 @@ let g:config_table = [
             \ [ 'sainnhe/gruvbox-material','',['nvim']],
             \ [ 'sainnhe/everforest','',['nvim']],
             \ [ 'NTBBloodbath/doom-one.nvim','',['nvim']],
-            \ [ 'dracula/vim','',['nvim']],
             \ [ 'Mofiqul/dracula.nvim','',['nvim']],
             \ [ 'yashguptaz/calvera-dark.nvim','',['nvim']],
             \ [ 'projekt0n/github-nvim-theme','',['nvim']],
