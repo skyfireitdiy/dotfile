@@ -66,6 +66,10 @@ nnoremap <C-j> <C-u>
 nnoremap <C-k> <C-d>
 nnoremap <S-Left> vh
 nnoremap <S-Right> vl
+nnoremap <S-Up> :resize -1<CR>
+nnoremap <S-Down> :resize +1<CR>
+nnoremap <S-Left> :vertical resize -1<CR>
+nnoremap <S-Right> :vertical resize +1<CR>
 
 vnoremap <Up> k
 vnoremap <Down> j
