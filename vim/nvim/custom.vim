@@ -11,10 +11,15 @@ augroup autoRunGroup
     autocmd BufLeave * stopinsert
     autocmd InsertEnter * :set norelativenumber
     autocmd InsertLeave * :set relativenumber
-    autocmd BufWritePost *vimrc :source ~/.vimrc
     " autocmd BufEnter * :set nomodifiable
 augroup END
 
+augroup enterterm
+autocmd!
+autocmd TermEnter * :startinsert
+autocmd TermEnter * :set nonu
+autocmd TermEnter * :set norelativenumber
+augroup END
 
 set nobackup
 set nowritebackup
