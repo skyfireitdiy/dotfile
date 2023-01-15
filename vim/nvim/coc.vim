@@ -85,8 +85,8 @@ let g:coc_config = [
             \ ['coc-yaml'],
             \ ['coc-snippets'],
             \ ['coc-cmake'],
+            \ ['coc-cl'],
             \ ]
-
 "  coc extensions
 let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = []
