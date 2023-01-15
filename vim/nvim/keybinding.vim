@@ -89,6 +89,21 @@ vnoremap p P
 vnoremap P p
 vnoremap <S-Left> h
 vnoremap <S-Right> l
+vnoremap <leader>r "9y:%s/<C-r>9//g<Left><Left><C-r>9
+vnoremap <leader>R "9y:%s/\<<C-r>9\>//g<Left><Left><C-r>9
 
-tmap <ESC><ESC> <C-\><C-o>
-tmap <ESC><ESC><ESC> <C-\><C-n>
+" tnoremap <Esc> <C-\><C-n>
+tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
