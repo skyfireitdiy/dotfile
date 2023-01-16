@@ -1,6 +1,5 @@
 
 " gitsigns
-if has('nvim')
 lua << EOF
 require('gitsigns').setup({
     signs = {
@@ -75,4 +74,3 @@ require('gitsigns').setup({
 )
 EOF
 set statusline+=%{get(b:,'gitsigns_status','')}
-endif

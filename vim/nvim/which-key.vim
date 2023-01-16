@@ -1,5 +1,4 @@
 
-if has('nvim')
 lua << EOF
 require("which-key").setup {
     -- your configuration comes here
@@ -12,5 +11,4 @@ require("which-key").setup {
     }
 }
 EOF
-endif
 

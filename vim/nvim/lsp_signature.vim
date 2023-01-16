@@ -1,7 +1,6 @@
 
 "  lsp_signature
 
-if has('nvim')
 lua << EOF
 cfg = {
     debug = false, -- set to true to enable debug logging
@@ -65,4 +64,3 @@ require'lsp_signature'.setup(cfg) -- no need to specify bufnr if you don't use t
 require'lsp_signature'.on_attach(cfg, bufnr) -- no need to specify bufnr if you don't use toggle_key
 
 EOF
-endif

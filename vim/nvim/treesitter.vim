@@ -1,7 +1,6 @@
 
 "  treesitter
 
-if has('nvim')
 lua << EOF
 require("nvim-treesitter.install").prefer_git = true
 
@@ -28,5 +27,4 @@ require'nvim-treesitter.configs'.setup {
 EOF
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
-endif
 

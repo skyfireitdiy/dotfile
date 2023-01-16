@@ -1,5 +1,4 @@
 
-if has('nvim')
 lua << EOF
 	require('mini.ai').setup()
 	require('mini.align').setup()
@@ -28,7 +27,4 @@ lua << EOF
 	require('mini.test').setup()
 	require('mini.trailspace').setup()
 EOF
-	nnoremap <leader>z :lua MiniMisc.zoom()<cr>
-	" nnoremap <leader>SS :lua MiniSessions.select()<cr>
-	" nnoremap <leader>SW :lua MiniSessions.write('',nil)<Left><Left><Left><Left><Left><Left>
-endif
+nnoremap <leader>z :lua MiniMisc.zoom()<cr>

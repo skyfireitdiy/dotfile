@@ -1,13 +1,4 @@
 
-if !has('nvim')
-    lnoremap ' ''<ESC>i
-    inoremap ( ()<ESC>i
-    inoremap " ""<ESC>i
-    inoremap { {}<ESC>i
-    inoremap [ []<ESC>i
-endif
-
-
 inoremap hh <ESC>
 inoremap jj <ESC>
 inoremap kk <ESC>
@@ -23,13 +14,8 @@ inoremap <C-l> <Right>
 inoremap <C-c> <ESC>
 
 nnoremap <leader>w <C-w>
-if has('nvim')
-    nnoremap <leader>rl :w<cr>:source ~/.config/nvim/init.vim<cr>
-    nnoremap <leader>s :sp<cr><C-w>j:terminal<cr>i
-else
-    nnoremap <leader>rl :w<cr>:source ~/.vimrc<cr>
-    nnoremap <leader>s :terminal<cr>
-endif
+nnoremap <leader>rl :w<cr>:source ~/.config/nvim/init.vim<cr>
+nnoremap <leader>s :sp<cr><C-w>j:terminal<cr>i
 nnoremap <leader>? :set hlsearch!<cr>
 
 nnoremap <leader>fc :echo expand('%:p')<cr>

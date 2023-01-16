@@ -35,26 +35,17 @@ config_vim(){
 
 	bak_config ~/.config/nvim
 	bak_config ~/.local/share/nvim/site
-	bak_config ~/.vim
-	bak_config ~/.vimrc
 
-	rm -rf ~/.config/nvim ~/.local/share/nvim/site ~/.vim ~/.vimrc
+	rm -rf ~/.config/nvim ~/.local/share/nvim/site
 
 	mkdir -p ~/.config
-	mkdir -p ~/.vim
 	mkdir -p ~/.local/share
 
 	replace_config ~/.config/nvim $(pwd)/vim/nvim
-	replace_config ~/.vimrc ~/.config/nvim/init.vim
 
 	nvim --version 2>/dev/null
 	if [ $? -eq 0 ]; then
 		nvim
-	else
-		vim --version 2>/dev/null
-		if [ $? -eq 0 ]; then
-			vim
-		fi
 	fi
 
 	echo "[n]vim配置成功！"

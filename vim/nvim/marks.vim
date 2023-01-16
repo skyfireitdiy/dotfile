@@ -1,5 +1,4 @@
 
-if has('nvim')
 lua << EOF
 require'marks'.setup {
     -- whether to map keybinds or not. default true
@@ -36,4 +35,3 @@ require'marks'.setup {
     mappings = {}
 }
 EOF
-endif

@@ -42,8 +42,4 @@ endfunction
 
 command! -nargs=0 RC :call RandomColor()
 
-if has('nvim')
-    colorscheme base16-dracula
-else
-    color badwolf
-endif
+colorscheme base16-dracula
