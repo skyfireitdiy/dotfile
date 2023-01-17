@@ -78,7 +78,7 @@ vnoremap <S-Right> l
 vnoremap <leader>r "9y:%s/<C-r>9//g<Left><Left><C-r>9
 vnoremap <leader>R "9y:%s/\<<C-r>9\>//g<Left><Left><C-r>9
 
-" tnoremap <Esc> <C-\><C-n>
+tnoremap <ESC><ESC><ESC> <C-\><C-n>
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
