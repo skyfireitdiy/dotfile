@@ -42,12 +42,13 @@ scrolling:
 font:
   normal:
     family: 'SauceCodePro Nerd Font Mono'
+    style: Bold
   bold:
     family: 'SauceCodePro Nerd Font Mono'
     style: Bold
   italic:
     family: 'SauceCodePro Nerd Font Mono'
-    style: italic
+    style: Bold italic
   bold_italic:
     family: 'SauceCodePro Nerd Font Mono'
     style: Bold italic
