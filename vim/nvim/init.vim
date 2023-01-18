@@ -152,7 +152,6 @@ let g:config_table = [
             \ [ 'fannheyward/telescope-coc.nvim'],
             \ [ 'MaximilianLloyd/adjacent.nvim'],
             \ [ 'winston0410/range-highlight.nvim'], 
-            \ [ 'sunjon/shade.nvim', 'shade.vim'],
             \ [ 'xiyaowong/nvim-transparent', 'transparent.vim'],
             \ [ 'folke/twilight.nvim', 'twilight.vim'],
             \ ['yaocccc/nvim-hlchunk'],
