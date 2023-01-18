@@ -9,7 +9,7 @@ lua << EOF
 	require('mini.cursorword').setup()
 	require('mini.doc').setup()
 	require('mini.fuzzy').setup()
-	require('mini.indentscope').setup()
+--	require('mini.indentscope').setup()
 	-- require('mini.jump').setup()
 --	require('mini.jump2d').setup({
 --	mappings = {
