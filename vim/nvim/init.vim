@@ -153,7 +153,7 @@ let g:config_table = [
             \ [ 'winston0410/range-highlight.nvim'], 
             \ [ 'xiyaowong/nvim-transparent', 'transparent.vim'],
             \ [ 'folke/twilight.nvim', 'twilight.vim'],
-            \ [' yaocccc/nvim-hlchunk'],
+            \ [ 'yaocccc/nvim-hlchunk'],
             \ [ 'lukas-reineke/indent-blankline.nvim', 'indent-blankline.vim'],
             \ [ 'akinsho/toggleterm.nvim', 'toggleterm.vim'],
             \ [ '', 'zoom.vim'],
