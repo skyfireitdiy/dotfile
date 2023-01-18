@@ -55,5 +55,5 @@ EOF
 " By applying the mappings this way you can pass a count to your
 " mapping to open a specific window.
 " For example: 2<C-t> will open terminal 2
-nnoremap <silent><C-z> <Cmd>exe v:count1 . "ToggleTerm"<CR>
-tnoremap <silent><C-z> <C-\><C-o><Cmd>exe v:count1 . "ToggleTerm"<CR>
+nnoremap <silent><C-s> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+tnoremap <silent><C-s> <C-\><C-o><Cmd>exe v:count1 . "ToggleTerm"<CR>
