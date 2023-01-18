@@ -15,7 +15,6 @@ inoremap <C-c> <ESC>
 
 nnoremap <leader>w <C-w>
 nnoremap <leader>rl :w<cr>:source ~/.config/nvim/init.vim<cr>
-nnoremap <leader>s :sp<cr><C-w>j:terminal<cr>i
 nnoremap <leader>? :set hlsearch!<cr>
 
 nnoremap <leader>fc :echo expand('%:p')<cr>
