@@ -93,6 +93,13 @@ config_hx() {
 	echo hx 配置成功！
 }
 
+config_rime() {
+	replace_config ~/.config/fcitx5/rime/default.custom.yaml $(pwd)/rime/default.custom.yaml
+	replace_config ~/.config/fcitx5/rime/luna_pinyin.custom.yaml $(pwd)/rime/default.custom.yaml
+	replace_config ~/.config/fcitx5/rime/weasel.custom.yaml $(pwd)/rime/default.custom.yaml
+	echo "rime 配置完成"
+}
+
 while test $# -gt 0
 do
 	config_$1
