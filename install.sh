@@ -95,8 +95,9 @@ config_hx() {
 
 config_rime() {
 	replace_config ~/.config/fcitx5/rime/default.custom.yaml $(pwd)/rime/default.custom.yaml
-	replace_config ~/.config/fcitx5/rime/luna_pinyin.custom.yaml $(pwd)/rime/default.custom.yaml
-	replace_config ~/.config/fcitx5/rime/weasel.custom.yaml $(pwd)/rime/default.custom.yaml
+	replace_config ~/.config/fcitx5/rime/luna_pinyin_simp.custom.yaml $(pwd)/rime/luna_pinyin_simp.custom.yaml
+	replace_config ~/.config/fcitx5/rime/weasel.custom.yaml $(pwd)/rime/weasel.custom.yaml
+	replace_config ~/.config/fcitx5/rime/sogoupinyin.dict.yaml $(pwd)/rime/sogoupinyin.dict.yaml
 	echo "rime 配置完成"
 }
 
