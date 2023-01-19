@@ -44,7 +44,7 @@ function _fish_float_toggle()
     fish_float:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<C-x>", "<cmd>lua _fish_float_toggle()<CR>", {noremap = true, silent = true})
 
 
