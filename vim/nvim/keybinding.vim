@@ -27,8 +27,6 @@ nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left><C-r>9
 nnoremap <leader>R "9yiw:%s/\<<C-r>9\>//g<Left><Left><C-r>9
 nnoremap <leader>M :set nomodifiable!<cr>
 
-nnoremap <A-Left> <C-o>
-nnoremap <A-Right> <C-i>
 nnoremap <C-a> ^
 nnoremap <C-e> $
 
@@ -91,4 +89,16 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+tnoremap <A-Left> <C-\><C-N><C-w>h
+tnoremap <A-Down> <C-\><C-N><C-w>j
+tnoremap <A-Up> <C-\><C-N><C-w>k
+tnoremap <A-Right> <C-\><C-N><C-w>l
+inoremap <A-Left> <C-\><C-N><C-w>h
+inoremap <A-Down> <C-\><C-N><C-w>j
+inoremap <A-Up> <C-\><C-N><C-w>k
+inoremap <A-Right> <C-\><C-N><C-w>l
+nnoremap <A-Left> <C-w>h
+nnoremap <A-Down> <C-w>j
+nnoremap <A-Up> <C-w>k
+nnoremap <A-Right> <C-w>l
 
