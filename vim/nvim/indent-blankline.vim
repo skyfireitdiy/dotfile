@@ -36,14 +36,14 @@ require("indent_blankline").setup {
         "IndentBlanklineIndent5",
         "IndentBlanklineIndent6",
     },
-    space_char_highlight_list = {
-        "IndentBlanklineIndentBg1",
-        "IndentBlanklineIndentBg2",
-        "IndentBlanklineIndentBg3",
-        "IndentBlanklineIndentBg4",
-        "IndentBlanklineIndentBg5",
-        "IndentBlanklineIndentBg6",
-    },
+--    space_char_highlight_list = {
+--        "IndentBlanklineIndentBg1",
+--        "IndentBlanklineIndentBg2",
+--        "IndentBlanklineIndentBg3",
+--        "IndentBlanklineIndentBg4",
+--        "IndentBlanklineIndentBg5",
+--        "IndentBlanklineIndentBg6",
+--    },
 }
 
 
