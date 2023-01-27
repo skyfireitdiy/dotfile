@@ -4,5 +4,3 @@ autocmd BufWritePre *.cpp,*.c,*.go,*.h,*.rs,*.json,*.yaml,dockerfile,makefile,CM
 augroup END
 
 
-nnoremap <A-F> :Autoformat<cr>
-vnoremap <A-F> :Autoformat<cr>

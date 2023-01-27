@@ -44,7 +44,7 @@ nnoremap W :wa<cr>
 nnoremap Q :qa<cr>
 nnoremap WQ :wqa<cr>
 nnoremap <leader>. :<Up><cr>
-nnoremap dD "_d
+nnoremap _d "_d
 nnoremap <C-j> <C-u>
 nnoremap <C-k> <C-d>
 nnoremap <S-Left> vh
