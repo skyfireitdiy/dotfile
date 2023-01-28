@@ -40,7 +40,7 @@ install_normal_app() {
         wqy-zenhei wqy-microhei-lite wqy-microhei \
         wqy-bitmapfont nerd-fonts-complete \
         ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git \
-        fontpreview  
+        clash
 	sudo systemctl start vmware-networks
 	sudo systemctl enable vmware-networks
 	sudo systemctl start vmware-usbarbitrator

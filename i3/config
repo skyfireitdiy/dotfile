@@ -58,6 +58,7 @@ bindsym $mod+Shift+d exec --no-startup-id rofi -show run -theme Monokai
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec_always --no-startup-id fcitx
+exec_always --no-startup-id clash
 
 # Display Wallpaper, always.
 exec_always feh --bg-fill /usr/share/backgrounds/i3/wall.png
