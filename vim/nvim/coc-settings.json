@@ -33,5 +33,6 @@
     "explorer.focus": true,
     "explorer.previewAction.onHover": "labeling",
     "Lua.telemetry.enable": true,
-    "snippets.ultisnips.pythonPrompt": false
+    "snippets.ultisnips.pythonPrompt": false,
+    "markdown-preview-enhanced.previewTheme": "vue.css"
 }
