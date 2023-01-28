@@ -259,13 +259,13 @@ bindsym $mod+r mode "resize"
 # for_window [class="nameofapp"] move to workspace $wsno.
 # WS No. 5 has been used as example.
 # Note: You will have to launch the program from a program launcher (rofi).
-for_window [class="firefox"] move to workspace $ws5
+# for_window [class="firefox"] move to workspace $ws5
 
 # The following way allows programs to be launched with a
 # defined keybinding, on a certain workspace, without
 # touching program launcher. Assign Programs to respective
 # workspaces.
-bindsym $mod+b workspace 5; exec firefox
+# bindsym $mod+b workspace 5; exec firefox
 
 
 #Multi Monitor (Dual Monitor, extended monitor)
