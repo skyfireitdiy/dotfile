@@ -12,11 +12,18 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 inoremap <C-c> <ESC>
+inoremap <A-Left> <C-\><C-N><C-w>h
+inoremap <A-Down> <C-\><C-N><C-w>j
+inoremap <A-Up> <C-\><C-N><C-w>k
+inoremap <A-Right> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
 
 nnoremap <leader>w <C-w>
 nnoremap <leader>rl :w<cr>:source ~/.config/nvim/init.vim<cr>
 nnoremap <leader>? :set hlsearch!<cr>
-
 nnoremap <leader>fc :echo expand('%:p')<cr>
 nnoremap <leader>zc 99zm
 nnoremap <leader>zo 99zr
@@ -26,10 +33,8 @@ nnoremap <leader>% ggvG
 nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left><C-r>9
 nnoremap <leader>R "9yiw:%s/\<<C-r>9\>//g<Left><Left><C-r>9
 nnoremap <leader>M :set nomodifiable!<cr>
-
 nnoremap <C-a> ^
 nnoremap <C-e> $
-
 nnoremap <Up> k
 nnoremap <Down> j
 nnoremap <Left> h
@@ -53,6 +58,19 @@ nnoremap <S-Up> :resize -1<CR>
 nnoremap <S-Down> :resize +1<CR>
 nnoremap <S-Left> :vertical resize -1<CR>
 nnoremap <S-Right> :vertical resize +1<CR>
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+nnoremap <A-Left> <C-w>h
+nnoremap <A-Down> <C-w>j
+nnoremap <A-Up> <C-w>k
+nnoremap <A-Right> <C-w>l
+nnoremap ]] }
+nnoremap [[ {
+nnoremap } ]]
+nnoremap { [[
+
 
 vnoremap <Up> k
 vnoremap <Down> j
@@ -74,6 +92,10 @@ vnoremap <S-Left> h
 vnoremap <S-Right> l
 vnoremap <leader>r "9y:%s/<C-r>9//g<Left><Left><C-r>9
 vnoremap <leader>R "9y:%s/\<<C-r>9\>//g<Left><Left><C-r>9
+vnoremap ]] }
+vnoremap [[ {
+vnoremap } ]]
+vnoremap { [[
 
 tnoremap <ESC><ESC><ESC> <C-\><C-n>
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
@@ -81,24 +103,7 @@ tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
 tnoremap <A-k> <C-\><C-N><C-w>k
 tnoremap <A-l> <C-\><C-N><C-w>l
-inoremap <A-h> <C-\><C-N><C-w>h
-inoremap <A-j> <C-\><C-N><C-w>j
-inoremap <A-k> <C-\><C-N><C-w>k
-inoremap <A-l> <C-\><C-N><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
 tnoremap <A-Left> <C-\><C-N><C-w>h
 tnoremap <A-Down> <C-\><C-N><C-w>j
 tnoremap <A-Up> <C-\><C-N><C-w>k
 tnoremap <A-Right> <C-\><C-N><C-w>l
-inoremap <A-Left> <C-\><C-N><C-w>h
-inoremap <A-Down> <C-\><C-N><C-w>j
-inoremap <A-Up> <C-\><C-N><C-w>k
-inoremap <A-Right> <C-\><C-N><C-w>l
-nnoremap <A-Left> <C-w>h
-nnoremap <A-Down> <C-w>j
-nnoremap <A-Up> <C-w>k
-nnoremap <A-Right> <C-w>l
-
