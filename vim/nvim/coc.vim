@@ -62,10 +62,16 @@ nmap <silent> <F12> <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
+nmap <silent> <leader>rn <Plug>(coc-rename)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nnoremap <silent> K :call ShowDocumentation()<cr>
+
+
+augroup autoformat
+autocmd!
+autocmd BufWritePre * :CocCommand editor.action.formatDocument
+augroup END
 
 " coc 插件配置表项  coc插件名  插件配置（可选）
 let g:coc_config = [
