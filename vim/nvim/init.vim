@@ -45,7 +45,6 @@ let g:config_table = [
             \ [ 'vim-scripts/CursorLineCurrentWindow' ],
             \ [ 'vim-scripts/EasyGrep' ,'easygrep.vim'],
             \ [ 'christoomey/vim-tmux-navigator', 'tmux.vim' ],
-            \ [ 'benmills/vimux' ,'VimuxRunCommand.vim'],
             \ [ 'junegunn/fzf'],
             \ [ 'junegunn/fzf.vim', 'fzf.vim'],
             \ [ 'tpope/vim-surround' ],

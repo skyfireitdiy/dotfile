@@ -62,21 +62,25 @@ require'nvim-treesitter.configs'.setup {
                 ["]f"] = "@function.outer",
                 ["]c"] = "@class.outer",
                 ["]a"] = "@parameter.outer",
+                ["]b"] = "@block.outer",
             },
             goto_next_start = {
                 ["]F"] = "@function.outer",
                 ["]C"] = "@class.outer",
                 ["]A"] = "@parameter.outer",
+                ["]B"] = "@block.outer",
             },
             goto_previous_start = {
                 ["[f"] = "@function.outer",
                 ["[c"] = "@class.outer",
                 ["[a"] = "@parameter.outer",
+                ["[b"] = "@block.outer",
             },
             goto_previous_end = {
                 ["[F"] = "@function.outer",
                 ["[C"] = "@class.outer",
                 ["[A"] = "@parameter.outer",
+                ["[A"] = "@block.outer",
             },
         },
         lsp_interop = {
