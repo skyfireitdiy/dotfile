@@ -88,6 +88,7 @@ let g:config_table = [
             \ [ 'savq/melange'],
             \ [ 'RRethy/nvim-base16'],
             \ [ 'fenetikm/falcon'],
+            \ [ 'kevinhwang91/rnvimr', 'rnvimr.vim'],
             \ [ 'andersevenrud/nordic.nvim'],
             \ [ 'shaunsingh/nord.nvim'],
             \ [ 'ishan9299/nvim-solarized-lua'],
@@ -289,4 +290,3 @@ if g:DefaultCheckdepsFunc() == 1
     call LoadConfig()
     call g:FinallyFunc()
 endif
-
