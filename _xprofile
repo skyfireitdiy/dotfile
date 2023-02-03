@@ -3,6 +3,6 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
-export http_proxy=http://127.0.0.1:7890
-export https_proxy=http://127.0.0.1:7890
-export socks_proxy=127.0.0.1:7890
+if [ -f ~/.xprofile_user ]; then
+    source ~/.xprofile_user
+fi
