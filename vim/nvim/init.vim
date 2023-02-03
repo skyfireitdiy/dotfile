@@ -31,6 +31,7 @@ let g:config_table = [
             \ [ 'luochen1990/rainbow','rainbow.vim', ['heavy']],
             \ [ 'majutsushi/tagbar', 'tagbar.vim', ['heavy']],
             \ [ 'inside/vim-search-pulse' ],
+            \ [ 'chiel92/vim-autoformat' ,'autoformat.vim'],
             \ [ 'mg979/vim-visual-multi',  'visual-cursor.vim'],
             \ [ 'tpope/vim-fugitive' ],
             \ [ 'vim-scripts/DoxygenToolkit.vim', 'doxygen.vim'],
