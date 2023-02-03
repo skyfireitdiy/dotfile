@@ -3,6 +3,6 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
-if [ -f ~/.xprofile_user ]; then
+if [[ -f ~/.xprofile_user ]]; then
     source ~/.xprofile_user
 fi
