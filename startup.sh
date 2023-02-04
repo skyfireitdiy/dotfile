@@ -30,8 +30,8 @@ update() {
 
 install_normal_app() {
         yay -S fish neovim xmake fzf ranger make \
-        lazygit tmux microsoft-edge-stable-bin \
-        lantern-bin konsole helix fcitx-im \
+        lazygit tmux vivaldi \
+        konsole helix fcitx-im \
         fcitx-configtool fcitx-sogoupinyin \
         ripgrep universal-ctags gcc nodejs xsel npm \
         go rustup fd icalingua++ linux-headers \
