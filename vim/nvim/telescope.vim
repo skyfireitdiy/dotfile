@@ -46,7 +46,7 @@ require('telescope').setup {
       selected_browser = 'vivaldi',
 
       -- Either provide a shell command to open the URL
-      url_open_command = 'vivaldi',
+      url_open_command = 'vivaldi-stable',
 
       -- Or provide the plugin name which is already installed
       -- Available: 'vim_external', 'open_browser'
@@ -121,3 +121,4 @@ nnoremap ``E :Telescope file_browser<CR>
 nnoremap ``gd :Telescope git_diffs diff_commits<CR>
 nnoremap ``C :Telescope coc<CR>
 nnoremap ``fa :Telescope adjacent<CR>
+nnoremap ``B :Telescope bookmarks<CR>
