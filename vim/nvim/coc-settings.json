@@ -1,7 +1,7 @@
 {
     "explorer.icon.enableNerdfont": true,
     "explorer.icon.source": "vim-devicons",
-    "go.checkForUpdates": "ask",
+    "go.checkForUpdates": "false",
     "suggest.autoTrigger": "always",
     "suggest.noselect": false,
     "suggest.timeout": 5000,
@@ -12,20 +12,23 @@
     "suggest.floatConfig": {
         "border": true,
         "highlight": "CocFloating",
-        "borderhighlight": "CocFloating"
+        "borderhighlight": "CocFloating",
+        "rounded": true
     },
     "diagnostic.floatConfig": {
         "border": true,
         "borderhighlight": "CocFloating",
         "highlight": "CocFloating",
-        "focusable": true
+        "focusable": true,
+        "rounded": true
     },
     "hover.floatConfig": {
         "border": true,
         "borderhighlight": "CocFloating",
         "highlight": "CocFloating",
         "focusable": true,
-        "title": "🎈"
+        "title": "🎈",
+        "rounded": true
     },
     "clangd.inlayHints.enable": true,
     "inlayHint.refreshOnInsertMode": true,
