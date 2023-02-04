@@ -4,14 +4,10 @@ inoremap jj <ESC>
 inoremap kk <ESC>
 inoremap oo <ESC>o
 inoremap OO <ESC>O
-inoremap zz <ESC>zza
-inoremap <C-a> <Esc>^i
-inoremap <C-e> <Esc>$a
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
-inoremap <C-c> <ESC>
 inoremap <A-Left> <C-\><C-N><C-w>h
 inoremap <A-Down> <C-\><C-N><C-w>j
 inoremap <A-Up> <C-\><C-N><C-w>k
