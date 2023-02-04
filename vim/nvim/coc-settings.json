@@ -1,6 +1,7 @@
 {
     "explorer.icon.enableNerdfont": true,
     "explorer.icon.source": "vim-devicons",
+    "inlayHint.enable": false,
     "go.checkForUpdates": "false",
     "suggest.autoTrigger": "always",
     "suggest.noselect": false,
@@ -30,8 +31,6 @@
         "title": "🎈",
         "rounded": true
     },
-    "clangd.inlayHints.enable": true,
-    "inlayHint.refreshOnInsertMode": true,
     "coc.preferences.extensionUpdateCheck": "never",
     "explorer.focus": true,
     "explorer.previewAction.onHover": "labeling",
