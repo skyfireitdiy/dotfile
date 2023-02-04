@@ -48,7 +48,7 @@ config_vim(){
 		nvim
 	fi
 
-	echo "[n]vim配置成功！"
+	echo "nvim配置成功！"
 }
 
 
