@@ -43,10 +43,10 @@ require('telescope').setup {
       --  * 'safari'
       --  * 'vivaldi'
       --  * 'waterfox'
-      selected_browser = 'edge',
+      selected_browser = 'vivaldi',
 
       -- Either provide a shell command to open the URL
-      url_open_command = 'microsoft-edge-stable',
+      url_open_command = 'vivaldi',
 
       -- Or provide the plugin name which is already installed
       -- Available: 'vim_external', 'open_browser'
