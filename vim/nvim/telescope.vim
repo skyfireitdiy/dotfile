@@ -13,11 +13,13 @@ command_center.add({
   mode = command_center.mode.SET
 })
 
-command_center.add({
-    -- 在这里添加command
-  }, {
-      mode = command_center.mode.ADD_SET
+for i, value in ipairs(vim.g.quick_start_config) do
+    command_center.add({
+        {desc=value[1], cmd=value[2]},
+    }, {
+        mode = command_center.mode.ADD_SET
   })
+end
 
 -- You dont need to set any of these options. These are the default ones. Only
 -- the loading is important

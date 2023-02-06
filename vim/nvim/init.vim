@@ -19,6 +19,9 @@ let g:deps_check = [
             \ ['npm', 'npm --version'],
             \ ]
 
+
+let g:quick_start_config = []
+
 if g:install_vim == 1
     let g:light_vim = 0
 endif
@@ -274,6 +277,10 @@ endfunction
 
 function! SetFinallyFunc(func_name)
     let g:FinallyFunc = function(a:func_name)
+endfunction
+
+function! AddQuickStartItem(desc, cmd)
+    let g:quick_start_config = add(g:quick_start_config, [a:desc, a:cmd])
 endfunction
 
 call LoadUserConfig()
