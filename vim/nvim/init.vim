@@ -130,6 +130,7 @@ let g:config_table = [
             \ [ 'ellisonleao/gruvbox.nvim'],
             \ [ 'lalitmee/cobalt2.nvim'],
             \ [ 'vim-scripts/scratch.vim'],
+            \ [ 'Pocco81/auto-save.nvim', 'auto-save.vim'], 
             \ [ 'ludovicchabant/vim-gutentags', 'ctags.vim'],
             \ [ 'preservim/nerdcommenter', 'nerdcommenter.vim'],
             \ [ 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '..g:npm_registry..' --frozen-lockfile'}"],

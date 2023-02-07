@@ -2,8 +2,6 @@
 inoremap hh <ESC>
 inoremap jj <ESC>
 inoremap kk <ESC>
-inoremap oo <ESC>o
-inoremap OO <ESC>O
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>

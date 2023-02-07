@@ -5,18 +5,11 @@ function! RepairVimScript()
     %s/^\s*EOF/EOF/g
 endfunction
 
-function! AutoSaveFile()
-    if match(expand("%:t"), "\\..\\+") != -1
-        w
-    endif
-endfunction
-
 augroup autoRunGroup
     autocmd!
     autocmd BufLeave * stopinsert
     autocmd InsertEnter * :set norelativenumber
     autocmd InsertLeave * :set relativenumber
-    autocmd InsertLeave * :call AutoSaveFile()
     " autocmd BufEnter * :set nomodifiable
 augroup END
 
