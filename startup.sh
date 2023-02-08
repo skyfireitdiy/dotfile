@@ -29,7 +29,7 @@ update() {
 }
 
 install_normal_app() {
-        yay -S fish neovim xmake fzf ranger make \
+        yay -S fish neovim xmake fzf ranger w3m make \
         lazygit tmux vivaldi \
         konsole helix fcitx-im \
         fcitx-configtool fcitx-sogoupinyin \
@@ -40,7 +40,7 @@ install_normal_app() {
         wqy-zenhei wqy-microhei-lite wqy-microhei \
         wqy-bitmapfont nerd-fonts-complete \
         ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git \
-        clash net-tools ranger
+        clash net-tools 
         sudo systemctl start vmware-networks
         sudo systemctl enable vmware-networks
         sudo systemctl start vmware-usbarbitrator

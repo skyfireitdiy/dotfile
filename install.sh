@@ -101,6 +101,11 @@ config_rime() {
 	echo "rime 配置完成"
 }
 
+config_ranger() {
+    replace_config ~/.config/ranger $(pwd)/ranger
+    echo "ranger 配置完成"
+}
+
 while test $# -gt 0
 do
 	config_$1
