@@ -51,7 +51,7 @@ bindsym $mod+d exec --no-startup-id rofi -show drun -theme Monokai -icon-theme "
 
 # The other mode search for applications in /usr/bin or /usr/sbin.
 # This should only be used if a program lacks a .desktop file.
-bindsym $mod+Shift+d exec --no-startup-id rofi -show run -theme Monokai
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run -theme Monokai -icon-theme "Tela-circle" -show-icons
 
 # Launch Polybar. Take a look at ~/.confi/polybar/config to
 # configure the bar.
@@ -217,24 +217,24 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # 13A] resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+    bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
+# same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+# back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
@@ -248,10 +248,10 @@ bindsym $mod+r mode "resize"
 # finds out, if available). Commented out due to use of polybar. If you want to
 # use i3 bars (status or blocks) this are some examples on how you can do it.
 # bar {
-        #status_command i3status
-        #tray_output primary
-        #status_command i3status -c ~/.config/i3/i3status.conf
-        #status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#status_command i3status
+#tray_output primary
+#status_command i3status -c ~/.config/i3/i3status.conf
+#status_command i3blocks -c ~/.config/i3/i3blocks.conf
 #}
 
 
