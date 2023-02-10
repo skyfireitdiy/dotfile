@@ -60,10 +60,6 @@ nnoremap <A-Left> <C-w>h
 nnoremap <A-Down> <C-w>j
 nnoremap <A-Up> <C-w>k
 nnoremap <A-Right> <C-w>l
-nnoremap ]] }
-nnoremap [[ {
-nnoremap } ]]
-nnoremap { [[
 
 
 vnoremap <Up> k
@@ -86,10 +82,6 @@ vnoremap <S-Left> h
 vnoremap <S-Right> l
 vnoremap <leader>r "9y:%s/<C-r>9//g<Left><Left><C-r>9
 vnoremap <leader>R "9y:%s/\<<C-r>9\>//g<Left><Left><C-r>9
-vnoremap ]] }
-vnoremap [[ {
-vnoremap } ]]
-vnoremap { [[
 
 tnoremap <ESC><ESC><ESC> <C-\><C-n>
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
