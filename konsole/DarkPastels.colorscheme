@@ -107,6 +107,6 @@ ColorRandomization=true
 Description=Dark Pastels
 FillStyle=Tile
 Opacity=0.5
-Wallpaper=
+Wallpaper=/home/skyfire/.local/share/konsole/background/1.jpg
 WallpaperFlipType=NoFlip
 WallpaperOpacity=1

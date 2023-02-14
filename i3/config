@@ -61,7 +61,7 @@ exec_always --no-startup-id fcitx
 exec_always --no-startup-id clash
 
 # Display Wallpaper, always.
-exec_always feh --bg-fill /usr/share/backgrounds/i3/wall.png
+exec_always feh --bg-fill --no-fehbg --randomize ~/.config/i3/wallpaper
 
 # Provide Gaps to Windows. Increase/Decrease as you like.
 gaps inner 10
