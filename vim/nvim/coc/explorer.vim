@@ -14,7 +14,7 @@ function! RecoverExplorer()
         endif
     endfor
     if need_recover == 1
-        CocCommand explorer
+        CocCommand explorer --no-focus
     endif
 endfunction
 
