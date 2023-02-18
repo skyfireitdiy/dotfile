@@ -38,7 +38,7 @@ augroup autoRunGroup
     autocmd TermEnter * :startinsert
     autocmd TermEnter * :set nonu
     autocmd TermEnter * :set norelativenumber
-    autocmd VimEnter * :call CleanBuffer()
+    autocmd SessionLoadPost * :call CleanBuffer()
 augroup END
 
 set nobackup
