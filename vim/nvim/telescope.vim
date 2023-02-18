@@ -124,9 +124,3 @@ nnoremap ``gd :Telescope git_diffs diff_commits<CR>
 nnoremap ``C :Telescope coc<CR>
 nnoremap ``fa :Telescope adjacent<CR>
 nnoremap ``B :Telescope bookmarks<CR>
-
-function ShowSessionsOnStart(timer)
-  lua require('session-lens').search_session()
-endfunction
-
-call timer_start(50, 'ShowSessionsOnStart')
