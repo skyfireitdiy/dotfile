@@ -130,8 +130,9 @@ let g:config_table = [
             \ [ 'ellisonleao/gruvbox.nvim'],
             \ [ 'lalitmee/cobalt2.nvim'],
             \ [ 'vim-scripts/scratch.vim'],
-            \ [ 'Pocco81/auto-save.nvim', 'auto-save.vim'], 
+            \ [ 'Pocco81/auto-save.nvim', 'auto-save.vim'],
             \ [ 'ludovicchabant/vim-gutentags', 'ctags.vim'],
+            \ [ 'puremourning/vimspector', 'vimspector.vim'],
             \ [ 'preservim/nerdcommenter', 'nerdcommenter.vim'],
             \ [ 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '..g:npm_registry..' --frozen-lockfile'}"],
             \ [ 'nvim-lua/plenary.nvim'],
@@ -198,7 +199,7 @@ function! GetLoadFlags()
         if len(config) > 2
             let properties = config[2]
         endif
-        if (g:light_vim == 0 || index(properties, "heavy") == -1) 
+        if (g:light_vim == 0 || index(properties, "heavy") == -1)
             let g:load_flags = add(g:load_flags, 1)
         else
             let g:load_flags = add(g:load_flags, 0)
