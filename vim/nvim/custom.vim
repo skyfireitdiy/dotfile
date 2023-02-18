@@ -58,7 +58,7 @@ set foldlevel=99
 set undofile
 
 if exists("g:neovide")
-    set guifont=SauceCodePro\ Nerd\ Font\ Mono:h10:w10:b:i
+    set guifont=FiraCode\ NF:h10:w10:b:i
     let g:neovide_scale_factor = 1.0
     let g:neovide_transparency = 0.8
     let g:neovide_hide_mouse_when_typing = v:true
