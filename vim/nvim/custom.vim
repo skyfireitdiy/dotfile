@@ -5,19 +5,40 @@ function! RepairVimScript()
     %s/^\s*EOF/EOF/g
 endfunction
 
+function! BackgroundBuffer()
+    let buffers = range(1, bufnr('$'))
+    return filter(buffers, 'buflisted(v:val) && index(tabpagebuflist(tabpagenr()),v:val) == -1') " 所有buffer
+endfunction
+
+function! CleanBuffer()
+    let bufs = BackgroundBuffer()
+    for buf in bufs
+        let name = bufname(buf)
+        echom match(name, "\\[.*\\]")
+        if match(name, "\\[.*\\]") != -1 || match(name, "__.*__") != -1
+            execute "bd "..buf
+        endif
+    endfor
+endfunction
+
+
+function! CloseBackgroundBuffer()
+    let bufs = BackgroundBuffer()
+    for b in bufs
+        execute "bd "..b
+    endfor
+endfunction
+
 augroup autoRunGroup
     autocmd!
     autocmd BufLeave * stopinsert
     autocmd InsertEnter * :set norelativenumber
     autocmd InsertLeave * :set relativenumber
     " autocmd BufEnter * :set nomodifiable
-augroup END
-
-augroup enterterm
-autocmd!
-autocmd TermEnter * :startinsert
-autocmd TermEnter * :set nonu
-autocmd TermEnter * :set norelativenumber
+    autocmd TermEnter * :startinsert
+    autocmd TermEnter * :set nonu
+    autocmd TermEnter * :set norelativenumber
+    autocmd VimEnter * :call CleanBuffer()
 augroup END
 
 set nobackup

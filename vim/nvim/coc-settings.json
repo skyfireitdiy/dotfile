@@ -2,7 +2,7 @@
     "explorer.icon.enableNerdfont": true,
     "explorer.icon.source": "vim-devicons",
     "inlayHint.enable": false,
-    "go.checkForUpdates": "false",
+    "go.checkForUpdates": "disabled",
     "suggest.autoTrigger": "always",
     "suggest.noselect": false,
     "suggest.timeout": 5000,
