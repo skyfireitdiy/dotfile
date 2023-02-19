@@ -1,0 +1,89 @@
+
+{
+    "configurations": {
+        "launch-current-file": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "default": true,
+                "type":    "cppdbg",
+                "request": "launch",
+                "program": "${fileDirname}/${fileBasenameNoExtension}",
+                "args": ["运行参数"],
+                "cwd": "${workspaceRoot}",
+                "environment": [],
+                "externalConsole": true,
+                "stopAtEntry": true,
+                "MIMode": "gdb",
+                "breakpointers": {
+                    "exception": {
+                        "cpp_throw": "Y",
+                        "cpp_catch": "N"
+                    }
+                }
+            }
+        },
+        "launch-current-project": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "variables": {
+                    "ProgramName": {
+                        "shell": ["basename ", "${workspaceRoot}/可执行文件路径"]
+                    },
+                    "ProgramPath": "${workspaceRoot}/_builds/${ProgramName}"
+                },
+                "type":    "cppdbg",
+                "request": "launch",
+                "program": "${workspaceRoot}/_builds/${ProgramName}",
+                "args": ["*${ProgramArgs}"],
+                "cwd": "${workspaceRoot}",
+                "environment": [],
+                "externalConsole": true,
+                "stopAtEntry": true,
+                "MIMode": "gdb",
+                "breakpointers": {
+                    "exception": {
+                        "cpp_throw": "Y",
+                        "cpp_catch": "N"
+                    }
+                }
+            }
+        },
+        "attach-current-file": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "type": "cppdbg",
+                "request": "attach",
+                "program": "${fileDirname}/${fileBasenameNoExtension}",
+                "MIMode": "gdb",
+                "breakpointers": {
+                    "exception": {
+                        "cpp_throw": "Y",
+                        "cpp_catch": "N"
+                    }
+                }
+            }
+        },
+        "attach-current-project": {
+            "adapter": "vscode-cpptools",
+            "configuration": {
+                "variables": {
+                    "ProgramName": {
+                        "shell": ["basename", "${workspaceRoot}"]
+                    },
+                    "ProgramPath": "${workspaceRoot}/可执行文件路径"
+                },
+                "type": "cppdbg",
+                "request": "attach",
+                "program": "${ProgramPath}",
+                "MIMode": "gdb",
+                "breakpointers": {
+                    "exception": {
+                        "cpp_throw": "Y",
+                        "cpp_catch": "N"
+                    }
+                }
+            }
+        }
+    }
+}
+

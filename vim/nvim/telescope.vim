@@ -79,7 +79,7 @@ require('telescope').setup {
         command_center.component.KEYS,
       },
       auto_replace_desc_with_cmd = false,
-    }
+    },
   }
 }
 -- To get fzf loaded and working with telescope, you need to call
@@ -93,7 +93,6 @@ require('telescope').load_extension('file_browser')
 require('telescope').load_extension('git_diffs')
 require('telescope').load_extension('coc')
 require('telescope').load_extension('adjacent')
-
 
 EOF
 
