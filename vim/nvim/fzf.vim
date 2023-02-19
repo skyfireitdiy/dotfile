@@ -1,23 +1,23 @@
 
 
-nnoremap  <leader>co    :Colors<cr>
-nnoremap  <leader>rg    :Rg<cr>
-nnoremap  <leader>m     :Marks<cr>
-nnoremap  <leader>k     :Maps<cr>
-nnoremap  <leader>H     :Helptags<cr>
-nnoremap  <leader>t     :BTags<cr>
-nnoremap  <leader>T     :Tags<cr>
-nnoremap <leader>ff     :Files<CR>
-nnoremap <leader>f      :GFiles<CR>
-nnoremap <leader>gs     :GFiles?<CR>
-nnoremap <leader>b      :Buffers<CR>
-nnoremap <leader>l      :BLines<CR>
-nnoremap <leader>h      :History<CR>
-nnoremap <leader>:      :History:<CR>
-nnoremap <leader>/      :History/<CR>
-nnoremap <leader>gc     :BCommits<CR>
-nnoremap <leader>gC     :Commits<CR>
-nnoremap <leader>x      :Commands<CR>
+nnoremap  <silent>``co    :Colors<cr>
+nnoremap  <silent>``rg    :Rg<cr>
+nnoremap  <silent>``m     :Marks<cr>
+nnoremap  <silent>``k     :Maps<cr>
+nnoremap  <silent>``H     :Helptags<cr>
+nnoremap  <silent>``t     :BTags<cr>
+nnoremap  <silent>``T     :Tags<cr>
+nnoremap <silent>``ff     :Files<CR>
+nnoremap <silent>``f      :GFiles<CR>
+nnoremap <silent>``gs     :GFiles?<CR>
+nnoremap <silent>``b      :Buffers<CR>
+nnoremap <silent>``l      :BLines<CR>
+nnoremap <silent>``h      :History<CR>
+nnoremap <silent>``:      :History:<CR>
+nnoremap <silent>``/      :History/<CR>
+nnoremap <silent>``gc     :BCommits<CR>
+nnoremap <silent>``gC     :Commits<CR>
+nnoremap <silent>``x      :Commands<CR>
 
 
 
