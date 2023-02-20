@@ -29,6 +29,14 @@ function! CloseBackgroundBuffer()
     endfor
 endfunction
 
+function! LoadProjectConfig()
+    let pwd = getcwd()
+    let project_config_file = pwd.."/.config.vim"
+    if filereadable(project_config_file)
+        execute "runtime "..project_config_file
+    endif
+endfunction
+
 augroup autoRunGroup
     autocmd!
     autocmd BufLeave * stopinsert
@@ -39,6 +47,7 @@ augroup autoRunGroup
     autocmd TermEnter * :set nonu
     autocmd TermEnter * :set norelativenumber
     autocmd SessionLoadPost * :call CleanBuffer()
+    autocmd SessionLoadPost * :call LoadProjectConfig()
 augroup END
 
 set nobackup
