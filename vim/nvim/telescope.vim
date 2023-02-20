@@ -128,4 +128,6 @@ function! StartSession(timer)
     lua require("session-lens").search_session()
 endfunction
 
-call timer_start(2000, "StartSession")
+if argc() == 0
+    call timer_start(2000, "StartSession")
+endif
