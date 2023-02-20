@@ -12,6 +12,7 @@ let g:deps_check = [
             \ ['fzf','fzf --version'],
             \ ['lazygit','lazygit --version'],
             \ ['ripgrep','rg --version'],
+            \ ['fd', 'fd --version'],
             \ ['universal-ctags', 'ctags --version'],
             \ ['g++', 'g++ --version'],
             \ ['nodejs', 'node --version'],
