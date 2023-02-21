@@ -263,19 +263,6 @@ function! LoadUserConfig(rcfile)
     endif
 endfunction
 
-
-function! SetBeforeGetLoadPluginsFunc(func_name)
-    let g:BeforeLoadPluginsFunc = function(a:func_name)
-endfunction
-
-function! SetBeforeGetLoadConfigFunc(func_name)
-    let g:BeforeLoadConfigFunc = function(a:func_name)
-endfunction
-
-function! SetFinallyFunc(func_name)
-    let g:FinallyFunc = function(a:func_name)
-endfunction
-
 function! AddQuickStartItem(desc, cmd)
     let g:quick_start_config = add(g:quick_start_config, [a:desc, a:cmd])
 endfunction
