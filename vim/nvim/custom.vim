@@ -90,7 +90,7 @@ set undofile
 if exists("g:neovide")
     set guifont=FiraCode\ NFM:h10:w10:b:i
     let g:neovide_scale_factor = 1.0
-    let g:neovide_transparency = 0.8
+    let g:neovide_transparency = 0.5
     let g:neovide_hide_mouse_when_typing = v:true
     let g:neovide_fullscreen = v:true
     let g:neovide_cursor_vfx_mode = "railgun"
