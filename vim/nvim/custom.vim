@@ -34,7 +34,7 @@ function! LoadProjectConfig()
     while pwd != "/"
         let project_config_file = pwd.."/.config.vim"
         if filereadable(project_config_file)
-            execute "runtime "..project_config_file
+            execute "source "..project_config_file
             break
         endif
         let pwd = fnamemodify(pwd, ":h")
