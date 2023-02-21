@@ -31,10 +31,25 @@ endfunction
 
 function! LoadProjectConfig()
     let pwd = getcwd()
-    let project_config_file = pwd.."/.config.vim"
-    if filereadable(project_config_file)
-        execute "runtime "..project_config_file
-    endif
+    while pwd != "/"
+        let project_config_file = pwd.."/.config.vim"
+        if filereadable(project_config_file)
+            execute "runtime "..project_config_file
+            break
+        endif
+        let pwd = fnamemodify(pwd, ":h")
+    endwhile
+endfunction
+
+function! HandleTermEnter()
+    startinsert
+    set nonu
+    set norelativenumber
+endfunction
+
+function! HandleSessionLoadPost()
+    call CloseBackgroundBuffer()
+    call LoadProjectConfig()
 endfunction
 
 augroup autoRunGroup
@@ -43,11 +58,8 @@ augroup autoRunGroup
     autocmd InsertEnter * :set norelativenumber
     autocmd InsertLeave * :set relativenumber
     " autocmd BufEnter * :set nomodifiable
-    autocmd TermEnter * :startinsert
-    autocmd TermEnter * :set nonu
-    autocmd TermEnter * :set norelativenumber
-    autocmd SessionLoadPost * :call CleanBuffer()
-    autocmd SessionLoadPost * :call LoadProjectConfig()
+    autocmd TermEnter * :call HandleTermEnter()
+    autocmd SessionLoadPost * :call HandleSessionLoadPost()
 augroup END
 
 set nobackup
