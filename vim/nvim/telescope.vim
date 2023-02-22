@@ -124,10 +124,3 @@ nnoremap <silent><leader>C :Telescope coc<CR>
 nnoremap <silent><leader>fa :Telescope adjacent<CR>
 nnoremap <silent><leader>B :Telescope bookmarks<CR>
 
-function! StartSession(timer)
-    lua require("session-lens").search_session()
-endfunction
-
-if argc() == 0
-    call timer_start(2000, "StartSession")
-endif
