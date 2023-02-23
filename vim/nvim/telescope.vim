@@ -100,24 +100,25 @@ EOF
 nnoremap <silent><leader>s :SearchSession<CR>
 nnoremap <silent>``` :Telescope<CR>
 nnoremap <silent><leader>s :SearchSession<CR>
-nnoremap <silent><leader>co :Telescope colorscheme<cr>
-nnoremap <silent><leader>rg :Telescope grep_string<cr>
-nnoremap <silent><leader>m :Telescope marks<cr>
-nnoremap <silent><leader>k :Telescope keymaps<cr>
-nnoremap <silent><leader>H :Telescope help_tags<cr>
-nnoremap <silent><leader>t :Telescope current_buffer_tags<cr>
-nnoremap <silent><leader>T :Telescope tags<cr>
-nnoremap <silent><leader>ff :Telescope find_files<CR>
-nnoremap <silent><leader>f :Telescope git_files<CR>
-nnoremap <silent><leader>gs :Telescope git_status<CR>
-nnoremap <silent><leader>b :Telescope buffers<CR>
-nnoremap <silent><leader>l :Telescope current_buffer_fuzzy_find<CR>
-nnoremap <silent><leader>h :Telescope oldfiles<CR>
-nnoremap <silent><leader>: :Telescope command_history<CR>
-nnoremap <silent><leader>/ :Telescope search_history<CR>
-nnoremap <silent><leader>gc :Telescope git_bcommits<CR>
-nnoremap <silent><leader>gC :Telescope git_commits<CR>
-nnoremap <silent><leader>x :Telescope commands<CR>
+nnoremap <silent>:<leader>co :Telescope colorscheme<cr>
+nnoremap <silent>``rg :Telescope grep_string<cr>
+nnoremap <silent>``m :Telescope marks<cr>
+nnoremap <silent>``k :Telescope keymaps<cr>
+nnoremap <silent>``H :Telescope help_tags<cr>
+nnoremap <silent>``t :Telescope current_buffer_tags<cr>
+nnoremap <silent>``T :Telescope tags<cr>
+nnoremap <silent>``ff :Telescope find_files<CR>
+nnoremap <silent>``f :Telescope git_files<CR>
+nnoremap <silent>``gs :Telescope git_status<CR>
+nnoremap <silent>``b :Telescope buffers<CR>
+nnoremap <silent>``l :Telescope current_buffer_fuzzy_find<CR>
+nnoremap <silent>``h :Telescope oldfiles<CR>
+nnoremap <silent>``: :Telescope command_history<CR>
+nnoremap <silent>``/ :Telescope search_history<CR>
+nnoremap <silent>``gc :Telescope git_bcommits<CR>
+nnoremap <silent>``gC :Telescope git_commits<CR>
+nnoremap <silent>``x :Telescope commands<CR>
+
 nnoremap <silent><leader>E :Telescope file_browser<CR>
 nnoremap <silent><leader>gd :Telescope git_diffs diff_commits<CR>
 nnoremap <silent><leader>C :Telescope coc<CR>
