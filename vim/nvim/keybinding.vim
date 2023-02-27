@@ -60,6 +60,7 @@ nnoremap <A-Left> <C-w>h
 nnoremap <A-Down> <C-w>j
 nnoremap <A-Up> <C-w>k
 nnoremap <A-Right> <C-w>l
+nnoremap <C-]> g<C-]>
 
 
 vnoremap <Up> k
