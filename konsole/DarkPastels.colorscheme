@@ -107,6 +107,6 @@ ColorRandomization=true
 Description=Dark Pastels
 FillStyle=Stretch
 Opacity=1
-Wallpaper=/tmp/konsole_backgrounds/1.jpg
+Wallpaper=
 WallpaperFlipType=NoFlip
 WallpaperOpacity=1

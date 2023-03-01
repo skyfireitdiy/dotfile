@@ -79,8 +79,8 @@ config_kitty() {
 
 config_konsole() {
     replace_config ~/.local/share/konsole $(pwd)/konsole
-    mkdir -p /tmp/konsole_backgrounds
-    cp ~/.local/share/konsole/background/* /tmp/konsole_backgrounds/
+    # mkdir -p /tmp/konsole_backgrounds
+    # cp ~/.local/share/konsole/background/* /tmp/konsole_backgrounds/
     echo konsole 配置成功！
 }
 
