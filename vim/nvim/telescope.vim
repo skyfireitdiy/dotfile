@@ -123,4 +123,6 @@ nnoremap <silent><leader>gd :Telescope git_diffs diff_commits<CR>
 nnoremap <silent><leader>C :Telescope coc<CR>
 nnoremap <silent><leader>fa :Telescope adjacent<CR>
 nnoremap <silent><leader>B :Telescope bookmarks<CR>
+nnoremap <silent><leader>j :Telescope jumplist<CR>
+
 
