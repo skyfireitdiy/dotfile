@@ -14,6 +14,8 @@ inoremap <A-h> <C-\><C-N><C-w>h
 inoremap <A-j> <C-\><C-N><C-w>j
 inoremap <A-k> <C-\><C-N><C-w>k
 inoremap <A-l> <C-\><C-N><C-w>l
+inoremap <C-v> <C-r>"
+inoremap <C-H> <C-W>
 
 nnoremap <leader>w <C-w>
 nnoremap <leader>rl :w<cr>:source ~/.config/nvim/init.vim<cr>
@@ -61,7 +63,7 @@ nnoremap <A-Down> <C-w>j
 nnoremap <A-Up> <C-w>k
 nnoremap <A-Right> <C-w>l
 nnoremap <C-]> g<C-]>
-
+nnoremap <C-c> yiw
 
 vnoremap <Up> k
 vnoremap <Down> j
@@ -83,6 +85,7 @@ vnoremap <S-Left> h
 vnoremap <S-Right> l
 vnoremap <leader>r "9y:%s/<C-r>9//g<Left><Left><C-r>9
 vnoremap <leader>R "9y:%s/\<<C-r>9\>//g<Left><Left><C-r>9
+vnoremap <C-c> y
 
 tnoremap <ESC><ESC><ESC> <C-\><C-n>
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'

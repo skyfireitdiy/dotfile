@@ -87,6 +87,7 @@ set rulerformat=%15(%c%V\ %p%%%)
 set smartindent
 set autoindent
 set clipboard=unnamedplus
+set scrolloff=999
 
 set enc=utf-8
 let &termencoding=&encoding
