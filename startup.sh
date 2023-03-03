@@ -29,7 +29,7 @@ update() {
 }
 
 install_normal_app() {
-    yay -S fish neovim xmake fzf ranger w3m make  lazygit tmux microsoft-edge-stable-bin  konsole helix fcitx-im  fcitx-configtool fcitx-sogoupinyin  ripgrep universal-ctags gcc nodejs xsel npm  go rustup fd icalingua++ linux-headers  vmware-workstation flameshot  p7zip wget aria2 unzip python-pynvim  wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete  ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git  clash net-tools privoxy trojan wechat-uos
+    yay -S fish neovim xmake fzf ranger w3m make  lazygit tmux microsoft-edge-stable-bin  konsole helix fcitx-im  fcitx-configtool fcitx-sogoupinyin  ripgrep universal-ctags gcc nodejs xsel npm  go rustup fd icalingua++ linux-headers  vmware-workstation flameshot  p7zip wget aria2 unzip python-pynvim  wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete  ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git  clash net-tools privoxy trojan wechat-uos reflector
     sudo systemctl start vmware-networks
     sudo systemctl enable vmware-networks
     sudo systemctl start vmware-usbarbitrator
