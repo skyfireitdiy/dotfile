@@ -18,6 +18,8 @@ let g:deps_check = [
             \ ['nodejs', 'node --version'],
             \ ['xsel', 'xsel --version'],
             \ ['npm', 'npm --version'],
+            \ ['python3', 'python3 --version'],
+            \ ['pip3', 'pip3 --version'],
             \ ]
 
 
@@ -134,6 +136,7 @@ let g:config_table = [
             \ [ 'Pocco81/auto-save.nvim', 'auto-save.vim'],
             \ [ 'ludovicchabant/vim-gutentags', 'ctags.vim'],
             \ [ 'puremourning/vimspector', 'vimspector.vim'],
+            \ [ 'skyfireitdiy/chatgpt'],
             \ [ 'preservim/nerdcommenter', 'nerdcommenter.vim'],
             \ [ 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '..g:npm_registry..' --frozen-lockfile'}"],
             \ [ 'nvim-lua/plenary.nvim'],
