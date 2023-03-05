@@ -136,7 +136,7 @@ let g:config_table = [
             \ [ 'Pocco81/auto-save.nvim', 'auto-save.vim'],
             \ [ 'ludovicchabant/vim-gutentags', 'ctags.vim'],
             \ [ 'puremourning/vimspector', 'vimspector.vim'],
-            \ [ 'skyfireitdiy/chatgpt'],
+            \ [ 'skyfireitdiy/chatgpt', 'chatgpt.vim'],
             \ [ 'preservim/nerdcommenter', 'nerdcommenter.vim'],
             \ [ 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '..g:npm_registry..' --frozen-lockfile'}"],
             \ [ 'nvim-lua/plenary.nvim'],
