@@ -7,6 +7,6 @@ call chatgpt#AddConfig('<leader>cpp', '请用c++实现以下功能：%selected%'
 call chatgpt#AddConfig('<leader>cgo', '请用go实现以下功能：%selected%')
 call chatgpt#AddConfig('<leader>cpy', '请用python实现以下功能：%selected%')
 call chatgpt#AddConfig('<leader>ca', '%selected%')
-call chatgpt#AddConfig('<leader>cw', '编写以“%selected%”为题目的文章')
+call chatgpt#AddConfig('<leader>cw', '编写以“%selected%”为题目的文章，以markdown格式输出')
 call chatgpt#AddConfig('<leader>c?', '什么是%selected%')
 call chatgpt#AddConfig('<leader>ch', '如何%selected%')
