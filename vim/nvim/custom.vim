@@ -89,6 +89,7 @@ set autoindent
 set clipboard=unnamedplus
 set scrolloff=999
 
+
 set enc=utf-8
 let &termencoding=&encoding
 set fencs=utf-8,ucs-bom,gb18030
