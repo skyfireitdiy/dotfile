@@ -57,6 +57,7 @@ augroup autoRunGroup
     autocmd BufLeave * stopinsert
     autocmd InsertEnter * :set norelativenumber
     autocmd InsertLeave * :set relativenumber
+    autocmd InsertLeave * :call system('fcitx-remote -c')
     " autocmd BufEnter * :set nomodifiable
     autocmd TermEnter * :call HandleTermEnter()
     autocmd SessionLoadPost * :call HandleSessionLoadPost()
