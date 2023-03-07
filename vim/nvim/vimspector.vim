@@ -8,12 +8,8 @@ function! StartDebug()
     if !filereadable(config_file)
         " 配置文件不存在，拷贝默认的配置文件，然后编辑
         execute "!cp ".."~/.config/nvim/vimspector_template.json "..config_file
-        execute "e "..config_file
-        return
-    else
-        " 如果已经有配置了，就启动调试
-        execute ("normal \<Plug>(VimspectorContinue)")
     endif
+    execute "e "..config_file
 endfunction
 
 
@@ -24,13 +20,14 @@ nmap <silent><nowait><leader>db <Plug>VimspectorToggleBreakpoint
 nmap <A-b> <Plug>VimspectorToggleBreakpoint
 
 " nmap <silent><nowait><leader>ds <Plug>VimspectorContinue
-nmap <silent><nowait><leader>ds :call StartDebug()<CR>
+nmap <silent><nowait><leader>ds <Plug>VimspectorContinue
+nmap <silent><nowait><leader>dd :call StartDebug()<CR>
 
 nmap <silent><nowait><leader>dr <Plug>VimspectorRestart
 nmap <silent><nowait><leader>dp <Plug>VimspectorPause
 nmap <silent><nowait><leader>dt <Plug>VimspectorStop
-nmap <silent><nowait><leader>df <Plug>VimspectorAddFunctionBreakpoint
-nmap <silent><nowait><leader>dc <Plug>VimspectorToggleConditionalBreakpoint
+nmap <silent><nowait><leader>dF <Plug>VimspectorAddFunctionBreakpoint
+nmap <silent><nowait><leader>dC <Plug>VimspectorToggleConditionalBreakpoint
 nmap <silent><nowait><leader>do <Plug>VimspectorStepOut
 nmap <A-o> <Plug>VimspectorStepOut
 nmap <silent><nowait><leader>di <Plug>VimspectorStepInto
