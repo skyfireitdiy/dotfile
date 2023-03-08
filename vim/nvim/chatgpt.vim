@@ -1,5 +1,7 @@
 
 nnoremap <silent><leader>cg :call chatgpt#Chat()<cr>
+nnoremap <silent><leader>cN :call chatgpt#LoadSession()<cr>
+nnoremap <silent><leader>cD :call chatgpt#DeleteSession()<cr>
 
 call chatgpt#AddConfig('<leader>ce', '请解释以下代码：&')
 call chatgpt#AddConfig('<leader>cd', '以下代码有什么问题吗：&')
