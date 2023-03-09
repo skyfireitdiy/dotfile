@@ -68,6 +68,7 @@ set nowritebackup
 set updatetime=300
 set signcolumn=yes
 set showcmd
+set noshowmode
 set nu
 set autoread
 set autowriteall
