@@ -42,4 +42,4 @@ endfunction
 
 command! -nargs=0 RC :call RandomColor()
 
-colorscheme base16-dracula
+colorscheme earlysummer
