@@ -44,6 +44,7 @@ endfunction
 augroup AutoToggleWin
 autocmd!
 autocmd SessionLoadPost * :call CreateToggleWindow()
+autocmd VimEnter * :call CreateToggleWindow()
 augroup END
 
 
