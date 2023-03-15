@@ -16,7 +16,7 @@ function! CleanBuffer()
         let name = bufname(buf)
         echom match(name, "\\[.*\\]")
         if match(name, "\\[.*\\]") != -1 || match(name, "__.*__") != -1
-            execute "bd "..buf
+            execute "bd! "..buf
         endif
     endfor
 endfunction
@@ -25,7 +25,7 @@ endfunction
 function! CloseBackgroundBuffer()
     let bufs = BackgroundBuffer()
     for b in bufs
-        execute "bd "..b
+        execute "bd! "..b
     endfor
 endfunction
 
@@ -48,7 +48,7 @@ function! HandleTermEnter()
 endfunction
 
 function! HandleSessionLoadPost()
-    call CloseBackgroundBuffer()
+    call CleanBuffer()
     call LoadProjectConfig()
 endfunction
 

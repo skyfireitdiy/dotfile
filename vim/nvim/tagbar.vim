@@ -12,7 +12,7 @@ function! RecoverTagBar()
     for buf in bufs
         let name = bufname(buf)
         if stridx(name, '__Tagbar__') == 0
-            execute 'bd '..buf
+            execute 'bd! '..buf
             let need_recover = 1
         endif
     endfor
