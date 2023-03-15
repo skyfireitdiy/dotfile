@@ -16,7 +16,7 @@ function! CleanBuffer()
         let name = bufname(buf)
         echom match(name, "\\[.*\\]")
         if match(name, "\\[.*\\]") != -1 || match(name, "__.*__") != -1
-            execute "bd! "..buf
+            execute "bd! ".buf
         endif
     endfor
 endfunction
@@ -25,16 +25,16 @@ endfunction
 function! CloseBackgroundBuffer()
     let bufs = BackgroundBuffer()
     for b in bufs
-        execute "bd! "..b
+        execute "bd! ".b
     endfor
 endfunction
 
 function! LoadProjectConfig()
     let pwd = getcwd()
     while pwd != "/"
-        let project_config_file = pwd.."/.config.vim"
+        let project_config_file = pwd."/.config.vim"
         if filereadable(project_config_file)
-            execute "source "..project_config_file
+            execute "source ".project_config_file
             break
         endif
         let pwd = fnamemodify(pwd, ":h")

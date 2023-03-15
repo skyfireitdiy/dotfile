@@ -4,10 +4,11 @@ let mapleader=" " "映射leader键为空格
 " 启用轻量化 vim，禁止加载一些重量级插件（比如treesitter），用于打开大文件
 let g:light_vim = index(keys(environ()), "LIGHT_VIM") != -1
 let g:home_dir = environ()['HOME']
-let g:install_vim = !filereadable(g:home_dir.."/.local/share/nvim/site/autoload/plug.vim") || !filereadable(g:home_dir.."/.local/share/nvim/site/autoload/plug.vim")
+let g:install_vim = !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim") || !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
 " 使用淘宝镜像加速coc安装
 let g:npm_registry = 'https://registry.npm.taobao.org'
 let g:load_flags = []
+let g:ignored_plugin = []
 let g:deps_check = [
             \ ['fzf','fzf --version'],
             \ ['lazygit','lazygit --version'],
@@ -58,12 +59,12 @@ let g:config_table = [
             \ [ 'sjl/badwolf' ],
             \ [ 'nvim-treesitter/nvim-treesitter', 'treesitter.vim', ['heavy'], "{'do':':TSUpdate'}"],
             \ [ 'nvim-treesitter/nvim-treesitter-textobjects', 'treesitter-textobjects.vim', ['heavy']],
-            \ ['ray-x/lsp_signature.nvim', 'lsp_signature.vim'],
-            \ ['m-demare/hlargs.nvim'],
-            \ ['folke/which-key.nvim', 'which-key.vim'],
-            \ ['ggandor/lightspeed.nvim'],
-            \ ['chentoast/marks.nvim', 'marks.vim'],
-            \ ['lewis6991/gitsigns.nvim', 'gitsigns.vim'],
+            \ [ 'ray-x/lsp_signature.nvim', 'lsp_signature.vim'],
+            \ [ 'm-demare/hlargs.nvim'],
+            \ [ 'folke/which-key.nvim', 'which-key.vim'],
+            \ [ 'ggandor/lightspeed.nvim'],
+            \ [ 'chentoast/marks.nvim', 'marks.vim'],
+            \ [ 'lewis6991/gitsigns.nvim', 'gitsigns.vim'],
             \ [ 'echasnovski/mini.nvim','mini.vim'],
             \ [ 'shaeinst/roshnivim-cs'],
             \ [ 'tomasiser/vim-code-dark'],
@@ -138,7 +139,7 @@ let g:config_table = [
             \ [ 'puremourning/vimspector', 'vimspector.vim'],
             \ [ 'skyfireitdiy/chatgpt', 'chatgpt.vim'],
             \ [ 'preservim/nerdcommenter', 'nerdcommenter.vim'],
-            \ [ 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '..g:npm_registry..' --frozen-lockfile'}"],
+            \ [ 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '.g:npm_registry.' --frozen-lockfile'}"],
             \ [ 'nvim-lua/plenary.nvim'],
             \ [ 'nvim-telescope/telescope.nvim', 'telescope.vim'],
             \ [ 'nvim-telescope/telescope-fzf-native.nvim', '', [], "{ 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }"],
@@ -179,7 +180,7 @@ function! CheckDeps()
             if len(deps) > 2
                 echo deps[2]
             else
-                echo deps[0] .. ' not found!'
+                echo deps[0] . ' not found!'
             endif
         endif
     endfor
@@ -188,9 +189,9 @@ endfunction
 
 " 自助安装配置，减少install.sh脚本中的依赖
 function! InstallVim()
-    if !filereadable(g:home_dir.."/.local/share/nvim/site/autoload/plug.vim")
+    if !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
         " nvim
-        echom system("curl -fLo " .. g:home_dir .. "/.local/share/nvim/site/autoload/plug.vim --create-dirs https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim")
+        echom system("curl -fLo " . g:home_dir . "/.local/share/nvim/site/autoload/plug.vim --create-dirs https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim")
         qa
     endif
 endfunction
@@ -202,7 +203,7 @@ function! GetLoadFlags()
         if len(config) > 2
             let properties = config[2]
         endif
-        if (g:light_vim == 0 || index(properties, "heavy") == -1)
+        if ((g:light_vim == 0 || index(properties, "heavy") == -1) && index(g:ignored_plugin, config[0]) == -1)
             let g:load_flags = add(g:load_flags, 1)
         else
             let g:load_flags = add(g:load_flags, 0)
@@ -223,13 +224,13 @@ function! LoadPlugin()
             if len(config) > 3
                 let plugin_ext = config[3]
             endif
-            let cmd = "Plug '"..plugin.."'"
+            let cmd = "Plug '".plugin."'"
             if plugin_ext != ""
-                let cmd = cmd .. "," .. plugin_ext
+                let cmd = cmd . "," . plugin_ext
             endif
             execute cmd
             let plugin_name = plugin[stridx(plugin, '/') + 1:]
-            if isdirectory(g:home_dir .. '/.local/share/nvim/plugged/'.. plugin_name) == 0
+            if isdirectory(g:home_dir . '/.local/share/nvim/plugged/'. plugin_name) == 0
                 let plug_install = 1
             endif
         endif
@@ -248,26 +249,30 @@ function! LoadConfig()
             let plugin_config = config[1]
         endif
         if g:load_flags[i] && plugin_config != ""
-            if filereadable(g:home_dir..'/.config/nvim/'..plugin_config)
-                execute "runtime "..plugin_config
-            elseif filereadable(g:home_dir..'/.vimrc_user/'..plugin_config)
-                execute "runtime "..g:home_dir..'/.vimrc_user/'..plugin_config
+            if filereadable(g:home_dir.'/.config/nvim/'.plugin_config)
+                execute "runtime ".plugin_config
+            elseif filereadable(g:home_dir.'/.vimrc_user/'.plugin_config)
+                execute "runtime ".g:home_dir.'/.vimrc_user/'.plugin_config
             else
-                echoerr "can't found config "..plugin_config.."!"
+                echoerr "can't found config ".plugin_config."!"
             endif
         endif
     endfor
 endfunction
 
 function! LoadUserConfig(rcfile)
-    let user_config = g:home_dir..'/.vimrc_user/'..a:rcfile
+    let user_config = g:home_dir.'/.vimrc_user/'.a:rcfile
     if filereadable(user_config)
-        execute 'source ' .. user_config
+        execute 'source ' . user_config
     endif
 endfunction
 
 function! AddQuickStartItem(desc, cmd)
     let g:quick_start_config = add(g:quick_start_config, [a:desc, a:cmd])
+endfunction
+
+function! IgnorePlugin(plugin)
+    let g:ignored_plugin = add(g:ignored_plugin, plugin)
 endfunction
 
 if CheckDeps() == 1

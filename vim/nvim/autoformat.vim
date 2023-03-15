@@ -2,7 +2,7 @@ let g:auto_format_flag = 1
 
 function RunAutoFormat()
     if g:auto_format_flag == 1
-        echom "Autoformat file:"..expand("%:p")
+        echom "Autoformat file:".expand("%:p")
         Autoformat
     endif
 endfunction

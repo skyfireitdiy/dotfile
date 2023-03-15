@@ -105,6 +105,6 @@ let g:coc_global_extensions = []
 for c in g:coc_config
     let g:coc_global_extensions = add(g:coc_global_extensions, c[0])
     if len(c) > 1
-        execute "runtime coc/" .. c[1]
+        execute "runtime coc/" . c[1]
     endif
 endfor

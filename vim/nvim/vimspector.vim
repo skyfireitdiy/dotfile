@@ -4,12 +4,12 @@
 function! StartDebug()
     " 判断有没有调试配置
     let pwd = getcwd()
-    let config_file = pwd.."/.vimspector.json"
+    let config_file = pwd."/.vimspector.json"
     if !filereadable(config_file)
         " 配置文件不存在，拷贝默认的配置文件，然后编辑
-        execute "!cp ".."~/.config/nvim/vimspector_template.json "..config_file
+        execute "!cp ~/.config/nvim/vimspector_template.json ".config_file
     endif
-    execute "e "..config_file
+    execute "e ".config_file
 endfunction
 
 
