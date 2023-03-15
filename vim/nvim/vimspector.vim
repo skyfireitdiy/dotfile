@@ -1,7 +1,7 @@
 
 
 
-function! StartDebug()
+function! vimspector#StartDebug()
     " 判断有没有调试配置
     let pwd = getcwd()
     let config_file = pwd."/.vimspector.json"
@@ -21,7 +21,7 @@ nmap <A-b> <Plug>VimspectorToggleBreakpoint
 
 " nmap <silent><nowait><leader>ds <Plug>VimspectorContinue
 nmap <silent><nowait><leader>ds <Plug>VimspectorContinue
-nmap <silent><nowait><leader>dd :call StartDebug()<CR>
+nmap <silent><nowait><leader>dd :call vimspector#StartDebug()<CR>
 
 nmap <silent><nowait><leader>dr <Plug>VimspectorRestart
 nmap <silent><nowait><leader>dp <Plug>VimspectorPause

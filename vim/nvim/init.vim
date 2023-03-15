@@ -166,12 +166,12 @@ let g:config_table = [
             \ ]
 
 " 增加Plugin
-function! AddPlugin(plugin_config)
+function! init#AddPlugin(plugin_config)
     let g:config_table = add(g:config_table, a:plugin_config)
 endfunction
 
 " 增加依赖项检测
-function! CheckDeps()
+function! init#CheckDeps()
     let flags = 1
     for deps in g:deps_check
         let out = system(deps[1])
@@ -188,7 +188,7 @@ function! CheckDeps()
 endfunction
 
 " 自助安装配置，减少install.sh脚本中的依赖
-function! InstallVim()
+function! init#InstallVim()
     if !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
         " nvim
         echom system("curl -fLo " . g:home_dir . "/.local/share/nvim/site/autoload/plug.vim --create-dirs https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim")
@@ -197,7 +197,7 @@ function! InstallVim()
 endfunction
 
 " 插件加载标记列表（判断某个插件是否需要加载）
-function! GetLoadFlags()
+function! init#GetLoadFlags()
     for config in g:config_table
         let properties = []
         if len(config) > 2
@@ -212,7 +212,7 @@ function! GetLoadFlags()
 endfunction
 
 " 插件的加载和插件的配置分开
-function! LoadPlugin()
+function! init#LoadPlugin()
     let g:plug_url_format="https://ghproxy.com/https://github.com/%s"
     let plug_install = 0
     call plug#begin()
@@ -241,7 +241,7 @@ function! LoadPlugin()
     endif
 endfunction
 
-function! LoadConfig()
+function! init#LoadConfig()
     for i in range(len(g:config_table))
         let config = g:config_table[i]
         let plugin_config = ""
@@ -260,29 +260,29 @@ function! LoadConfig()
     endfor
 endfunction
 
-function! LoadUserConfig(rcfile)
+function! init#LoadUserConfig(rcfile)
     let user_config = g:home_dir.'/.vimrc_user/'.a:rcfile
     if filereadable(user_config)
         execute 'source ' . user_config
     endif
 endfunction
 
-function! AddQuickStartItem(desc, cmd)
+function! init#AddQuickStartItem(desc, cmd)
     let g:quick_start_config = add(g:quick_start_config, [a:desc, a:cmd])
 endfunction
 
-function! IgnorePlugin(plugin)
+function! init#IgnorePlugin(plugin)
     let g:ignored_plugin = add(g:ignored_plugin, plugin)
 endfunction
 
-if CheckDeps() == 1
+if init#CheckDeps() == 1
     if g:install_vim == 1
-        call InstallVim()
+        call init#InstallVim()
     endif
-    call GetLoadFlags()
-    call LoadUserConfig('before_all.vim')
-    call LoadPlugin()
-    call LoadUserConfig('before_config.vim')
-    call LoadConfig()
-    call LoadUserConfig('after_all.vim')
+    call init#GetLoadFlags()
+    call init#LoadUserConfig('before_all.vim')
+    call init#LoadPlugin()
+    call init#LoadUserConfig('before_config.vim')
+    call init#LoadConfig()
+    call init#LoadUserConfig('after_all.vim')
 endif

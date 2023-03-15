@@ -1,17 +1,17 @@
 
 " 自动格式化会将EOF缩进，这样就有问题了，此处将缩进去除
-function! RepairVimScript()
+function! custom#RepairVimScript()
     %s/^\s*lua << EOF/lua << EOF/g
     %s/^\s*EOF/EOF/g
 endfunction
 
-function! BackgroundBuffer()
+function! custom#BackgroundBuffer()
     let buffers = range(1, bufnr('$'))
     return filter(buffers, 'buflisted(v:val) && index(tabpagebuflist(tabpagenr()),v:val) == -1') " 所有buffer
 endfunction
 
-function! CleanBuffer()
-    let bufs = BackgroundBuffer()
+function! custom#CleanBuffer()
+    let bufs = custom#BackgroundBuffer()
     for buf in bufs
         let name = bufname(buf)
         echom match(name, "\\[.*\\]")
@@ -22,14 +22,14 @@ function! CleanBuffer()
 endfunction
 
 
-function! CloseBackgroundBuffer()
-    let bufs = BackgroundBuffer()
+function! custom#CloseBackgroundBuffer()
+    let bufs = custom#BackgroundBuffer()
     for b in bufs
         execute "bd! ".b
     endfor
 endfunction
 
-function! LoadProjectConfig()
+function! custom#LoadProjectConfig()
     let pwd = getcwd()
     while pwd != "/"
         let project_config_file = pwd."/.config.vim"
@@ -41,15 +41,15 @@ function! LoadProjectConfig()
     endwhile
 endfunction
 
-function! HandleTermEnter()
+function! custom#HandleTermEnter()
     startinsert
     set nonu
     set norelativenumber
 endfunction
 
-function! HandleSessionLoadPost()
-    call CleanBuffer()
-    call LoadProjectConfig()
+function! custom#HandleSessionLoadPost()
+    call custom#CleanBuffer()
+    call custom#LoadProjectConfig()
 endfunction
 
 augroup autoRunGroup
@@ -59,8 +59,8 @@ augroup autoRunGroup
     autocmd InsertLeave * :set relativenumber
     autocmd InsertLeave * :call system('fcitx-remote -c')
     " autocmd BufEnter * :set nomodifiable
-    autocmd TermEnter * :call HandleTermEnter()
-    autocmd SessionLoadPost * :call HandleSessionLoadPost()
+    autocmd TermEnter * :call custom#HandleTermEnter()
+    autocmd SessionLoadPost * :call custom#HandleSessionLoadPost()
 augroup END
 
 set nobackup

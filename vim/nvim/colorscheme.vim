@@ -7,7 +7,7 @@ let g:rehash256 = 1
 "color badwolf
 
 
-function! RandomColor()
+function! colorscheme#RandomColor()
     let colors = split(globpath(&rtp, "colors/*.vim"), "\n")
     if has('packages')
         let colors += split(globpath(&packpath, "pack/*/opt/*/colors/*.vim"), "\n")
@@ -18,7 +18,7 @@ function! RandomColor()
     echomsg "current color scheme: " . target
 endfunction
 
-function! CheckColor()
+function! colorscheme#CheckColor()
     let colors = split(globpath(&rtp, "colors/*.vim"), "\n")
     if has('packages')
         let colors += split(globpath(&packpath, "pack/*/opt/*/colors/*.vim"), "\n")
@@ -40,6 +40,6 @@ function! CheckColor()
     endif
 endfunction
 
-command! -nargs=0 RC :call RandomColor()
+command! -nargs=0 RC :call colorscheme#RandomColor()
 
 colorscheme earlysummer

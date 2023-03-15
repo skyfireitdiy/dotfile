@@ -1,6 +1,6 @@
 
 
-function! CreateToggleWindow()
+function! toggleterm#CreateToggleWindow()
 
 lua <<EOF
     local Terminal  = require('toggleterm.terminal').Terminal
@@ -43,8 +43,8 @@ endfunction
 
 augroup AutoToggleWin
 autocmd!
-autocmd SessionLoadPost * :call CreateToggleWindow()
-autocmd VimEnter * :call CreateToggleWindow()
+autocmd SessionLoadPost * :call toggleterm#CreateToggleWindow()
+autocmd VimEnter * :call toggleterm#CreateToggleWindow()
 augroup END
 
 

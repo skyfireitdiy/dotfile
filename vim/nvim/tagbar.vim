@@ -5,7 +5,7 @@ nnoremap gt :TagbarToggle<cr>
 let g:tagbar_autofocus=1
 let g:tagbar_autoshowtag=1
 
-function! RecoverTagBar()
+function! tagbar#RecoverTagBar()
     let need_recover = 0
     let tab = tabpagenr()
     let bufs = tabpagebuflist(tab)
@@ -25,5 +25,5 @@ endfunction
 
 augroup autoRecoverTagbar
     autocmd!
-    autocmd SessionLoadPost * call RecoverTagBar()
+    autocmd SessionLoadPost * call tagbar#RecoverTagBar()
 augroup END

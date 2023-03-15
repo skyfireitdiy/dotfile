@@ -1,7 +1,7 @@
 
 nnoremap <leader>e :CocCommand explorer<cr>
 
-function! RecoverExplorer()
+function! explorer#RecoverExplorer()
     let need_recover = 0
     let tab = tabpagenr()
     let bufs = tabpagebuflist(tab)
@@ -19,5 +19,5 @@ endfunction
 
 augroup autoRecoverExplorer
     autocmd!
-    autocmd SessionLoadPost * call RecoverExplorer()
+    autocmd SessionLoadPost * call explorer#RecoverExplorer()
 augroup END
