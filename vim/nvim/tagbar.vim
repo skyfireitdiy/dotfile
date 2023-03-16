@@ -18,6 +18,7 @@ function! tagbar#RecoverTagBar()
     endfor
     if need_recover == 1
         Tagbar
+        wincmd p
     endif
 endfunction
 
