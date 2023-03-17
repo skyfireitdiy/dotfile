@@ -2,8 +2,11 @@ let g:auto_format_flag = 1
 
 function autoformat#RunAutoFormat()
     if g:auto_format_flag == 1
-        echom "Autoformat file:".expand("%:p")
-        Autoformat
+        let dot_pos = stridx(expand('%:p:t'), '.')
+        if dot_pos != -1
+            echom "Autoformat file:".expand("%:p")
+            Autoformat
+        endif
     endif
 endfunction
 
