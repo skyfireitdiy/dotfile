@@ -3,6 +3,9 @@ nnoremap <silent><leader>cL :call chatgpt#LoadSession()<cr>
 nnoremap <silent><leader>cD :call chatgpt#DeleteSession()<cr>
 nnoremap <silent><leader>cC :call chatgpt#CloseSession()<cr>
 nnoremap <silent><leader>cO :call chatgpt#OpenWindow()<cr>
+nnoremap <silent><leader>ck :call chatgpt#ChatCode()<cr>
+
+vnoremap <silent><leader>ck :call chatgpt#ChatSelectedCode()<cr>
 
 
 call chatgpt#AddConfig('<leader>ce', '请解释以下代码：&')
@@ -14,3 +17,5 @@ call chatgpt#AddConfig('<leader>ca', '&')
 call chatgpt#AddConfig('<leader>cw', '编写以“&”为题目的文章，以markdown格式输出')
 call chatgpt#AddConfig('<leader>c?', '什么是&')
 call chatgpt#AddConfig('<leader>ch', '如何&')
+
+
