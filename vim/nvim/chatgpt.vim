@@ -4,10 +4,10 @@ nnoremap <silent><leader>cD :call chatgpt#DeleteSession()<cr>
 nnoremap <silent><leader>cC :call chatgpt#CloseSession()<cr>
 nnoremap <silent><leader>cO :call chatgpt#OpenWindow()<cr>
 
-nnoremap <silent><leader>ck :call chatgpt#InBufChat("\n[Output in plain text format, Do not output any content other than code snippets.]")<cr>
+nnoremap <silent><leader>ck :call chatgpt#InBufChat("\n[Do not output any content other than code snippets.]")<cr>
 
 vnoremap <silent><leader>cg <ESC>:call chatgpt#OutBufChatVisual()<cr>
-vnoremap <silent><leader>ck <ESC>:call chatgpt#InBufChatVisual("\n[Output in plain text format, Do not output any content other than code snippets.]")<cr>
+vnoremap <silent><leader>ck <ESC>:call chatgpt#InBufChatVisual("\n[Do not output any content other than code snippets.]")<cr>
 
 
 call chatgpt#AddOutBufConfig('<leader>ce', '请解释以下代码：&')
