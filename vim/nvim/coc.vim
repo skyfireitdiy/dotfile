@@ -98,6 +98,7 @@ let g:coc_config = [
             \ ['coc-cmake'],
             \ ['coc-cl'],
             \ ['coc-json'],
+            \ ['coc-codegeex'],
             \ ]
 "  coc extensions
 let g:coc_disable_startup_warning = 1
