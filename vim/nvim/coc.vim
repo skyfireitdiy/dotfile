@@ -108,3 +108,6 @@ for c in g:coc_config
         execute "runtime coc/" . c[1]
     endif
 endfor
+
+call system("python3 ". shellescape(expand("~/.config/nvim/coc/merge_config.py")))
+
