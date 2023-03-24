@@ -1,4 +1,5 @@
 "  coc.vim config
+call system("python3 ". shellescape(expand("~/.config/nvim/coc/merge_config.py")))
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#_select_confirm() :
@@ -110,5 +111,4 @@ for c in g:coc_config
     endif
 endfor
 
-call system("python3 ". shellescape(expand("~/.config/nvim/coc/merge_config.py")))
 
