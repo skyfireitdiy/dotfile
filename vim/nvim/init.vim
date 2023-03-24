@@ -138,6 +138,7 @@ let g:config_table = [
             \ [ 'ludovicchabant/vim-gutentags', 'ctags.vim'],
             \ [ 'puremourning/vimspector', 'vimspector.vim'],
             \ [ 'skyfireitdiy/chatgpt', 'chatgpt.vim'],
+            \ [ 'skyfireitdiy/codegeex-vim', 'codegeex.vim'],
             \ [ 'gmarik/vundle'],
             \ [ 'scrooloose/syntastic'],
             \ [ 'dbeniamine/cheat.sh-vim'],
