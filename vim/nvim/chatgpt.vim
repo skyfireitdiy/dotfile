@@ -3,6 +3,8 @@ nnoremap <silent><leader>cL :call chatgpt#LoadSession()<cr>
 nnoremap <silent><leader>cD :call chatgpt#DeleteSession()<cr>
 nnoremap <silent><leader>cC :call chatgpt#CloseSession()<cr>
 nnoremap <silent><leader>cO :call chatgpt#OpenWindow()<cr>
+nnoremap <silent><leader>cT :call chatgpt#TruncSession()<cr>
+
 
 nnoremap <silent><leader>ck :call chatgpt#InBufChat("\n[Do not output any content other than code snippets.]")<cr>
 
