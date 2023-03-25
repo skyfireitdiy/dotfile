@@ -22,7 +22,7 @@
         "open"
       ],
       "o": ["wait", "expanded?", "collapse", "expand"],
-      "<C-cr>": ["wait", "expandable?", "cd", "open"],
+      "cd": ["wait", "expandable?", "cd", "open"],
       "<cr>": ["wait", "expandable?", "expand", "open"],
       "e": "open",
       "s": "open:split",
