@@ -11,10 +11,9 @@ function! custom#BackgroundBuffer()
 endfunction
 
 function! custom#CleanBuffer()
-    let bufs = custom#BackgroundBuffer()
+    let bufs = range(1, bufnr('$'))
     for buf in bufs
         let name = bufname(buf)
-        echom match(name, "\\[.*\\]")
         if match(name, "\\[.*\\]") != -1 || match(name, "__.*__") != -1
             execute "bd! ".buf
         endif
