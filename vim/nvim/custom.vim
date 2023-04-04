@@ -23,8 +23,11 @@ endfunction
 
 function! custom#CloseBackgroundBuffer()
     let bufs = custom#BackgroundBuffer()
-    for b in bufs
-        execute "bd! ".b
+    for buf in bufs
+        let name = bufname(buf)
+        if match(name, "\\[.*\\]") != -1 || match(name, "__.*__") != -1
+            execute "bd! ".buf
+        endif
     endfor
 endfunction
 
@@ -47,7 +50,7 @@ function! custom#HandleTermEnter()
 endfunction
 
 function! custom#HandleSessionLoadPost()
-    call custom#CleanBuffer()
+    call custom#CloseBackgroundBuffer()
     call custom#LoadProjectConfig()
 endfunction
 
