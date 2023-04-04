@@ -24,7 +24,7 @@ endfunction
 
 
 
-augroup autoRecoverTagbar
-    autocmd!
-    autocmd SessionLoadPost * call tagbar#RecoverTagBar()
-augroup END
+" augroup autoRecoverTagbar
+"     autocmd!
+"     autocmd SessionLoadPost * call tagbar#RecoverTagBar()
+" augroup END

@@ -17,7 +17,7 @@ function! explorer#RecoverExplorer()
     endif
 endfunction
 
-augroup autoRecoverExplorer
-    autocmd!
-    autocmd SessionLoadPost * call explorer#RecoverExplorer()
-augroup END
+" augroup autoRecoverExplorer
+"     autocmd!
+"     autocmd SessionLoadPost * call explorer#RecoverExplorer()
+" augroup END
