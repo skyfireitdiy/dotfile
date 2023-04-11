@@ -267,7 +267,7 @@ function! init#AddQuickStartItem(desc, cmd)
 endfunction
 
 function! init#IgnorePlugin(plugin)
-    let g:ignored_plugin = add(g:ignored_plugin, plugin)
+    let g:ignored_plugin = add(g:ignored_plugin, a:plugin)
 endfunction
 
 if init#CheckDeps() == 1
