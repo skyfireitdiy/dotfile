@@ -36,7 +36,7 @@ endif
 let g:config_table = [
             \ ['增强的c++高亮', 'octol/vim-cpp-enhanced-highlight', 'cpphighlight.vim', ['heavy'] ],
             \ ['彩虹括号', 'luochen1990/rainbow','rainbow.vim', ['heavy']],
-            \ ['tag变蓝', 'majutsushi/tagbar', 'tagbar.vim', ['heavy']],
+            \ ['tag边栏', 'majutsushi/tagbar', 'tagbar.vim', ['heavy']],
             \ ['仅在当前活动窗口高亮光标', 'vim-scripts/CursorLineCurrentWindow' ],
             \ ['搜索时闪烁当前行', 'inside/vim-search-pulse' ],
             \ ['自动格式化', 'chiel92/vim-autoformat' ,'autoformat.vim', ['heavy']],
@@ -155,8 +155,8 @@ let g:config_table = [
             \ ['主题', 'tjdevries/gruvbuddy.nvim'],
             \ ['主题', 'ellisonleao/gruvbox.nvim'],
             \ ['主题', 'lalitmee/cobalt2.nvim'],
-            \ ['', '', 'custom.vim' ],
-            \ ['', '', 'keybinding.vim'],
+            \ ['', '', 'custom.vim', ['vscode']],
+            \ ['', '', 'keybinding.vim', ['vscode']],
             \ ['', '', 'colorscheme.vim' ],
             \ ]
 
@@ -198,11 +198,23 @@ function! init#GetLoadFlags()
         if len(config) > 3
             let properties = config[3]
         endif
-        if ((g:light_vim == 0 || index(properties, "heavy") == -1) && index(g:ignored_plugin, config[0]) == -1)
-            let g:load_flags = add(g:load_flags, 1)
+        let flag = 0
+        if exists('g:vscode')
+            if index(properties, "vscode") != -1
+                let flag = 1
+            endif
         else
-            let g:load_flags = add(g:load_flags, 0)
+            if g:light_vim == 0
+                let flag = 1
+            endif
+            if index(properties, "heavy") == -1
+                let flag = 1
+            endif
         endif
+        if index(g:ignored_plugin, config[0]) != -1
+            let flag = 0
+        endif
+        let g:load_flags = add(g:load_flags, flag)
     endfor
 endfunction
 
