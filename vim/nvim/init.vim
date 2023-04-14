@@ -51,7 +51,7 @@ let g:config_table = [
             \ ['基于fzf的工具', 'junegunn/fzf.vim', 'fzf.vim'],
             \ ['增加、修改包围的括号或者tag', 'tpope/vim-surround' ],
             \ ['表格模式（markdown）', 'dhruvasagar/vim-table-mode' ],
-            \ ['增强的选中扩展', 'vim-scripts/wildfire.vim' ,'wildfire.vim', ['heavy]],
+            \ ['增强的选中扩展', 'vim-scripts/wildfire.vim' ,'wildfire.vim', ['heavy']],
             \ ['treesitter语法高亮', 'nvim-treesitter/nvim-treesitter', 'treesitter.vim', ['heavy'], "{'do':':TSUpdate'}"],
             \ ['treesitter对象', 'nvim-treesitter/nvim-treesitter-textobjects', 'treesitter-textobjects.vim', ['heavy']],
             \ ['函数签名提示', 'ray-x/lsp_signature.nvim', 'lsp_signature.vim'],
