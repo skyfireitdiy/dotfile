@@ -32,7 +32,7 @@ endif
 
 " 使用表驱动重构vim配置
 " 表项含义
-"       插件名称 插件配置 插件flag(nvim/vim/heavy一个或者) 插件加载配置
+"       插件作用 插件名称 插件配置 插件flag(nvim/vim/heavy一个或者) 插件加载配置
 let g:config_table = [
             \ ['增强的c++高亮', 'octol/vim-cpp-enhanced-highlight', 'cpphighlight.vim', ['heavy'] ],
             \ ['彩虹括号', 'luochen1990/rainbow','rainbow.vim', ['heavy']],
