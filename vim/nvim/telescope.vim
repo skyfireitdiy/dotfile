@@ -105,7 +105,7 @@ nnoremap <silent><leader>T :Telescope tags<cr>
 nnoremap <silent><leader>ff :Telescope find_files<CR>
 nnoremap <silent><leader>f :Telescope git_files<CR>
 nnoremap <silent><leader>gs :Telescope git_status<CR>
-nnoremap <silent><leader>b :Telescope buffers<CR>
+nnoremap <silent>``b :Telescope buffers<CR>   " 使用fzf的buffer
 nnoremap <silent><leader>l :Telescope current_buffer_fuzzy_find<CR>
 nnoremap <silent><leader>h :Telescope oldfiles<CR>
 nnoremap <silent><leader>: :Telescope command_history<CR>
