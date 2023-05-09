@@ -1,6 +1,6 @@
 lua << EOF
 require("auto-save").setup {
-    enabled = false, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
+    enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
     execution_message = {
 		message = function() -- message to print on save
 			return ("AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"))
