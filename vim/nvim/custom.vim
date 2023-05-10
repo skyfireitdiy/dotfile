@@ -21,13 +21,20 @@ function! custom#CleanBuffer()
 endfunction
 
 
-function! custom#CloseBackgroundBuffer()
+function! custom#CloseBackgroundSpecBuffer()
     let bufs = custom#BackgroundBuffer()
     for buf in bufs
         let name = bufname(buf)
         if match(name, "\\[.*\\]") != -1 || match(name, "__.*__") != -1
             execute "bd! ".buf
         endif
+    endfor
+endfunction
+
+function! custom#CloseBackgroundBuffer()
+    let bufs = custom#BackgroundBuffer()
+    for buf in bufs
+        execute "bd! ".buf
     endfor
 endfunction
 
@@ -50,9 +57,11 @@ function! custom#HandleTermEnter()
 endfunction
 
 function! custom#HandleSessionLoadPost()
-    call custom#CloseBackgroundBuffer()
+    call custom#CloseBackgroundSpecBuffer()
     call custom#LoadProjectConfig()
 endfunction
+
+command! -nargs=0 R :bufdo e!
 
 augroup autoRunGroup
     autocmd!

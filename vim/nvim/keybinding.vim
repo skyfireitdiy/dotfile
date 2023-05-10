@@ -64,7 +64,6 @@ nnoremap <A-Up> <C-w>k
 nnoremap <A-Right> <C-w>l
 nnoremap <C-]> g<C-]>
 nnoremap <C-c> yiw
-nnoremap <C-R> :bufdo e!<CR>
 
 vnoremap <Up> k
 vnoremap <Down> j
