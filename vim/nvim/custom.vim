@@ -61,7 +61,12 @@ function! custom#HandleSessionLoadPost()
     call custom#LoadProjectConfig()
 endfunction
 
-command! -nargs=0 R :bufdo e!
+function! custom#RefreshAllBuffer()
+    call custom#CloseBackgroundBuffer()
+    bufdo e!
+endfunction
+
+command! -nargs=0 R :call custom#RefreshAllBuffer()
 
 augroup autoRunGroup
     autocmd!
