@@ -102,7 +102,7 @@ nnoremap <silent><leader>k :Telescope keymaps<cr>
 nnoremap <silent><leader>H :Telescope help_tags<cr>
 nnoremap <silent><leader>t :Telescope current_buffer_tags<cr>
 nnoremap <silent><leader>T :Telescope tags<cr>
-nnoremap <silent><leader>ff :Telescope find_files<CR>
+" nnoremap <silent><leader>ff :Telescope find_files<CR>
 nnoremap <silent><leader>f :Telescope git_files<CR>
 nnoremap <silent><leader>gs :Telescope git_status<CR>
 nnoremap <silent>``b :Telescope buffers<CR>
