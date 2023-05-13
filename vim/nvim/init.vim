@@ -78,7 +78,6 @@ let g:config_table = [
             \ ['telescope fzf扩展', 'nvim-telescope/telescope-fzf-native.nvim', '', [], "{ 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }"],
             \ ['会话自动保存', 'rmagatti/auto-session', 'auto-session.vim'],
             \ ['会话搜索', 'rmagatti/session-lens', "session-lens.vim"],
-            \ ['书签搜索', 'dhruvmanila/telescope-bookmarks.nvim'],
             \ ['快速命令', 'FeiyouG/command_center.nvim'],
             \ ['透明', 'xiyaowong/nvim-transparent', 'transparent.vim'],
             \ ['高亮当前块', 'folke/twilight.nvim', 'twilight.vim'],

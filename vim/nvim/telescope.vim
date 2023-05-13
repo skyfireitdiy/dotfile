@@ -68,25 +68,13 @@ require('telescope').setup {
 
       -- Provide debug messages
       debug = false,
-    },
-    command_center = {
-      components = {
-        command_center.component.DESC,
---        command_center.component.KEYS,
-      },
-      sort_by = {
-        command_center.component.DESC,
-        command_center.component.KEYS,
-      },
-      auto_replace_desc_with_cmd = false,
-    },
+    }
   }
 }
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('session-lens')
-require('telescope').load_extension('bookmarks')
 require('telescope').load_extension('command_center')
 
 EOF
