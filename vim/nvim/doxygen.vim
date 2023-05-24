@@ -1,10 +1,10 @@
 
 "  doxygen
-nnoremap <leader>//c :Dox<cr>
-nnoremap <leader>//l :DoxLic<cr>
-nnoremap <leader>//a :DoxAuthor<cr>
-nnoremap <leader>//u :DoxUndoc<cr>
-nnoremap <leader>//b :DoxBlock<cr>
+" nnoremap <leader>//c :Dox<cr>
+" nnoremap <leader>//l :DoxLic<cr>
+" nnoremap <leader>//a :DoxAuthor<cr>
+" nnoremap <leader>//u :DoxUndoc<cr>
+" nnoremap <leader>//b :DoxBlock<cr>
 
 
 let g:DoxygenToolkit_briefTag_pre = "说    明："
