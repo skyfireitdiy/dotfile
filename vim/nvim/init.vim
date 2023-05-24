@@ -84,6 +84,7 @@ let g:config_table = [
             \ ['代码块范围箭头', 'yaocccc/nvim-hlchunk'],
             \ ['缩进线', 'lukas-reineke/indent-blankline.nvim', 'indent-blankline.vim'],
             \ ['浮动终端', 'akinsho/toggleterm.nvim', 'toggleterm.vim'],
+            \ ['lsp增强', 'jose-elias-alvarez/null-ls.nvim', 'null-ls.vim'],
             \ ['主题', 'tomasr/molokai' ],
             \ ['主题', 'dracula/vim'],
             \ ['主题', 'sjl/badwolf' ],
