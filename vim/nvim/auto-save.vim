@@ -1,6 +1,6 @@
 lua << EOF
 require("auto-save").setup {
-    enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
+    enabled = false, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
     execution_message = {
 		message = function() -- message to print on save
 			return ("AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"))
@@ -8,7 +8,7 @@ require("auto-save").setup {
 		dim = 0.18, -- dim the color of `message`
 		cleaning_interval = 1250, -- (milliseconds) automatically clean MsgArea after displaying `message`. See :h MsgArea
 	},
-    trigger_events = {"InsertLeave", "TextChanged"}, -- vim events that trigger auto-save. See :h events
+    trigger_events = {"BufLeave"}, -- vim events that trigger auto-save. See :h events
 	-- function that determines whether to save the current buffer or not
 	-- return true: if buffer is ok to be saved
 	-- return false: if it's not ok to be saved
@@ -24,7 +24,7 @@ require("auto-save").setup {
 		return false -- can't save
 	end,
     write_all_buffers = false, -- write all buffers when the current one meets `condition`
-    debounce_delay = 135, -- saves the file at most every `debounce_delay` milliseconds
+    debounce_delay = 1000, -- saves the file at most every `debounce_delay` milliseconds
 	callbacks = { -- functions to be executed at different intervals
 		enabling = nil, -- ran when enabling auto-save
 		disabling = nil, -- ran when disabling auto-save

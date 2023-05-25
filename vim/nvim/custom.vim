@@ -10,24 +10,32 @@ function! custom#BackgroundBuffer()
     return filter(buffers, 'buflisted(v:val) && index(tabpagebuflist(tabpagenr()),v:val) == -1') " 所有buffer
 endfunction
 
-function! custom#CleanBuffer()
+function! custom#isNormalBufferName(filename)
+    return a:filename != "" && a:filename !~ "__.*__" && a:filename !~ "\\[.*\\]"
+endfunction
+
+function! custom#SpecialBuffer()
     let bufs = range(1, bufnr('$'))
+    return filter(bufs,'!custom#isNormalBufferName(v:val)')
+endfunction
+
+function! custom#BackgroundSpecialBuffer()
+    let bufs = custom#BackgroundBuffer()
+    return filter(bufs,'!custom#isNormalBufferName(v:val)')
+endfunction
+
+function! custom#CleanSpecialBuffer()
+    let bufs = custom#SpecialBuffer()
     for buf in bufs
-        let name = bufname(buf)
-        if match(name, "\\[.*\\]") != -1 || match(name, "__.*__") != -1
-            execute "bd! ".buf
-        endif
+        execute "bd! ".buf
     endfor
 endfunction
 
 
 function! custom#CloseBackgroundSpecBuffer()
-    let bufs = custom#BackgroundBuffer()
+    let bufs = custom#BackgroundSpecialBuffer()
     for buf in bufs
-        let name = bufname(buf)
-        if match(name, "\\[.*\\]") != -1 || match(name, "__.*__") != -1
-            execute "bd! ".buf
-        endif
+        execute "bd! ".buf
     endfor
 endfunction
 
@@ -66,6 +74,14 @@ function! custom#RefreshAllBuffer()
     bufdo e!
 endfunction
 
+function! custom#SaveNormalBuffer()
+  let pattern = "__.*__"
+  let filename = expand('%:t')
+  if custom#isNormalBufferName(filename)
+    exec ":e"
+  endif
+endfunction
+
 command! -nargs=0 R :call custom#RefreshAllBuffer()
 
 augroup autoRunGroup
@@ -77,6 +93,7 @@ augroup autoRunGroup
     " autocmd BufEnter * :set nomodifiable
     autocmd TermEnter * :call custom#HandleTermEnter()
     autocmd SessionLoadPost * :call custom#HandleSessionLoadPost()
+    autocmd BufEnter * :call custom#SaveNormalBuffer()
 augroup END
 
 set nobackup
