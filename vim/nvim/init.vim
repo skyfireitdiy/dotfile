@@ -60,7 +60,6 @@ let g:config_table = [
             \ ['快速搜索', 'ggandor/lightspeed.nvim'],
             \ ['书签管理', 'chentoast/marks.nvim', 'marks.vim'],
             \ ['git状态', 'lewis6991/gitsigns.nvim', 'gitsigns.vim'],
-            \ ['git包装', 'tpope/vim-fugitive'],
             \ ['mini功能合集', 'echasnovski/mini.nvim','mini.vim'],
             \ ['图标', 'ryanoasis/vim-devicons' ],
             \ ['图标', 'kyazdani42/nvim-web-devicons'],

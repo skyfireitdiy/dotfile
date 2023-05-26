@@ -41,30 +41,10 @@ config_fish(){
     sudo chsh -s /usr/bin/fish
 }
 
-config_git(){
-    git remote set-url origin git@github.com:skyfireitdiy/dotfile.git
-    git config --global core.editor nvim
-    git config --global user.email skyfireitdiy@hotmail.com
-    git config --global user.name skyfire
-    git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-    git config --global alias.br branch
-    git config --global alias.bra branch -a
-    git config --global alias.co checkout
-    git config --global alias.c commit
-    git config --global alias.s status
-    git config --global alias.ss show --stat
-    git config --global alias.d diff
-    git config --global alias.ds diff --stat
-    git config --global alias.mg merge
-    git config --global alias.cp cherry-pick
-    git config --global alias.rb rebase
-    git config --global pull.rebase true
-}
 
 config(){
     ./install.sh fish tmux x vim konsole kitty alacritty hx i3 polybar
     config_fish
-    config_git
 }
 
 install_all(){
