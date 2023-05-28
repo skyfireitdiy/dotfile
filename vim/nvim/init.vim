@@ -95,7 +95,7 @@ let g:config_table = [
             \ ['透明', 'xiyaowong/nvim-transparent', 'transparent.vim'],
             \ ['高亮当前块', 'folke/twilight.nvim', 'twilight.vim'],
             \ ['代码块范围箭头', 'yaocccc/nvim-hlchunk'],
-            \ ['缩进线', 'lukas-reineke/indent-blankline.nvim', 'indent-blankline.vim'],
+            \ ['缩进线', 'lukas-reineke/indent-blankline.nvim', 'indent-blankline.vim', ['heavy']],
             \ ['浮动终端', 'akinsho/toggleterm.nvim', 'toggleterm.vim'],
             \ ['lsp增强', 'jose-elias-alvarez/null-ls.nvim', 'null-ls.vim'],
             \ ['主题', 'tomasr/molokai' ],
