@@ -23,6 +23,19 @@ let g:deps_check = [
             \ ['pip3', 'pip3 --version'],
             \ ]
 
+function! init#CheckHugeFile()
+    for path in argv()
+        if filereadable(path)
+            " 判断文件大小，如果超过1MB，启动轻量级nvim
+            if(getfsize(path) > 10*1024*1024)
+                let g:light_vim = 1
+                break
+            endif
+        endif
+    endfor
+endfunction
+
+call init#CheckHugeFile()
 
 let g:quick_start_config = []
 
