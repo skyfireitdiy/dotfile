@@ -20,7 +20,7 @@ inoremap <C-H> <C-W>
 nnoremap <leader>w <C-w>
 nnoremap <leader>rl :w<cr>:source ~/.config/nvim/init.vim<cr>
 nnoremap <leader>? :set hlsearch!<cr>
-nnoremap <leader>fc :echo expand('%:p')<cr>
+nnoremap <leader>fc :let @+=expand('%:p')<CR>:echo expand('%:p')<CR>
 nnoremap <leader>zc 99zm
 nnoremap <leader>zo 99zr
 nnoremap // *
