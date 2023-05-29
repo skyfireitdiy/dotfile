@@ -181,7 +181,7 @@ function! init#AddPlugin(plugin_config)
 endfunction
 
 " 增加coc插件
-function! init#AddCocExt(ext_config)
+function! init#AddCoc(ext_config)
     let g:coc_ext_table = add(g:coc_ext_table, a:ext_config)
 endfunction
 
