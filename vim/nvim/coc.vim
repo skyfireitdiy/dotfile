@@ -99,7 +99,6 @@ let g:coc_config = [
             \ ['coc-cmake'],
             \ ['coc-cl'],
             \ ['coc-json'],
-            \ ['coc-kotlin-dev'],
             \ ]
 
 for ext in g:coc_ext_table
