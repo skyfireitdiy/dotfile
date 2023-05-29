@@ -9,6 +9,8 @@ let g:install_vim = !filereadable(g:home_dir."/.local/share/nvim/site/autoload/p
 let g:npm_registry = 'https://registry.npm.taobao.org'
 let g:load_flags = []
 let g:ignored_plugin = []
+let g:coc_ext_table = []
+let g:treesitter_table = []
 let g:deps_check = [
             \ ['fzf','fzf --version'],
             \ ['lazygit','lazygit --version'],
@@ -176,6 +178,16 @@ let g:config_table = [
 " 增加Plugin
 function! init#AddPlugin(plugin_config)
     let g:config_table = add(g:config_table, a:plugin_config)
+endfunction
+
+" 增加coc插件
+function! init#AddCocExt(ext_config)
+    let g:coc_ext_table = add(g:coc_ext_table, a:ext_config)
+endfunction
+
+" 增加treesitter语言支持
+function! init#AddTreesitter(treesitter_config)
+    let g:treesitter_table = add(g:treesitter_table, a:treesitter_config)
 endfunction
 
 " 增加依赖项检测

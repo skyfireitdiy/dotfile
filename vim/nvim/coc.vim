@@ -99,7 +99,13 @@ let g:coc_config = [
             \ ['coc-cmake'],
             \ ['coc-cl'],
             \ ['coc-json'],
+            \ ['coc-kotlin-dev'],
             \ ]
+
+for ext in g:coc_ext_table
+    let g:coc_config = add(g:coc_config, ext)
+endfor
+
 "  coc extensions
 let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = []
