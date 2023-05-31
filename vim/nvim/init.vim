@@ -282,11 +282,11 @@ function! init#LoadConfig()
         endif
         if g:load_flags[i] && plugin_config != ""
             if filereadable(g:home_dir.'/.config/nvim/'.plugin_config)
-                execute "runtime ".plugin_config
+                execute "runtime ".g:home_dir.'/.config/nvim/'.plugin_config
             elseif filereadable(g:home_dir.'/.vimrc_user/'.plugin_config)
                 execute "runtime ".g:home_dir.'/.vimrc_user/'.plugin_config
             else
-                echoerr "can't found config ".plugin_config."!"
+                echoerr "can't find config ".plugin_config."!"
             endif
         endif
     endfor
