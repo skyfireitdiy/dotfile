@@ -74,7 +74,7 @@ function! custom#RefreshAllBuffer()
     bufdo e!
 endfunction
 
-function! custom#ReloadNormalBuffer()
+function! custom#SaveNormalBuffer()
   let pattern = "__.*__"
   let filename = expand('%:t')
   if custom#isNormalBufferName(filename)
@@ -93,7 +93,7 @@ augroup autoRunGroup
     " autocmd BufEnter * :set nomodifiable
     autocmd TermEnter * :call custom#HandleTermEnter()
     autocmd SessionLoadPost * :call custom#HandleSessionLoadPost()
-    autocmd BufEnter * :call custom#ReloadNormalBuffer()
+    autocmd BufEnter * :call custom#SaveNormalBuffer()
 augroup END
 
 set nobackup
