@@ -21,5 +21,5 @@ nnoremap <silent>``x      :Commands<CR>
 nnoremap <silent>``G      "9yiw:Rg<Space><C-r>9<cr>
 
 nnoremap <leader>L      "9yiw:BLines<Space><C-r>9<cr>
-nnoremap <leader>TT     "9yiw:Tags<Space><C-r>9<cr>
+nnoremap <leader>T      "9yiw:Tags<Space><C-r>9<cr>
 nnoremap <leader>W      :Windows<cr>
