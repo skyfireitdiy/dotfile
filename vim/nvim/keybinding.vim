@@ -41,9 +41,7 @@ nnoremap g<Left> 0
 nnoremap g<Right> $
 nnoremap g<Down> 25jzz
 nnoremap g<Up> 25kzz
-nnoremap W :wa<cr>
 nnoremap Q :qa<cr>
-nnoremap WQ :wqa<cr>
 nnoremap <leader>. :<Up><cr>
 nnoremap _d "_d
 nnoremap <C-j> <C-u>
@@ -64,6 +62,7 @@ nnoremap <A-Up> <C-w>k
 nnoremap <A-Right> <C-w>l
 nnoremap <C-]> g<C-]>
 nnoremap <C-c> yiw
+nnoremap <C-v> vimP
 nnoremap <leader>y yiw
 nnoremap <leader>p viwP
 
