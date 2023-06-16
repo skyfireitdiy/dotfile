@@ -75,11 +75,11 @@ function! custom#RefreshAllBuffer()
 endfunction
 
 function! custom#ReleadCurrentBuffer()
-  let pattern = "__.*__"
-  let filename = expand('%:t')
-  if custom#isNormalBufferName(filename)
-    exec ":e"
-  endif
+    let pattern = "__.*__"
+    let filename = expand('%:t')
+    if custom#isNormalBufferName(filename)
+        exec ":e"
+    endif
 endfunction
 
 command! -nargs=0 R :call custom#RefreshAllBuffer()
@@ -140,9 +140,9 @@ set wildmode=longest,list,full,lastused
 set noswapfile
 
 if exists("g:neovide")
-    set guifont=FiraCode\ NFM:h8:w8:b:i
+    set guifont=Source\ Code\ Pro:h10:b:i
     let g:neovide_scale_factor = 1.0
-    let g:neovide_transparency = 0.5
+    let g:neovide_transparency = 0.3
     let g:neovide_hide_mouse_when_typing = v:true
     let g:neovide_fullscreen = v:true
     let g:neovide_cursor_vfx_mode = "railgun"
