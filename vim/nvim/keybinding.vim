@@ -2,6 +2,8 @@
 inoremap hh <ESC>
 inoremap jj <ESC>
 inoremap kk <ESC>
+inoremap oo <ESC>o
+inoremap OO <ESC>O
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
@@ -16,6 +18,7 @@ inoremap <A-k> <C-\><C-N><C-w>k
 inoremap <A-l> <C-\><C-N><C-w>l
 inoremap <C-v> <C-r>"
 inoremap <C-H> <C-W>
+inoremap <C-c> <ESC>
 
 nnoremap <leader>w <C-w>
 nnoremap <leader>rl :w<cr>:source ~/.config/nvim/init.vim<cr>
@@ -29,8 +32,8 @@ nnoremap <leader>% ggvG
 nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left><C-r>9
 nnoremap <leader>R "9yiw:%s/\<<C-r>9\>//g<Left><Left><C-r>9
 nnoremap <leader>M :set nomodifiable!<cr>
-nnoremap <C-a> ^
-nnoremap <C-e> $
+" nnoremap <C-a> ^
+" nnoremap <C-e> $
 nnoremap <Up> k
 nnoremap <Down> j
 nnoremap <Left> h
@@ -44,10 +47,8 @@ nnoremap g<Up> 25kzz
 nnoremap Q :qa<cr>
 nnoremap <leader>. :<Up><cr>
 nnoremap _d "_d
-nnoremap <C-j> <C-u>
-nnoremap <C-k> <C-d>
-nnoremap <S-Left> vh
-nnoremap <S-Right> vl
+" nnoremap <C-j> <C-u>
+" nnoremap <C-k> <C-d>
 nnoremap <S-Up> :resize -1<CR>
 nnoremap <S-Down> :resize +1<CR>
 nnoremap <S-Left> :vertical resize -1<CR>
@@ -62,7 +63,7 @@ nnoremap <A-Up> <C-w>k
 nnoremap <A-Right> <C-w>l
 nnoremap <C-]> g<C-]>
 nnoremap <C-c> yiw
-nnoremap <C-v> vimP
+nnoremap <C-v> viwP
 nnoremap <leader>y yiw
 nnoremap <leader>p viwP
 
@@ -76,8 +77,6 @@ vnoremap g<Left> 0
 vnoremap g<Right> $
 vnoremap g<Down> 25jzz
 vnoremap g<Up> 25kzz
-vnoremap <C-a> ^
-vnoremap <C-e> $
 vnoremap <C-c> <ESC>
 vnoremap <leader>. :<Up><cr>
 vnoremap p P
