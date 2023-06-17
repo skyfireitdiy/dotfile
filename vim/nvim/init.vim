@@ -311,8 +311,8 @@ if init#CheckDeps() == 1
     if g:install_vim == 1
         call init#InstallVim()
     endif
-    call init#GetLoadFlags()
     call init#LoadUserConfig('before_all.vim')
+    call init#GetLoadFlags()
     call init#LoadPlugin()
     call init#LoadUserConfig('before_config.vim')
     call init#LoadConfig()

@@ -8,7 +8,24 @@ for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) 
     config.install_info.url = config.install_info.url:gsub("https://github.com/", "https://ghproxy.com/https://github.com/")
 end
 
-ext_tab = { "c", "lua", "rust", "cpp", "go", "bash", "make", "json", "json5", "yaml", "jsonc", "vim" ,"javascript", "cmake", "commonlisp", "python"}
+ext_tab = {
+    "c",
+    "lua",
+    "rust",
+    "cpp",
+    "go",
+    "bash",
+    "make",
+    "json",
+    "json5",
+    "yaml",
+    "jsonc",
+    "vim" ,
+    "javascript",
+    "cmake",
+    "commonlisp",
+    "python"
+    }
 for _, ext in pairs(vim.g.treesitter_table) do
     table.insert(ext_tab, ext)
 end
