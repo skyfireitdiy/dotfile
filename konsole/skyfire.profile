@@ -1,7 +1,7 @@
 [Appearance]
 AntiAliasFonts=true
 ColorScheme=DarkPastels
-Font=FiraCode NFM,10,-1,5,75,0,0,0,0,0,Bold
+Font=SauceCodePro Nerd Font Mono,10,-1,5,75,0,0,0,0,0,Bold
 UseFontLineChararacters=false
 
 [General]
