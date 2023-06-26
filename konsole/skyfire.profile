@@ -1,7 +1,7 @@
 [Appearance]
 AntiAliasFonts=true
 ColorScheme=DarkPastels
-Font=SauceCodePro Nerd Font Mono,10,-1,5,75,0,0,0,0,0,Bold
+Font=JetBrainsMono Nerd Font Mono,10,-1,5,75,0,0,0,0,0,Bold
 UseFontLineChararacters=false
 
 [General]
