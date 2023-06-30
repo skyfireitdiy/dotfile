@@ -192,6 +192,10 @@ endfunction
 
 " 增加依赖项检测
 function! init#CheckDeps()
+    let flag_file = g:home_dir . "/.vim_checked"
+    if filereadable(flag_file)
+        return 1
+    endif
     let flags = 1
     for deps in g:deps_check
         let out = system(deps[1])
@@ -204,6 +208,9 @@ function! init#CheckDeps()
             endif
         endif
     endfor
+    if flags == 1
+        call system("touch " . flag_file)
+    endif
     return flags
 endfunction
 
