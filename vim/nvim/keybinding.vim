@@ -2,8 +2,8 @@
 inoremap hh <ESC>
 inoremap jj <ESC>
 inoremap kk <ESC>
-inoremap oo <ESC>o
-inoremap OO <ESC>O
+inoremap <C-o><C-o> <ESC>o
+inoremap <C-O><C-O> <ESC>O
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
@@ -18,7 +18,8 @@ inoremap <A-k> <C-\><C-N><C-w>k
 inoremap <A-l> <C-\><C-N><C-w>l
 inoremap <C-v> <C-r>"
 inoremap <C-H> <C-W>
-inoremap <C-c> <ESC>
+inoremap <C-d><C-d> <ESC>ddi
+inoremap <C-c><C-c> <ESC>cci
 
 nnoremap <leader>w <C-w>
 nnoremap <leader>rl :w<cr>:source ~/.config/nvim/init.vim<cr>
