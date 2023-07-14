@@ -1,0 +1,13 @@
+services:
+  nvim:
+    build:
+      dockerfile: dockerfile
+    environment:
+      - http_proxy=${http_proxy}
+      - https_proxy=${https_proxy}
+      - socks_proxy=${socks_proxy}
+      - USERNAME=`whoami`
+      - USERID=`id -u`
+      - GROUPID=`id -g`
+    volumes:
+      - ${HOME}:${HOME}

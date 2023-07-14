@@ -1,0 +1,12 @@
+from archlinux
+copy pacman.conf /etc/pacman.conf
+copy mirrorlist /etc/pacman.d/mirrorlist
+env http_proxy=
+env https_proxy=
+env socks_proxy=
+run pacman -Sy
+run pacman -Su --no-comfirm
+run pacman -S archlinux-keyring
+run pacman -S yay
+run yay -S git nvim fzf fd lazygit ripgrep universal-ctags gcc nodejs xsel npm python3 python-pip
+
