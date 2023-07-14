@@ -61,7 +61,7 @@ endfunction
 function! custom#HandleTermEnter()
     startinsert
     set nonu
-    set norelativenumber
+    " set norelativenumber
 endfunction
 
 function! custom#HandleSessionLoadPost()
@@ -86,8 +86,8 @@ command! -nargs=0 R :call custom#RefreshAllBuffer()
 augroup autoRunGroup
     autocmd!
     autocmd BufLeave * stopinsert
-    autocmd InsertEnter * :set norelativenumber
-    autocmd InsertLeave * :set relativenumber
+    " autocmd InsertEnter * :set norelativenumber
+    " autocmd InsertLeave * :set relativenumber
     autocmd InsertLeave * :call system('fcitx-remote -c')
     " autocmd BufEnter * :set nomodifiable
     autocmd TermEnter * :call custom#HandleTermEnter()
