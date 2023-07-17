@@ -13,7 +13,6 @@ arg USERID=
 run pacman -Sy
 run pacman -Su --noconfirm
 run pacman -S --noconfirm archlinux-keyring yay git neovim fzf fd lazygit ripgrep universal-ctags gcc nodejs xsel npm python3 python-pip fish sudo docker
-run git clone https://ghproxy.com/https://github.com/skyfireitdiy/dotfile /dotfile
 run groupadd -g $GROUPID $USERNAME
 run useradd -g $USERNAME -u $USERID -d /home/$USERNAME -m -s /usr/bin/fish $USERNAME
 run echo 'skyfire ALL=(ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers
