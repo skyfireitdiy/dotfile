@@ -48,137 +48,139 @@ endif
 " 使用表驱动重构vim配置
 " 表项含义
 "       插件作用 插件名称 插件配置 插件flag(nvim/vim/heavy一个或者) 插件加载配置
-let g:config_table = [
-            \ ['增强的c++高亮', 'octol/vim-cpp-enhanced-highlight', 'cpphighlight.vim', ['heavy'] ],
-            \ ['彩虹括号', 'luochen1990/rainbow','rainbow.vim', ['heavy']],
-            \ ['tag边栏', 'majutsushi/tagbar', 'tagbar.vim', ['heavy']],
-            \ ['仅在当前活动窗口高亮光标', 'vim-scripts/CursorLineCurrentWindow' ],
-            \ ['搜索时闪烁当前行', 'inside/vim-search-pulse' ],
-            \ ['自动格式化', 'chiel92/vim-autoformat' ,'autoformat.vim', ['heavy']],
-            \ ['多光标支持', 'mg979/vim-visual-multi',  'visual-cursor.vim'],
-            \ ['Doxygen文档支持', 'vim-scripts/DoxygenToolkit.vim', 'doxygen.vim'],
-            \ ['状态栏', 'vim-airline/vim-airline' ],
-            \ ['状态栏主题', 'vim-airline/vim-airline-themes' ,'airline-theme.vim'],
-            \ ['光标样式', 'jszakmeister/vim-togglecursor' ],
-            \ ['屏幕滚动<C-j><C-k>', 'reedes/vim-wheel' ],
-            \ ['增强的搜索替换', 'vim-scripts/EasyGrep' ,'easygrep.vim'],
-            \ ['fzf基础支持', 'junegunn/fzf'],
-            \ ['基于fzf的工具', 'junegunn/fzf.vim', 'fzf.vim'],
-            \ ['增加、修改包围的括号或者tag', 'tpope/vim-surround' ],
-            \ ['表格模式（markdown）', 'dhruvasagar/vim-table-mode' ],
-            \ ['增强的选中扩展', 'vim-scripts/wildfire.vim' ,'wildfire.vim', ['heavy']],
-            \ ['treesitter语法高亮', 'nvim-treesitter/nvim-treesitter', 'treesitter.vim', ['heavy'], "{'do':':TSUpdate'}"],
-            \ ['treesitter对象', 'nvim-treesitter/nvim-treesitter-textobjects', 'treesitter-textobjects.vim', ['heavy']],
-            \ ['函数签名提示', 'ray-x/lsp_signature.nvim', 'lsp_signature.vim'],
-            \ ['函数参数高亮', 'm-demare/hlargs.nvim'],
-            \ ['which-key提示', 'folke/which-key.nvim', 'which-key.vim'],
-            \ ['快速搜索', 'ggandor/lightspeed.nvim'],
-            \ ['书签管理', 'chentoast/marks.nvim', 'marks.vim'],
-            \ ['git状态', 'lewis6991/gitsigns.nvim', 'gitsigns.vim'],
-            \ ['mini功能合集', 'echasnovski/mini.nvim','mini.vim'],
-            \ ['图标', 'ryanoasis/vim-devicons' ],
-            \ ['图标', 'kyazdani42/nvim-web-devicons'],
-            \ ['创建scratch缓冲区', 'vim-scripts/scratch.vim'],
-            \ ['自动保存ASToggle', 'Pocco81/auto-save.nvim', 'auto-save.vim'],
-            \ ['自动生成tag', 'ludovicchabant/vim-gutentags', 'ctags.vim'],
-            \ ['调试支持', 'puremourning/vimspector', 'vimspector.vim'],
-            \ ['chatgpt', 'skyfireitdiy/chatgpt', 'chatgpt.vim'],
-            \ ['codegeex', 'skyfireitdiy/codegeex-vim', 'codegeex.vim'],
-            \ ['codeium', 'Exafunction/codeium.vim'],
-            \ ['cheat.sh', 'dbeniamine/cheat.sh-vim'],
-            \ ['注释', 'preservim/nerdcommenter', 'nerdcommenter.vim'],
-            \ ['coc', 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '.g:npm_registry.' --frozen-lockfile'}"],
-            \ ['lua函数集', 'nvim-lua/plenary.nvim'],
-            \ ['搜索', 'nvim-telescope/telescope.nvim', 'telescope.vim'],
-            \ ['telescope fzf扩展', 'nvim-telescope/telescope-fzf-native.nvim', '', [], "{ 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }"],
-            \ ['会话自动保存', 'rmagatti/auto-session', 'auto-session.vim'],
-            \ ['会话搜索', 'rmagatti/session-lens', "session-lens.vim"],
-            \ ['快速命令', 'FeiyouG/command_center.nvim'],
-            \ ['透明', 'xiyaowong/nvim-transparent', 'transparent.vim'],
-            \ ['高亮当前块', 'folke/twilight.nvim', 'twilight.vim'],
-            \ ['代码块范围箭头', 'yaocccc/nvim-hlchunk'],
-            \ ['缩进线', 'lukas-reineke/indent-blankline.nvim', 'indent-blankline.vim', ['heavy']],
-            \ ['浮动终端', 'akinsho/toggleterm.nvim', 'toggleterm.vim'],
-            \ ['lsp增强', 'jose-elias-alvarez/null-ls.nvim', 'null-ls.vim'],
-            \ ['主题', 'tomasr/molokai' ],
-            \ ['主题', 'dracula/vim'],
-            \ ['主题', 'sjl/badwolf' ],
-            \ ['主题', 'shaeinst/roshnivim-cs'],
-            \ ['主题', 'tomasiser/vim-code-dark'],
-            \ ['主题', 'Mofiqul/vscode.nvim'],
-            \ ['主题', 'marko-cerovac/material.nvim'],
-            \ ['主题', 'bluz71/vim-nightfly-guicolors'],
-            \ ['主题', 'bluz71/vim-moonfly-colors'],
-            \ ['主题', 'ChristianChiarulli/nvcode-color-schemes.vim'],
-            \ ['主题', 'folke/tokyonight.nvim'],
-            \ ['主题', 'sainnhe/sonokai'],
-            \ ['主题', 'kyazdani42/blue-moon'],
-            \ ['主题', 'mhartington/oceanic-next'],
-            \ ['主题', 'glepnir/zephyr-nvim'],
-            \ ['主题', 'rockerBOO/boo-colorscheme-nvim'],
-            \ ['主题', 'jim-at-jibba/ariake-vim-colors'],
-            \ ['主题', 'ishan9299/modus-theme-vim'],
-            \ ['主题', 'sainnhe/edge'],
-            \ ['主题', 'theniceboy/nvim-deus'],
-            \ ['主题', 'Th3Whit3Wolf/one-nvim'],
-            \ ['主题', 'PHSix/nvim-hybrid'],
-            \ ['主题', 'yonlu/omni.vim'],
-            \ ['主题', 'ray-x/aurora'],
-            \ ['主题', 'ray-x/starry.nvim'],
-            \ ['主题', 'tanvirtin/monokai.nvim'],
-            \ ['主题', 'ofirgall/ofirkai.nvim'],
-            \ ['主题', 'savq/melange'],
-            \ ['主题', 'RRethy/nvim-base16'],
-            \ ['主题', 'fenetikm/falcon'],
-            \ ['主题', 'kevinhwang91/rnvimr', 'rnvimr.vim'],
-            \ ['主题', 'andersevenrud/nordic.nvim'],
-            \ ['主题', 'shaunsingh/nord.nvim'],
-            \ ['主题', 'ishan9299/nvim-solarized-lua'],
-            \ ['主题', 'shaunsingh/moonlight.nvim'],
-            \ ['主题', 'navarasu/onedark.nvim'],
-            \ ['主题', 'lourenci/github-colors'],
-            \ ['主题', 'sainnhe/gruvbox-material'],
-            \ ['主题', 'sainnhe/everforest'],
-            \ ['主题', 'NTBBloodbath/doom-one.nvim'],
-            \ ['主题', 'Mofiqul/dracula.nvim'],
-            \ ['主题', 'yashguptaz/calvera-dark.nvim'],
-            \ ['主题', 'projekt0n/github-nvim-theme'],
-            \ ['主题', 'kdheepak/monochrome.nvim'],
-            \ ['主题', 'rose-pine/neovim'],
-            \ ['主题', 'catppuccin/nvim'],
-            \ ['主题', 'FrenzyExists/aquarium-vim'],
-            \ ['主题', 'EdenEast/nightfox.nvim'],
-            \ ['主题', 'kvrohit/substrata.nvim'],
-            \ ['主题', 'ldelossa/vimdark'],
-            \ ['主题', 'Everblush/everblush.nvim'],
-            \ ['主题', 'olimorris/onedarkpro.nvim'],
-            \ ['主题', 'rmehri01/onenord.nvim'],
-            \ ['主题', 'luisiacc/gruvbox-baby'],
-            \ ['主题', 'titanzero/zephyrium'],
-            \ ['主题', 'rebelot/kanagawa.nvim'],
-            \ ['主题', 'tiagovla/tokyodark.nvim'],
-            \ ['主题', 'cpea2506/one_monokai.nvim'],
-            \ ['主题', 'kvrohit/rasmus.nvim'],
-            \ ['主题', 'chrsm/paramount-ng.nvim'],
-            \ ['主题', 'kaiuri/nvim-juliana'],
-            \ ['主题', 'lmburns/kimbox'],
-            \ ['主题', 'rockyzhang24/arctic.nvim'],
-            \ ['主题', 'meliora-theme/neovim'],
-            \ ['主题', 'Yazeed1s/minimal.nvim'],
-            \ ['主题', 'Mofiqul/adwaita.nvim'],
-            \ ['主题', 'olivercederborg/poimandres.nvim'],
-            \ ['主题', 'tjdevries/gruvbuddy.nvim'],
-            \ ['主题', 'ellisonleao/gruvbox.nvim'],
-            \ ['主题', 'lalitmee/cobalt2.nvim'],
-            \ ['', '', 'custom.vim', ['vscode']],
-            \ ['', '', 'keybinding.vim', ['vscode']],
-            \ ['', '', 'colorscheme.vim' ],
-            \ ]
+let g:config_table = []
 
 " 增加Plugin
 function! init#AddPlugin(plugin_config)
     let g:config_table = add(g:config_table, a:plugin_config)
 endfunction
+
+
+call init#AddPlugin( ['增强的c++高亮', 'octol/vim-cpp-enhanced-highlight', 'cpphighlight.vim', ['heavy'] ])
+call init#AddPlugin( ['彩虹括号', 'luochen1990/rainbow','rainbow.vim', ['heavy']])
+call init#AddPlugin( ['tag边栏', 'majutsushi/tagbar', 'tagbar.vim', ['heavy']])
+call init#AddPlugin( ['仅在当前活动窗口高亮光标', 'vim-scripts/CursorLineCurrentWindow' ])
+call init#AddPlugin( ['搜索时闪烁当前行', 'inside/vim-search-pulse' ])
+call init#AddPlugin( ['自动格式化', 'chiel92/vim-autoformat' ,'autoformat.vim', ['heavy']])
+call init#AddPlugin( ['多光标支持', 'mg979/vim-visual-multi',  'visual-cursor.vim'])
+call init#AddPlugin( ['Doxygen文档支持', 'vim-scripts/DoxygenToolkit.vim', 'doxygen.vim'])
+call init#AddPlugin( ['状态栏', 'vim-airline/vim-airline' ])
+call init#AddPlugin( ['状态栏主题', 'vim-airline/vim-airline-themes' ,'airline-theme.vim'])
+call init#AddPlugin( ['光标样式', 'jszakmeister/vim-togglecursor' ])
+call init#AddPlugin( ['屏幕滚动<C-j><C-k>', 'reedes/vim-wheel' ])
+call init#AddPlugin( ['增强的搜索替换', 'vim-scripts/EasyGrep' ,'easygrep.vim'])
+call init#AddPlugin( ['fzf基础支持', 'junegunn/fzf'])
+call init#AddPlugin( ['基于fzf的工具', 'junegunn/fzf.vim', 'fzf.vim'])
+call init#AddPlugin( ['增加、修改包围的括号或者tag', 'tpope/vim-surround' ])
+call init#AddPlugin( ['表格模式（markdown）', 'dhruvasagar/vim-table-mode' ])
+call init#AddPlugin( ['增强的选中扩展', 'vim-scripts/wildfire.vim' ,'wildfire.vim', ['heavy']])
+call init#AddPlugin( ['treesitter语法高亮', 'nvim-treesitter/nvim-treesitter', 'treesitter.vim', ['heavy'], "{'do':':TSUpdate'}"])
+call init#AddPlugin( ['treesitter对象', 'nvim-treesitter/nvim-treesitter-textobjects', 'treesitter-textobjects.vim', ['heavy']])
+call init#AddPlugin( ['函数签名提示', 'ray-x/lsp_signature.nvim', 'lsp_signature.vim'])
+call init#AddPlugin( ['函数参数高亮', 'm-demare/hlargs.nvim'])
+call init#AddPlugin( ['which-key提示', 'folke/which-key.nvim', 'which-key.vim'])
+call init#AddPlugin( ['快速搜索', 'ggandor/lightspeed.nvim'])
+call init#AddPlugin( ['书签管理', 'chentoast/marks.nvim', 'marks.vim'])
+call init#AddPlugin( ['git状态', 'lewis6991/gitsigns.nvim', 'gitsigns.vim'])
+call init#AddPlugin( ['mini功能合集', 'echasnovski/mini.nvim','mini.vim'])
+call init#AddPlugin( ['图标', 'ryanoasis/vim-devicons' ])
+call init#AddPlugin( ['图标', 'kyazdani42/nvim-web-devicons'])
+call init#AddPlugin( ['创建scratch缓冲区', 'vim-scripts/scratch.vim'])
+call init#AddPlugin( ['自动保存ASToggle', 'Pocco81/auto-save.nvim', 'auto-save.vim'])
+call init#AddPlugin( ['自动生成tag', 'ludovicchabant/vim-gutentags', 'ctags.vim'])
+" call init#AddPlugin( ['调试支持', 'puremourning/vimspector', 'vimspector.vim'])
+" call init#AddPlugin( ['chatgpt', 'skyfireitdiy/chatgpt', 'chatgpt.vim'])
+call init#AddPlugin( ['codegeex', 'skyfireitdiy/codegeex-vim', 'codegeex.vim'])
+call init#AddPlugin( ['codeium', 'Exafunction/codeium.vim'])
+" call init#AddPlugin( ['cheat.sh', 'dbeniamine/cheat.sh-vim'])
+call init#AddPlugin( ['注释', 'preservim/nerdcommenter', 'nerdcommenter.vim'])
+call init#AddPlugin( ['coc', 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '.g:npm_registry.' --frozen-lockfile'}"])
+call init#AddPlugin( ['lua函数集', 'nvim-lua/plenary.nvim'])
+call init#AddPlugin( ['搜索', 'nvim-telescope/telescope.nvim', 'telescope.vim'])
+call init#AddPlugin( ['telescope fzf扩展', 'nvim-telescope/telescope-fzf-native.nvim', '', [], "{ 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }"])
+call init#AddPlugin( ['会话自动保存', 'rmagatti/auto-session', 'auto-session.vim'])
+call init#AddPlugin( ['会话搜索', 'rmagatti/session-lens', "session-lens.vim"])
+call init#AddPlugin( ['快速命令', 'FeiyouG/command_center.nvim'])
+call init#AddPlugin( ['透明', 'xiyaowong/nvim-transparent', 'transparent.vim'])
+" call init#AddPlugin( ['高亮当前块', 'folke/twilight.nvim', 'twilight.vim'])
+" call init#AddPlugin( ['代码块范围箭头', 'yaocccc/nvim-hlchunk'])
+call init#AddPlugin( ['缩进线', 'lukas-reineke/indent-blankline.nvim', 'indent-blankline.vim', ['heavy']])
+call init#AddPlugin( ['浮动终端', 'akinsho/toggleterm.nvim', 'toggleterm.vim'])
+call init#AddPlugin( ['lsp增强', 'jose-elias-alvarez/null-ls.nvim', 'null-ls.vim'])
+call init#AddPlugin( ['主题', 'tomasr/molokai' ])
+call init#AddPlugin( ['主题', 'dracula/vim'])
+call init#AddPlugin( ['主题', 'sjl/badwolf' ])
+call init#AddPlugin( ['主题', 'shaeinst/roshnivim-cs'])
+call init#AddPlugin( ['主题', 'tomasiser/vim-code-dark'])
+call init#AddPlugin( ['主题', 'Mofiqul/vscode.nvim'])
+call init#AddPlugin( ['主题', 'marko-cerovac/material.nvim'])
+call init#AddPlugin( ['主题', 'bluz71/vim-nightfly-guicolors'])
+call init#AddPlugin( ['主题', 'bluz71/vim-moonfly-colors'])
+call init#AddPlugin( ['主题', 'ChristianChiarulli/nvcode-color-schemes.vim'])
+call init#AddPlugin( ['主题', 'folke/tokyonight.nvim'])
+call init#AddPlugin( ['主题', 'sainnhe/sonokai'])
+call init#AddPlugin( ['主题', 'kyazdani42/blue-moon'])
+call init#AddPlugin( ['主题', 'mhartington/oceanic-next'])
+call init#AddPlugin( ['主题', 'glepnir/zephyr-nvim'])
+call init#AddPlugin( ['主题', 'rockerBOO/boo-colorscheme-nvim'])
+call init#AddPlugin( ['主题', 'jim-at-jibba/ariake-vim-colors'])
+call init#AddPlugin( ['主题', 'ishan9299/modus-theme-vim'])
+call init#AddPlugin( ['主题', 'sainnhe/edge'])
+call init#AddPlugin( ['主题', 'theniceboy/nvim-deus'])
+call init#AddPlugin( ['主题', 'Th3Whit3Wolf/one-nvim'])
+call init#AddPlugin( ['主题', 'PHSix/nvim-hybrid'])
+call init#AddPlugin( ['主题', 'yonlu/omni.vim'])
+call init#AddPlugin( ['主题', 'ray-x/aurora'])
+call init#AddPlugin( ['主题', 'ray-x/starry.nvim'])
+call init#AddPlugin( ['主题', 'tanvirtin/monokai.nvim'])
+call init#AddPlugin( ['主题', 'ofirgall/ofirkai.nvim'])
+call init#AddPlugin( ['主题', 'savq/melange'])
+call init#AddPlugin( ['主题', 'RRethy/nvim-base16'])
+call init#AddPlugin( ['主题', 'fenetikm/falcon'])
+call init#AddPlugin( ['主题', 'kevinhwang91/rnvimr', 'rnvimr.vim'])
+call init#AddPlugin( ['主题', 'andersevenrud/nordic.nvim'])
+call init#AddPlugin( ['主题', 'shaunsingh/nord.nvim'])
+call init#AddPlugin( ['主题', 'ishan9299/nvim-solarized-lua'])
+call init#AddPlugin( ['主题', 'shaunsingh/moonlight.nvim'])
+call init#AddPlugin( ['主题', 'navarasu/onedark.nvim'])
+call init#AddPlugin( ['主题', 'lourenci/github-colors'])
+call init#AddPlugin( ['主题', 'sainnhe/gruvbox-material'])
+call init#AddPlugin( ['主题', 'sainnhe/everforest'])
+call init#AddPlugin( ['主题', 'NTBBloodbath/doom-one.nvim'])
+call init#AddPlugin( ['主题', 'Mofiqul/dracula.nvim'])
+call init#AddPlugin( ['主题', 'yashguptaz/calvera-dark.nvim'])
+call init#AddPlugin( ['主题', 'projekt0n/github-nvim-theme'])
+call init#AddPlugin( ['主题', 'kdheepak/monochrome.nvim'])
+call init#AddPlugin( ['主题', 'rose-pine/neovim'])
+call init#AddPlugin( ['主题', 'catppuccin/nvim'])
+call init#AddPlugin( ['主题', 'FrenzyExists/aquarium-vim'])
+call init#AddPlugin( ['主题', 'EdenEast/nightfox.nvim'])
+call init#AddPlugin( ['主题', 'kvrohit/substrata.nvim'])
+call init#AddPlugin( ['主题', 'ldelossa/vimdark'])
+call init#AddPlugin( ['主题', 'Everblush/everblush.nvim'])
+call init#AddPlugin( ['主题', 'olimorris/onedarkpro.nvim'])
+call init#AddPlugin( ['主题', 'rmehri01/onenord.nvim'])
+call init#AddPlugin( ['主题', 'luisiacc/gruvbox-baby'])
+call init#AddPlugin( ['主题', 'titanzero/zephyrium'])
+call init#AddPlugin( ['主题', 'rebelot/kanagawa.nvim'])
+call init#AddPlugin( ['主题', 'tiagovla/tokyodark.nvim'])
+call init#AddPlugin( ['主题', 'cpea2506/one_monokai.nvim'])
+call init#AddPlugin( ['主题', 'kvrohit/rasmus.nvim'])
+call init#AddPlugin( ['主题', 'chrsm/paramount-ng.nvim'])
+call init#AddPlugin( ['主题', 'kaiuri/nvim-juliana'])
+call init#AddPlugin( ['主题', 'lmburns/kimbox'])
+call init#AddPlugin( ['主题', 'rockyzhang24/arctic.nvim'])
+call init#AddPlugin( ['主题', 'meliora-theme/neovim'])
+call init#AddPlugin( ['主题', 'Yazeed1s/minimal.nvim'])
+call init#AddPlugin( ['主题', 'Mofiqul/adwaita.nvim'])
+call init#AddPlugin( ['主题', 'olivercederborg/poimandres.nvim'])
+call init#AddPlugin( ['主题', 'tjdevries/gruvbuddy.nvim'])
+call init#AddPlugin( ['主题', 'ellisonleao/gruvbox.nvim'])
+call init#AddPlugin( ['主题', 'lalitmee/cobalt2.nvim'])
+call init#AddPlugin( ['', '', 'custom.vim', ['vscode']])
+call init#AddPlugin( ['', '', 'keybinding.vim', ['vscode']])
+call init#AddPlugin( ['', '', 'colorscheme.vim' ])
+
 
 " 增加coc插件
 function! init#AddCoc(ext_config)
