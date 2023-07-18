@@ -26,10 +26,10 @@ SETUVAR _fish_abbr_tn:tmux\x20new
 SETUVAR _fish_abbr_vf:nvim\x20\x28find\x20\x2e\x20\x2dtype\x20f\x20\x7c\x20fzf\x29
 SETUVAR _fish_abbr_vim:nvim
 SETUVAR _fish_abbr_xm:xmake
-SETUVAR _fish_abbr_yi:yay\x20\x2dS
+SETUVAR _fish_abbr_yi:yay\x20\x2dS\x20\x2d\x2dnoconfirm
 SETUVAR _fish_abbr_yr:yay\x20\x2dRnsuvc
 SETUVAR _fish_abbr_ys:yay\x20\x2dSs
-SETUVAR _fish_abbr_yu:yay\x20\x2dSy;\x20yay\x20\x2dSu
+SETUVAR _fish_abbr_yu:yay\x20\x2dSy;\x20yay\x20\x2dSu\x20\x2d\x2dnoconfirm
 SETUVAR _fish_abbr_um:sudo\x20reflector\x20\x2d\x2dverbose\x20\x2dc\x20China\x20\x2d\x2dlatest\x2010\x20\x2d\x2dsort\x20rate\x20\x2d\x2dsave\x20/etc/pacman.d/mirrorlist
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
