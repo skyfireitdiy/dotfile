@@ -274,4 +274,5 @@ bindsym $mod+r mode "resize"
 #HDMI-X is display used in Desktop connected to monitor with HDMI Cable.
 #VGA-X is display used in Desktop connected to monitor with VGA Cable.
 exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
-bindsym Print --release exec flameshot gui
+# bindsym Print --release exec flameshot gui
+bindsym F1 --release exec flameshot gui
