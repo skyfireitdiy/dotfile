@@ -88,7 +88,6 @@ let g:coc_config = [
             \ ['coc-marketplace'],
             \ ['coc-rust-analyzer'],
             \ ['coc-markdownlint'],
-            \ ['coc-markdown-preview-enhanced', 'markdown-preview-enhanced.vim'],
             \ ['coc-webview'],
             \ ['coc-sumneko-lua'],
             \ ['coc-explorer', 'explorer.vim'],

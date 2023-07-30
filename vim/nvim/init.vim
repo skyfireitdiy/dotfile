@@ -23,6 +23,7 @@ let g:deps_check = [
             \ ['npm', 'npm --version'],
             \ ['python3', 'python3 --version'],
             \ ['pip3', 'pip3 --version'],
+            \ ['yarn', 'yarn --version'],
             \ ]
 
 function! init#CheckHugeFile()
@@ -98,7 +99,7 @@ call init#AddPlugin( ['注释', 'preservim/nerdcommenter', 'nerdcommenter.vim'])
 call init#AddPlugin( ['coc', 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '.g:npm_registry.' --frozen-lockfile'}"])
 call init#AddPlugin( ['lua函数集', 'nvim-lua/plenary.nvim'])
 call init#AddPlugin( ['搜索', 'nvim-telescope/telescope.nvim', 'telescope.vim'])
-call init#AddPlugin( ['telescope fzf扩展', 'nvim-telescope/telescope-fzf-native.nvim', '', [], "{ 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }"])
+" call init#AddPlugin( ['telescope fzf扩展', 'nvim-telescope/telescope-fzf-native.nvim', '', [], "{ 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }"])
 call init#AddPlugin( ['会话自动保存', 'rmagatti/auto-session', 'auto-session.vim'])
 call init#AddPlugin( ['会话搜索', 'rmagatti/session-lens', "session-lens.vim"])
 call init#AddPlugin( ['快速命令', 'FeiyouG/command_center.nvim'])
