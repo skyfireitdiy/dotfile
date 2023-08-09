@@ -29,7 +29,7 @@ nnoremap <leader>zo 99zr
 nnoremap // *
 nnoremap ?? #
 nnoremap <leader>% ggvG
-nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left><C-r>9
+" nnoremap <leader>r "9yiw:%s/<C-r>9//g<Left><Left><C-r>9
 nnoremap <leader>R "9yiw:%s/\<<C-r>9\>//g<Left><Left><C-r>9
 nnoremap <leader>M :set nomodifiable!<cr>
 " nnoremap <C-a> ^

@@ -35,7 +35,7 @@ EOF
 nnoremap <silent>``` :Telescope<CR>
 nnoremap <silent><leader>s :SearchSession<CR>
 nnoremap <silent>``co :Telescope colorscheme<cr>
-nnoremap <silent>``rg :Telescope live_grep<cr>
+nnoremap <silent>``r  :Telescope live_grep<cr>
 nnoremap <silent>``m :Telescope marks<cr>
 nnoremap <silent>``k :Telescope keymaps<cr>
 nnoremap <silent><leader>H :Telescope help_tags<cr>
