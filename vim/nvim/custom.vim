@@ -138,6 +138,10 @@ set undofile
 set wildmode=longest,list,full,lastused
 set noswapfile
 
+let g:loaded_perl_provider = 0
+let g:loaded_node_provider = 0
+let g:loaded_ruby_provider = 0
+
 if exists("g:neovide")
     set guifont=Source\ Code\ Pro:h10:b:i
     let g:neovide_scale_factor = 1.0
