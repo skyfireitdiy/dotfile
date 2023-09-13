@@ -2,7 +2,6 @@
 "  color scheme
 let g:molokai_original = 1
 let g:rehash256 = 1
-"color molokai
 "color dracula
 "color badwolf
 
@@ -42,4 +41,4 @@ endfunction
 
 command! -nargs=0 RC :call colorscheme#RandomColor()
 
-colorscheme earlysummer
+color molokai
