@@ -1,25 +1,7 @@
 
 
 
-lua <<EOF
-
-
-local noremap = { noremap = true, silent = true }
-local command_center = require("command_center")
-
-command_center.add({
-  {desc="Opencommand_center",cmd=":Telescope command_center<CR>",keys={{"n","``c",noremap},}},
-}, {
-  mode = command_center.mode.SET
-})
-
-for i, value in ipairs(vim.g.quick_start_config) do
-    command_center.add({
-        {desc=value[1], cmd=value[2]},
-    }, {
-        mode = command_center.mode.ADD_SET
-  })
-end
+lua<<EOF
 
 -- You dont need to set any of these options. These are the default ones. Only
 -- the loading is important
@@ -28,8 +10,6 @@ require('telescope').setup {}
 -- load_extension, somewhere after setup function
 
 require('telescope').load_extension('session-lens')
-require('telescope').load_extension('command_center')
-
 EOF
 
 nnoremap <silent>``` :Telescope<CR>

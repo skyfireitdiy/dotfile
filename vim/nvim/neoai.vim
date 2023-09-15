@@ -10,12 +10,18 @@ require("neoai").setup({
         output_popup_height = 80, -- As percentage eg. 80%
         submit = "<Enter>", -- Key binding to submit the prompt
     },
+    selected_model_index = 1,
     models = {
         {
             name = "openai",
             model = "gpt-3.5-turbo",
             params = nil,
         },
+        {
+            name = "spark",
+            model = "v1",
+            params = nil,
+        }
     },
     register_output = {
         ["g"] = function(output)
