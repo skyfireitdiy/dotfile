@@ -11,7 +11,6 @@ end
 ext_tab = {
     "c",
     "lua",
-    "rust",
     "cpp",
     "go",
     "bash",
@@ -23,7 +22,6 @@ ext_tab = {
     "vim" ,
     "javascript",
     "cmake",
-    "commonlisp",
     "python"
     }
 for _, ext in pairs(vim.g.treesitter_table) do
