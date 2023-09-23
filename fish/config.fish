@@ -10,5 +10,6 @@ end
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /opt/anaconda/bin/conda
     eval /opt/anaconda/bin/conda "shell.fish" hook $argv | source
+    set -x CURL_CA_BUNDLE /opt/anaconda/ssl/cacert.pem
 end
 # <<< conda initialize <<<

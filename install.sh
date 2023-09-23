@@ -108,6 +108,8 @@ config_ranger() {
     echo "ranger 配置完成"
 }
 
+
+
 while test $# -gt 0
 do
     config_$1

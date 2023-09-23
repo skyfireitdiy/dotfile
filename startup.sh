@@ -11,12 +11,15 @@ add_source() {
     sudo bash -c 'cat>>/etc/pacman.conf<<EOF
 [archlinuxcn]
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/\$arch
-SigLevel = TrustAll
+SigLevel = Never
+[blackarch]
+Include = /etc/pacman.d/blackarch-mirrorlist
+SigLevel = Never
 EOF
 '
-sudo sed 's/\[core\]/\0\nSigLevel = TrustAll/g' -i /etc/pacman.conf
-sudo sed 's/\[extra\]/\0\nSigLevel = TrustAll/g' -i /etc/pacman.conf
-sudo sed 's/\[community\]/\0\nSigLevel = TrustAll/g' -i /etc/pacman.conf
+sudo sed 's/\[core\]/\0\nSigLevel = Never/g' -i /etc/pacman.conf
+sudo sed 's/\[extra\]/\0\nSigLevel = Never/g' -i /etc/pacman.conf
+sudo sed 's/\[community\]/\0\nSigLevel = Never/g' -i /etc/pacman.conf
 }
 
 install_must_app() {
@@ -46,6 +49,8 @@ config(){
     ./install.sh fish tmux x vim konsole kitty alacritty hx i3 polybar
     config_fish
 }
+
+
 
 install_all(){
     add_sudoer
