@@ -15,6 +15,9 @@ SigLevel = Never
 [blackarch]
 Include = /etc/pacman.d/blackarch-mirrorlist
 SigLevel = Never
+[multilib]
+SigLevel = Never
+Include = /etc/pacman.d/mirrorlist
 EOF
 '
 sudo sed 's/\[core\]/\0\nSigLevel = Never/g' -i /etc/pacman.conf
