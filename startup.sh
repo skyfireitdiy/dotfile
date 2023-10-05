@@ -15,7 +15,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/\$arch
 SigLevel = Never
 EOF
 '
-sudo sed 's/SigLevel=\s*/SigLevel = Never/g' -i /etc/pacman.conf
+    sudo sed 's/SigLevel\s*=.*/SigLevel = Never/g' -i /etc/pacman.conf
 }
 
 install_must_app() {
