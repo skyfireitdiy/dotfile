@@ -80,20 +80,9 @@ nnoremap <silent> K :call coc#ShowDocumentation()<cr>
 " augroup END
 
 " coc 插件配置表项  coc插件名  插件配置（可选）
-let g:coc_config = [
-            \ ["coc-clangd", 'clangd.vim'],
-            \ ['coc-go'],
-            \ ['coc-jedi'],
-            \ ['coc-vimlsp'],
-            \ ['coc-marketplace'],
-            \ ['coc-webview'],
-            \ ['coc-sumneko-lua'],
-            \ ['coc-explorer', 'explorer.vim'],
-            \ ['coc-yaml'],
-            \ ['coc-snippets'],
-            \ ['coc-cmake'],
-            \ ['coc-json'],
-            \ ]
+let g:coc_config = []
+
+call init#AddCoc( ['coc-explorer', 'explorer.vim'])
 
 for ext in g:coc_ext_table
     let g:coc_config = add(g:coc_config, ext)
