@@ -1,46 +1,41 @@
 
-let mapleader=" " "映射leader键为空格
-" 启用轻量化 vim，禁止加载一些重量级插件（比如treesitter），用于打开大文件
-let g:home_dir = environ()['HOME']
-let g:install_vim = !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim") || !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
-let g:light_vim = index(keys(environ()), "LIGHT_VIM") != -1
-if g:install_vim == 1
-    let g:light_vim = 0
-endif
-" 使用淘宝镜像加速coc安装
-let g:npm_registry = 'https://registry.npm.taobao.org'
-let g:load_flags = []
-let g:ignored_plugin = []
-let g:coc_ext_table = []
-let g:treesitter_table = []
-let g:deps_check = [
-            \ ['fzf','fzf --version'],
-            \ ['lazygit','lazygit --version'],
-            \ ['ripgrep','rg --version'],
-            \ ['fd', 'fd --version'],
-            \ ['universal-ctags', 'ctags --version'],
-            \ ['g++', 'g++ --version'],
-            \ ['nodejs', 'node --version'],
-            \ ['xsel', 'xsel --version'],
-            \ ['npm', 'npm --version'],
-            \ ['python3', 'python3 --version'],
-            \ ['pip3', 'pip3 --version'],
-            \ ['yarn', 'yarn --version'],
-            \ ]
-let g:quick_start_config = []
-" 使用表驱动重构vim配置
-" 表项含义
-"       插件作用 插件名称 插件配置 插件flag(nvim/vim/heavy一个或者) 插件加载配置
-let g:config_table = []
+
+function! init#initGlobalVars()
+    "映射leader键为空格
+    let g:mapleader=" "
+    " 获取home_dir
+    let g:home_dir = environ()['HOME']
+    " 检测是否安装vim
+    let g:install_vim = !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim") || !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
+    " 是否启用轻量级nvim
+    let g:lite_vim = index(keys(environ()), "lite_vim") != -1
+    " 如果需要安装vim，不能启用轻量级nvim
+    if g:install_vim == 1
+        let g:lite_vim = 0
+    endif
+    " 使用淘宝镜像加速coc安装
+    let g:npm_registry = 'https://registry.npm.taobao.org'
+    " 加载标记
+    let g:load_flags = []
+    " 忽略的插件
+    let g:ignored_plugin = []
+    " coc插件
+    let g:coc_ext_table = []
+    " treesitter
+    let g:treesitter_config_table = []
+    " 插件配置
+    let g:plugin_config_table = []
+
+endfunction
 
 
 " 检测是否是大文件
-function! init#CheckHugeFile()
+function! init#checkHugeFile()
     for path in argv()
         if filereadable(path)
             " 判断文件大小，如果超过1MB，启动轻量级nvim
             if(getfsize(path) > 10*1024*1024)
-                let g:light_vim = 1
+                let g:lite_vim = 1
                 break
             endif
         endif
@@ -52,14 +47,14 @@ endfunction
 
 " 增加Plugin
 function! init#AddPlugin(plugin_config)
-    let g:config_table = add(g:config_table, a:plugin_config)
+    let g:plugin_config_table = add(g:plugin_config_table, a:plugin_config)
 endfunction
 
 " 增加内置插件
 function init#addBuiltinPlugin()
     " call init#AddPlugin( ['增强的c++高亮', 'octol/vim-cpp-enhanced-highlight', 'cpphighlight.vim', ['heavy'] ])
     " call init#AddPlugin( ['彩虹括号', 'luochen1990/rainbow','rainbow.vim', ['heavy']])
-    " call init#AddPlugin( ['tag边栏', 'majutsushi/tagbar', 'tagbar.vim', ['heavy']])
+    call init#AddPlugin( ['tag边栏', 'majutsushi/tagbar', 'tagbar.vim', ['heavy']])
     " call init#AddPlugin( ['仅在当前活动窗口高亮光标', 'vim-scripts/CursorLineCurrentWindow' ])
     call init#AddPlugin( ['搜索时闪烁当前行', 'inside/vim-search-pulse' ])
     call init#AddPlugin( ['自动格式化', 'chiel92/vim-autoformat' ,'autoformat.vim', ['heavy']])
@@ -194,17 +189,31 @@ endfunction
 
 " 增加treesitter语言支持
 function! init#AddTreesitter(treesitter_config)
-    let g:treesitter_table = add(g:treesitter_table, a:treesitter_config)
+    let g:treesitter_config_table = add(g:treesitter_config_table, a:treesitter_config)
 endfunction
 
 " 增加依赖项检测
-function! init#CheckDeps()
+function! init#checkDeps()
     let flag_file = g:home_dir . "/.vim_checked"
     if filereadable(flag_file)
         return 1
     endif
+    let deps_check = [
+                \ ['fzf','fzf --version'],
+                \ ['lazygit','lazygit --version'],
+                \ ['ripgrep','rg --version'],
+                \ ['fd', 'fd --version'],
+                \ ['universal-ctags', 'ctags --version'],
+                \ ['g++', 'g++ --version'],
+                \ ['nodejs', 'node --version'],
+                \ ['xsel', 'xsel --version'],
+                \ ['npm', 'npm --version'],
+                \ ['python3', 'python3 --version'],
+                \ ['pip3', 'pip3 --version'],
+                \ ['yarn', 'yarn --version'],
+                \ ]
     let flags = 1
-    for deps in g:deps_check
+    for deps in deps_check
         let out = system(deps[1])
         if stridx(out, 'not found') != -1 || stridx(out, 'Unknown command') != -1
             let flags = 0
@@ -222,7 +231,7 @@ function! init#CheckDeps()
 endfunction
 
 " 自助安装配置，减少install.sh脚本中的依赖
-function! init#InstallVim()
+function! init#installVim()
     if !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
         " nvim
         echom system("curl -fLo " . g:home_dir . "/.local/share/nvim/site/autoload/plug.vim --create-dirs https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim")
@@ -231,8 +240,8 @@ function! init#InstallVim()
 endfunction
 
 " 插件加载标记列表（判断某个插件是否需要加载）
-function! init#GetLoadFlags()
-    for config in g:config_table
+function! init#getLoadFlags()
+    for config in g:plugin_config_table
         let properties = []
         if len(config) > 3
             let properties = config[3]
@@ -243,7 +252,7 @@ function! init#GetLoadFlags()
                 let flag = 1
             endif
         else
-            if g:light_vim == 0
+            if g:lite_vim == 0
                 let flag = 1
             endif
             if index(properties, "heavy") == -1
@@ -258,12 +267,12 @@ function! init#GetLoadFlags()
 endfunction
 
 " 插件的加载和插件的配置分开
-function! init#LoadPlugin()
+function! init#loadPlugin()
     let g:plug_url_format="https://ghproxy.com/https://github.com/%s"
     let plug_install = 0
     call plug#begin()
-    for i in range(len(g:config_table))
-        let config = g:config_table[i]
+    for i in range(len(g:plugin_config_table))
+        let config = g:plugin_config_table[i]
         let plugin = config[1]
         if g:load_flags[i] && plugin != ""
             let plugin_ext = ""
@@ -287,9 +296,9 @@ function! init#LoadPlugin()
     endif
 endfunction
 
-function! init#LoadConfig()
-    for i in range(len(g:config_table))
-        let config = g:config_table[i]
+function! init#loadConfig()
+    for i in range(len(g:plugin_config_table))
+        let config = g:plugin_config_table[i]
         let plugin_config = ""
         if len(config) > 2
             let plugin_config = config[2]
@@ -306,34 +315,33 @@ function! init#LoadConfig()
     endfor
 endfunction
 
-function! init#LoadUserConfig(rcfile)
+function! init#loadUserConfig(rcfile)
     let user_config = g:home_dir.'/.vimrc_user/'.a:rcfile
     if filereadable(user_config)
         execute 'source ' . user_config
     endif
 endfunction
 
-function! init#AddQuickStartItem(desc, cmd)
-    let g:quick_start_config = add(g:quick_start_config, [a:desc, a:cmd])
-endfunction
+
 
 function! init#IgnorePlugin(plugin)
     let g:ignored_plugin = add(g:ignored_plugin, a:plugin)
 endfunction
 
 function init#init()
-    if init#CheckDeps() == 1
-        call init#CheckHugeFile()
+    call init#initGlobalVars()
+    if init#checkDeps() == 1
+        call init#checkHugeFile()
         call init#addBuiltinPlugin()
         if g:install_vim == 1
-            call init#InstallVim()
+            call init#installVim()
         endif
-        call init#LoadUserConfig('before_all.vim')
-        call init#GetLoadFlags()
-        call init#LoadPlugin()
-        call init#LoadUserConfig('before_config.vim')
-        call init#LoadConfig()
-        call init#LoadUserConfig('after_all.vim')
+        call init#loadUserConfig('before_all.vim')
+        call init#getLoadFlags()
+        call init#loadPlugin()
+        call init#loadUserConfig('before_config.vim')
+        call init#loadConfig()
+        call init#loadUserConfig('after_all.vim')
     endif
 endfunction
 

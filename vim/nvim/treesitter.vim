@@ -24,7 +24,7 @@ ext_tab = {
     "cmake",
     "python"
     }
-for _, ext in pairs(vim.g.treesitter_table) do
+for _, ext in pairs(vim.g.treesitter_config_table) do
     table.insert(ext_tab, ext)
 end
 
