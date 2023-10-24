@@ -15,6 +15,7 @@ function! init#initGlobalVars()
     endif
     " 使用淘宝镜像加速coc安装
     let g:npm_registry = 'https://registry.npm.taobao.org'
+
     " 加载标记
     let g:load_flags = []
     " 忽略的插件
@@ -25,9 +26,24 @@ function! init#initGlobalVars()
     let g:treesitter_config_table = []
     " 插件配置
     let g:plugin_config_table = []
-
+    " 插件配置搜索路径
+    let g:plugin_config_search_path = [g:home_dir . '/.vimrc_user/',
+                \ g:home_dir . "/.config/nvim",
+                \ g:home_dir . "/.config/nvim/plugin_config/"]
+    " 插件加载标记判断回调函数
+    let g:plugin_load_hooks = [
+            \ function("init#heavyLoadHook"),
+            \ function("init#vscodeLoadHook"),
+          \ ]
 endfunction
 
+function! init#heavyLoadHook(tags)
+    return index(a:tags, "heavy") == -1 || !g:lite_vim
+endfunction
+
+function! init#vscodeLoadHook(tags)
+    return !exists("g:vscode") || index(a:tags, "vscode") != -1
+endfunction
 
 " 检测是否是大文件
 function! init#checkHugeFile()
@@ -41,9 +57,6 @@ function! init#checkHugeFile()
         endif
     endfor
 endfunction
-
-
-
 
 " 增加Plugin
 function! init#AddPlugin(plugin_config)
@@ -239,26 +252,27 @@ function! init#installVim()
     endif
 endfunction
 
+function! init#AddLoadFlagsHook(funcref)
+    let g:plugin_load_hooks = add(g:plugin_load_hooks, funcref)
+endfunction
+
+function! init#isPluginShouldLoad(tags)
+    for Hook in g:plugin_load_hooks
+        if !Hook(a:tags)
+            return 0
+        endif
+    endfor
+    return 1
+endfunction
+
 " 插件加载标记列表（判断某个插件是否需要加载）
 function! init#getLoadFlags()
     for config in g:plugin_config_table
-        let properties = []
+        let tags = []
         if len(config) > 3
-            let properties = config[3]
+            let tags = config[3]
         endif
-        let flag = 0
-        if exists('g:vscode')
-            if index(properties, "vscode") != -1
-                let flag = 1
-            endif
-        else
-            if g:lite_vim == 0
-                let flag = 1
-            endif
-            if index(properties, "heavy") == -1
-                let flag = 1
-            endif
-        endif
+        let flag = init#isPluginShouldLoad(tags)
         if index(g:ignored_plugin, config[0]) != -1
             let flag = 0
         endif
@@ -296,6 +310,24 @@ function! init#loadPlugin()
     endif
 endfunction
 
+
+
+
+function! init#AddPluginConfigSearchPath(path)
+    let g:plugin_config_search_path = add(g:plugin_config_search_path, a:path)
+endfunction
+
+function! init#sourceConfigFile(plugin_config)
+    for dir in g:plugin_config_search_path
+        let config_file = dir . a:plugin_config
+        if filereadable(config_file)
+            execute "source" config_file
+            return
+        endif
+    endfor
+    echoerr "can't find config " a:plugin_config
+endfunction
+
 function! init#loadConfig()
     for i in range(len(g:plugin_config_table))
         let config = g:plugin_config_table[i]
@@ -304,13 +336,7 @@ function! init#loadConfig()
             let plugin_config = config[2]
         endif
         if g:load_flags[i] && plugin_config != ""
-            if filereadable(g:home_dir . '/.vimrc_user/' . plugin_config)
-                execute "source" . g:home_dir . '/.vimrc_user/' . plugin_config
-            elseif filereadable(g:home_dir . '/.config/nvim/' . plugin_config)
-                execute "source" g:home_dir . '/.config/nvim/' . plugin_config
-            else
-                echoerr "can't find config " . plugin_config . "!"
-            endif
+            call init#sourceConfigFile(plugin_config)
         endif
     endfor
 endfunction
@@ -321,8 +347,6 @@ function! init#loadUserConfig(rcfile)
         execute 'source ' . user_config
     endif
 endfunction
-
-
 
 function! init#IgnorePlugin(plugin)
     let g:ignored_plugin = add(g:ignored_plugin, a:plugin)
