@@ -108,6 +108,11 @@ config_ranger() {
     echo "ranger 配置完成"
 }
 
+config_pacman() {
+    replace_config /etc/pacman.d $(pwd)/pacman/pacman.d
+    replace_config /etc/pacman.conf $(pwd)/pacman/pacman.conf
+    echo "pacman 配置完成"
+}
 
 
 while test $# -gt 0
