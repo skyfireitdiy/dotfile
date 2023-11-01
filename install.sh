@@ -114,6 +114,11 @@ config_pacman() {
     echo "pacman 配置完成"
 }
 
+config_conda() {
+    replace_config ~/.condarc $(pwd)/_condarc
+    echo "conda 配置完成"
+}
+
 
 while test $# -gt 0
 do
