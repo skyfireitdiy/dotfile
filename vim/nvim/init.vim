@@ -14,7 +14,7 @@ function! init#initGlobalVars()
         let g:lite_vim = 0
     endif
     " 使用淘宝镜像加速coc安装
-    let g:npm_registry = 'https://registry.npm.taobao.org'
+    " let g:npm_registry = 'https://registry.npm.taobao.org'
 
     " 加载标记
     let g:load_flags = []
@@ -104,7 +104,7 @@ function init#addBuiltinPlugin()
     call init#AddPlugin( ['codeium', 'Exafunction/codeium.vim'])
     " call init#AddPlugin( ['cheat.sh', 'dbeniamine/cheat.sh-vim'])
     call init#AddPlugin( ['注释', 'preservim/nerdcommenter', 'nerdcommenter.vim'])
-    call init#AddPlugin( ['coc', 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install --registry '.g:npm_registry.' --frozen-lockfile'}"])
+    call init#AddPlugin( ['coc', 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install  --frozen-lockfile'}"])
     call init#AddPlugin( ['lua函数集', 'nvim-lua/plenary.nvim'])
     call init#AddPlugin( ['搜索', 'nvim-telescope/telescope.nvim', 'telescope.vim'])
     " call init#AddPlugin( ['telescope fzf扩展', 'nvim-telescope/telescope-fzf-native.nvim', '', [], "{ 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }"])
@@ -282,7 +282,7 @@ endfunction
 
 " 插件的加载和插件的配置分开
 function! init#loadPlugin()
-    let g:plug_url_format="https://ghproxy.com/https://github.com/%s"
+    " let g:plug_url_format="https://ghproxy.com/https://github.com/%s"
     let plug_install = 0
     call plug#begin()
     for i in range(len(g:plugin_config_table))
