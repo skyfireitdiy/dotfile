@@ -115,11 +115,13 @@ function init#addBuiltinPlugin()
     " call init#AddPlugin( ['高亮当前块', 'folke/twilight.nvim', 'twilight.vim'])
     " call init#AddPlugin( ['代码块范围箭头', 'yaocccc/nvim-hlchunk'])
     " call init#AddPlugin( ['缩进线', 'lukas-reineke/indent-blankline.nvim', 'indent-blankline.vim', ['heavy']])
+    " call init#AddPlugin( ['ranger', 'kevinhwang91/rnvimr', 'rnvimr.vim'])
     call init#AddPlugin( ['浮动终端', 'akinsho/toggleterm.nvim', 'toggleterm.vim'])
     call init#AddPlugin( ['lsp增强', 'jose-elias-alvarez/null-ls.nvim', 'null-ls.vim'])
     call init#AddPlugin( ['ChatGPT', 'MunifTanjim/nui.nvim' ])
     call init#AddPlugin( ['ChatGPT', 'skyfireitdiy/neoai.nvim', 'neoai.vim'])
-    " call init#AddPlugin( ['主题', 'tomasr/molokai' ])
+    call init#AddPlugin( ['主题', 'tomasr/molokai' ])
+    call init#AddPlugin( ['主题', 'tanvirtin/monokai.nvim'])
     call init#AddPlugin( ['主题', 'dracula/vim'])
     " call init#AddPlugin( ['主题', 'sjl/badwolf' ])
     " call init#AddPlugin( ['主题', 'shaeinst/roshnivim-cs'])
@@ -144,12 +146,10 @@ function init#addBuiltinPlugin()
     " call init#AddPlugin( ['主题', 'yonlu/omni.vim'])
     " call init#AddPlugin( ['主题', 'ray-x/aurora'])
     " call init#AddPlugin( ['主题', 'ray-x/starry.nvim'])
-    " call init#AddPlugin( ['主题', 'tanvirtin/monokai.nvim'])
     " call init#AddPlugin( ['主题', 'ofirgall/ofirkai.nvim'])
     " call init#AddPlugin( ['主题', 'savq/melange'])
     " call init#AddPlugin( ['主题', 'RRethy/nvim-base16'])
     " call init#AddPlugin( ['主题', 'fenetikm/falcon'])
-    " call init#AddPlugin( ['主题', 'kevinhwang91/rnvimr', 'rnvimr.vim'])
     " call init#AddPlugin( ['主题', 'andersevenrud/nordic.nvim'])
     " call init#AddPlugin( ['主题', 'shaunsingh/nord.nvim'])
     " call init#AddPlugin( ['主题', 'ishan9299/nvim-solarized-lua'])
@@ -219,7 +219,6 @@ function! init#checkDeps()
                 \ ['universal-ctags', 'ctags --version'],
                 \ ['g++', 'g++ --version'],
                 \ ['nodejs', 'node --version'],
-                \ ['xsel', 'xsel --version'],
                 \ ['npm', 'npm --version'],
                 \ ['python3', 'python3 --version'],
                 \ ['pip3', 'pip3 --version'],
