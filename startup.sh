@@ -1,7 +1,7 @@
 #!/bin/bash
 
 add_sudoer() {
-    user = $(whoami)
+    user=$(whoami)
     sudo bash -c "cat>>/etc/sudoers<<EOF
     $user ALL=(ALL:ALL) NOPASSWD: ALL
 EOF
@@ -28,8 +28,9 @@ update() {
 }
 
 install_normal_app() {
-    yay -S --noconfirm fish neovim fzf ranger w3m make  lazygit tmux  konsole fcitx-im  fcitx-configtool fcitx-sogoupinyin  ripgrep universal-ctags gcc nodejs xsel npm  go rustup fd linux-headers flameshot  p7zip wget aria2 unzip python-pynvim  wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete  ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git  clash net-tools wechat-uos reflector python-pip yarn witch python-jedi
+    yay -S --noconfirm fish neovim fzf ranger w3m make  lazygit tmux  konsole fcitx-im  fcitx-configtool fcitx-sogoupinyin  ripgrep universal-ctags gcc nodejs xsel npm  go rustup fd linux-headers flameshot  p7zip wget aria2 unzip python-pynvim  wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete  ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git net-tools reflector python-pip yarn witch python-jedi
 }
+
 
 config_fish(){
     chsh -s /usr/bin/fish
