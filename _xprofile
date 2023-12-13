@@ -2,6 +2,7 @@
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS="@im=ibus"
+export GLFW_IM_MODULE=ibus
 
 if [[ -f ~/.xprofile_user ]]; then
 source ~/.xprofile_user

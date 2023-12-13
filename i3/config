@@ -57,7 +57,7 @@ bindsym $mod+Shift+d exec --no-startup-id rofi -show run -theme Monokai -icon-th
 # configure the bar.
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec_always --no-startup-id fcitx
+exec_always --no-startup-id ibus-daemon
 
 # Display Wallpaper, always.
 exec_always feh --bg-fill --no-fehbg --randomize ~/.config/i3/wallpaper
