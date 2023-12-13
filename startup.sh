@@ -9,7 +9,7 @@ EOF
 }
 
 add_source() {
-	./install.sh pacman
+    ./install.sh pacman
 }
 
 install_must_app() {
@@ -22,7 +22,7 @@ update() {
 }
 
 install_normal_app() {
-    yay -S --noconfirm fish neovim fzf ranger w3m make  lazygit tmux  konsole fcitx-im  fcitx-configtool fcitx-sogoupinyin  ripgrep universal-ctags gcc nodejs xsel npm  go rustup fd linux-headers flameshot  p7zip wget aria2 unzip python-pynvim  wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete  ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git net-tools reflector python-pip yarn witch python-jedi
+    yay -S --noconfirm fish neovim fzf ranger w3m make  lazygit tmux  ibus ibus-rime  ripgrep universal-ctags gcc nodejs xsel npm  go rustup fd linux-headers flameshot  p7zip wget aria2 unzip python-pynvim  wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete  ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git net-tools reflector python-pip yarn witch python-jedi
 }
 
 

@@ -1,8 +1,8 @@
 
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS="@im=ibus"
 
 if [[ -f ~/.xprofile_user ]]; then
-    source ~/.xprofile_user
+source ~/.xprofile_user
 fi
