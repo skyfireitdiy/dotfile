@@ -9,13 +9,7 @@ EOF
 }
 
 add_source() {
-    sudo bash -c 'cat>>/etc/pacman.conf<<EOF
-[archlinuxcn]
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/\$arch
-SigLevel = Never
-EOF
-'
-    sudo sed 's/SigLevel\s*=.*/SigLevel = Never/g' -i /etc/pacman.conf
+	./install.sh pacman
 }
 
 install_must_app() {
