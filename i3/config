@@ -96,6 +96,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
 # We use this. System dark theme is applied to it.
 exec --no-startup-id nm-applet
 
+exec --no-startup-id clash
+
 # Use pactl to adjust volume in PulseAudio.
 # These are examples if you would like to use pactl. We will not use this,
 # but rather alsamixer.

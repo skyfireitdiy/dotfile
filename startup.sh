@@ -9,7 +9,7 @@ EOF
 }
 
 add_source() {
-    ./install.sh pacman
+    sudo ./install.sh pacman
 }
 
 install_must_app() {
@@ -22,7 +22,8 @@ update() {
 }
 
 install_normal_app() {
-    yay -S --noconfirm fish neovim fzf ranger w3m make  lazygit tmux  ibus ibus-rime  ripgrep universal-ctags gcc nodejs xsel npm  go rustup fd linux-headers flameshot  p7zip wget aria2 unzip python-pynvim  wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete  ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git net-tools reflector python-pip yarn witch python-jedi
+    sudo ./install.sh pacman
+    yay -S --noconfirm fish neovim fzf ranger w3m make  lazygit tmux  ibus ibus-libpinyin  ripgrep universal-ctags gcc nodejs xsel npm  go rustup fd linux-headers flameshot  p7zip wget aria2 unzip python-pynvim  wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete  ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git net-tools reflector python-pip yarn witch python-jedi clash microsoft-edge-stable-bin
 }
 
 
