@@ -119,6 +119,11 @@ config_conda() {
     echo "conda 配置完成"
 }
 
+config_pip() {
+    replace_config ~/.config/pip $(pwd)/pip
+    echo "pip 配置完成"
+}
+
 
 while test $# -gt 0
 do
