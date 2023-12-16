@@ -97,7 +97,7 @@ augroup END
 
 set nobackup
 set nowritebackup
-set updatetime=300
+set updatetime=100
 set signcolumn=yes
 set showcmd
 set noshowmode
@@ -106,7 +106,7 @@ set autoread
 set autowriteall
 set ignorecase smartcase
 set incsearch
-"set hlsearch
+set hlsearch
 set cmdheight=1
 set cursorline cursorcolumn
 set smarttab

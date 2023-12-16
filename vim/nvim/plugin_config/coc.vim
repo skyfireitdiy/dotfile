@@ -36,11 +36,11 @@ augroup mygroup
     autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>ac  <Plug>(coc-codeaction)
-nmap <leader>qf  <Plug>(coc-fix-current)
-nmap <leader>cl  <Plug>(coc-codelens-action)
+xmap <silent> <leader>a  <Plug>(coc-codeaction-selected)
+nmap <silent> <leader>a  <Plug>(coc-codeaction-selected)
+nmap <silent> <leader>ac  <Plug>(coc-codeaction)
+nmap <silent> <leader>qf  <Plug>(coc-fix-current)
+nmap <silent> <leader>cl  <Plug>(coc-codelens-action)
 nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
 xmap <silent> <leader>rr  <Plug>(coc-codeaction-refactor-selected)
 nmap <silent> <leader>rr  <Plug>(coc-codeaction-refactor-selected)

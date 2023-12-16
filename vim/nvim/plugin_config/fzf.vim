@@ -19,6 +19,6 @@ nnoremap  <silent><leader>gC    :Commits<CR>
 nnoremap  <silent><leader>x     :Commands<CR>
 nnoremap  <silent><leader>G     "9yiw:Rg<Space><C-r>9<cr>
 
-nnoremap <leader>L      "9yiw:BLines<Space><C-r>9<cr>
-nnoremap <leader>T      "9yiw:Tags<Space><C-r>9<cr>
-nnoremap <leader>W      :Windows<cr>
+nnoremap <silent> <leader>L      "9yiw:BLines<Space><C-r>9<cr>
+nnoremap <silent> <leader>T      "9yiw:Tags<Space><C-r>9<cr>
+nnoremap <silent> <leader>W      :Windows<cr>

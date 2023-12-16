@@ -15,9 +15,9 @@ endfunction
 
 
 nmap <silent><nowait><leader>dn <Plug>VimspectorStepOver
-nmap <A-n> <Plug>VimspectorStepOver
+nmap <silent><nowait><A-n> <Plug>VimspectorStepOver
 nmap <silent><nowait><leader>db <Plug>VimspectorToggleBreakpoint
-nmap <A-b> <Plug>VimspectorToggleBreakpoint
+nmap <silent><nowait><A-b> <Plug>VimspectorToggleBreakpoint
 
 " nmap <silent><nowait><leader>ds <Plug>VimspectorContinue
 nmap <silent><nowait><leader>ds <Plug>VimspectorContinue
@@ -29,9 +29,9 @@ nmap <silent><nowait><leader>dt <Plug>VimspectorStop
 nmap <silent><nowait><leader>dF <Plug>VimspectorAddFunctionBreakpoint
 nmap <silent><nowait><leader>dC <Plug>VimspectorToggleConditionalBreakpoint
 nmap <silent><nowait><leader>do <Plug>VimspectorStepOut
-nmap <A-o> <Plug>VimspectorStepOut
+nmap <silent><nowait><A-o> <Plug>VimspectorStepOut
 nmap <silent><nowait><leader>di <Plug>VimspectorStepInto
-nmap <A-i> <Plug>VimspectorStepInto
+nmap <silent><nowait><A-i> <Plug>VimspectorStepInto
 nmap <silent><nowait><leader>dq :<C-u>VimspectorReset<CR>
 nmap <silent><nowait><leader>dlc <Plug>VimspectorShowOutput Console<CR>
 nmap <silent><nowait><leader>dld <Plug>VimspectorShowOutput stderr<CR>
@@ -41,7 +41,7 @@ nmap <silent><nowait><leader>dls <Plug>VimspectorShowOutput server<CR>
 nmap <silent><nowait><leader>dlt <Plug>VimspectorShowOutput Telemetry<CR>
 nmap <silent><nowait><leader>de :<C-u>VimspectorEval<space>
 nmap <silent><nowait><leader>dw :<C-u>VimspectorWatch<space>
-nmap <A-w> :<C-u>VimspectorWatch<space>
+nmap <silent><nowait><A-w> :<C-u>VimspectorWatch<space>
 
 
 

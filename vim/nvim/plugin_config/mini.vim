@@ -27,4 +27,4 @@ lua << EOF
 	require('mini.test').setup()
 	require('mini.trailspace').setup()
 EOF
-nnoremap <leader>z :lua MiniMisc.zoom()<cr>
+nnoremap <silent> <leader>z :lua MiniMisc.zoom()<cr>

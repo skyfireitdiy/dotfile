@@ -41,4 +41,4 @@ endfunction
 
 command! -nargs=0 RC :call colorscheme#RandomColor()
 
-color dracula
+color molokai

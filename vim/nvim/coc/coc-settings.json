@@ -1,6 +1,49 @@
 {
     "explorer.icon.enableNerdfont": true,
     "explorer.icon.source": "vim-devicons",
+    "inlayHint.enable": false,
+    "inlayHint.display": true,
+    "inlayHint.subSeparator": " ☯ ",
+    "inlayHint.typeSeparator": " ❤ ",
+    "inlayHint.enableParameter": true,
+    "inlayHint.parameterSeparator": " ✪ ",
+    "inlayHint.refreshOnInsertMode": true,
+    "go.checkForUpdates": "disabled",
+    "suggest.autoTrigger": "always",
+    "suggest.noselect": false,
+    "suggest.timeout": 5000,
+    "suggest.virtualText": false,
+    "suggest.selection": "recentlyUsed",
+    "suggest.detailField": "preview",
+    "suggest.minTriggerInputLength": 1,
+    "suggest.floatConfig": {
+        "border": true,
+        "highlight": "CocFloating",
+        "borderhighlight": "CocFloating",
+        "title": "♥",
+        "rounded": true
+    },
+    "diagnostic.floatConfig": {
+        "border": true,
+        "borderhighlight": "CocFloating",
+        "highlight": "CocFloating",
+        "focusable": true,
+        "title": "☠",
+        "rounded": true
+    },
+    "hover.floatConfig": {
+        "border": true,
+        "borderhighlight": "CocFloating",
+        "highlight": "CocFloating",
+        "focusable": true,
+        "title": "✪",
+        "rounded": true
+    },
+    "coc.preferences.extensionUpdateCheck": "never",
+    "explorer.focus": true,
+    "Lua.telemetry.enable": true,
+    "snippets.ultisnips.pythonPrompt": false,
+    "markdown-preview-enhanced.previewTheme": "vue.css",
     "explorer.keyMappings.global": {
         "i": false,
         "<c-o>": "noop",
@@ -65,22 +108,22 @@
         "gb": "gotoSource:buffer",
 
         "[[": ["wait", "sourcePrev"],
-            "]]": ["wait", "sourceNext"],
+        "]]": ["wait", "sourceNext"],
 
-            "[i": ["wait", "indentPrev"],
-                "]i": ["wait", "indentNext"],
+        "[i": ["wait", "indentPrev"],
+        "]i": ["wait", "indentNext"],
 
-                "[m": ["wait", "markPrev:modified"],
-                    "]m": ["wait", "markNext:modified"],
+        "[m": ["wait", "markPrev:modified"],
+        "]m": ["wait", "markNext:modified"],
 
-                    "[d": ["wait", "markPrev:diagnosticError:diagnosticWarning"],
-                        "]d": ["wait", "markNext:diagnosticError:diagnosticWarning"],
-                        "[D": ["wait", "markPrev:diagnosticError"],
-                            "]D": ["wait", "markNext:diagnosticError"],
+        "[d": ["wait", "markPrev:diagnosticError:diagnosticWarning"],
+        "]d": ["wait", "markNext:diagnosticError:diagnosticWarning"],
+        "[D": ["wait", "markPrev:diagnosticError"],
+        "]D": ["wait", "markNext:diagnosticError"],
 
-                            "[c": ["wait", "markPrev:git"],
-                                "]c": ["wait", "markNext:git"],
-                                "<<": "gitStage",
-                                ">>": "gitUnstage"
+        "[c": ["wait", "markPrev:git"],
+        "]c": ["wait", "markNext:git"],
+        "<<": "gitStage",
+        ">>": "gitUnstage"
     }
 }

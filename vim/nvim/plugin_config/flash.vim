@@ -1,6 +1,6 @@
-nnoremap ]t :lua require('flash').treesitter()<CR>
-nnoremap ]T :lua require("flash").treesitter_search()<CR>
-nnoremap ]r :lua require("flash").remote()<CR>
-nnoremap ]j :lua require("flash").jump()<CR>
+nnoremap <silent> ]t :lua require('flash').treesitter()<cr>
+nnoremap <silent> ]t :lua require("flash").treesitter_search()<cr>
+nnoremap <silent> ]r :lua require("flash").remote()<cr>
+nnoremap <silent> ]j :lua require("flash").jump()<cr>
 
 command! -nargs=0 TF :lua require('flash').toggle()
