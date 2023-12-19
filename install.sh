@@ -61,7 +61,7 @@ config_fish(){
 
 config_tmux(){
     bak_config ~/.tmux
-    git clone https://ghproxy.com/https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     replace_config ~/.tmux.conf $(pwd)/_tmux.conf
     echo tmux配置成功！
 }
@@ -122,6 +122,11 @@ config_conda() {
 config_pip() {
     replace_config ~/.config/pip $(pwd)/pip
     echo "pip 配置完成"
+}
+
+config_zellij () {
+    replace_config ~/.config/zellij $(pwd)/zellij
+    echo "zellij 配置完成"
 }
 
 

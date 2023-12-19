@@ -1,0 +1,14 @@
+on_force_close "detach"
+simplified_ui false
+default_shell "fish"
+pane_frames true
+theme "default"
+default_layout "default"
+default_mode "normal"
+mouse_mode true
+scroll_buffer_size 100000
+copy_command "xsel -ib" 
+copy_clipboard "primary"
+copy_on_select true
+scrollback_editor "nvim"
+
