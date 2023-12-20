@@ -17,7 +17,7 @@ install_must_app() {
     sudo pacman -S --noconfirm archlinuxcn-keyring yay fakeroot
 }
 
-update() {
+update_system() {
     yay -Su
 }
 
@@ -44,7 +44,7 @@ install_all(){
     add_sudoer
     add_source
     install_must_app
-    update
+    update_system
     install_normal_app
     config
 }
