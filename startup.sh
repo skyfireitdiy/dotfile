@@ -32,10 +32,14 @@ config_fish(){
     sudo chsh -s /usr/bin/fish
 }
 
+config_bluez(){
+    sudo systemctl enable bluetooth
+}
 
 config(){
     ./install.sh fish tmux x vim konsole kitty alacritty hx i3 polybar
     config_fish
+    config_bluez
 }
 
 
