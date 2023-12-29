@@ -100,6 +100,8 @@ exec --no-startup-id clash
 
 exec --no-startup-id blueman-applet
 
+exec --no-startup-id pasystray
+
 # Use pactl to adjust volume in PulseAudio.
 # These are examples if you would like to use pactl. We will not use this,
 # but rather alsamixer.
