@@ -66,6 +66,8 @@ nnoremap <silent> <C-c> yiw
 nnoremap <silent> <C-v> viwP
 nnoremap <silent> <leader>y yiw
 nnoremap <silent> <leader>p viwP
+nnoremap <silent> <C-Left> <C-o>
+nnoremap <silent> <C-Right> <C-i>
 
 vnoremap <silent> <Up> k
 vnoremap <silent> <Down> j
