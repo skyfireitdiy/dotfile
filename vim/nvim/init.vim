@@ -6,7 +6,7 @@ function! init#initGlobalVars()
     " 获取home_dir
     let g:home_dir = environ()['HOME']
     " 检测是否安装vim
-    let g:install_vim = !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim") || !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
+    let g:install_vim = !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim") 
     " 是否启用轻量级nvim
     let g:lite_vim = index(keys(environ()), "lite_vim") != -1
     " 如果需要安装vim，不能启用轻量级nvim
