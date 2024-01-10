@@ -23,7 +23,11 @@ update_system() {
 
 install_normal_app() {
     sudo ./install.sh pacman
-    yay -S --noconfirm fish neovim fzf ranger w3m make  lazygit tmux  ibus ibus-libpinyin  ripgrep universal-ctags gcc nodejs xsel npm  go rustup fd linux-headers flameshot  p7zip wget aria2 unzip python-pynvim  wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete  ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git net-tools reflector python-pip yarn witch python-jedi clash microsoft-edge-stable-bin zellij bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol obs-studio pasystray
+    yay -S --noconfirm fish neovim fzf ranger w3m make  lazygit tmux  ripgrep universal-ctags gcc nodejs xsel npm  go rustup fd linux-headers p7zip wget aria2 unzip python-pynvim  ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git net-tools reflector python-pip yarn witch python-jedi zellij 
+}
+
+install_gui_app() {
+    yay -S --noconfirm ibus ibus-libpinyin flameshot wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete clash microsoft-edge-stable-bin bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol obs-studio pasystray
 }
 
 
