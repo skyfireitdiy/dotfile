@@ -36,6 +36,14 @@ abbr -a -- yr 'yay -Rnsuvc'
 
 # --------------------- abbr end ---------------------
 
+# --------------------- env start --------------------
+
+set -gx FZF_DEFAULT_COMMAND 'fd --exclude={.git,.idea,.sass-cache,node_modules,build} --type f'
+set -gx FZF_DEFAULT_OPTS "--preview 'bat --style=numbers,changes --color=always {} 2> /dev/null'"
+
+# --------------------- env end --------------------
+
+
 if test -f ~/.config/fish_user/config.fish
     source ~/.config/fish_user/config.fish
 end
