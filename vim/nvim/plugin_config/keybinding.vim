@@ -2,7 +2,7 @@
 inoremap <silent> hh <ESC>
 inoremap <silent> jj <ESC>
 inoremap <silent> kk <ESC>
-inoremap <silent> oo <ESC>o
+" inoremap <silent> oo <ESC>o
 " inoremap <silent> OO <ESC>O
 inoremap <silent> <C-j> <Down>
 inoremap <silent> <C-k> <Up>
