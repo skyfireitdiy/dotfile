@@ -1,4 +1,4 @@
-let g:auto_format_flag = 1
+let g:auto_format_flag = 0
 
 function autoformat#RunAutoFormat()
     if g:auto_format_flag == 1
