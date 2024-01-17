@@ -26,3 +26,5 @@ augroup autoformat
     autocmd!
     autocmd BufWritePre * :call autoformat#RunAutoFormat()
 augroup END
+
+nnoremap <silent> <A-F> :Autoformat<cr>
