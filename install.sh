@@ -130,6 +130,13 @@ config_zellij () {
 }
 
 
+config_ssh () {
+    mkdir -p ~/.ssh
+    replace_config ~/.ssh/config $(pwd)/ssh/config
+    echo "ssh 配置完成"
+}
+
+
 while test $# -gt 0
 do
     config_$1
