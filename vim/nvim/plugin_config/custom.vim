@@ -143,7 +143,7 @@ let g:loaded_node_provider = 0
 let g:loaded_ruby_provider = 0
 
 if exists("g:neovide")
-    set guifont=Source\ Code\ Pro:h10:b:i
+    set guifont=Source\ Code\ Pro:h15:b:i
     let g:neovide_scale_factor = 1.0
     let g:neovide_transparency = 0.3
     let g:neovide_hide_mouse_when_typing = v:true
