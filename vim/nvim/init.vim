@@ -246,7 +246,9 @@ endfunction
 function! init#installVim()
     if !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
         " nvim
-        echom system("curl -fLo " . g:home_dir . "/.local/share/nvim/site/autoload/plug.vim --create-dirs https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim")
+	echom system("mkdir -p ". g:home_dir . "/.local/share/nvim/site/autoload")
+        echom system("git clone git@github.com:junegunn/vim-plug.git ".g:home_dir."/.local/share/nvim/vim-plug")
+	echom system("ln -sf ".g:home_dir."/.local/share/nvim/vim-plug/plug.vim ".g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
         qa
     endif
 endfunction
