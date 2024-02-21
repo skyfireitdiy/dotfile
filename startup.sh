@@ -18,7 +18,7 @@ install_must_app() {
 }
 
 update_system() {
-    yay -Su
+    sudo pacman -Su --noconfirm
 }
 
 install_normal_app() {
