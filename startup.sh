@@ -40,10 +40,16 @@ config_bluez(){
     sudo systemctl enable bluetooth
 }
 
+config_ntp() {
+    sudo timedatectl set-timezone Asia/Shanghai
+    sudo timedatectl set-ntp true
+}
+
 config(){
     ./install.sh fish tmux x vim konsole kitty alacritty hx i3 polybar
     config_fish
     config_bluez
+    config_ntp
 }
 
 
