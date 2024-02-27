@@ -1,7 +1,13 @@
-let g:auto_format_flag = 0
+let g:auto_format_flag = 1
+let g:dont_format_ext = ["txt"]
 
 function autoformat#RunAutoFormat()
     if g:auto_format_flag == 1
+        let file_ext = expand('%:e')
+        if index(g:dont_format_ext, file_ext) != -1
+            echo "Ignore format file:".expand("%:p")
+            return
+        endif
         let dot_pos = stridx(expand('%:p:t'), '.')
         if dot_pos != -1
             echom "Autoformat file:".expand("%:p")
