@@ -136,6 +136,11 @@ config_ssh () {
     echo "ssh 配置完成"
 }
 
+config_pypi() {
+    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+    echo "pypi 配置完成"
+}
+
 
 while test $# -gt 0
 do

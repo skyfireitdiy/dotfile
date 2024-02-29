@@ -46,7 +46,7 @@ config_ntp() {
 }
 
 config(){
-    ./install.sh fish tmux x vim konsole kitty alacritty hx i3 polybar
+    ./install.sh fish tmux x vim konsole kitty alacritty hx i3 polybar pypi
     config_fish
     config_bluez
     config_ntp
