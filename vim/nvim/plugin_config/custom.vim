@@ -121,7 +121,7 @@ set rulerformat=%15(%c%V\ %p%%%)
 set smartindent
 set autoindent
 set clipboard=unnamedplus
-set scrolloff=10
+" set scrolloff=10
 
 
 set enc=utf-8
