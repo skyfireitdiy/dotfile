@@ -225,8 +225,6 @@ function! init#checkDeps()
                 \ ['python3', 'python3 --version'],
                 \ ['pip3', 'pip3 --version'],
                 \ ['yarn', 'yarn --version'],
-                \ ['gh', 'gh --help'],
-                \ ['codeql', 'codeql --version'],
                 \ ]
     let flags = 1
     for deps in deps_check
