@@ -116,6 +116,7 @@ function init#addBuiltinPlugin()
     " call init#AddPlugin( ['代码块范围箭头', 'yaocccc/nvim-hlchunk'])
     " call init#AddPlugin( ['缩进线', 'lukas-reineke/indent-blankline.nvim', 'indent-blankline.vim', ['heavy']])
     " call init#AddPlugin( ['ranger', 'kevinhwang91/rnvimr', 'rnvimr.vim'])
+    call init#AddPlugin( ['codeql依赖', 's1n7ax/nvim-window-picker', 'nvim-window-picker.vim'])
     call init#AddPlugin( ['codeql支持', 'pwntester/codeql.nvim', 'codeql.vim'])
     call init#AddPlugin( ['浮动终端', 'akinsho/toggleterm.nvim', 'toggleterm.vim'])
     call init#AddPlugin( ['lsp增强', 'jose-elias-alvarez/null-ls.nvim', 'null-ls.vim'])
@@ -224,6 +225,7 @@ function! init#checkDeps()
                 \ ['python3', 'python3 --version'],
                 \ ['pip3', 'pip3 --version'],
                 \ ['yarn', 'yarn --version'],
+                \ ['gh', 'gh --help'],
                 \ ]
     let flags = 1
     for deps in deps_check
