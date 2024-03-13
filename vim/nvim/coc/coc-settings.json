@@ -228,7 +228,7 @@
             "rootPatterns": [
                 "qlpack.yml"
             ],
-            "requireRootPattern": true
+            "requireRootPattern": false
         }
     }
 }
