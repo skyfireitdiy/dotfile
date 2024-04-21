@@ -13,11 +13,13 @@ add_source() {
 }
 
 install_must_app() {
-    sudo pacman -Sy
-    sudo pacman -S --noconfirm archlinuxcn-keyring yay fakeroot
+    add_source
+    sudo pacman -S --noconfirm archlinuxcn-keyring yay fakeroot debugedit
 }
 
 update_system() {
+    add_source
+    sudo pacman -Sy
     sudo pacman -Su --noconfirm
 }
 
@@ -57,8 +59,8 @@ config(){
 install_all(){
     add_sudoer
     add_source
-    install_must_app
     update_system
+    install_must_app
     install_normal_app
     config
 }
