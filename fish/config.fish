@@ -34,6 +34,8 @@ abbr -a -- yu 'yay -Sy; yay -Su --noconfirm --needed --overwrite="*"'
 abbr -a -- ys 'yay -Ss'
 abbr -a -- yr 'yay -Rnsuvc'
 
+abbr -a -- ls exa
+
 # --------------------- abbr end ---------------------
 
 # --------------------- env start --------------------
