@@ -83,6 +83,7 @@ nnoremap <silent> K :call coc#ShowDocumentation()<cr>
 let g:coc_config = []
 
 call init#AddCoc( ['coc-explorer', 'explorer.vim'])
+call init#AddCoc( ['coc-marketplace'])
 
 for ext in g:coc_ext_table
     let g:coc_config = add(g:coc_config, ext)
