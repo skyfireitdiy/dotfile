@@ -2,14 +2,14 @@
 call system("python3 ". shellescape(expand("~/.config/nvim/coc/merge_config.py")))
 
 inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ coc#CheckBackspace() ? "\<TAB>" :
-      \ coc#refresh()
+            \ coc#pum#visible() ? coc#_select_confirm() :
+            \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+            \ coc#CheckBackspace() ? "\<TAB>" :
+            \ coc#refresh()
 
 function! coc#CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 let g:coc_snippet_next = '<tab>'
@@ -58,7 +58,7 @@ command! -nargs=0 Format :call CocActionAsync('format')
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 nnoremap <silent><nowait> <space>ca  :<C-u>CocList diagnostics<cr>
 nnoremap <silent><nowait> <space>ce  :<C-u>CocList extensions<cr>

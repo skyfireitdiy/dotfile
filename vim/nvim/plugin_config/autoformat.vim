@@ -34,3 +34,4 @@ augroup autoformat
 augroup END
 
 nnoremap <silent> <A-F> :Autoformat<cr>
+command! F :Autoformat
