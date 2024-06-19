@@ -1,31 +1,33 @@
 
 " gitsigns
 lua << EOF
-require('gitsigns').setup({
+require('gitsigns').setup {
     signs = {
-        add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
-        change       = {hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-        delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-        topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-        changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+        add          = { text = '┃' },
+        change       = { text = '┃' },
+        delete       = { text = '_' },
+        topdelete    = { text = '‾' },
+        changedelete = { text = '~' },
+        untracked    = { text = '┆' },
     },
     signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
-    numhl      = true, -- Toggle with `:Gitsigns toggle_numhl`
+    numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
     linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
-    word_diff  = true, -- Toggle with `:Gitsigns toggle_word_diff`
+    word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
     watch_gitdir = {
-        interval = 1000,
         follow_files = true
     },
-    attach_to_untracked = true,
-    current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
+    auto_attach = true,
+    attach_to_untracked = false,
+    current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
     current_line_blame_opts = {
         virt_text = true,
         virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
-        delay = 100,
+        delay = 1000,
         ignore_whitespace = false,
+        virt_text_priority = 100,
     },
-    current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
+    current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
     sign_priority = 6,
     update_debounce = 100,
     status_formatter = nil, -- Use default
@@ -38,39 +40,50 @@ require('gitsigns').setup({
         row = 0,
         col = 1
     },
-    yadm = {
-        enable = false
-    },
     on_attach = function(bufnr)
-        local function map(mode, lhs, rhs, opts)
-            opts = vim.tbl_extend('force', {noremap = true, silent = true}, opts or {})
-            vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
-        end
+    local gitsigns = require('gitsigns')
 
-        -- Navigation
-        map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", {expr=true})
-        map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", {expr=true})
-
-        -- Actions
-        map('n', '<leader>hs', ':Gitsigns stage_hunk<CR>')
-        map('v', '<leader>hs', ':Gitsigns stage_hunk<CR>')
-        map('n', '<leader>hr', ':Gitsigns reset_hunk<CR>')
-        map('v', '<leader>hr', ':Gitsigns reset_hunk<CR>')
-        map('n', '<leader>hS', '<cmd>Gitsigns stage_buffer<CR>')
-        map('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<CR>')
-        map('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<CR>')
-        map('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<CR>')
-        map('n', '<leader>hb', '<cmd>lua require"gitsigns".blame_line{full=true}<CR>')
-        map('n', '<leader>gtb', '<cmd>Gitsigns toggle_current_line_blame<CR>')
-        map('n', '<leader>hd', '<cmd>Gitsigns diffthis<CR>')
-        map('n', '<leader>hD', '<cmd>lua require"gitsigns".diffthis("~")<CR>')
-        map('n', '<leader>gtd', '<cmd>Gitsigns toggle_deleted<CR>')
-
-        -- Text object
-        map('o', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
-        map('x', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+    local function map(mode, l, r, opts)
+    opts = opts or {}
+    opts.buffer = bufnr
+    vim.keymap.set(mode, l, r, opts)
     end
+
+    -- Navigation
+    map('n', ']c', function()
+    if vim.wo.diff then
+        vim.cmd.normal({']c', bang = true})
+    else
+        gitsigns.nav_hunk('next')
+        end
+        end)
+
+        map('n', '[c', function()
+        if vim.wo.diff then
+            vim.cmd.normal({'[c', bang = true})
+        else
+            gitsigns.nav_hunk('prev')
+            end
+            end)
+
+            -- Actions
+            map('n', '<leader>hs', gitsigns.stage_hunk)
+            map('n', '<leader>hr', gitsigns.reset_hunk)
+            map('v', '<leader>hs', function() gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+            map('v', '<leader>hr', function() gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+            map('n', '<leader>hS', gitsigns.stage_buffer)
+            map('n', '<leader>hu', gitsigns.undo_stage_hunk)
+            map('n', '<leader>hR', gitsigns.reset_buffer)
+            map('n', '<leader>hp', gitsigns.preview_hunk)
+            map('n', '<leader>hb', function() gitsigns.blame_line{full=true} end)
+            map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
+            map('n', '<leader>hd', gitsigns.diffthis)
+            map('n', '<leader>hD', function() gitsigns.diffthis('~') end)
+            map('n', '<leader>td', gitsigns.toggle_deleted)
+
+            -- Text object
+            map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+            end
 }
-)
 EOF
 set statusline+=%{get(b:,'gitsigns_status','')}
