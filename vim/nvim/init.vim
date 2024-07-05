@@ -35,6 +35,8 @@ function! init#initGlobalVars()
             \ function("init#heavyLoadHook"),
             \ function("init#vscodeLoadHook"),
           \ ]
+    " 使用telescope
+    let g:use_telescope = 0
 endfunction
 
 function! init#heavyLoadHook(tags)
