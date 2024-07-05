@@ -6,7 +6,7 @@ function! init#initGlobalVars()
     " 获取home_dir
     let g:home_dir = environ()['HOME']
     " 检测是否安装vim
-    let g:install_vim = !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim") 
+    let g:install_vim = !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
     " 是否启用轻量级nvim
     let g:lite_vim = index(keys(environ()), "lite_vim") != -1
     " 如果需要安装vim，不能启用轻量级nvim
@@ -32,11 +32,13 @@ function! init#initGlobalVars()
                 \ g:home_dir . "/.config/nvim/plugin_config/"]
     " 插件加载标记判断回调函数
     let g:plugin_load_hooks = [
-            \ function("init#heavyLoadHook"),
-            \ function("init#vscodeLoadHook"),
-          \ ]
+                \ function("init#heavyLoadHook"),
+                \ function("init#vscodeLoadHook"),
+                \ ]
     " 使用telescope
     let g:use_telescope = 0
+    " 是否是arch
+    let g:is_arch_linux = init#isArchLinuxOS()
 endfunction
 
 function! init#heavyLoadHook(tags)
@@ -63,6 +65,10 @@ endfunction
 " 增加Plugin
 function! init#AddPlugin(plugin_config)
     let g:plugin_config_table = add(g:plugin_config_table, a:plugin_config)
+endfunction
+
+function! init#isArchLinuxOS()
+    return filereadable("/etc/arch-release")
 endfunction
 
 " 增加内置插件
@@ -216,27 +222,28 @@ function! init#checkDeps()
         return 1
     endif
     let deps_check = [
-                \ ['fzf','fzf --version'],
-                \ ['lazygit','lazygit --version'],
-                \ ['ripgrep','rg --version'],
-                \ ['fd', 'fd --version'],
-                \ ['universal-ctags', 'ctags --version'],
-                \ ['g++', 'g++ --version'],
-                \ ['nodejs', 'node --version'],
-                \ ['npm', 'npm --version'],
-                \ ['python3', 'python3 --version'],
-                \ ['pip3', 'pip3 --version'],
-                \ ['yarn', 'yarn --version'],
+                \ ['fzf','fzf --version', 'yay -S fzf --noconfirm'],
+                \ ['lazygit','lazygit --version', 'yay -S lazygit --noconfirm'],
+                \ ['ripgrep','rg --version', 'yay -S ripgrep --noconfirm'],
+                \ ['fd', 'fd --version', 'yay -S fd --noconfirm'],
+                \ ['universal-ctags', 'ctags --version', 'yay -S universal-ctags --noconfirm'],
+                \ ['g++', 'g++ --version', 'yay -S gcc --noconfirm'],
+                \ ['nodejs', 'node --version', 'yay -S nodejs --noconfirm'],
+                \ ['npm', 'npm --version', 'yay -S npm --noconfirm'],
+                \ ['python3', 'python3 --version', 'yay -S python3'],
+                \ ['pip3', 'pip3 --version', 'yay -S python-pip --noconfirm'],
+                \ ['yarn', 'yarn --version', 'yay -S yarn --noconfirm'],
                 \ ]
     let flags = 1
     for deps in deps_check
         let out = system(deps[1])
         if stridx(out, 'not found') != -1 || stridx(out, 'Unknown command') != -1
-            let flags = 0
-            if len(deps) > 2
+            if g:is_arch_linux
                 echo deps[2]
+                call system(deps[2])
             else
-                echo deps[0] . ' not found!'
+                echo deps[1] . " not found"
+                let flags = 0
             endif
         endif
     endfor
@@ -250,9 +257,9 @@ endfunction
 function! init#installVim()
     if !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
         " nvim
-	echom system("mkdir -p ". g:home_dir . "/.local/share/nvim/site/autoload")
+        echom system("mkdir -p ". g:home_dir . "/.local/share/nvim/site/autoload")
         echom system("git clone https://github.com/junegunn/vim-plug.git ".g:home_dir."/.local/share/nvim/vim-plug")
-	echom system("ln -sf ".g:home_dir."/.local/share/nvim/vim-plug/plug.vim ".g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
+        echom system("ln -sf ".g:home_dir."/.local/share/nvim/vim-plug/plug.vim ".g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
         qa
     endif
 endfunction
