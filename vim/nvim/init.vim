@@ -73,10 +73,8 @@ endfunction
 
 " 增加内置插件
 function init#addBuiltinPlugin()
-    " call init#AddPlugin( ['增强的c++高亮', 'octol/vim-cpp-enhanced-highlight', 'cpphighlight.vim', ['heavy'] ])
-    " call init#AddPlugin( ['彩虹括号', 'luochen1990/rainbow','rainbow.vim', ['heavy']])
+    call init#AddPlugin( ['彩虹括号', 'luochen1990/rainbow','rainbow.vim', ['heavy']])
     call init#AddPlugin( ['tag边栏', 'majutsushi/tagbar', 'tagbar.vim', ['heavy']])
-    " call init#AddPlugin( ['仅在当前活动窗口高亮光标', 'vim-scripts/CursorLineCurrentWindow' ])
     call init#AddPlugin( ['搜索时闪烁当前行', 'inside/vim-search-pulse' ])
     call init#AddPlugin( ['自动格式化', 'chiel92/vim-autoformat' ,'autoformat.vim', ['heavy']])
     call init#AddPlugin( ['多光标支持', 'mg979/vim-visual-multi',  'visual-cursor.vim'])
@@ -84,19 +82,16 @@ function init#addBuiltinPlugin()
     call init#AddPlugin( ['状态栏', 'vim-airline/vim-airline' ])
     call init#AddPlugin( ['状态栏主题', 'vim-airline/vim-airline-themes' ,'airline-theme.vim'])
     call init#AddPlugin( ['光标样式', 'jszakmeister/vim-togglecursor' ])
-    " call init#AddPlugin( ['屏幕滚动<C-j><C-k>', 'reedes/vim-wheel' ])
     call init#AddPlugin( ['增强的搜索替换', 'vim-scripts/EasyGrep' ,'easygrep.vim'])
     call init#AddPlugin( ['fzf基础支持', 'junegunn/fzf'])
     call init#AddPlugin( ['基于fzf的工具', 'junegunn/fzf.vim', 'fzf.vim'])
     call init#AddPlugin( ['增加、修改包围的括号或者tag', 'tpope/vim-surround' ])
-    " call init#AddPlugin( ['表格模式（markdown）', 'dhruvasagar/vim-table-mode' ])
     call init#AddPlugin( ['增强的选中扩展', 'vim-scripts/wildfire.vim' ,'wildfire.vim', ['heavy']])
     call init#AddPlugin( ['treesitter语法高亮', 'nvim-treesitter/nvim-treesitter', 'treesitter.vim', ['heavy'], "{'do':':TSUpdate'}"])
     call init#AddPlugin( ['treesitter对象', 'nvim-treesitter/nvim-treesitter-textobjects', 'treesitter-textobjects.vim', ['heavy']])
     call init#AddPlugin( ['函数签名提示', 'ray-x/lsp_signature.nvim', 'lsp_signature.vim'])
     call init#AddPlugin( ['函数参数高亮', 'm-demare/hlargs.nvim'])
     call init#AddPlugin( ['which-key提示', 'folke/which-key.nvim', 'which-key.vim'])
-    " call init#AddPlugin( ['快速跳转', 'ggandor/lightspeed.nvim'])
     call init#AddPlugin( ['快速跳转', 'folke/flash.nvim', 'flash.vim', ['heavy']])
     call init#AddPlugin( ['书签管理', 'chentoast/marks.nvim', 'marks.vim'])
     call init#AddPlugin( ['git状态', 'lewis6991/gitsigns.nvim', 'gitsigns.vim'])
@@ -106,100 +101,19 @@ function init#addBuiltinPlugin()
     call init#AddPlugin( ['创建scratch缓冲区', 'vim-scripts/scratch.vim'])
     call init#AddPlugin( ['自动保存ASToggle', 'Pocco81/auto-save.nvim', 'auto-save.vim'])
     call init#AddPlugin( ['自动生成tag', 'ludovicchabant/vim-gutentags', 'ctags.vim'])
-    " call init#AddPlugin( ['调试支持', 'puremourning/vimspector', 'vimspector.vim'])
     call init#AddPlugin( ['chatgpt', 'skyfireitdiy/chatgpt', 'chatgpt.vim'])
-    " call init#AddPlugin( ['codegeex', 'skyfireitdiy/codegeex-vim', 'codegeex.vim'])
-    call init#AddPlugin( ['codeium', 'Exafunction/codeium.vim'])
     call init#AddPlugin( ['tabnine', 'codota/tabnine-nvim', 'tabnine.vim', [], "{ 'do': './dl_binaries.sh' }"])
-    " call init#AddPlugin( ['cheat.sh', 'dbeniamine/cheat.sh-vim'])
     call init#AddPlugin( ['注释', 'preservim/nerdcommenter', 'nerdcommenter.vim'])
     call init#AddPlugin( ['coc', 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 'master', 'do': 'npm install  --frozen-lockfile'}"])
     call init#AddPlugin( ['lua函数集', 'nvim-lua/plenary.nvim'])
     call init#AddPlugin( ['搜索', 'nvim-telescope/telescope.nvim', 'telescope.vim'])
-    " call init#AddPlugin( ['telescope fzf扩展', 'nvim-telescope/telescope-fzf-native.nvim', '', [], "{ 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }"])
     call init#AddPlugin( ['会话自动保存', 'rmagatti/auto-session', 'auto-session.vim'])
     call init#AddPlugin( ['会话搜索', 'rmagatti/session-lens', "session-lens.vim"])
-    " call init#AddPlugin( ['快速命令', 'FeiyouG/command_center.nvim'])
-    " call init#AddPlugin( ['透明', 'xiyaowong/nvim-transparent', 'transparent.vim'])
-    " call init#AddPlugin( ['高亮当前块', 'folke/twilight.nvim', 'twilight.vim'])
-    " call init#AddPlugin( ['代码块范围箭头', 'yaocccc/nvim-hlchunk'])
-    " call init#AddPlugin( ['缩进线', 'lukas-reineke/indent-blankline.nvim', 'indent-blankline.vim', ['heavy']])
-    " call init#AddPlugin( ['ranger', 'kevinhwang91/rnvimr', 'rnvimr.vim'])
-    call init#AddPlugin( ['codeql依赖', 's1n7ax/nvim-window-picker', 'nvim-window-picker.vim'])
-    " call init#AddPlugin( ['codeql支持', 'pwntester/codeql.nvim', 'codeql.vim'])
     call init#AddPlugin( ['浮动终端', 'akinsho/toggleterm.nvim', 'toggleterm.vim'])
     call init#AddPlugin( ['lsp增强', 'jose-elias-alvarez/null-ls.nvim', 'null-ls.vim'])
-    call init#AddPlugin( ['ChatGPT', 'MunifTanjim/nui.nvim' ])
-    call init#AddPlugin( ['ChatGPT', 'skyfireitdiy/neoai.nvim', 'neoai.vim'])
     call init#AddPlugin( ['主题', 'tomasr/molokai' ])
     call init#AddPlugin( ['主题', 'tanvirtin/monokai.nvim'])
     call init#AddPlugin( ['主题', 'dracula/vim'])
-    " call init#AddPlugin( ['主题', 'sjl/badwolf' ])
-    " call init#AddPlugin( ['主题', 'shaeinst/roshnivim-cs'])
-    " call init#AddPlugin( ['主题', 'tomasiser/vim-code-dark'])
-    " call init#AddPlugin( ['主题', 'Mofiqul/vscode.nvim'])
-    " call init#AddPlugin( ['主题', 'marko-cerovac/material.nvim'])
-    " call init#AddPlugin( ['主题', 'bluz71/vim-nightfly-guicolors'])
-    " call init#AddPlugin( ['主题', 'bluz71/vim-moonfly-colors'])
-    " call init#AddPlugin( ['主题', 'ChristianChiarulli/nvcode-color-schemes.vim'])
-    " call init#AddPlugin( ['主题', 'folke/tokyonight.nvim'])
-    " call init#AddPlugin( ['主题', 'sainnhe/sonokai'])
-    " call init#AddPlugin( ['主题', 'kyazdani42/blue-moon'])
-    " call init#AddPlugin( ['主题', 'mhartington/oceanic-next'])
-    " call init#AddPlugin( ['主题', 'glepnir/zephyr-nvim'])
-    " call init#AddPlugin( ['主题', 'rockerBOO/boo-colorscheme-nvim'])
-    " call init#AddPlugin( ['主题', 'jim-at-jibba/ariake-vim-colors'])
-    " call init#AddPlugin( ['主题', 'ishan9299/modus-theme-vim'])
-    " call init#AddPlugin( ['主题', 'sainnhe/edge'])
-    " call init#AddPlugin( ['主题', 'theniceboy/nvim-deus'])
-    " call init#AddPlugin( ['主题', 'Th3Whit3Wolf/one-nvim'])
-    " call init#AddPlugin( ['主题', 'PHSix/nvim-hybrid'])
-    " call init#AddPlugin( ['主题', 'yonlu/omni.vim'])
-    " call init#AddPlugin( ['主题', 'ray-x/aurora'])
-    " call init#AddPlugin( ['主题', 'ray-x/starry.nvim'])
-    " call init#AddPlugin( ['主题', 'ofirgall/ofirkai.nvim'])
-    " call init#AddPlugin( ['主题', 'savq/melange'])
-    " call init#AddPlugin( ['主题', 'RRethy/nvim-base16'])
-    " call init#AddPlugin( ['主题', 'fenetikm/falcon'])
-    " call init#AddPlugin( ['主题', 'andersevenrud/nordic.nvim'])
-    " call init#AddPlugin( ['主题', 'shaunsingh/nord.nvim'])
-    " call init#AddPlugin( ['主题', 'ishan9299/nvim-solarized-lua'])
-    " call init#AddPlugin( ['主题', 'shaunsingh/moonlight.nvim'])
-    " call init#AddPlugin( ['主题', 'navarasu/onedark.nvim'])
-    " call init#AddPlugin( ['主题', 'lourenci/github-colors'])
-    " call init#AddPlugin( ['主题', 'sainnhe/gruvbox-material'])
-    " call init#AddPlugin( ['主题', 'sainnhe/everforest'])
-    " call init#AddPlugin( ['主题', 'NTBBloodbath/doom-one.nvim'])
-    " call init#AddPlugin( ['主题', 'Mofiqul/dracula.nvim'])
-    " call init#AddPlugin( ['主题', 'yashguptaz/calvera-dark.nvim'])
-    " call init#AddPlugin( ['主题', 'projekt0n/github-nvim-theme'])
-    " call init#AddPlugin( ['主题', 'kdheepak/monochrome.nvim'])
-    " call init#AddPlugin( ['主题', 'rose-pine/neovim'])
-    " call init#AddPlugin( ['主题', 'catppuccin/nvim'])
-    " call init#AddPlugin( ['主题', 'FrenzyExists/aquarium-vim'])
-    " call init#AddPlugin( ['主题', 'EdenEast/nightfox.nvim'])
-    " call init#AddPlugin( ['主题', 'kvrohit/substrata.nvim'])
-    " call init#AddPlugin( ['主题', 'ldelossa/vimdark'])
-    " call init#AddPlugin( ['主题', 'Everblush/everblush.nvim'])
-    " call init#AddPlugin( ['主题', 'olimorris/onedarkpro.nvim'])
-    " call init#AddPlugin( ['主题', 'rmehri01/onenord.nvim'])
-    " call init#AddPlugin( ['主题', 'luisiacc/gruvbox-baby'])
-    " call init#AddPlugin( ['主题', 'titanzero/zephyrium'])
-    " call init#AddPlugin( ['主题', 'rebelot/kanagawa.nvim'])
-    " call init#AddPlugin( ['主题', 'tiagovla/tokyodark.nvim'])
-    " call init#AddPlugin( ['主题', 'cpea2506/one_monokai.nvim'])
-    " call init#AddPlugin( ['主题', 'kvrohit/rasmus.nvim'])
-    " call init#AddPlugin( ['主题', 'chrsm/paramount-ng.nvim'])
-    " call init#AddPlugin( ['主题', 'kaiuri/nvim-juliana'])
-    " call init#AddPlugin( ['主题', 'lmburns/kimbox'])
-    " call init#AddPlugin( ['主题', 'rockyzhang24/arctic.nvim'])
-    " call init#AddPlugin( ['主题', 'meliora-theme/neovim'])
-    " call init#AddPlugin( ['主题', 'Yazeed1s/minimal.nvim'])
-    " call init#AddPlugin( ['主题', 'Mofiqul/adwaita.nvim'])
-    " call init#AddPlugin( ['主题', 'olivercederborg/poimandres.nvim'])
-    " call init#AddPlugin( ['主题', 'tjdevries/gruvbuddy.nvim'])
-    " call init#AddPlugin( ['主题', 'ellisonleao/gruvbox.nvim'])
-    " call init#AddPlugin( ['主题', 'lalitmee/cobalt2.nvim'])
     call init#AddPlugin( ['', '', 'custom.vim', ['vscode']])
     call init#AddPlugin( ['', '', 'keybinding.vim', ['vscode']])
     call init#AddPlugin( ['', '', 'colorscheme.vim' ])
@@ -218,40 +132,16 @@ endfunction
 
 " 增加依赖项检测
 function! init#checkDeps()
-    let flag_file = g:home_dir . "/.vim_checked"
-    if filereadable(flag_file)
+    if init#isArchLinuxOS() != 1 
+        echom "Not ArchLinux, Will not auto install deps"
+        return
+    endif
+    let out = system("bash " . g:home_dir . "/.config/nvim/install_deps.sh")
+    if stridx(out, "[vim ok]") != -1
         return 1
+    else
+        return 0
     endif
-    let deps_check = [
-                \ ['fzf','fzf --version', 'yay -S fzf --noconfirm'],
-                \ ['lazygit','lazygit --version', 'yay -S lazygit --noconfirm'],
-                \ ['ripgrep','rg --version', 'yay -S ripgrep --noconfirm'],
-                \ ['fd', 'fd --version', 'yay -S fd --noconfirm'],
-                \ ['universal-ctags', 'ctags --version', 'yay -S universal-ctags --noconfirm'],
-                \ ['g++', 'g++ --version', 'yay -S gcc --noconfirm'],
-                \ ['nodejs', 'node --version', 'yay -S nodejs --noconfirm'],
-                \ ['npm', 'npm --version', 'yay -S npm --noconfirm'],
-                \ ['python3', 'python3 --version', 'yay -S python3'],
-                \ ['pip3', 'pip3 --version', 'yay -S python-pip --noconfirm'],
-                \ ['yarn', 'yarn --version', 'yay -S yarn --noconfirm'],
-                \ ]
-    let flags = 1
-    for deps in deps_check
-        let out = system(deps[1])
-        if stridx(out, 'not found') != -1 || stridx(out, 'Unknown command') != -1
-            if g:is_arch_linux
-                echo deps[2]
-                call system(deps[2])
-            else
-                echo deps[1] . " not found"
-                let flags = 0
-            endif
-        endif
-    endfor
-    if flags == 1
-        call system("touch " . flag_file)
-    endif
-    return flags
 endfunction
 
 " 自助安装配置，减少install.sh脚本中的依赖
@@ -323,9 +213,6 @@ function! init#loadPlugin()
     endif
 endfunction
 
-
-
-
 function! init#AddPluginConfigSearchPath(path)
     let g:plugin_config_search_path = add(g:plugin_config_search_path, a:path)
 endfunction
@@ -365,6 +252,23 @@ function! init#IgnorePlugin(plugin)
     let g:ignored_plugin = add(g:ignored_plugin, a:plugin)
 endfunction
 
+function! init#initTabnineChat()
+    let tabnine_dir = g:home_dir . '/.local/share/nvim/plugged/tabnine-nvim'
+    if isdirectory(tabnine_dir)
+        if filereadable(tabnine_dir . '/chat/target/release/tabnine_chat')
+            return
+        else
+            echom "start build tabnine-chat ..."
+            call system("cargo build --release --manifest-path " . tabnine_dir . '/chat/Cargo.toml')
+            echom "tabnine-chat build finished"
+        endif
+    endif
+endfunction
+
+function init#afterAll() 
+    call init#initTabnineChat()
+endfunction
+
 function init#init()
     call init#initGlobalVars()
     if init#checkDeps() == 1
@@ -379,6 +283,8 @@ function init#init()
         call init#loadUserConfig('before_config.vim')
         call init#loadConfig()
         call init#loadUserConfig('after_all.vim')
+
+        call init#afterAll()
     endif
 endfunction
 
