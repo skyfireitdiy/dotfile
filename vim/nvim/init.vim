@@ -136,7 +136,7 @@ function! init#checkDeps()
         echom "Not ArchLinux, Will not auto install deps"
         return
     endif
-    let out = system("bash " . g:home_dir . "/.config/nvim/install_deps.sh")
+    let out = system("bash " . g:home_dir . "/.config/nvim/script/install_deps.sh")
     if stridx(out, "[vim ok]") != -1
         return 1
     else
