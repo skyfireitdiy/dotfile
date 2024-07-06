@@ -22,7 +22,7 @@ family = "SauceCodePro Nerd Font Mono"
 style = "Bold"
 
 [scrolling]
-auto_scroll = true
+# auto_scroll = true
 faux_multiplier = 100
 history = 2000
 multiplier = 20
