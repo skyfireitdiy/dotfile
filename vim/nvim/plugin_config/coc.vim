@@ -36,23 +36,15 @@ augroup mygroup
     autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-xmap <silent> <leader>a  <Plug>(coc-codeaction-selected)
-nmap <silent> <leader>a  <Plug>(coc-codeaction-selected)
-nmap <silent> <leader>ac  <Plug>(coc-codeaction)
-nmap <silent> <leader>qf  <Plug>(coc-fix-current)
-nmap <silent> <leader>cl  <Plug>(coc-codelens-action)
-nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
-xmap <silent> <leader>rr  <Plug>(coc-codeaction-refactor-selected)
-nmap <silent> <leader>rr  <Plug>(coc-codeaction-refactor-selected)
+xmap <silent> <C-a>  <Plug>(coc-codeaction-selected)
+nmap <silent> <C-a>  <Plug>(coc-codeaction-selected)
+nmap <silent> <C-a>  <Plug>(coc-codeaction)
+nmap <silent> <C-F>  <Plug>(coc-fix-current)
+nmap <silent> <C-L>  <Plug>(coc-codelens-action)
+nmap <silent> <C-R>  <Plug>(coc-codeaction-refactor)
+xmap <silent> <C-R>  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <C-R>  <Plug>(coc-codeaction-refactor-selected)
 
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-    nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-    nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-    inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-    inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-    vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-    vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-endif
 
 command! -nargs=0 Format :call CocActionAsync('format')
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
