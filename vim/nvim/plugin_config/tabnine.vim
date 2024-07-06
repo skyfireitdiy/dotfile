@@ -42,4 +42,4 @@ function! tabnine#openTabnineChat()
     endif
 endfunction
 
-nnoremap <silent> <leader>q :call tabnine#openTabnineCh
+nnoremap <silent> <leader>q :call tabnine#openTabnineChat()<cr>
