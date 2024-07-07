@@ -68,6 +68,7 @@ nnoremap <silent> <leader>y yiw
 nnoremap <silent> <leader>p viwP
 nnoremap <silent> <C-Left> <C-o>
 nnoremap <silent> <C-Right> <C-i>
+nnoremap <silent> <leader>a :call custom#toggleQuickFixWin()<CR>
 
 vnoremap <silent> <Up> k
 vnoremap <silent> <Down> j

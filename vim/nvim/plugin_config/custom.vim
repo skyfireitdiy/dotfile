@@ -81,6 +81,16 @@ function! custom#ReloadCurrentBuffer()
     endif
 endfunction
 
+function! custom#toggleQuickFixWin()
+    if exists("g:quickfix_is_open") && g:quickfix_is_open
+        cclose
+        let g:quickfix_is_open = 0
+    else
+        copen
+        let g:quickfix_is_open = 1
+    endif
+endfunction
+
 command! -nargs=0 R :call custom#RefreshAllBuffer()
 
 augroup autoRunGroup
