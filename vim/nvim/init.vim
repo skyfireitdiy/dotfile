@@ -77,6 +77,7 @@ endfunction
 " 增加内置插件
 function init#addBuiltinPlugin()
     call init#AddPlugin( ['彩虹括号', 'luochen1990/rainbow','rainbow.vim', ['heavy']])
+    call init#AddPlugin( ['迷你map', 'wfxr/minimap.vim', 'minimap.vim', [], "{'do': ':!cargo install --locked code-minimap'}"])
     call init#AddPlugin( ['tag边栏', 'majutsushi/tagbar', 'tagbar.vim', ['heavy']])
     call init#AddPlugin( ['搜索时闪烁当前行', 'inside/vim-search-pulse' ])
     call init#AddPlugin( ['自动格式化', 'chiel92/vim-autoformat' ,'autoformat.vim', ['heavy']])
