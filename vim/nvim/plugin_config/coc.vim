@@ -68,6 +68,8 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nnoremap <silent> K :call coc#ShowDocumentation()<cr>
 
+nnoremap <silent> <leader>i :CocCommand document.toggleInlayHint<cr>
+
 
 " augroup autoformat
 " autocmd!
