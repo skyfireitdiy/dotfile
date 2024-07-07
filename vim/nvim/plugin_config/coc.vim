@@ -1,18 +1,20 @@
 "  coc.vim config
 call system("python3 ". shellescape(expand("~/.config/nvim/coc/merge_config.py")))
 
-inoremap <silent><expr> <TAB>
-            \ coc#pum#visible() ? coc#_select_confirm() :
-            \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-            \ coc#CheckBackspace() ? "\<TAB>" :
-            \ coc#refresh()
+" inoremap <silent><expr> <TAB>
+            " \ coc#pum#visible() ? coc#_select_confirm() :
+            " \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+            " \ coc#CheckBackspace() ? "\<TAB>" :
+            " \ coc#refresh()
+
+
+let g:coc_snippet_next = '<tab>'
 
 function! coc#CheckBackspace() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:coc_snippet_next = '<tab>'
 
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
             \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
@@ -41,9 +43,9 @@ nmap <silent> <C-a>  <Plug>(coc-codeaction-selected)
 nmap <silent> <C-a>  <Plug>(coc-codeaction)
 nmap <silent> <C-f>  <Plug>(coc-fix-current)
 nmap <silent> <C-c>  <Plug>(coc-codelens-action)
-nmap <silent> <C-R>  <Plug>(coc-codeaction-refactor)
-xmap <silent> <C-R>  <Plug>(coc-codeaction-refactor-selected)
-nmap <silent> <C-R>  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <C-r>  <Plug>(coc-codeaction-refactor)
+xmap <silent> <C-r>  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <C-r>  <Plug>(coc-codeaction-refactor-selected)
 
 
 command! -nargs=0 Format :call CocActionAsync('format')
