@@ -36,13 +36,12 @@ require'nvim-treesitter.configs'.setup {
     },
     incremental_selection = {
         enable = true,
--- 与muren冲突
---        keymaps = {
---            init_selection = "<cr>",
---            node_incremental = "<cr>",
---            scope_incremental = "<cr>",
---            node_decremental = "<bs>",
---        },
+        keymaps = {
+            init_selection = "<cr>",
+            node_incremental = "<cr>",
+            scope_incremental = "<cr>",
+            node_decremental = "<bs>",
+        },
     },
 }
 EOF
