@@ -137,7 +137,7 @@ endfunction
 function! init#checkDeps()
     if init#isArchLinuxOS() != 1
         echom "Not ArchLinux, Will not auto install deps"
-        return
+        return 1
     endif
     let out = system("bash " . g:home_dir . "/.config/nvim/script/install_deps.sh")
     if stridx(out, "[vim ok]") != -1
@@ -255,22 +255,6 @@ function! init#IgnorePlugin(plugin)
     let g:ignored_plugin = add(g:ignored_plugin, a:plugin)
 endfunction
 
-function! init#initTabnineChat()
-    let tabnine_dir = g:home_dir . '/.local/share/nvim/plugged/tabnine-nvim'
-    if isdirectory(tabnine_dir)
-        if filereadable(tabnine_dir . '/chat/target/release/tabnine_chat')
-            return
-        else
-            echom "start build tabnine-chat ..."
-            call system("cargo build --release --manifest-path " . tabnine_dir . '/chat/Cargo.toml')
-            echom "tabnine-chat build finished"
-        endif
-    endif
-endfunction
-
-function init#afterAll()
-    call init#initTabnineChat()
-endfunction
 
 function init#init()
     call init#initGlobalVars()
@@ -286,8 +270,6 @@ function init#init()
         call init#loadUserConfig('before_config.vim')
         call init#loadConfig()
         call init#loadUserConfig('after_all.vim')
-
-        call init#afterAll()
     endif
 endfunction
 
