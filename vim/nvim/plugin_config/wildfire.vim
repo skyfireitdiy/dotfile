@@ -1,3 +1,3 @@
 
-let g:wildfire_fuel_map = "<leader><cr>"
-let g:wildfire_water_map = "<leader><bs>"
+let g:wildfire_fuel_map = "<cr>"
+let g:wildfire_water_map = "<bs>"

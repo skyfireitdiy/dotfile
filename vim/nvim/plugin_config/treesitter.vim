@@ -5,7 +5,7 @@ lua << EOF
 require("nvim-treesitter.install").prefer_git = true
 
 for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
-    config.install_info.url = config.install_info.url:gsub("https://github.com/", "https://github.com/")
+    config.install_info.url = config.install_info.url:gsub("https://github.com/", vim.api.nvim_get_var("github_proxy") .. "https://github.com/")
 end
 
 ext_tab = {
@@ -36,12 +36,13 @@ require'nvim-treesitter.configs'.setup {
     },
     incremental_selection = {
         enable = true,
-        keymaps = {
-            init_selection = "<cr>",
-            node_incremental = "<cr>",
-            scope_incremental = "<cr>",
-            node_decremental = "<bs>",
-        },
+-- 与muren冲突
+--        keymaps = {
+--            init_selection = "<cr>",
+--            node_incremental = "<cr>",
+--            scope_incremental = "<cr>",
+--            node_decremental = "<bs>",
+--        },
     },
 }
 EOF

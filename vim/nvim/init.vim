@@ -39,6 +39,9 @@ function! init#initGlobalVars()
     let g:use_telescope = 0
     " 是否是arch
     let g:is_arch_linux = init#isArchLinuxOS()
+
+    " github代理
+    let g:github_proxy = 'https://ghproxy.org/'
 endfunction
 
 function! init#heavyLoadHook(tags)
@@ -82,7 +85,6 @@ function init#addBuiltinPlugin()
     call init#AddPlugin( ['状态栏', 'vim-airline/vim-airline' ])
     call init#AddPlugin( ['状态栏主题', 'vim-airline/vim-airline-themes' ,'airline-theme.vim'])
     call init#AddPlugin( ['光标样式', 'jszakmeister/vim-togglecursor' ])
-    call init#AddPlugin( ['增强的搜索替换', 'vim-scripts/EasyGrep' ,'easygrep.vim'])
     call init#AddPlugin( ['fzf基础支持', 'junegunn/fzf'])
     call init#AddPlugin( ['基于fzf的工具', 'junegunn/fzf.vim', 'fzf.vim'])
     call init#AddPlugin( ['增加、修改包围的括号或者tag', 'tpope/vim-surround' ])
@@ -111,6 +113,8 @@ function init#addBuiltinPlugin()
     call init#AddPlugin( ['会话搜索', 'rmagatti/session-lens', "session-lens.vim"])
     call init#AddPlugin( ['浮动终端', 'akinsho/toggleterm.nvim', 'toggleterm.vim'])
     call init#AddPlugin( ['lsp增强', 'jose-elias-alvarez/null-ls.nvim', 'null-ls.vim'])
+    call init#AddPlugin( ['全局搜索', 'mangelozzi/rgflow.nvim', 'rgflow.vim'])
+    call init#AddPlugin( ['全局替换', 'AckslD/muren.nvim', 'muren.vim'])
     call init#AddPlugin( ['主题', 'tomasr/molokai' ])
     call init#AddPlugin( ['主题', 'tanvirtin/monokai.nvim'])
     call init#AddPlugin( ['主题', 'dracula/vim'])
@@ -132,7 +136,7 @@ endfunction
 
 " 增加依赖项检测
 function! init#checkDeps()
-    if init#isArchLinuxOS() != 1 
+    if init#isArchLinuxOS() != 1
         echom "Not ArchLinux, Will not auto install deps"
         return
     endif
@@ -185,7 +189,7 @@ endfunction
 
 " 插件的加载和插件的配置分开
 function! init#loadPlugin()
-    " let g:plug_url_format="https://ghproxy.com/https://github.com/%s"
+    let g:plug_url_format = g:github_proxy . "https://github.com/%s"
     let plug_install = 0
     call plug#begin()
     for i in range(len(g:plugin_config_table))
@@ -265,7 +269,7 @@ function! init#initTabnineChat()
     endif
 endfunction
 
-function init#afterAll() 
+function init#afterAll()
     call init#initTabnineChat()
 endfunction
 

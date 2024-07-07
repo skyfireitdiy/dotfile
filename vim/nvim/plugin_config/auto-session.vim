@@ -14,5 +14,4 @@ require("auto-session").setup {
 EOF
 
 
-
-nnoremap <silent> <leader>ss :SessionSave<CR>
+command! SS :SessionSave
