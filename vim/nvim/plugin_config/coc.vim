@@ -81,7 +81,6 @@ let g:coc_config = []
 
 call init#AddCoc( ['coc-explorer', 'explorer.vim'])
 call init#AddCoc( ['coc-marketplace'])
-call init#AddCoc( ['coc-code-translate', 'code-translate.vim'])
 
 for ext in g:coc_ext_table
     let g:coc_config = add(g:coc_config, ext)
