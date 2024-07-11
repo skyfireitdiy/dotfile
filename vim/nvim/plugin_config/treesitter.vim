@@ -34,15 +34,15 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
         additional_vim_regex_highlighting = false,
     },
---     incremental_selection = {
---         enable = true,
---         keymaps = {
---             init_selection = "<cr>",
---             node_incremental = "<cr>",
---             scope_incremental = "<cr>",
---             node_decremental = "<bs>",
---         },
---     },
+     incremental_selection = {
+         enable = true,
+         keymaps = {
+             init_selection = "<cr>",
+             node_incremental = "<cr>",
+             scope_incremental = "<cr>",
+             node_decremental = "<bs>",
+         },
+     },
 }
 EOF
 set foldmethod=expr
