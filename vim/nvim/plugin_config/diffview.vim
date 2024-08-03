@@ -231,4 +231,4 @@ require("diffview").setup({
 })
 EOF
 
-nnoremap <silent> <leader>d :DiffviewOpen
+nnoremap  <leader>d :DiffviewOpen
