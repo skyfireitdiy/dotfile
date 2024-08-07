@@ -9,6 +9,7 @@ require("auto-session").setup {
         --          -- require("lualine").refresh() -- refresh lualine so the new session name is displayed in the status bar
         --      end,
         --  },
+    silent_restore = false,
 }
 
 EOF
