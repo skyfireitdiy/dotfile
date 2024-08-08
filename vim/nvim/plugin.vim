@@ -41,6 +41,7 @@ call init#AddPlugin( ['diff工具', 'sindrets/diffview.nvim', 'diffview.vim', ['
 call init#AddPlugin( ['tab选择', 'ghillb/cybu.nvim', 'cybu.vim', ['heavy']])
 call init#AddPlugin( ['搜索增强', 'kevinhwang91/nvim-hlslens', 'nvim-hlslens.vim', ['heavy']])
 call init#AddPlugin( ['minimap', 'petertriho/nvim-scrollbar', 'nvim-scrollbar.vim', ['heavy']])
+call init#AddPlugin( ['快捷键建议', 'tris203/hawtkeys.nvim', 'hawtkeys.vim', ['heavy']])
 call init#AddPlugin( ['主题', 'tomasr/molokai' ])
 call init#AddPlugin( ['主题', 'tanvirtin/monokai.nvim'])
 call init#AddPlugin( ['主题', 'dracula/vim'])

@@ -41,7 +41,8 @@ function! init#initGlobalVars()
     let g:is_arch_linux = init#isArchLinuxOS()
 
     " github代理
-    let g:github_proxy = 'https://ghproxy.org/'
+    " let g:github_proxy = 'https://ghproxy.org/'
+    let g:github_proxy = ''
 endfunction
 
 function! init#heavyLoadHook(tags)
