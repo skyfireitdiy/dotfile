@@ -7,6 +7,7 @@
     "suggest.minTriggerInputLength": 1,
     "explorer.focus": true,
     "snippets.ultisnips.pythonPrompt": false,
+    "inlayHint.enable": false,
     "markdown-preview-enhanced.previewTheme": "vue.css",
     "explorer.keyMappings.global": {
         "i": false,
