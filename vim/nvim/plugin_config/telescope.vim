@@ -9,12 +9,10 @@ require('telescope').setup {}
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function
 
-require('telescope').load_extension('session-lens')
 EOF
 
 if g:use_telescope == 0
     nnoremap <silent>``` :Telescope<CR>
-    nnoremap <silent><leader>s :SearchSession<CR>
     nnoremap <silent>``co :Telescope colorscheme<cr>
     nnoremap <silent>``r  :Telescope live_grep<cr>
     nnoremap <silent>``m :Telescope marks<cr>
@@ -35,7 +33,6 @@ if g:use_telescope == 0
     nnoremap <silent>``G :Telescope grep_string<CR>
 else
     nnoremap <silent><leader>` :Telescope<CR>
-    nnoremap <silent><leader>s :SearchSession<CR>
     nnoremap <silent><leader>co :Telescope colorscheme<cr>
     nnoremap <silent><leader>r  :Telescope live_grep<cr>
     nnoremap <silent><leader>m :Telescope marks<cr>

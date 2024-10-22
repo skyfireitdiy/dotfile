@@ -31,7 +31,6 @@ call init#AddPlugin( ['coc', 'neoclide/coc.nvim', 'coc.vim', [], "{'branch': 're
 call init#AddPlugin( ['lua函数集', 'nvim-lua/plenary.nvim'])
 call init#AddPlugin( ['搜索', 'nvim-telescope/telescope.nvim', 'telescope.vim'])
 call init#AddPlugin( ['会话自动保存', 'rmagatti/auto-session', 'auto-session.vim'])
-call init#AddPlugin( ['会话搜索', 'rmagatti/session-lens', "session-lens.vim"])
 call init#AddPlugin( ['浮动终端', 'akinsho/toggleterm.nvim', 'toggleterm.vim'])
 call init#AddPlugin( ['lsp增强', 'jose-elias-alvarez/null-ls.nvim', 'null-ls.vim', ['heavy']])
 call init#AddPlugin( ['全局替换', 'nvim-pack/nvim-spectre', 'nvim-spectre.vim'])
