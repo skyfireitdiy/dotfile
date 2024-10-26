@@ -5,3 +5,4 @@ coc-settings.json
 *.gpg
 *~
 fish/conf.d
+gnupg
