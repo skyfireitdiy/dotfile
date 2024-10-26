@@ -58,7 +58,7 @@ function! init#checkHugeFile()
     for path in argv()
         if filereadable(path)
             " 判断文件大小，如果超过1MB，启动轻量级nvim
-            if(getfsize(path) > 10*1024*1024)
+            if(getfsize(path) > 1024*1024)
                 let g:lite_vim = 1
                 break
             endif
