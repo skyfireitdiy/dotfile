@@ -29,7 +29,7 @@ install_normal_app() {
 }
 
 install_gui_app() {
-    yay -S --noconfirm ibus ibus-libpinyin flameshot wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete clash debugedit microsoft-edge-stable-bin bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol obs-studio pasystray bat
+    yay -S --noconfirm ibus ibus-libpinyin flameshot wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete docker debugedit microsoft-edge-stable-bin bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol obs-studio pasystray bat
 }
 
 
@@ -47,11 +47,16 @@ config_ntp() {
     sudo timedatectl set-ntp true
 }
 
+config_docker() {
+    sudo usermod -aG docker $(whoami)
+}
+
 config(){
     ./install.sh fish tmux x vim konsole kitty alacritty hx i3 polybar pypi ranger
     config_fish
     config_bluez
     config_ntp
+    config_docker
 }
 
 
