@@ -52,3 +52,5 @@ else
     nnoremap <silent><leader>x :Telescope commands<CR>
     nnoremap <silent><leader>G :Telescope grep_string<CR>
 endif
+
+noremap <silent><leader>P :Telescope registers<CR>
