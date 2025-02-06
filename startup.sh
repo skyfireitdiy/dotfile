@@ -29,7 +29,7 @@ install_normal_app() {
 }
 
 install_gui_app() {
-    yay -S --noconfirm ibus ibus-libpinyin flameshot wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete debugedit microsoft-edge-stable-bin bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol obs-studio pasystray bat
+    yay -S --noconfirm ibus ibus-libpinyin flameshot wqy-zenhei wqy-microhei-lite wqy-microhei  wqy-bitmapfont nerd-fonts-complete-mono-glyphs debugedit microsoft-edge-stable-bin bluez bluez-utils blueman pulseaudio-bluetooth pavucontrol obs-studio pasystray bat
 }
 
 
