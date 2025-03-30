@@ -25,7 +25,7 @@ update_system() {
 
 install_normal_app() {
     sudo ./install.sh pacman
-    yay -S --noconfirm fish neovim fzf ranger w3m make  lazygit tmux  ripgrep universal-ctags gcc nodejs xsel npm  go rustup fd linux-headers p7zip wget aria2 unzip python-pynvim  ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git net-tools reflector python-pip yarn witch python-jedi zellij exa docker docker-compose
+    yay -S --noconfirm fish neovim fzf ranger w3m make  lazygit tmux  ripgrep universal-ctags gcc nodejs xsel npm  go rustup fd linux-headers p7zip wget aria2 unzip python-pynvim  ueberzug ffmpegthumbnailer poppler epub-thumbnailer-git net-tools reflector python-pip yarn witch python-jedi zellij eza docker docker-compose
 }
 
 install_gui_app() {

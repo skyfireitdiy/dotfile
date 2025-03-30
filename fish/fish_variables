@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dexclude\x3d\x7b\x2egit\x2c\x2eidea\x2c\x2esass\x2dcache\x2cnode_modules\x2cbuild\x7d\x20\x2d\x2dtype\x20f
-SETUVAR __fish_initialized:3800
+SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:blue
