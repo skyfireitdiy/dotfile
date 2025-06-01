@@ -4,7 +4,7 @@ end
 
 
 # --------------------- abbr start ---------------------
-abbr -a -- np 'set -e http_proxy ; set -e https_proxy ; set -e socks_proxy '
+abbr -a -- np 'set -e http_proxy ; set -e https_proxy ; set -e socks_proxy ; set -e HTTP_PROXY ; set -e HTTPS_PROXY ; set -e SOCKS_PROXY '
 abbr -a -- e exit
 
 abbr -a -- rm 'rm -rf'
