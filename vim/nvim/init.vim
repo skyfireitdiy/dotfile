@@ -13,8 +13,7 @@ function! init#initGlobalVars()
     if g:install_vim == 1
         let g:lite_vim = 0
     endif
-    " 使用淘宝镜像加速coc安装
-    " let g:npm_registry = 'https://registry.npm.taobao.org'
+    
 
     " 加载标记
     let g:load_flags = []
@@ -27,9 +26,10 @@ function! init#initGlobalVars()
     " 插件配置
     let g:plugin_config_table = []
     " 插件配置搜索路径
-    let g:plugin_config_search_path = [g:home_dir . '/.vimrc_user/',
-                \ g:home_dir . "/.config/nvim",
-                \ g:home_dir . "/.config/nvim/plugin_config/"]
+    let g:plugin_config_search_path = [
+                \ fnamemodify('~/.vimrc_user/', ':p'),
+                \ fnamemodify('~/.config/nvim', ':p'),
+                \ fnamemodify('~/.config/nvim/plugin_config/', ':p')]
     " 插件加载标记判断回调函数
     let g:plugin_load_hooks = [
                 \ function("init#heavyLoadHook"),
@@ -40,8 +40,6 @@ function! init#initGlobalVars()
     " 是否是arch
     let g:is_arch_linux = init#isArchLinuxOS()
 
-    " github代理
-    " let g:github_proxy = 'https://ghproxy.org/'
     let g:github_proxy = ''
 endfunction
 
@@ -77,7 +75,10 @@ endfunction
 
 " 增加内置插件
 function init#addBuiltinPlugin()
-    execute 'source ' . g:home_dir . "/.config/nvim/plugin.vim" 
+    let plugin_file = glob(g:home_dir . "/.config/nvim/plugin.vim")
+    if !empty(plugin_file)
+        execute 'source ' . plugin_file
+    endif
 endfunction
 
 
@@ -97,21 +98,29 @@ function! init#checkDeps()
         echom "Not ArchLinux, Will not auto install deps"
         return 1
     endif
-    let out = system("bash " . g:home_dir . "/.config/nvim/script/install_deps.sh")
-    if stridx(out, "[vim ok]") != -1
-        return 1
-    else
+    try
+        let out = system("bash " . g:home_dir . "/.config/nvim/script/install_deps.sh")
+        if stridx(out, "[vim ok]") != -1
+            return 1
+        else
+            echohl ErrorMsg | echom "Failed to install dependencies: " . out | echohl None
+            return 0
+        endif
+    catch /^Vim\%((\a\+)\)\=:E/
+        echohl ErrorMsg | echom "Error executing install_deps.sh: " . v:exception | echohl None
         return 0
-    endif
+    endtry
 endfunction
 
 " 自助安装配置，减少install.sh脚本中的依赖
 function! init#installVim()
     if !filereadable(g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
-        " nvim
-        echom system("mkdir -p ". g:home_dir . "/.local/share/nvim/site/autoload")
-        echom system("git clone https://github.com/junegunn/vim-plug.git ".g:home_dir."/.local/share/nvim/vim-plug")
-        echom system("ln -sf ".g:home_dir."/.local/share/nvim/vim-plug/plug.vim ".g:home_dir."/.local/share/nvim/site/autoload/plug.vim")
+        let install_cmd = "mkdir -p " . g:home_dir . "/.local/share/nvim/site/autoload && " .
+                    \ "git clone https://github.com/junegunn/vim-plug.git " . g:home_dir . "/.local/share/nvim/vim-plug && " .
+                    \ "ln -sf " . g:home_dir . "/.local/share/nvim/vim-plug/plug.vim " . g:home_dir . "/.local/share/nvim/site/autoload/plug.vim"
+        if system(install_cmd) != ""
+            echohl ErrorMsg | echom "Failed to install vim-plug" | echohl None
+        endif
         qa
     endif
 endfunction
