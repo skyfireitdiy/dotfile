@@ -1,11 +1,5 @@
-"  coc.vim config
+" coc.vim config
 call system("python3 ". shellescape(expand("~/.config/nvim/coc/merge_config.py")))
-
-" inoremap <silent><expr> <TAB>
-            " \ coc#pum#visible() ? coc#_select_confirm() :
-            " \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-            " \ coc#CheckBackspace() ? "\<TAB>" :
-            " \ coc#refresh()
 
 
 let g:coc_snippet_next = '<tab>'
@@ -30,7 +24,7 @@ function! coc#ShowDocumentation()
     endif
 endfunction
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 augroup mygroup
     autocmd!
@@ -39,13 +33,9 @@ augroup mygroup
 augroup end
 
 xmap <silent> <C-a>  <Plug>(coc-codeaction-selected)
-nmap <silent> <C-a>  <Plug>(coc-codeaction-selected)
-nmap <silent> <C-a>  <Plug>(coc-codeaction)
 nmap <silent> <C-f>  <Plug>(coc-fix-current)
 nmap <silent> <C-c>  <Plug>(coc-codelens-action)
-nmap <silent> <C-r>  <Plug>(coc-codeaction-refactor)
 xmap <silent> <C-r>  <Plug>(coc-codeaction-refactor-selected)
-nmap <silent> <C-r>  <Plug>(coc-codeaction-refactor-selected)
 
 
 command! -nargs=0 Format :call CocActionAsync('format')
@@ -58,12 +48,10 @@ nnoremap <silent><nowait> <space>ca  :<C-u>CocList diagnostics<cr>
 nnoremap <silent><nowait> <space>ce  :<C-u>CocList extensions<cr>
 nnoremap <silent><nowait> <space>cx  :<C-u>CocList commands<cr>
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> <F12> <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <leader>rn <Plug>(coc-rename)
-nmap <silent> <F2> <Plug>(coc-rename)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nnoremap <silent> K :call coc#ShowDocumentation()<cr>

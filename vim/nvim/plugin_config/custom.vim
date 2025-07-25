@@ -96,13 +96,10 @@ command! -nargs=0 R :call custom#RefreshAllBuffer()
 augroup autoRunGroup
     autocmd!
     autocmd BufLeave * stopinsert
-    " autocmd InsertEnter * :set norelativenumber
-    " autocmd InsertLeave * :set relativenumber
-    autocmd InsertLeave * :call system('fcitx-remote -c')
-    " autocmd BufEnter * :set nomodifiable
     autocmd TermEnter * :call custom#HandleTermEnter()
     autocmd SessionLoadPost * :call custom#HandleSessionLoadPost()
-    " autocmd BufEnter * :call custom#ReloadCurrentBuffer()
+    autocmd FocusGained,BufEnter * :silent! checktime
+    autocmd CursorHold * :silent! checktime
 augroup END
 
 set nobackup
@@ -112,7 +109,6 @@ set signcolumn=yes
 set showcmd
 set noshowmode
 set nu
-set autoread
 set autowriteall
 set ignorecase smartcase
 set incsearch
@@ -147,9 +143,7 @@ set undofile
 set wildmode=longest,list,full,lastused
 set noswapfile
 
-let g:loaded_perl_provider = 0
-let g:loaded_node_provider = 0
-let g:loaded_ruby_provider = 0
+
 
 if exists("g:neovide")
     set guifont=Source\ Code\ Pro:h10:b:i

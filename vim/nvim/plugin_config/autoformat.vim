@@ -1,5 +1,5 @@
 let g:auto_format_flag = 1
-let g:dont_format_ext = ["txt"]
+let g:dont_format_ext = ["txt", "yaml", "yml"]
 
 function autoformat#RunAutoFormat()
     if g:auto_format_flag == 1

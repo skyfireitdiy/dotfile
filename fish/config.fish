@@ -49,3 +49,5 @@ set -gx FZF_DEFAULT_OPTS "--preview 'bat --style=numbers,changes --color=always 
 if test -f ~/.config/fish_user/config.fish
     source ~/.config/fish_user/config.fish
 end
+
+set -x UV_DEFAULT_INDEX https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
