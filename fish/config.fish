@@ -51,3 +51,16 @@ if test -f ~/.config/fish_user/config.fish
 end
 
 set -x UV_DEFAULT_INDEX https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
+
+# ===== JARVIS JSS FISH COMPLETION START =====
+function fish_command_not_found
+    if test (string length "$argv") -lt 10
+        return
+    end
+    commandline -r (jss request "$argv")
+end
+
+function __fish_command_not_found_handler --on-event fish_command_not_found
+    fish_command_not_found "$argv"
+end
+# ===== JARVIS JSS FISH COMPLETION END =====
