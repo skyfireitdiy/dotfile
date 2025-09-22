@@ -50,7 +50,6 @@ if test -f ~/.config/fish_user/config.fish
     source ~/.config/fish_user/config.fish
 end
 
-set -x UV_DEFAULT_INDEX https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
 
 # ===== JARVIS JSS FISH COMPLETION START =====
 function fish_command_not_found
