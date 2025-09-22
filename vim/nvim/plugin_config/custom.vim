@@ -126,7 +126,15 @@ set ruler
 set rulerformat=%15(%c%V\ %p%%%)
 set smartindent
 set autoindent
-set clipboard=unnamedplus
+" Clipboard: only enable unnamedplus when a provider is available
+" This avoids startup hang in WSL2 without X11 (no DISPLAY) by not forcing
+" Neovim to initialize clipboard provider when none is usable.
+if (exists('$DISPLAY') && $DISPLAY != '') ||
+      \ executable('win32yank') || executable('win32yank.exe') ||
+      \ executable('wl-copy') || executable('xclip') || executable('xsel') ||
+      \ executable('pbcopy') || executable('clip.exe') || executable('powershell.exe')
+    set clipboard=unnamedplus
+endif
 " set scrolloff=10
 
 
