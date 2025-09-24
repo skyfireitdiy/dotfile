@@ -63,6 +63,10 @@ if test -f ~/.config/fish_user/config.fish
     source ~/.config/fish_user/config.fish
 end
 
+set -x GTK_IM_MODULE fcitx
+set -x QT_IM_MODULE fcitx
+set -x XMODIFIERS '@im=fcitx'
+
 
 # ===== JARVIS JSS FISH COMPLETION START =====
 function fish_command_not_found
