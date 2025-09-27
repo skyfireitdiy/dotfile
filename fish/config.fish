@@ -13,6 +13,12 @@ if test -f /etc/os-release
             abbr -a -- yu 'yay -Sy; yay -Su --noconfirm --needed --overwrite="*"'
             abbr -a -- ys 'yay -Ss'
             abbr -a -- yr 'yay -Rnsuvc'
+        case "fedora" "centos" "rhel"
+            # Fedora/CentOS/RHEL specific aliases
+            abbr -a -- yu 'sudo dnf upgrade -y'
+            abbr -a -- yi 'sudo dnf install -y'
+            abbr -a -- yr 'sudo dnf remove -y'
+            abbr -a -- ys 'dnf search'
         case "kali" "debian" "ubuntu" "kylin"
             # Debian/Ubuntu/Kali Linux specific aliases
             abbr -a -- yu 'sudo apt update && sudo apt upgrade -y'
