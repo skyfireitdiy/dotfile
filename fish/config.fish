@@ -13,7 +13,7 @@ if test -f /etc/os-release
             abbr -a -- yu 'yay -Sy; yay -Su --noconfirm --needed --overwrite="*"'
             abbr -a -- ys 'yay -Ss'
             abbr -a -- yr 'yay -Rnsuvc'
-        case "kali" "debian" "ubuntu"
+        case "kali" "debian" "ubuntu" "kylin"
             # Debian/Ubuntu/Kali Linux specific aliases
             abbr -a -- yu 'sudo apt update && sudo apt upgrade -y'
             abbr -a -- yi 'sudo apt install'
