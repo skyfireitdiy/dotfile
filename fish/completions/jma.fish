@@ -1,0 +1,1 @@
+complete --command jma --no-files --arguments "(env _JMA_COMPLETE=complete_fish _TYPER_COMPLETE_FISH_ACTION=get-args _TYPER_COMPLETE_ARGS=(commandline -cp) jma)" --condition "env _JMA_COMPLETE=complete_fish _TYPER_COMPLETE_FISH_ACTION=is-args _TYPER_COMPLETE_ARGS=(commandline -cp) jma"

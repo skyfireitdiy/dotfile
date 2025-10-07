@@ -1,0 +1,1 @@
+complete --command jmo --no-files --arguments "(env _JMO_COMPLETE=complete_fish _TYPER_COMPLETE_FISH_ACTION=get-args _TYPER_COMPLETE_ARGS=(commandline -cp) jmo)" --condition "env _JMO_COMPLETE=complete_fish _TYPER_COMPLETE_FISH_ACTION=is-args _TYPER_COMPLETE_ARGS=(commandline -cp) jmo"

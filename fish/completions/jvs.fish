@@ -1,0 +1,1 @@
+complete --command jvs --no-files --arguments "(env _JVS_COMPLETE=complete_fish _TYPER_COMPLETE_FISH_ACTION=get-args _TYPER_COMPLETE_ARGS=(commandline -cp) jvs)" --condition "env _JVS_COMPLETE=complete_fish _TYPER_COMPLETE_FISH_ACTION=is-args _TYPER_COMPLETE_ARGS=(commandline -cp) jvs"
