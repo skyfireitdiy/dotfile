@@ -6,20 +6,20 @@ end
 if test -f /etc/os-release
     set -l os (cat /etc/os-release | grep ^ID= | cut -d= -f2 | tr -d '"')
     switch $os
-        case "arch"
+        case arch
             # Arch Linux specific aliases
             abbr -a -- um 'sudo reflector --verbose -c China --latest 10 --sort rate --save /etc/pacman.d/mirrorlist'
             abbr -a -- yi 'yay -S --noconfirm'
             abbr -a -- yu 'yay -Sy; yay -Su --noconfirm --needed --overwrite="*"'
             abbr -a -- ys 'yay -Ss'
             abbr -a -- yr 'yay -Rnsuvc'
-        case "fedora" "centos" "rhel"
+        case fedora centos rhel
             # Fedora/CentOS/RHEL specific aliases
             abbr -a -- yu 'sudo dnf upgrade -y'
             abbr -a -- yi 'sudo dnf install -y'
             abbr -a -- yr 'sudo dnf remove -y'
             abbr -a -- ys 'dnf search'
-        case "kali" "debian" "ubuntu" "kylin"
+        case kali debian ubuntu kylin
             # Debian/Ubuntu/Kali Linux specific aliases
             abbr -a -- yu 'sudo apt update && sudo apt upgrade -y'
             abbr -a -- yi 'sudo apt install'
@@ -64,7 +64,6 @@ set -gx FZF_DEFAULT_OPTS "--preview 'bat --style=numbers,changes --color=always 
 
 # --------------------- env end --------------------
 
-
 if test -f ~/.config/fish_user/config.fish
     source ~/.config/fish_user/config.fish
 end
@@ -72,7 +71,6 @@ end
 set -x GTK_IM_MODULE fcitx
 set -x QT_IM_MODULE fcitx
 set -x XMODIFIERS '@im=fcitx'
-
 
 # ===== JARVIS JSS FISH COMPLETION START =====
 function fish_command_not_found
@@ -87,3 +85,4 @@ function __fish_command_not_found_handler --on-event fish_command_not_found
 end
 # ===== JARVIS JSS FISH COMPLETION END =====
 set -gx PATH $PATH /home/skyfire/npm-global/bin
+~/go/bin
