@@ -1,6 +1,7 @@
 lua <<EOF
-require'nvim-treesitter.configs'.setup {
-    textobjects = {
+local ok_textobjects, ts_textobjects = pcall(require, 'nvim-treesitter-textobjects')
+if ok_textobjects then
+    ts_textobjects.setup {
         select = {
             enable = true,
 
@@ -92,7 +93,7 @@ require'nvim-treesitter.configs'.setup {
                 ["<leader>dc"] = "@class.outer",
             },
         },
-    },
-}
+    }
+end
 
 EOF
